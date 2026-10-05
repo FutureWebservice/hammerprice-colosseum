@@ -1,0 +1,6 @@
+{
+  "action": "mute",
+  "paddle": 7,
+  "minutes": 30,
+  "reason": "Repeated spam in the chat."
+}

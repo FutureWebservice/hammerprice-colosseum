@@ -1,0 +1,23 @@
+{
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "retry": "Retry",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "skipToContent": "Skip to content",
+  "states": {
+    "rooms": "Go to the rooms",
+    "home": "Back to home",
+    "retry": "Try again",
+    "notFound": {
+      "kicker": "404",
+      "title": "This page does not exist.",
+      "body": "The address may be mistyped, or the room, lot or pack is no longer there. The rooms are the best place to pick up again."
+    },
+    "error": {
+      "kicker": "Something went wrong",
+      "title": "This page failed to load.",
+      "body": "Please try again. If it keeps happening, the rest of the site still works. A payment is only ever made by a transaction you signed in your own wallet: check your wallet history if you are unsure."
+    }
+  }
+}

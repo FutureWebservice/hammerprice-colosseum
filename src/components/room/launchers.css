@@ -1,0 +1,75 @@
+/*
+ * The room's two launchers, bottom left, side by side: the AI assistant (brass, filled) and the room chat (brass outline). Same size, same pill shape, same
+ * focus ring. A desktop room has no scrolling page: they sit just above the room's row of legal links. On a phone they sit above the sticky bid bar.
+ * Also the room's two SIDEBARS: the chat (left, chat.css) and the assistant drawer (right) the assistant button opens. See the sidebars section below.
+ */
+.hp-launch {
+  position: fixed; left: var(--hp-launch-x, 16px); bottom: 44px; z-index: 44; width: 148px; min-height: 44px; padding: 0 14px; box-sizing: border-box;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; cursor: pointer;
+  font-family: var(--mono, ui-monospace, monospace); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+  border: 1px solid rgba(232, 199, 118, .7); box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+}
+.hp-launch svg { flex: none; }
+.hp-launch:focus-visible { outline: 2px solid #f4f0e6; outline-offset: 3px; }
+.hp-launch--ai { background: #c8a44d; color: #1a1a17; }
+.hp-launch--ai:hover { background: #e8c776; }
+.hp-launch--chat { left: calc(var(--hp-launch-x, 16px) + 156px); background: #12171d; color: #e8c776; }
+.hp-launch--chat:hover { background: #1b222b; border-color: #e8c776; }
+body:not(:has(.hp-launch--ai)) .hp-launch--chat { left: var(--hp-launch-x, 16px); } /* the assistant is off: the chat button takes the first place */
+.hp-launch .hc-badge { position: absolute; top: -9px; right: 6px; }
+
+/*
+ * The sidebars. Chat = the left one, assistant = the right one, both fixed under the site header at full height; the width class is the same (380 and 400 px).
+ * A desktop room never has its centre under a sidebar: the room takes padding the width of each open sidebar, and the rail on that side (the catalogue under the
+ * chat, the feed under the assistant) folds away below 1920 px, and both whenever a sidebar is open below 1280 px (there only one sidebar opens at a time,
+ * sidebars.ts). The launchers move to the right of the chat sidebar while it is open. The arithmetic is guarded in __tests__/sidebars-layout.test.ts:
+ * the stage keeps at least 480 px at 1280 px with both open, and the two sidebars never overlap each other.
+ */
+:root { --hp-chat-w: 380px; --hp-assist-w: 400px; }
+@media (min-width: 981px) {
+  body:has(.hc-panel) { --hp-launch-x: calc(var(--hp-chat-w) + 16px); }
+  body:has(.hc-panel) .hp.ar-room { padding-left: var(--hp-chat-w); }
+  body:has(.hp-assist-drawer:not([hidden])) .hp.ar-room { padding-right: var(--hp-assist-w); }
+  /* a folded catalogue no longer holds the launchers' space (its bottom padding), so the room keeps a strip for them: they never sit on the bid button */
+  body:has(.hc-panel, .hp-assist-drawer:not([hidden])) .ar-rostrum { padding-bottom: 56px; }
+}
+@media (min-width: 981px) and (max-width: 1919px) {
+  body:has(.hc-panel) .ar-rostrum { --ar-cat-w: 0px; }
+  body:has(.hc-panel) .ar-cat { visibility: hidden; }
+  body:has(.hp-assist-drawer:not([hidden])) .ar-rostrum { --ar-feed-w: 0px; }
+  body:has(.hp-assist-drawer:not([hidden])) .ar-feed { visibility: hidden; }
+}
+@media (min-width: 981px) and (max-width: 1279px) {
+  body:has(.hc-panel, .hp-assist-drawer:not([hidden])) .ar-rostrum { --ar-cat-w: 0px; --ar-feed-w: 0px; }
+  body:has(.hc-panel, .hp-assist-drawer:not([hidden])) :is(.ar-cat, .ar-feed) { visibility: hidden; }
+}
+
+@media (max-width: 980px) {
+  .hp-launch { --hp-launch-x: 12px; left: var(--hp-launch-x); bottom: calc(112px + env(safe-area-inset-bottom)); }
+  .hp-launch--chat { left: calc(var(--hp-launch-x) + 156px); }
+  body:not(:has(.hp-launch--ai)) .hp-launch--chat { left: var(--hp-launch-x); }
+  /* a full screen sheet is open (chat or assistant): both launchers step out of its way and out of the tab order, they come back when it closes; the page behind does not scroll and the "How it works" bubble and the first-visit tour card wait */
+  body:has(.hc-panel, .hp-assist-drawer:not([hidden])) .hp-launch { display: none; }
+  body:has(.hc-panel, .hp-assist-drawer:not([hidden])) { overflow: hidden; }
+  body:has(.hc-panel, .hp-assist-drawer:not([hidden])) :is(.ex-bubble, .ux-tour) { display: none; }
+}
+
+/* the assistant drawer: the right sidebar */
+.hp-assist-drawer {
+  position: fixed; z-index: 48; top: var(--hp-bar-h, 57px); right: 0; bottom: 0; width: min(var(--hp-assist-w), 100vw); display: flex; flex-direction: column; overflow: hidden;
+  min-height: 240px; background: #0e1116; border-left: 1px solid rgba(200, 164, 77, .35); box-shadow: -24px 0 60px rgba(0, 0, 0, .5);
+}
+.hp-assist-drawer[hidden] { display: none; }
+.hp-assist-scrim { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .hp-assist-drawer { animation: hp-assist-in .2s ease-out; }
+  @keyframes hp-assist-in { from { transform: translateX(16px); } to { transform: none; } }
+}
+@media (max-width: 980px) {
+  /* a full screen sheet (100dvh, the safe areas respected), no scrim needed */
+  .hp-assist-drawer { top: 0; left: 0; right: 0; width: auto; height: 100dvh; border-left: 0; box-shadow: none; padding-top: env(safe-area-inset-top); overscroll-behavior: contain; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hp-assist-drawer { animation-name: hp-assist-up; }
+    @keyframes hp-assist-up { from { transform: translateY(24px); } to { transform: none; } }
+  }
+}

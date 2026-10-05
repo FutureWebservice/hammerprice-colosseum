@@ -1,0 +1,356 @@
+{
+  "bubble": {
+    "label": "How it works"
+  },
+  "modal": {
+    "title": "How it works",
+    "close": "Close",
+    "tabPanels": "In pictures",
+    "tabFaq": "FAQ",
+    "prev": "Back",
+    "next": "Next"
+  },
+  "panels": {
+    "vault": {
+      "title": "The cards come from a real vault",
+      "body": "Collector Crypt keeps graded cards in insured vaults and mints each one as an NFT: more than 150,000 of them. Hammerprice reads that catalogue live. This build runs on Solana devnet, so the cards you bid on are replicas we minted with the real photo and grade, labelled as replicas."
+    },
+    "room": {
+      "title": "A room goes live",
+      "body": "A room is a scheduled auction. The rail lists every lot, the stage shows the card, the bid control takes bids. One live demo room runs around the clock with its own test cards, so there is always something live, and the house also runs timed demo lots. All other rooms are created by sellers."
+    },
+    "signature": {
+      "title": "A bid is a signed, funded commitment",
+      "body": "Your wallet signs a message that names the show, the lot, the amount and the network. Nothing moves when you bid. The server only accepts the bid if your USDC balance, minus your other open bids, covers it."
+    },
+    "hammer": {
+      "title": "The clock closes the lot",
+      "body": "A lot closes by itself when its clock runs out. A bid in the last seconds adds time, so nobody wins by waiting for the final beat. No person presses a hammer: the highest valid bid against the reserve decides."
+    },
+    "settle": {
+      "title": "The hammer is the payment",
+      "body": "After the close, buyer and seller sign one transaction. It pays the seller in USDC, pays our 2.5% fee and moves the card to the buyer. All of it happens or none of it does. In the demo room our server signs the seller's part, so you sign once."
+    },
+    "custody": {
+      "title": "We hold nothing, in auctions and in packs",
+      "body": "In auctions and packs the platform never holds your USDC or the card. In an equal-value pack you pay the seller in the same transaction that moves the card; in a chance pack you pay the pack operator directly, and we only take our fee in the same payment. Its settlement key only pays network fees, and an auction transaction is valid only with both the buyer's and the seller's signature. The price of holding nothing is that we cannot refund a payment: if a chance pack operator does not deliver, we mark the sale, give the operator a strike and pause the pack, but you claim your loss from the operator. In our reading, holding client funds would need a German payment licence, which this design avoids."
+    },
+    "demo": {
+      "title": "What you are looking at",
+      "body": "The house runs one live demo room and timed demo lots, and all of them are labelled DEMO. It takes real signed bids from visitors and settles on devnet with test USDC and replica cards that the platform owns. Labelled house bots also bid there so a lot is always live, but they never outbid a person. If a house bot wins, nothing is sold and nobody pays. Every other room is created by a seller with a wallet, in the sell flow, and has no bots."
+    }
+  },
+  "faq": {
+    "solana": {
+      "q": "Why Solana?",
+      "a": "The winning bid settles as one atomic transaction: the money and the card move together or not at all. Solana makes that cheap and fast, and the cards already exist there as NFTs."
+    },
+    "packs": {
+      "q": "Are there pack openings?",
+      "a": "Where the operator has switched packs on, yes. The pool is fixed by a hash before the first sale and the draw has a public proof. In a chance pack you pay the independent pack operator directly and first: nothing is drawn until your payment is final, then the operator delivers the card. We hold no money and cannot refund you, so check the operator's delivery record before you pay. In an equal-value pack every card has the same listed value and the card moves in the same transaction as the payment. Buyers must be 18 or older. Whether packs are lawful is a legal question that no lawyer has reviewed."
+    },
+    "commission": {
+      "q": "What is the 2.5% commission charged on?",
+      "a": "The hammer price, charged to the seller and taken from the USDC in the same transaction. The buyer pays no premium."
+    },
+    "reserve": {
+      "q": "Why did a lot not sell?",
+      "a": "The highest bid stayed below the reserve, the seller's minimum, so the lot passed unsold and nobody paid."
+    },
+    "wallet": {
+      "q": "Do I need a wallet to watch?",
+      "a": "No, only to bid. You need a Solana wallet set to devnet. Test USDC is free and you need no SOL."
+    },
+    "video": {
+      "q": "Is there live video?",
+      "a": "Optionally. Where the operator has enabled it, a seller can switch on live video for a show. Nothing is loaded from the video server until you press \"Load live video\". Otherwise a room shows the card's photo and a live bid feed."
+    },
+    "sell": {
+      "q": "Can I sell?",
+      "a": "On devnet, yes, if the wallet you connect owns a Metaplex Core card. You must be online to sign within 15 minutes of the close. Real mainnet cards cannot be sold here."
+    },
+    "collectorCrypt": {
+      "q": "What is Collector Crypt?",
+      "a": "The vault: a public catalogue of graded cards, each one an NFT. We read it for the landing page and for the photos and grades of our devnet replicas."
+    }
+  },
+  "walletHelp": {
+    "id": "wallet",
+    "heading": "Need a wallet?",
+    "lede": "To bid you need a Solana wallet in your browser. It is free, takes two minutes and holds your USDC. To look around you need none.",
+    "steps": [
+      "Install one of the wallets below.",
+      "Fund it with USDC: send USDC to your wallet address from an exchange or from another wallet. Where a room offers a USDC top-up (a faucet), the room says so and you can claim it once per wallet every 24 hours.",
+      "Open a room and press Connect. You need no SOL: our key pays the network fee."
+    ],
+    "installLabel": "Install",
+    "mobile": "On a phone, open this site inside your wallet app's own browser. A normal phone browser cannot reach your wallet app.",
+    "faqLink": "More in the FAQ"
+  },
+  "faqPage": {
+    "title": "Questions and answers",
+    "intro": "Only what the sections above do not already answer.",
+    "groups": [
+      {
+        "id": "pay",
+        "heading": "Paying and selling",
+        "items": [
+          {
+            "q": "How long do I have to sign?",
+            "a": "After the close the room opens a payment round and you have 15 minutes to sign one transaction (a single round lasts about a minute, and the room opens the next one if you miss it). When it lands, the room links the transaction on Solana Explorer."
+          },
+          {
+            "q": "What if I do not pay?",
+            "a": "The win lapses after the window and the lot shows as not completed. The card never moved, so nothing needs refunding. Your wallet gets a strike, and repeated lapses can get it banned."
+          },
+          {
+            "q": "What does it cost?",
+            "a": "The seller's commission is taken from the hammer price in the same transaction, and the buyer pays the bid and nothing more. The rate is in the figures under Functions."
+          },
+          {
+            "q": "What do I need to sell?",
+            "a": "The wallet you connect must hold a graded card that you own. As the seller you must also be online to sign within the same 15 minutes after the close."
+          }
+        ]
+      },
+      {
+        "id": "trust",
+        "heading": "Packs, safety and fairness",
+        "items": [
+          {
+            "q": "How do I pay for a pack?",
+            "a": "In a chance pack you pay the independent pack operator directly and first: nothing is drawn until your payment is final, then the operator delivers the card within a deadline. We hold no money and cannot refund you, so check the operator's delivery record before you pay. In an equal-value pack every card has the same listed value and the card moves in the same transaction as the payment. Buyers must be 18 or older."
+          },
+          {
+            "q": "Who holds my money and my card?",
+            "a": "Nobody but you. The settlement key only pays network fees and cannot move your USDC or your card, and both parties sign the same transaction."
+          },
+          {
+            "q": "What does an audit page prove?",
+            "a": "It recomputes every signed bid in your browser, hashes the bid log and compares it with the memo of the payment on Solana. A matching hash shows that the log was not changed after the sale. It cannot show that no bid was left out, which is why every bidder keeps a signed copy of their own bids."
+          },
+          {
+            "q": "Is this legal in Germany?",
+            "a": "Under MiCAR Art. 48(2) USDC is e-money, and holding it for clients would need an authorisation under § 10 ZAG, so we hold no client funds. A paid random draw of goods can be a game of chance under § 3 Abs. 3 GlüStV, which is why packs work as described under paying for a pack. This is our reading of the rules, not legal advice, and no lawyer has reviewed it."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "meta": {
+      "title": "About Hammerprice: how it works and who builds it",
+      "description": "How Hammerprice works in six steps, everything the platform does, verified randomness with a live proof, the pitch, the FAQ and the founder: Farshad Shadjari, Germany."
+    },
+    "kicker": "About us",
+    "title": "About us",
+    "nav": {
+      "label": "On this page",
+      "how": "How it works",
+      "features": "Functions",
+      "verify": "Randomness",
+      "pitch": "Pitch",
+      "faq": "FAQ",
+      "team": "Founder"
+    },
+    "team": {
+      "kicker": "Founder",
+      "heading": "Behind Hammerprice",
+      "intro": "Who built Hammerprice and who runs it."
+    },
+    "who": {
+      "heading": "About me",
+      "name": "Farshad Shadjari",
+      "role": "Founder",
+      "facts": [
+        "Master's student in Business Computer Science (Wirtschaftsinformatik) at FernUniversität in Hagen"
+      ],
+      "operator": "Hammerprice is operated by Future Webservice, Inhaber Farshad Shadjari, in Germany.",
+      "contactLabel": "Contact",
+      "githubLabel": "GitHub",
+      "githubNote": "The source code is public under the MIT licence (see the LICENSE file)."
+    }
+  },
+  "closing": {
+    "heading": "Try it",
+    "body": "Hammerprice is live and currently in beta. The waiting list on the homepage tells you when the mainnet launch opens.",
+    "cta": "Go to the rooms",
+    "sell": "Sell a card",
+    "waitlist": "Join the waiting list"
+  },
+  "assistant": {
+    "quick": {
+      "heading": "The short version",
+      "items": [
+        {
+          "q": "What do I need?",
+          "a": "A Solana wallet such as Phantom, Solflare or Backpack, with some USDC in it. You need no SOL. To look around you need nothing at all."
+        },
+        {
+          "q": "What happens when I win?",
+          "a": "The room asks you to pay. You approve one payment in your wallet. The seller gets the USDC and the card moves to your wallet. You have 15 minutes. If you do not pay, the win lapses and your wallet gets a strike."
+        },
+        {
+          "q": "Can I sell my own card?",
+          "a": "Yes. Open Sell, choose a card from your wallet, set a price and a time. The seller pays 2.5% of the final price. The buyer pays no extra fee."
+        },
+        {
+          "q": "Is it safe?",
+          "a": "A bid is a signed promise, and the payment is one transaction that you can read before you sign. In an auction we never hold your money or your cards. A bid is binding: if you win, you owe the payment."
+        },
+        {
+          "q": "How do I know a draw is fair?",
+          "a": "A random draw, such as the order of the lots, comes with a public proof that your browser recomputes. The section on verified randomness on this page links to a live example."
+        }
+      ]
+    },
+    "groups": [
+      {
+        "id": "start",
+        "heading": "Getting started",
+        "items": [
+          {
+            "q": "What do I need to bid?",
+            "a": "A Solana wallet such as Phantom, Solflare or Backpack, with some USDC in it. Signing in is a free signature, and our key pays the network fee of the settlement."
+          },
+          {
+            "q": "Where do I get USDC?",
+            "a": "Send USDC to your wallet address from an exchange or from another wallet. Where a room offers a USDC top-up (a faucet), the room says so, and you can claim it once per wallet every 24 hours."
+          },
+          {
+            "q": "Do I need SOL?",
+            "a": "No. Our settlement key pays the network fee, so your wallet can hold USDC only."
+          },
+          {
+            "q": "Can I use my phone?",
+            "a": "Yes, through your wallet app's own browser. Open this site there. A regular phone browser cannot reach a wallet app."
+          },
+          {
+            "q": "Do I need a wallet just to look around?",
+            "a": "No. The homepage, the schedule and the rooms can be watched without one."
+          }
+        ]
+      },
+      {
+        "id": "bid",
+        "heading": "Bidding",
+        "items": [
+          {
+            "q": "How do I bid?",
+            "a": "Open a room and connect your wallet. Sign in with a free signature, which is not a transaction. Choose the next bid or a quick raise and confirm the binding bid. The bid is a signed message, and the server checks that your USDC balance covers it."
+          },
+          {
+            "q": "Is a bid binding?",
+            "a": "Yes. If you win, payment is due. Place a bid only if you mean to pay."
+          },
+          {
+            "q": "What if someone bids in the last seconds?",
+            "a": "The closing time moves later, up to a cap. The clock runs on the server, so your device's clock does not matter."
+          },
+          {
+            "q": "What is a reserve?",
+            "a": "The lowest price at which the seller agrees to sell. A lot whose highest bid is below it passes unsold and nobody pays."
+          },
+          {
+            "q": "What is a timed auction?",
+            "a": "A card that stays open for anything from one hour to seven days and closes by itself at its deadline. A bid near the end extends the clock by a few minutes, up to a cap, and the winner gets a longer window to pay."
+          }
+        ]
+      },
+      {
+        "id": "win",
+        "heading": "When you win",
+        "items": [
+          {
+            "q": "What happens when I win?",
+            "a": "The room opens a payment round. You sign one transaction in your wallet. It pays the seller in USDC, pays the fee and moves the card to you. When it lands, the room links the transaction on Solana Explorer."
+          },
+          {
+            "q": "How long do I have to sign?",
+            "a": "15 minutes from the close. A single signing round lasts about a minute, and the room opens the next one if you miss it."
+          },
+          {
+            "q": "What if I do not pay?",
+            "a": "The win lapses after the window and the lot shows as not completed. The card never moved, so nothing needs refunding. Your wallet gets a strike, and repeated lapses can get it banned."
+          }
+        ]
+      },
+      {
+        "id": "fees",
+        "heading": "Fees",
+        "items": [
+          {
+            "q": "What does it cost?",
+            "a": "The seller pays 2.5% of the hammer price, taken from the USDC in the same transaction. The buyer pays the bid and nothing more. There is no buyer's premium."
+          },
+          {
+            "q": "What about network fees?",
+            "a": "Our settlement key pays the network fee of the settlement. Neither the buyer nor the seller needs SOL for it."
+          }
+        ]
+      },
+      {
+        "id": "sell",
+        "heading": "Selling and rooms",
+        "items": [
+          {
+            "q": "How do I sell a card?",
+            "a": "Open Sell, choose a graded card from the wallet you connected, let the AI draft the listing if you like and review it, then set the price, the minimum price and the lot length and go live. You must be online to sign within 15 minutes of the close."
+          },
+          {
+            "q": "Which rooms are there?",
+            "a": "The house room and timed lots that Hammerprice runs, labelled as tutorial, and the rooms that sellers create with their own wallet. Both are listed on the rooms page, in two separate sections."
+          },
+          {
+            "q": "How does the chat work?",
+            "a": "Signed-in bidders can write in a room, and the room owner approves every message before anyone else sees it. Links and contact details are refused, and the public list shows a bidder number, never a wallet. Visitors can report a message."
+          },
+          {
+            "q": "Is there live video?",
+            "a": "Optionally. A seller can switch on live video for a show. Nothing is loaded from the video server until you press Load live video. Otherwise a room shows the card's photo and a live bid feed."
+          },
+          {
+            "q": "What are the cards?",
+            "a": "Graded trading cards, each one an NFT. The catalogue on the homepage is the public Collector Crypt vault, and the card in a room is the NFT that the seller owns."
+          }
+        ]
+      },
+      {
+        "id": "more",
+        "heading": "Packs, AI and Telegram",
+        "items": [
+          {
+            "q": "How do packs work?",
+            "a": "A pack is a draw from a public pool of cards. The pool and the odds are fixed by a hash before the first sale and the draw has a public proof. In a chance pack you pay the independent pack operator directly and first: nothing is drawn until your payment is final, then the operator delivers the card within a deadline. We hold no money and cannot refund you, so check the operator's delivery record before you pay. In an equal-value pack every card has the same listed value and the card moves in the same transaction as the payment. Buyers must be 18 or older."
+          },
+          {
+            "q": "What does the AI do?",
+            "a": "It drafts a listing for the seller to review, an assistant answers from this FAQ, and an agent on the AI page finds open lots and prepares a bid for you to confirm. Everything is labelled AI, a signed-in wallet is required and the agent never bids for you."
+          },
+          {
+            "q": "How does Telegram work?",
+            "a": "Press Connect Telegram in your profile and tap Start in the bot. It tells you when you are outbid, when you win and when a payment is due, and /watch alerts you to the next lots of a room with a pre-filled bid link. You always confirm and sign in your own wallet."
+          }
+        ]
+      },
+      {
+        "id": "trust",
+        "heading": "Safety and fairness",
+        "items": [
+          {
+            "q": "Who holds my money and my card?",
+            "a": "Nobody but you. The settlement key only pays network fees and cannot move your USDC or your card. Both parties sign the same transaction."
+          },
+          {
+            "q": "What does an audit page prove?",
+            "a": "It recomputes every signed bid in your browser, hashes the bid log and compares it with the memo of the payment on Solana. A matching hash shows that the log was not changed after the sale. It cannot show that no bid was left out, which is why every bidder keeps a signed copy of their own bids."
+          },
+          {
+            "q": "Is this legal in Germany?",
+            "a": "The design follows two rules. Holding client funds needs an authorisation under § 10 ZAG, so we hold none. A paid random draw of goods can be a game of chance under § 3 Abs. 3 GlüStV, so packs publish their odds, are paid first and drawn after the payment is final. This is our reading of the rules, not legal advice, and no lawyer has reviewed it."
+          }
+        ]
+      }
+    ]
+  }
+}

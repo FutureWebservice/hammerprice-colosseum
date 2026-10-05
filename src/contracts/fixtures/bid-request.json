@@ -1,0 +1,9 @@
+{
+  "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+  "amount": "120000000",
+  "intent": {
+    "message": "hammerprice bid v1\ncluster: devnet\nshow: 3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10\nlot: 8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11\namount: 120000000\nbidder: 3Cv8UNdmzgmNFGNo6U7iAMHjf3wv6679SZV3BfTWwdiU\npaddle: a4f1c8e3-5b27-4d09-96ae-8c3d7e1b2f18\nnonce: 9f2c41d07a3be685\nissued: 1791223241000",
+    "signature": "dJdNCs3gT3c10pRW2fNkLZ2ieqJVa+qOTq1ZMeQiYPdPSSZD6cnFItTYJcXx71wRU9KgOs35Q8u3g1fqUMotBQ==",
+    "signer": "session"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "loading": "Lädt...",
+  "error": "Ein Fehler ist aufgetreten",
+  "retry": "Wiederholen",
+  "cancel": "Abbrechen",
+  "confirm": "Bestätigen",
+  "skipToContent": "Zum Inhalt springen",
+  "states": {
+    "rooms": "Zu den Räumen",
+    "home": "Zur Startseite",
+    "retry": "Erneut versuchen",
+    "notFound": {
+      "kicker": "404",
+      "title": "Diese Seite gibt es nicht.",
+      "body": "Vielleicht ist die Adresse falsch geschrieben, oder der Raum, das Los oder der Pack ist nicht mehr da. Am besten machen Sie in den Räumen weiter."
+    },
+    "error": {
+      "kicker": "Etwas ist schiefgelaufen",
+      "title": "Diese Seite konnte nicht geladen werden.",
+      "body": "Bitte versuchen Sie es erneut. Wenn es immer wieder passiert: Der Rest der Seite funktioniert weiter. Bezahlt wird nur mit einer Transaktion, die Sie selbst in Ihrem Wallet signiert haben. Prüfen Sie im Zweifel den Verlauf Ihres Wallets."
+    }
+  }
+}

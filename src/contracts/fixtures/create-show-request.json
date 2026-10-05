@@ -1,0 +1,21 @@
+{
+  "title": "Saturday night slabs",
+  "format": "auction",
+  "mode": "auto",
+  "scheduledAt": "2026-10-06T18:00:00.000Z",
+  "rules": {
+    "lotDurationS": 45,
+    "gapS": 6
+  },
+  "lots": [
+    {
+      "mint": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "reserve": "100000000",
+      "openingPrice": "50000000",
+      "increment": "5000000"
+    },
+    {
+      "mint": "6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q"
+    }
+  ]
+}

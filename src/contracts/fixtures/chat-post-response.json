@@ -1,0 +1,11 @@
+{
+  "message": {
+    "id": "7b1c2d3e-4f50-4a61-8b72-000000000006",
+    "seq": 44,
+    "at": "2026-10-05T18:00:30.000Z",
+    "lotNumber": 1,
+    "body": "Ist die Karte wirklich PSA 10?",
+    "status": "pending",
+    "reason": null
+  }
+}

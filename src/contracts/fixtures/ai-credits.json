@@ -1,0 +1,10 @@
+{
+  "balance": 7,
+  "pack": {
+    "credits": 10,
+    "priceUsdc": "1000000"
+  },
+  "packsLeftToday": 2,
+  "cluster": "devnet",
+  "configured": true
+}

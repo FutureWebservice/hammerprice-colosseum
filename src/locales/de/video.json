@@ -1,0 +1,66 @@
+{
+  "option": {
+    "label": "Live-Video (optional)",
+    "hint": "Standardmäßig aus. Wenn Sie das aktivieren, können Sie während der Show Ihre Kamera senden. Zuschauer sehen das Bild erst, wenn sie auf \"Live-Video laden\" klicken. Dabei erfährt der Video-Server ihre IP-Adresse.",
+    "ipNote": "Jeder Zuschauer, der das Bild lädt, verbindet sich mit dem Video-Server, und dieser Server sieht seine IP-Adresse."
+  },
+  "manage": {
+    "label": "Live-Video",
+    "on": "An",
+    "off": "Aus",
+    "turnOn": "Einschalten",
+    "turnOff": "Ausschalten",
+    "saving": "Wird gespeichert",
+    "broadcast": "Zur Sendeseite",
+    "ended": "Die Show ist beendet.",
+    "unavailable": "Live-Video lässt sich hier nicht einschalten: Auf dieser Seite ist noch kein Video-Server eingerichtet."
+  },
+  "stage": {
+    "load": "Live-Video laden",
+    "connect": "Verbindung zu {host}",
+    "turnOff": "Video aus",
+    "mark": "Kamerabild, kann einige Sekunden verzögert sein. Es gilt die Uhr des Servers.",
+    "title": "Kamerabild des Verkäufers",
+    "play": "Abspielen",
+    "pause": "Pause",
+    "mute": "Ton aus",
+    "unmute": "Ton an",
+    "fullscreen": "Vollbild"
+  },
+  "broadcast": {
+    "meta": "Sendeseite",
+    "kicker": "Live-Video",
+    "title": "Sendeseite",
+    "lede": "Senden Sie Ihre Kamera in den Raum dieser Show. Zeigen Sie nur die Karte, keine Personen.",
+    "back": "Zurück zur Show",
+    "loading": "Die Show wird geladen",
+    "off": "Live-Video ist für diese Show nicht eingeschaltet. Schalten Sie es zuerst in der Show-Verwaltung ein.",
+    "ended": "Diese Show ist beendet, Sie können nicht mehr senden.",
+    "camera": "Kamera",
+    "cameraDefault": "Standardkamera",
+    "mic": "Mikrofon",
+    "micOn": "Mikrofon an",
+    "micOff": "Mikrofon aus",
+    "preview": "Kameravorschau starten",
+    "previewAlt": "Ihre Kameravorschau",
+    "goLive": "Live gehen",
+    "stop": "Beenden",
+    "status": {
+      "idle": "Es wird nichts gesendet.",
+      "connecting": "Verbindung wird aufgebaut.",
+      "sending": "Es wird gesendet. Zuschauer, die das Video laden, sehen das Bild mit kurzer Verzögerung.",
+      "retrying": "Die Verbindung ist abgebrochen. Neuer Versuch.",
+      "stopped": "Beendet."
+    },
+    "errors": {
+      "denied": "Der Browser hat keine Erlaubnis für die Kamera. Erlauben Sie sie in der Adressleiste und versuchen Sie es erneut.",
+      "nocam": "Es wurde keine Kamera gefunden.",
+      "signin": "Melden Sie sich zuerst mit Ihrem Wallet an.",
+      "forbidden": "Nur der Betreiber darf hier Video senden.",
+      "state": "Live-Video ist für diese Show nicht eingeschaltet, oder die Show ist beendet.",
+      "rate": "Zu viele Versuche. Warten Sie eine Minute und versuchen Sie es erneut.",
+      "unavailable": "Der Video-Server ist gerade nicht erreichbar. Der Raum funktioniert auch ohne Video.",
+      "generic": "Das Senden hat nicht geklappt. Versuchen Sie es erneut."
+    }
+  }
+}

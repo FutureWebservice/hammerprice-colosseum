@@ -1,0 +1,22 @@
+{
+  "tagline": "Live-Auktionen für verwahrte, gegradete Karten, abgewickelt in USDC auf Solana.",
+  "howItWorks": "So funktioniert's",
+  "pitch": "Der Pitch",
+  "context": "Gebaut für den Colosseum-Hackathon.",
+  "demo": "Demonstrationsbetrieb: Testnetz, Test-USDC und Replikat-Karten",
+  "legalNav": "Rechtliches",
+  "legal": {
+    "index": "Rechtliches",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "terms": "AGB",
+    "cookies": "Cookies",
+    "consumer": "Verbraucherinfos und Widerruf",
+    "risk": "Risikohinweise",
+    "fees": "Gebühren",
+    "dsa-contact": "Kontakt und Meldungen"
+  },
+  "faq": "FAQ",
+  "ai": "KI",
+  "about": "Über uns"
+}

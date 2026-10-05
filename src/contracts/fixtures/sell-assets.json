@@ -1,0 +1,26 @@
+{
+  "assets": [
+    {
+      "mint": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "name": "Charizard ex 199/165",
+      "imageUrl": "https://d1xpxki1g4htqu.cloudfront.net/cards/charizard-ex-199.png",
+      "grade": "PSA 10",
+      "standard": "core",
+      "eligible": true,
+      "reasons": [],
+      "consign": "ready"
+    },
+    {
+      "mint": "ARX8Qy2vjchuy4bQ125oyUdE5yLgkTe1MVPJUNH5QhmN",
+      "name": "Blastoise ex 200/165",
+      "imageUrl": null,
+      "grade": null,
+      "standard": "pnft",
+      "eligible": false,
+      "reasons": [
+        "unsupported_standard"
+      ],
+      "consign": "none"
+    }
+  ]
+}

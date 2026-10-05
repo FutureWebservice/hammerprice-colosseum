@@ -1,0 +1,370 @@
+{
+  "topbar": {
+    "title": "Auktionsraum"
+  },
+  "a11y": {
+    "skip": "Zum Bieten springen",
+    "siteNav": "Website",
+    "stage": "Los auf dem Podium",
+    "catalogue": "Katalog",
+    "bidding": "Bieten",
+    "feed": "Raumprotokoll",
+    "chatLabel": "Chatnachricht",
+    "timer": "Verbleibende Zeit für dieses Los"
+  },
+  "notFound": {
+    "title": "Nicht gefunden",
+    "body": "Diese Show existiert nicht oder wurde noch nicht katalogisiert.",
+    "back": "Alle Räume"
+  },
+  "unavailable": "Dieser Raum konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+  "retry": "Erneut versuchen",
+  "loading": "Raum wird geöffnet…",
+  "connection": {
+    "stale": "Verbindung verloren. Es wird der zuletzt bekannte Stand gezeigt, neuer Versuch läuft."
+  },
+  "prefill": {
+    "notOpen": "Los {number} aus Ihrem Link ist gerade nicht offen. Der Raum zeigt den aktuellen Stand."
+  },
+  "status": {
+    "live": "Live",
+    "startingSoon": "Startet in Kürze",
+    "showEnded": "Show beendet",
+    "scheduled": "Geplant"
+  },
+  "phase": {
+    "open": "Bieten offen",
+    "goingOnce": "Zum Ersten",
+    "goingTwice": "Zum Zweiten",
+    "closed": "Geschlossen",
+    "waiting": "Warten auf das nächste Los",
+    "nextIn": "Nächstes Los in {seconds} s",
+    "ended": "Show beendet",
+    "closing": "Wird geschlossen…",
+    "starts": "Beginnt {time}"
+  },
+  "countdown": {
+    "closesIn": "Schließt in",
+    "extended": "+{seconds} s: Ein spätes Gebot hat das Los verlängert",
+    "antiSnipe": "Ein Gebot kurz vor Ende verlängert das Los."
+  },
+  "state": {
+    "sold": "Verkauft",
+    "hammered": "Verkauft, Zahlung offen",
+    "hammeredBelowReserve": "Verkauft unter dem Mindestpreis",
+    "houseWon": "Von Haus-Bot gewonnen, kein Verkauf",
+    "passed": "Nicht verkauft",
+    "withdrawn": "Entfernt"
+  },
+  "catalogue": {
+    "head": "Katalog · {count, plural, one {# Los} other {# Lose}}",
+    "empty": "Noch keine Lose katalogisiert.",
+    "lotNumber": "Los {number}",
+    "hammer": "Verkauft für",
+    "estimate": "Mindestpreis",
+    "insured": "Versichert",
+    "noMinimum": "Kein Mindestpreis",
+    "toYou": "an Sie",
+    "lotRule": "Jedes Los läuft {duration}, länger, wenn ein spätes Gebot Zeit anhängt."
+  },
+  "stage": {
+    "noLotOpen": "Kein Los geöffnet",
+    "currentBid": "aktuelles Gebot",
+    "estimate": "Mindestpreis",
+    "insured": "Versichert",
+    "noMinimum": "Kein Mindestpreis",
+    "opening": "Startpreis",
+    "reserveNotMet": "Mindestpreis nicht erreicht",
+    "untilLimit": "Noch {amount} bis zum Mindestpreis",
+    "limitReached": "Mindestpreis erreicht"
+  },
+  "call": {
+    "once": "Zum Ersten",
+    "twice": "Zum Zweiten"
+  },
+  "announce": {
+    "bid": "{paddle} bietet {amount}",
+    "hammerYou": "Verkauft an Sie: {amount}",
+    "hammerOther": "Verkauft an {paddle}: {amount}",
+    "hammerYouBelowReserve": "Verkauft an Sie unter dem Mindestpreis, der Verkäufer stimmt zu: {amount}",
+    "hammerOtherBelowReserve": "Verkauft an {paddle} unter dem Mindestpreis, der Verkäufer stimmt zu: {amount}",
+    "passed": "Los {number} nicht verkauft · Mindestpreis nicht erreicht",
+    "lotOpen": "Los {number} ist offen: {name}, Mindestpreis {amount}",
+    "lotOpenNoMinimum": "Los {number} ist offen: {name}, kein Mindestpreis",
+    "leading": "Ihr Gebot {amount} liegt vorn",
+    "outbid": "Überboten von {paddle} mit {amount}"
+  },
+  "paddle": {
+    "label": "Bieter {number}",
+    "house": "Haus-Bot {number}",
+    "maxInvalid": "Geben Sie einen einfachen Betrag ein, zum Beispiel 250 oder 99,50.",
+    "expiryLabel": "Gültig für",
+    "hours": "{hours, plural, one {# Stunde} other {# Stunden}}"
+  },
+  "bidPanel": {
+    "title": "Gebot bestätigen",
+    "lotLine": "Los {number} · {name}",
+    "yourBid": "Ihr Gebot",
+    "limitLabel": "Mindestpreis",
+    "meetsLimit": "Dieses Gebot erreicht den Mindestpreis. Gewinnt es, gehört die Karte Ihnen.",
+    "belowLimit": "Dieses Gebot liegt {amount} unter dem Mindestpreis. Ein Los, das darunter bleibt, wird nicht verkauft.",
+    "noLimit": "Dieses Los hat keinen Mindestpreis. Das höchste Gebot gewinnt.",
+    "noLimitValue": "Keiner",
+    "binding": "Dieses Gebot ist verbindlich. Bei Zuschlag schulden Sie {amount} in USDC und müssen die Zahlung rechtzeitig unterschreiben.",
+    "outcome": "Die Karte wechselt in Ihr Wallet, und der Verkäufer wird in derselben Transaktion bezahlt. Hammerprice hält zu keinem Zeitpunkt eines von beidem.",
+    "demoNote": "Das Bieten in diesem Raum ist eine Demonstration: keine Unterschrift, keine Transaktion, nichts wird belastet.",
+    "close": "Schließen",
+    "titleAmount": "Gebot {amount}",
+    "ifYouWin": "Wenn Sie gewinnen, zahlen Sie {amount} und die Karte geht in Ihr Wallet.",
+    "details": "Details anzeigen",
+    "fromLink": "Der Betrag stammt aus Ihrem Telegram-Link. Es wird erst etwas abgegeben, wenn Sie bestätigen und in Ihrer eigenen Wallet unterschreiben.",
+    "fromLinkAdjusted": "Der Betrag aus Ihrem Link passt nicht mehr, deshalb sehen Sie das aktuelle nächste Gebot. Es wird erst etwas abgegeben, wenn Sie bestätigen und in Ihrer eigenen Wallet unterschreiben."
+  },
+  "fees": {
+    "heading": "Was passiert, wenn Sie gewinnen",
+    "headingWon": "Was Sie zahlen",
+    "hammer": "Verkaufspreis",
+    "network": "Netzwerkgebühr (Solana)",
+    "networkDevnet": "Von Hammerprice getragen",
+    "youPay": "Sie zahlen",
+    "youPayValue": "{amount} plus Netzwerkgebühr",
+    "youPayDevnet": "{amount}",
+    "sellerGets": "Verkäufer erhält",
+    "commission": "Hammerprice behält {pct} % vom Verkaufspreis ({amount}), getragen vom Verkäufer. Als Bieter zahlen Sie Ihr Gebot und sonst nichts.",
+    "approx": "SOL-Beträge sind Näherungswerte zum aktuellen Kurs. Sie zahlen in USDC."
+  },
+  "bid": {
+    "noLotOpen": "Kein Los geöffnet",
+    "notOpenYet": "Noch nicht offen",
+    "signingIn": "Warten auf Ihr Wallet…",
+    "bid": "Bieten",
+    "bindingLabel": "Verbindlich bieten, zahlungspflichtig",
+    "placing": "Gebot wird abgegeben…",
+    "noPaddleOpen": "Das Bieten ist offen. Holen Sie sich Ihre Bieternummer, um teilzunehmen.",
+    "noPaddleSoon": "Das Bieten startet gleich. Sie können Ihre Bieternummer schon jetzt holen.",
+    "paddleLabel": "Bieternummer",
+    "yourPaddle": "Ihre Bieternummer: {number}",
+    "outbid": "Überboten",
+    "notAccepted": "Gebot nicht angenommen",
+    "failed": "Gebot konnte nicht abgegeben werden",
+    "nextAmount": "nächstes Gebot",
+    "leadingSlab": "Sie liegen vorn",
+    "leadingLine": "Ihr Gebot {amount} liegt vorn",
+    "outbidLine": "Überboten von {paddle} mit {amount}",
+    "wonLine": "Verkauft an Sie: {amount}",
+    "lostLine": "Verkauft an {paddle}: {amount}",
+    "nextLotIn": "Nächstes Los in {seconds} s",
+    "balance": "Ihr USDC: {amount}",
+    "balanceLow": "Ihr Guthaben liegt unter diesem Gebot.",
+    "balanceUnknown": "Guthaben gerade nicht verfügbar.",
+    "getTestUsdc": "Test-USDC holen",
+    "funded": "Gedeckt",
+    "notFunded": "Nicht gedeckt",
+    "pendingServer": "Warten auf Bestätigung des Raums…",
+    "getReady": "Zum Bieten bereit machen",
+    "quickLabel": "Erhöhen auf",
+    "pausedSlab": "Raum pausiert"
+  },
+  "wallet": {
+    "title": "Wallet verbinden, um zu bieten",
+    "need": "Was Sie brauchen",
+    "needWallet": "Ein Solana-Wallet. Es verwahrt Ihr USDC und unterschreibt Ihre Gebote.",
+    "needUsdc": "USDC, um bei Zuschlag zu zahlen.",
+    "detected": "Auf diesem Gerät erkannt",
+    "getWallet": "Wallet besorgen",
+    "connect": "{name} verbinden",
+    "install": "{name} installieren",
+    "mobileTitle": "Auf dem Handy?",
+    "mobileBody": "Öffnen Sie diese Seite im eigenen Browser Ihres Wallets und verbinden Sie dort.",
+    "openIn": "In {name} öffnen",
+    "guestTitle": "Kein Wallet? Probieren Sie den Übungsraum",
+    "guestBody": "Bieten Sie gegen simulierte Bieter. Kein Wallet nötig, es wird nichts gesendet.",
+    "guest": "Übungsraum ausprobieren",
+    "close": "Schließen",
+    "connectShort": "Wallet verbinden",
+    "connecting": "Verbinde…",
+    "disconnect": "Trennen",
+    "connectedAs": "Verbunden: {address}"
+  },
+  "practice": {
+    "pill": "Übungsraum · simulierte Bieter",
+    "pillShort": "Übungsraum",
+    "more": "Was ist echt und was simuliert?",
+    "title": "Übungsraum",
+    "real": "Echt: die Karten, ihre Bewertungen sowie die Regeln für Mindestpreis und Gebotsschritte.",
+    "simulated": "Simuliert: die Bieter, ihre Gebote und die Uhr. Nichts wird unterschrieben, gesendet oder belastet.",
+    "link": "Was gebaut ist und was nicht",
+    "close": "Schließen",
+    "guestPaddle": "Demo-Bieter",
+    "guestYou": "Sie"
+  },
+  "devnet": {
+    "title": "Solana Devnet",
+    "body": "Dieser Raum wird auf Solana Devnet abgewickelt. Ihr Wallet muss ebenfalls auf Devnet stehen, sonst kann es nicht unterschreiben.",
+    "help": "Mein Wallet steht auf Mainnet",
+    "step1": "Öffnen Sie die Einstellungen Ihres Wallets.",
+    "step2": "Phantom: Einstellungen, Entwicklereinstellungen, Testnet-Modus einschalten, dann Solana Devnet wählen. Solflare und Backpack: In den Einstellungen das Netzwerk auf Devnet stellen.",
+    "step3": "Kehren Sie zurück und laden Sie diese Seite neu.",
+    "funds": "Test-USDC holen",
+    "details": "Details"
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Versuchen Sie es erneut.",
+    "network": "Hammerprice war nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "noSignMessage": "Dieses Wallet kann keine Nachrichten unterschreiben. Nutzen Sie Phantom, Solflare oder Backpack.",
+    "walletSign": "Ihr Wallet konnte nicht unterschreiben.",
+    "walletRejected": "Sie haben die Unterschrift in Ihrem Wallet abgebrochen.",
+    "walletCluster": "Ihr Wallet konnte nicht unterschreiben. Vermutlich steht es im falschen Netzwerk: Öffnen Sie oben auf der Seite die Details.",
+    "walletUnsupported": "Dieses Wallet kann keine Nachrichten unterschreiben. Nutzen Sie Phantom, Solflare oder Backpack.",
+    "walletUnknown": "Ihr Wallet konnte nicht unterschreiben. Versuchen Sie es erneut.",
+    "walletNotConnected": "Die Wallet ist noch nicht verbunden. Warten Sie einen Moment und versuchen Sie es erneut.",
+    "walletTimeout": "Ihre Wallet hat nicht rechtzeitig geantwortet. Öffnen Sie die Wallet, prüfen Sie die Anfrage und versuchen Sie es erneut.",
+    "validation": "Diese Anfrage war ungültig. Laden Sie die Seite neu und versuchen Sie es erneut.",
+    "unauthenticated": "Sie sind abgemeldet. Bestätigen Sie Ihr Wallet erneut, um zu bieten.",
+    "bad_signature": "Die Unterschrift Ihres Wallets stimmte nicht. Versuchen Sie es erneut.",
+    "replay": "Dieses Gebot wurde bereits gesendet. Prüfen Sie das Protokoll, bevor Sie es erneut versuchen.",
+    "banned": "Dieses Wallet ist vom Bieten ausgeschlossen.",
+    "forbidden": "Das ist Ihnen nicht erlaubt.",
+    "not_found": "Dieses Los oder diese Show gibt es nicht mehr.",
+    "wrong_state": "Der Raum erlaubt das gerade nicht.",
+    "nonce_used": "Diese Bestätigung wurde bereits verwendet. Bestätigen Sie Ihr Wallet erneut.",
+    "expired": "Ihre Bestätigung ist abgelaufen. Bestätigen Sie Ihr Wallet erneut.",
+    "wrong_domain": "Das Wallet hat eine Nachricht für eine andere Website unterschrieben. Laden Sie neu und versuchen Sie es erneut.",
+    "rate_limited": "Zu viele Versuche. Warten Sie {seconds} s und versuchen Sie es erneut.",
+    "paused": "Das Bieten ist vorübergehend pausiert. Versuchen Sie es gleich erneut.",
+    "balance_unavailable": "Ihr USDC-Guthaben konnte nicht gelesen werden. Versuchen Sie es in ein paar Sekunden erneut.",
+    "rpc_unavailable": "Das Solana-Netzwerk antwortet langsam. Versuchen Sie es in ein paar Sekunden erneut.",
+    "insufficient_funds": "Ihr verfügbares USDC deckt dieses Gebot nicht. Laden Sie USDC auf Ihre Wallet oder bieten Sie weniger.",
+    "show_not_live": "Diese Show ist nicht live.",
+    "show_ended": "Diese Show ist beendet.",
+    "lot_not_open": "Dieses Los ist nicht für Gebote offen.",
+    "lot_closed": "Dieses Los wurde gerade geschlossen. Ihr Gebot wurde nicht angenommen.",
+    "bid_too_low": "Jemand war schneller. Das niedrigste Gebot ist jetzt {amount}.",
+    "amount_too_large": "Dieser Betrag liegt über dem höchsten erlaubten Gebot.",
+    "self_bid": "Sie können nicht auf Ihr eigenes Los bieten.",
+    "already_high_bidder": "Sie halten bereits das höchste Gebot.",
+    "no_paddle": "Machen Sie sich zuerst zum Bieten bereit.",
+    "paddle_limit": "Das liegt über dem Ausgabelimit, das Sie für diesen Raum festgelegt haben. Erhöhen Sie das Limit unter Erweiterte Optionen bei Zum Bieten bereit machen, oder bieten Sie weniger.",
+    "mainnet_config_incomplete": "Diese Seite ist für echte Zahlungen noch nicht vollständig eingerichtet. Es wurde nichts gesendet.",
+    "cluster_config_conflict": "Die Netzwerk-Einstellungen dieser Seite widersprechen sich. Es wurde nichts gesendet.",
+    "show_paused": "Der Verkäufer hat den Raum pausiert. Das Bieten geht mit der gleichen Restzeit weiter. Ihr Gebot wurde nicht abgegeben."
+  },
+  "feed": {
+    "title": "Raum",
+    "empty": "Bisher ruhig, noch kein Gebot. Gebote und Chat erscheinen hier.",
+    "placeholder": "Schreiben Sie etwas",
+    "send": "Senden",
+    "note": "Der Chat ist nur auf Ihrem Bildschirm sichtbar.",
+    "bidderFallback": "Bieter",
+    "youFallback": "Sie",
+    "buyerYou": "Sie",
+    "lotInline": "Los {number}",
+    "opened": "Los {number} wird eröffnet",
+    "sold": "Los {number} verkauft: {amount}",
+    "hammered": "Los {number} verkauft an {buyer}: {amount}",
+    "passed": "Los {number}: nicht verkauft, Mindestpreis nicht erreicht",
+    "withdrawn": "Los {number} entfernt",
+    "extended": "Los {number}: Ein spätes Gebot hat Zeit hinzugefügt",
+    "settled": "Los {number}: bezahlt, die Karte hat den Besitzer gewechselt",
+    "notCompleted": "Los {number}: nicht abgeschlossen, die Zeit ist abgelaufen",
+    "houseWon": "Los {number}: Ein Haus-Bot hat gewonnen. Kein Verkauf, die Karte bleibt beim Haus",
+    "showLive": "Die Show ist live",
+    "showEnded": "Die Show ist beendet",
+    "paused": "Der Verkäufer hat den Raum pausiert, das Bieten geht mit der gleichen Restzeit weiter (Pause {count} von {max})",
+    "resumed": "Es wird wieder geboten, mit der gleichen Restzeit",
+    "resumedAuto": "Die Pause ist von selbst zu Ende, es wird wieder geboten, mit der gleichen Restzeit"
+  },
+  "glossary": {
+    "title": "Was bedeutet das?"
+  },
+  "win": {
+    "title": "Gewonnen",
+    "close": "Schließen",
+    "call": "Verkauft an Sie",
+    "outcome": "Sobald Sie zahlen, wechselt die Karte in Ihr Wallet, und der Verkäufer wird im selben Schritt bezahlt. Hammerprice hält keines von beidem.",
+    "status": {
+      "pending": "Ihre Zahlung wird vorbereitet…",
+      "awaiting": "Zahlung fällig. Bestätigen Sie sie in Ihrem Wallet, um den Kauf abzuschließen.",
+      "submitted": "Beide Seiten haben bestätigt. Abschluss im Netzwerk…",
+      "settled": "Bezahlt. Die Karte ist in Ihrem Wallet.",
+      "windowEnded": "Das Zahlungsfenster ist abgelaufen. Eine Zahlung ist nicht mehr möglich, der Verkauf wird als nicht abgeschlossen verbucht.",
+      "lapsed": "Nicht abgeschlossen, die Zeit ist abgelaufen."
+    },
+    "pay": "Prüfen und zahlen",
+    "receipt": "Beleg im Solana Explorer ansehen",
+    "verify": "Gebote prüfen",
+    "dismiss": "Weiter zuschauen",
+    "viewRooms": "Alle Räume",
+    "listYours": "Eigene Karte einliefern",
+    "practiceNote": "Das war der Übungsraum: Nichts wurde unterschrieben, übertragen oder belastet. Bei einem echten Los wird der Verkäufer in USDC bezahlt, und die Karte wechselt in einer Transaktion ins Wallet des Gewinners.",
+    "practiceNext": "Einen Live-Raum ansehen",
+    "technical": "Technische Details"
+  },
+  "demoOutcome": {
+    "wonTitle": "Super!",
+    "wonBody": "Das war ein Demo-Durchlauf mit einer Replik-Karte. In einem echten Raum wäre die Karte, die Sie gerade gewonnen haben, wirklich Ihre.",
+    "outbidTitle": "Sie wurden in dieser Demo überboten.",
+    "outbidBody": "Das war ein Demo-Durchlauf mit einer Replik-Karte. In einem echten Raum ginge die hier gezeigte Karte an den Gewinner.",
+    "try": "Probieren Sie einen echten Raum aus.",
+    "browse": "Echte Räume ansehen",
+    "sell": "Eigene Karte verkaufen",
+    "dismiss": "Weiter zuschauen"
+  },
+  "desk": {
+    "title": "Eine Zahlung wartet auf Sie",
+    "line": "Los {number}: {amount}",
+    "buyer": "Sie haben dieses Los gewonnen. Zahlen Sie, um den Kauf abzuschließen.",
+    "seller": "Sie haben dieses Los verkauft. Bestätigen Sie, um die Karte zu übergeben.",
+    "open": "Ansehen"
+  },
+  "ready": {
+    "title": "Zum Bieten bereit machen",
+    "progress": "Schritt {step} von 3",
+    "steps": {
+      "connect": "Wallet verbinden",
+      "verify": "Wallet bestätigen",
+      "funds": "Guthaben"
+    },
+    "connect": {
+      "body": "Wählen Sie das Wallet, das Ihre Karte und Ihr USDC aufnimmt.",
+      "watch": "Zuschauen geht ohne Wallet. Zum Bieten brauchen Sie eine."
+    },
+    "verify": {
+      "body": "Ihr Wallet unterschreibt eine kurze Nachricht und zeigt so, dass es Ihnen gehört. Das ist kostenlos und sendet kein Geld.",
+      "button": "Wallet bestätigen"
+    },
+    "waiting": "Warten auf Ihr Wallet…",
+    "funds": {
+      "bodyDevnet": "Ihr Wallet hat noch nicht genug USDC. Füllen Sie es hier mit kostenlosem Devnet-Test-USDC auf, um das Bieten zu testen.",
+      "bodyMain": "Legen Sie mindestens 1 $ in USDC in dieses Wallet und prüfen Sie dann erneut.",
+      "balance": "Ihr Guthaben: {amount}",
+      "unknown": "nicht verfügbar",
+      "claiming": "Ihr Test-USDC wird geholt…",
+      "claim": "Test-USDC holen",
+      "recheck": "Erneut prüfen",
+      "limited": "Sie haben vor Kurzem Test-USDC geholt, deshalb können Sie vorerst nicht erneut welches holen. Versuchen Sie es später erneut.",
+      "paused": "Test-USDC holen ist gerade pausiert. Versuchen Sie es später erneut.",
+      "failed": "Wir konnten kein Test-USDC senden. Versuchen Sie es erneut."
+    },
+    "start": {
+      "body": "Eine letzte kostenlose Unterschrift gibt Ihnen Ihre Bieternummer. Danach bieten Sie ohne Wallet-Fenster bei jedem Gebot.",
+      "button": "Mit dem Bieten beginnen"
+    },
+    "advanced": {
+      "summary": "Erweiterte Optionen",
+      "limitLabel": "Ausgabelimit (USDC)",
+      "limitHelp": "Ihre Bieternummer kann nicht über diesem Betrag bieten. Standard: Ihr Guthaben, höchstens 250 $ (jetzt {amount})."
+    }
+  },
+  "pause": {
+    "title": "Der Verkäufer hat den Raum pausiert.",
+    "body": "Das Bieten ruht und geht mit der gleichen Restzeit weiter. Niemand verliert Zeit.",
+    "keeps": "Das Los behält {time}",
+    "count": "Pause {used} von {max}",
+    "autoIn": "{minutes, plural, one {Die Pause endet spätestens in etwa # Minute von selbst.} other {Die Pause endet spätestens in etwa # Minuten von selbst.}}",
+    "autoCountdown": "Weiter in {time}"
+  },
+  "seller": {
+    "by": "Angeboten von {name}"
+  }
+}

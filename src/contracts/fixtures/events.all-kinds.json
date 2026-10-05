@@ -1,0 +1,76 @@
+{
+  "show.live": {},
+  "show.ended": {},
+  "lot.opened": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "closesAt": "2026-10-05T18:00:45.000Z"
+  },
+  "bid.placed": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "amount": "60000000",
+    "paddle": 3,
+    "belowReserve": true
+  },
+  "lot.extended": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "closesAt": "2026-10-05T18:00:56.000Z"
+  },
+  "lot.sold": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "highBid": "120000000",
+    "paddle": 7
+  },
+  "lot.passed": {
+    "lotId": "5d2e9f63-7c14-4b8a-9e05-3a6b1c8d4f12",
+    "lotNumber": 2,
+    "highBid": null
+  },
+  "lot.withdrawn": {
+    "lotId": "c7e4a2b9-0d35-4f1c-8b67-9a2e5d1f3c13",
+    "lotNumber": 3
+  },
+  "settlement.awaiting": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "settlementId": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+    "gross": "120000000",
+    "dueAt": "2026-10-05T18:15:56.000Z"
+  },
+  "settlement.submitted": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "settlementId": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+    "txSignature": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ"
+  },
+  "settlement.settled": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "settlementId": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+    "txSignature": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ"
+  },
+  "settlement.expired": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "settlementId": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15"
+  },
+  "demo.reset": {},
+  "show.paused": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "resumesBy": "2026-10-05T18:05:30.000Z",
+    "msLeft": 15000,
+    "count": 1,
+    "max": 2
+  },
+  "show.resumed": {
+    "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+    "lotNumber": 1,
+    "closesAt": "2026-10-05T18:01:15.000Z",
+    "shiftedMs": 30000,
+    "auto": false
+  }
+}

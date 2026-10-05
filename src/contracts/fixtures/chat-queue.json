@@ -1,0 +1,52 @@
+{
+  "messages": [
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000006",
+      "seq": 44,
+      "at": "2026-10-05T18:00:30.000Z",
+      "status": "pending",
+      "paddle": 7,
+      "wallet": "3Cv8UNdmzgmNFGNo6U7iAMHjf3wv6679SZV3BfTWwdiU",
+      "role": "bidder",
+      "source": "user",
+      "lotNumber": 1,
+      "body": "Ist die Karte wirklich PSA 10?",
+      "reports": 0,
+      "reportDetails": [],
+      "reason": null,
+      "moderatedAt": null
+    },
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000007",
+      "seq": 45,
+      "at": "2026-10-05T18:00:30.000Z",
+      "status": "pending",
+      "paddle": 9,
+      "wallet": "3Cv8UNdmzgmNFGNo6U7iAMHjf3wv6679SZV3BfTWwdiU",
+      "role": "bidder",
+      "source": "user",
+      "lotNumber": 1,
+      "body": "Great pull, congrats!",
+      "reports": 1,
+      "reportDetails": [{ "reason": "spam", "detail": null }],
+      "reason": null,
+      "moderatedAt": null
+    }
+  ],
+  "counts": {
+    "pending": 2,
+    "approved": 2,
+    "rejected": 1,
+    "reported": 1
+  },
+  "silenced": [
+    {
+      "paddle": 12,
+      "wallet": "GCSbbGJoj4M16LdZkj5fjQDT6em52WPyZcnjwnE1Zn38",
+      "kind": "mute",
+      "until": "2026-10-05T18:30:00.000Z",
+      "reason": "Repeated spam in the chat."
+    }
+  ],
+  "lastSeq": 45
+}

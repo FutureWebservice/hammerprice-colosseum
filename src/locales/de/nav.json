@@ -1,0 +1,13 @@
+{
+  "main": "Hauptnavigation",
+  "home": "Startseite",
+  "rooms": "Räume",
+  "ai": "KI-Agent",
+  "pitchRibbon": "Pitch lesen",
+  "about": "Über uns",
+  "packs": "Packs",
+  "sell": "Verkaufen",
+  "profile": "Profil",
+  "connectWallet": "Wallet verbinden",
+  "connectTitle": "Wallet verbinden"
+}

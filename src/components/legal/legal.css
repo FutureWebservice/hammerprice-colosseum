@@ -1,0 +1,55 @@
+/*
+ * The legal pages. Long-form text on the site's ink background: one column, a readable measure, plain
+ * tables that scroll sideways on a phone. Palette and font stacks declared locally, like explain.css.
+ */
+.lg-page {
+  --lg-ink: #0e1116;
+  --lg-brass: #c8a44d;
+  --lg-brass-br: #e8c776;
+  --lg-paper: #f4f0e6;
+  --lg-slate: #9aa0a6;
+  --lg-line: #232a33;
+  --lg-serif: var(--font-serif), ui-serif, Georgia, serif;
+  --lg-sans: var(--font-sans), ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+  --lg-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--lg-ink);
+  color: #d5dbd8;
+  font-family: var(--lg-sans);
+}
+.lg-wrap { max-width: 760px; margin: 0 auto; padding: 72px 24px 96px; }
+.lg-kicker { font-family: var(--lg-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--lg-brass); margin: 0 0 18px; }
+.lg-kicker a { color: inherit; text-decoration: none; }
+.lg-kicker a:hover { color: var(--lg-brass-br); }
+.lg-rule { height: 2px; width: 56px; background: var(--lg-brass); margin: 0 0 26px; }
+
+.lg-doc { font-size: 16px; line-height: 1.65; }
+.lg-doc h1 { font-family: var(--lg-serif); font-weight: 400; font-size: clamp(34px, 6vw, 52px); line-height: 1.05; letter-spacing: -.01em; margin: 0 0 22px; color: var(--lg-paper); text-wrap: balance; }
+.lg-doc h2 { font-family: var(--lg-serif); font-weight: 400; font-size: clamp(24px, 3.4vw, 30px); margin: 44px 0 12px; color: var(--lg-paper); letter-spacing: -.005em; }
+.lg-doc h3 { font-size: 17px; font-weight: 600; margin: 28px 0 8px; color: var(--lg-paper); }
+.lg-doc h4 { font-size: 15px; font-weight: 600; margin: 22px 0 6px; color: var(--lg-paper); }
+.lg-doc p { margin: 0 0 14px; max-width: 68ch; }
+.lg-doc ul, .lg-doc ol { margin: 0 0 16px; padding-left: 1.3em; max-width: 68ch; }
+.lg-doc ul { list-style: disc; }
+.lg-doc ol { list-style: decimal; }
+.lg-doc li::marker { color: var(--lg-brass); }
+.lg-doc li { margin: 0 0 6px; }
+.lg-doc strong { color: var(--lg-paper); font-weight: 600; }
+.lg-doc a { color: var(--lg-brass-br); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(232, 199, 118, .4); }
+.lg-doc a:hover { text-decoration-color: var(--lg-brass-br); }
+.lg-doc code { font-family: var(--lg-mono); font-size: .9em; background: #161b22; padding: 1px 5px; border-radius: 3px; color: var(--lg-paper); }
+.lg-doc hr { border: 0; border-top: 1px solid var(--lg-line); margin: 32px 0; }
+
+.lg-table-wrap { overflow-x: auto; margin: 0 0 20px; border: 1px solid var(--lg-line); border-radius: 6px; }
+.lg-doc table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; line-height: 1.5; }
+.lg-doc th, .lg-doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--lg-line); }
+.lg-doc th { font-family: var(--lg-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--lg-brass); font-weight: 500; }
+.lg-doc tr:last-child td { border-bottom: 0; }
+
+.lg-nav { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--lg-line); }
+.lg-nav-label { font-family: var(--lg-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--lg-slate); margin: 0 0 12px; }
+.lg-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.lg-nav a { color: #c9d1cd; font-size: 14px; text-decoration: none; }
+.lg-nav a:hover, .lg-nav a[aria-current='page'] { color: var(--lg-brass-br); }
+.lg-nav a[aria-current='page'] { text-decoration: underline; text-underline-offset: 4px; }
+
+@media (max-width: 480px) { .lg-wrap { padding: 48px 16px 72px; } }

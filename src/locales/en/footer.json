@@ -1,0 +1,22 @@
+{
+  "tagline": "Live auctions for vaulted, graded cards, settled in USDC on Solana.",
+  "howItWorks": "How it works",
+  "pitch": "The pitch",
+  "context": "Built for the Colosseum hackathon.",
+  "demo": "Demo operation: test network, test USDC and replica cards",
+  "legalNav": "Legal",
+  "legal": {
+    "index": "Legal",
+    "impressum": "Impressum",
+    "datenschutz": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "consumer": "Consumer information",
+    "risk": "Risk notice",
+    "fees": "Fees",
+    "dsa-contact": "Contact and reports"
+  },
+  "faq": "FAQ",
+  "ai": "AI",
+  "about": "About"
+}

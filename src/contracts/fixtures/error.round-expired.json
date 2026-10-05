@@ -1,0 +1,5 @@
+{
+  "ok": false,
+  "code": "round_expired",
+  "reason": "The signing round ended. Request a new round."
+}

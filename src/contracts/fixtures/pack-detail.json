@@ -1,0 +1,98 @@
+{
+  "pack": {
+    "id": "7b1c2d3e-4f50-4a61-8b72-000000000020",
+    "name": {
+      "de": "Haus-Pack Testkarten",
+      "en": "House pack test cards"
+    },
+    "description": {
+      "de": "Acht Testkarten im Devnet. Die Wahrscheinlichkeiten stehen fest, bevor Sie kaufen.",
+      "en": "Eight test cards on devnet. The odds are fixed before you buy."
+    },
+    "imageUrl": null,
+    "mode": "chance",
+    "status": "live",
+    "cluster": "devnet",
+    "price": "5000000",
+    "operator": {
+      "wallet": "GCSbbGJoj4M16LdZkj5fjQDT6em52WPyZcnjwnE1Zn38",
+      "isHouse": true
+    },
+    "odds": [
+      {
+        "tier": "rare",
+        "label": {
+          "de": "Selten",
+          "en": "Rare"
+        },
+        "bps": 600,
+        "remaining": 1,
+        "total": 1
+      },
+      {
+        "tier": "uncommon",
+        "label": {
+          "de": "Ungewöhnlich",
+          "en": "Uncommon"
+        },
+        "bps": 2400,
+        "remaining": 2,
+        "total": 2
+      },
+      {
+        "tier": "common",
+        "label": {
+          "de": "Häufig",
+          "en": "Common"
+        },
+        "bps": 7000,
+        "remaining": 5,
+        "total": 5
+      }
+    ],
+    "pool": {
+      "total": 8,
+      "remaining": 8
+    },
+    "commitment": {
+      "poolHash": "360f330fbc77216eafabe884ca37b606c258f648afdae561b40176bcf24a5a94",
+      "oddsHash": "331e1ee3f2e6a773521cb44f0abcf94c57ccedee3ae3b70aeb7c1269243cf270",
+      "committedAt": "2026-10-05T12:00:00.000Z"
+    },
+    "perWalletDailyCap": 5,
+    "vrfPublicKey": "6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q",
+    "createdAt": "2026-10-05T11:00:00.000Z"
+  },
+  "cards": [
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000040",
+      "position": 0,
+      "asset": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "tier": "rare",
+      "name": "Charizard PSA 10",
+      "imageUrl": null,
+      "listedValue": null,
+      "status": "available"
+    },
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000041",
+      "position": 1,
+      "asset": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "tier": "uncommon",
+      "name": "Pikachu PSA 9",
+      "imageUrl": null,
+      "listedValue": null,
+      "status": "available"
+    },
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000042",
+      "position": 2,
+      "asset": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "tier": "common",
+      "name": "Blastoise PSA 8",
+      "imageUrl": null,
+      "listedValue": null,
+      "status": "available"
+    }
+  ]
+}

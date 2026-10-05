@@ -1,0 +1,148 @@
+{
+  "chip": {
+    "pending": "The lot order is being drawn (about 45 seconds)",
+    "checking": "Checking the proof in your browser",
+    "verified": "Order drawn by a random proof, checked in your browser",
+    "failed": "The proof did not check out in your browser",
+    "defaulted": "Catalogue order (the proof was not completed in time)",
+    "details": "See the proof"
+  },
+  "page": {
+    "kicker": "Provable randomness",
+    "missingKicker": "Not available",
+    "rooms": "Go to the rooms",
+    "home": "Back to home",
+    "title": "Proof of the lot order",
+    "titleRaffle": "Proof of the thank-you draw",
+    "lede": "The platform does not choose the order of the lots, and it can show that. It commits to the lots, waits for a Solana block it cannot know in advance, and publishes a proof from which anyone can recompute the order. This page recomputes it in your browser.",
+    "ledeRaffle": "A thank-you draw among everyone who bid in the show. It only names a paddle number: no money, no card and no other value changes hands. The draw uses the same provable randomness as the lot order, and this page recomputes it in your browser.",
+    "loading": "Loading the proof",
+    "notFound": "There is no such draw.",
+    "off": "This feature is switched off.",
+    "unavailable": "The proof could not be loaded. Try again in a moment.",
+    "back": "Back to the room"
+  },
+  "status": {
+    "pending": "Started, waiting for the commit on the network",
+    "committed": "Committed, waiting for the beacon block",
+    "revealed": "Revealed",
+    "defaulted": "Not completed in time"
+  },
+  "verdict": {
+    "checking": "Recomputing in your browser",
+    "proven": "The proof is valid. Your browser checked it and recomputed the result from it, and the result matches. The checks against the network run when you press \"Recompute it yourself\" and are best effort.",
+    "failed": "The proof does not check out. At least one check does not match. The details are below.",
+    "pending": "The proof is not ready yet. This page updates itself.",
+    "committed": "The input is committed and can no longer change. Waiting for the beacon block. This page updates itself.",
+    "defaulted": "No proof. The draw was not completed before its deadline, so the catalogue order applies. This is not a failed check, and a reveal that arrives later is not accepted.",
+    "chainNote": "The network checks read the public network from your browser. They are best effort: a node that cannot answer shows as not checkable, never as a pass."
+  },
+  "fields": {
+    "status": "Status",
+    "cluster": "Network",
+    "key": "Public key",
+    "input": "Input text (what the proof is made over)",
+    "committed": "Committed parameters (hash)",
+    "beacon": "Beacon (slot and block hash)",
+    "proof": "Proof (80 bytes, hex)",
+    "output": "Random output (64 bytes, hex)",
+    "result": "Result",
+    "commitTx": "Commit transaction",
+    "revealTx": "Reveal transaction",
+    "deadline": "Reveal deadline",
+    "copy": "Copy",
+    "copied": "Copied",
+    "explorer": "Open in the explorer",
+    "download": "Download the proof package (JSON)",
+    "none": "not available yet"
+  },
+  "cluster": {
+    "devnet": "Solana devnet",
+    "mainnet": "Solana mainnet"
+  },
+  "keycard": {
+    "title": "The key behind every draw",
+    "algorithm": "ECVRF-EDWARDS25519-SHA512-TAI (RFC 9381)",
+    "announced": "Announced in this transaction",
+    "notAnnounced": "No announcement transaction has been published for this key yet.",
+    "stats": "Commits {commits}, reveals {reveals}, not completed {defaults}",
+    "hint": "Every commit and every reveal is a transaction signed by this key, so a draw that was started and never revealed stays visible here."
+  },
+  "recompute": {
+    "button": "Recompute it yourself",
+    "again": "Recompute again",
+    "running": "Recomputing",
+    "hint": "Runs every check in your browser. The first five need nothing from us but the data on this page. The last four read the public network."
+  },
+  "checks": {
+    "crypto": "Checked in your browser",
+    "chain": "Read from the network (best effort)",
+    "status": {
+      "pass": "matches",
+      "fail": "does not match",
+      "skipped": "nothing to check yet",
+      "unverifiable": "could not be checked"
+    },
+    "params_hash": {
+      "title": "The committed parameters",
+      "how": "The lots and their numbers, hashed again here, give the value that was committed before the draw."
+    },
+    "alpha": {
+      "title": "The input text",
+      "how": "The text the proof is made over is rebuilt from the network, the draw, the committed parameters and the beacon."
+    },
+    "proof": {
+      "title": "The proof",
+      "how": "The proof is valid for this input under the published public key (RFC 9381)."
+    },
+    "output": {
+      "title": "The random output",
+      "how": "The output the proof yields equals the stored output."
+    },
+    "result": {
+      "title": "The result",
+      "how": "The result derived from the output by the public rule equals the stored result."
+    },
+    "commit_memo": {
+      "title": "The commit on the network",
+      "how": "The commit transaction holds the committed hash and the deadline, signed by the key, in the stored slot."
+    },
+    "beacon": {
+      "title": "The beacon block",
+      "how": "The beacon is the first confirmed block at least 32 slots after the commit, and its block hash matches."
+    },
+    "reveal_memo": {
+      "title": "The reveal on the network",
+      "how": "The reveal transaction holds the same proof and beacon, was written after the beacon block and not after the deadline."
+    },
+    "single_commit": {
+      "title": "Only one commit",
+      "how": "The key committed exactly once for this draw. A hidden second attempt would show up here."
+    }
+  },
+  "explain": {
+    "title": "What the proof shows and what it does not",
+    "proven": "Shown: the result is one fixed function of three things, the published key, the committed lots and the block hash that followed the commit. If the commit was written before that block, which the network checks read from the chain, nobody can change the outcome afterwards, including us.",
+    "notProven": "Not shown: that we never hold a result back. A draw that was started and not revealed in time stays visible as not completed, and the catalogue order applies.",
+    "beacon": "The block hash comes from Solana devnet, where nobody has a reason to manipulate a block.",
+    "beaconMain": "The block hash comes from the main network. A validator could in theory influence it. That is expensive and would be visible, but it is not ruled out."
+  },
+  "order": {
+    "before": "Before the draw (catalogue order)",
+    "after": "After the draw (play order)",
+    "lot": "Lot {number}",
+    "applied": "The new numbers are in use in the room.",
+    "notApplied": "The room had already started, so the drawn order was only recorded. It is not in use."
+  },
+  "raffle": {
+    "winner": "Drawn: paddle {number}",
+    "entrants": "{count} participants (paddle numbers): {list}",
+    "bots": "House bidders, bids placed by the house and the seller do not take part."
+  },
+  "lot": {
+    "title": "How the lot order was drawn",
+    "text": "The order of the lots in this show was drawn with a random proof that anyone can recompute.",
+    "link": "See and recompute the proof",
+    "raffle": "See the thank-you draw"
+  }
+}

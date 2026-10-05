@@ -1,0 +1,356 @@
+{
+  "bubble": {
+    "label": "So funktioniert's"
+  },
+  "modal": {
+    "title": "Wie es funktioniert",
+    "close": "Schließen",
+    "tabPanels": "In Bildern",
+    "tabFaq": "FAQ",
+    "prev": "Zurück",
+    "next": "Weiter"
+  },
+  "panels": {
+    "vault": {
+      "title": "Die Karten kommen aus einem echten Tresor",
+      "body": "Collector Crypt lagert gradierte Karten in versicherten Tresoren und prägt jede als NFT: mehr als 150.000 Stück. Hammerprice liest diesen Katalog live. Dieser Build läuft im Solana-Devnet, also sind die Karten, auf die Sie bieten, Replikate mit echtem Foto und echtem Grade, die wir geprägt haben und als Replikat kennzeichnen."
+    },
+    "room": {
+      "title": "Ein Raum geht live",
+      "body": "Ein Raum ist eine angesetzte Auktion. Die Seitenleiste zeigt jedes Los, die Bühne die Karte, das Gebotsfeld nimmt Gebote entgegen. Ein Live-Demo-Raum läuft rund um die Uhr mit eigenen Testkarten, sodass immer etwas live ist, und das Haus betreibt auch Demo-Zeitlose. Alle anderen Räume legen Verkäufer an."
+    },
+    "signature": {
+      "title": "Ein Gebot ist eine signierte, gedeckte Zusage",
+      "body": "Ihr Wallet signiert eine Nachricht mit Auktion, Los, Betrag und Netzwerk. Beim Bieten bewegt sich nichts. Der Server nimmt das Gebot nur an, wenn Ihr USDC-Guthaben abzüglich Ihrer anderen offenen Gebote es deckt."
+    },
+    "hammer": {
+      "title": "Die Uhr beendet das Los",
+      "body": "Ein Los endet von selbst, wenn seine Uhr abläuft. Ein Gebot in den letzten Sekunden gibt Zeit dazu, niemand gewinnt also durch Warten auf den letzten Schlag. Niemand drückt einen Hammer: Das höchste gültige Gebot gegen das Limit entscheidet."
+    },
+    "settle": {
+      "title": "Der Hammer ist die Zahlung",
+      "body": "Nach dem Ende signieren Käufer und Verkäufer eine Transaktion. Sie zahlt dem Verkäufer USDC, zahlt unsere 2,5 % Gebühr und überträgt die Karte an den Käufer. Alles geschieht oder nichts. Im Demo-Raum signiert unser Server den Teil des Verkäufers, Sie signieren also einmal."
+    },
+    "custody": {
+      "title": "Wir verwahren nichts, bei Auktionen und bei Packs",
+      "body": "Bei Auktionen und Packs hält die Plattform nie Ihr USDC oder die Karte. Bei einem Pack mit gleichem Wert zahlen Sie den Verkäufer in derselben Transaktion, die die Karte bewegt; bei einem Zufalls-Pack zahlen Sie den Pack-Betreiber direkt, und wir nehmen nur unsere Gebühr in derselben Zahlung. Ihr Abwicklungsschlüssel zahlt nur Netzwerkgebühren, und eine Auktionstransaktion gilt nur mit der Signatur von Käufer und Verkäufer. Der Preis dafür, nichts zu halten: Wir können eine Zahlung nicht erstatten. Liefert der Betreiber eines Zufalls-Packs nicht, markieren wir den Verkauf, geben dem Betreiber einen Strike und pausieren das Pack, aber Ihren Verlust fordern Sie vom Betreiber. Fremde Gelder zu verwahren bräuchte nach unserer Lesart eine deutsche Zahlungserlaubnis, die dieses Design vermeidet."
+    },
+    "demo": {
+      "title": "Was Sie gerade sehen",
+      "body": "Das Haus betreibt einen Live-Demo-Raum und Demo-Zeitlose, und alle sind als DEMO gekennzeichnet. Er nimmt echte signierte Gebote von Besuchern an und wickelt auf Devnet ab, mit Test-USDC und Replik-Karten, die der Plattform gehören. Dort bieten auch gekennzeichnete Haus-Bots mit, damit immer ein Los läuft, aber sie überbieten nie eine Person. Gewinnt ein Haus-Bot, wird nichts verkauft und niemand zahlt. Jeder andere Raum wird von einem Verkäufer mit Wallet im Verkaufsablauf angelegt und hat keine Bots."
+    }
+  },
+  "faq": {
+    "solana": {
+      "q": "Warum Solana?",
+      "a": "Das Siegergebot wird als eine atomare Transaktion abgewickelt: Geld und Karte wechseln gemeinsam den Besitzer oder gar nicht. Solana macht das günstig und schnell, und die Karten existieren dort schon als NFTs."
+    },
+    "packs": {
+      "q": "Gibt es Pack Opening?",
+      "a": "Dort, wo der Betreiber Packs eingeschaltet hat, ja. Der Pool wird vor dem ersten Verkauf durch einen Hash festgelegt, und die Ziehung hat einen öffentlichen Beweis. Bei einem Zufalls-Pack zahlen Sie den unabhängigen Pack-Betreiber direkt und zuerst: Es wird nichts gezogen, bevor Ihre Zahlung endgültig ist, danach liefert der Betreiber die Karte. Wir halten kein Geld und können nichts erstatten, prüfen Sie also vor der Zahlung die Lieferbilanz des Betreibers. Bei einem Pack mit gleichem Wert hat jede Karte denselben Listenwert, und die Karte wandert in derselben Transaktion wie die Zahlung. Käufer müssen mindestens 18 Jahre alt sein. Ob Packs zulässig sind, ist eine Rechtsfrage, die kein Anwalt geprüft hat."
+    },
+    "commission": {
+      "q": "Worauf werden die 2,5 % Provision berechnet?",
+      "a": "Auf den Zuschlagspreis, zulasten der Verkäuferin und in derselben Transaktion vom USDC abgezogen. Der Käufer zahlt kein Aufgeld."
+    },
+    "reserve": {
+      "q": "Warum wurde ein Los nicht verkauft?",
+      "a": "Das höchste Gebot lag unter dem Limit, dem Mindestpreis der Verkäuferin. Also blieb das Los unverkauft, und niemand zahlte."
+    },
+    "wallet": {
+      "q": "Brauche ich ein Wallet zum Zuschauen?",
+      "a": "Nein, nur zum Bieten. Sie brauchen ein Solana-Wallet im Devnet. Test-USDC ist kostenlos, und Sie brauchen kein SOL."
+    },
+    "video": {
+      "q": "Gibt es Live-Video?",
+      "a": "Optional. Wo der Betreiber es freigeschaltet hat, kann ein Verkäufer Live-Video für eine Show einschalten. Vom Video-Server wird nichts geladen, bevor Sie auf „Live-Video laden“ klicken. Sonst zeigt ein Raum das Foto der Karte und einen Live-Gebotsfeed."
+    },
+    "sell": {
+      "q": "Kann ich selbst verkaufen?",
+      "a": "Auf Devnet ja, wenn das verbundene Wallet eine Metaplex-Core-Karte besitzt. Sie müssen online sein und innerhalb von 15 Minuten nach dem Ende signieren. Echte Mainnet-Karten lassen sich hier nicht verkaufen."
+    },
+    "collectorCrypt": {
+      "q": "Was ist Collector Crypt?",
+      "a": "Der Tresor: ein öffentlicher Katalog gradierter Karten, jede ein NFT. Wir lesen ihn für die Startseite und für Fotos und Grades unserer Devnet-Replikate."
+    }
+  },
+  "walletHelp": {
+    "id": "wallet",
+    "heading": "Noch kein Wallet?",
+    "lede": "Zum Bieten brauchen Sie ein Solana-Wallet im Browser. Es ist kostenlos, in zwei Minuten eingerichtet und nimmt Ihr USDC auf. Zum Umschauen brauchen Sie keins.",
+    "steps": [
+      "Eines der Wallets unten installieren.",
+      "Mit USDC aufladen: Senden Sie USDC von einer Börse oder aus einem anderen Wallet an Ihre Wallet-Adresse. Wo ein Raum eine USDC-Aufladung (einen Faucet) anbietet, steht das im Raum, und Sie können sie einmal pro Wallet alle 24 Stunden abrufen.",
+      "Einen Raum öffnen und auf Verbinden drücken. Sie brauchen kein SOL: Unser Schlüssel zahlt die Netzwerkgebühr."
+    ],
+    "installLabel": "Installieren",
+    "mobile": "Öffnen Sie diese Seite auf dem Telefon im eigenen Browser Ihrer Wallet-App. Ein normaler Telefon-Browser erreicht Ihre Wallet-App nicht.",
+    "faqLink": "Mehr in den FAQ"
+  },
+  "faqPage": {
+    "title": "Fragen und Antworten",
+    "intro": "Nur, was die Abschnitte oben noch nicht beantworten.",
+    "groups": [
+      {
+        "id": "pay",
+        "heading": "Zahlen und Verkaufen",
+        "items": [
+          {
+            "q": "Wie lange habe ich zum Signieren?",
+            "a": "Nach dem Ende öffnet der Raum eine Zahlungsrunde, und Sie haben 15 Minuten, um eine Transaktion zu signieren (eine einzelne Runde dauert etwa eine Minute, und der Raum öffnet die nächste, wenn Sie eine verpassen). Sobald sie durch ist, verlinkt der Raum die Transaktion im Solana Explorer."
+          },
+          {
+            "q": "Was, wenn ich nicht zahle?",
+            "a": "Der Zuschlag verfällt nach dem Zeitfenster, und das Los erscheint als nicht abgeschlossen. Die Karte hat sich nie bewegt, es muss also nichts erstattet werden. Ihr Wallet bekommt eine Verwarnung, und wiederholtes Verfallen kann zur Sperre führen."
+          },
+          {
+            "q": "Was kostet es?",
+            "a": "Die Provision der Verkäuferin wird in derselben Transaktion vom Zuschlagspreis abgezogen, der Käufer zahlt sein Gebot und nichts weiter. Den Satz finden Sie in den Kennzahlen unter den Funktionen."
+          },
+          {
+            "q": "Was brauche ich zum Verkaufen?",
+            "a": "Das verbundene Wallet muss eine gradierte Karte enthalten, die Ihnen gehört. Als Verkäufer müssen Sie außerdem online sein und innerhalb derselben 15 Minuten nach dem Ende signieren."
+          }
+        ]
+      },
+      {
+        "id": "trust",
+        "heading": "Packs, Sicherheit und Fairness",
+        "items": [
+          {
+            "q": "Wie bezahle ich ein Pack?",
+            "a": "Bei einem Zufalls-Pack zahlen Sie den unabhängigen Pack-Betreiber direkt und zuerst: Es wird nichts gezogen, bevor Ihre Zahlung endgültig ist, dann liefert der Betreiber die Karte innerhalb einer Frist. Wir halten kein Geld und können Ihnen nichts erstatten, prüfen Sie also vor der Zahlung die Lieferhistorie des Betreibers. Bei einem Pack mit gleichem Wert hat jede Karte denselben angegebenen Wert, und die Karte wandert in derselben Transaktion wie die Zahlung. Käufer müssen mindestens 18 sein."
+          },
+          {
+            "q": "Wer hält mein Geld und meine Karte?",
+            "a": "Niemand außer Ihnen. Der Abwicklungsschlüssel zahlt nur Netzwerkgebühren und kann weder Ihr USDC noch Ihre Karte bewegen, und beide Seiten signieren dieselbe Transaktion."
+          },
+          {
+            "q": "Was beweist eine Prüfseite?",
+            "a": "Sie rechnet jedes signierte Gebot in Ihrem Browser nach, hasht das Gebotsprotokoll und vergleicht es mit dem Memo der Zahlung auf Solana. Ein übereinstimmender Hash zeigt, dass das Protokoll nach dem Verkauf nicht verändert wurde. Er kann nicht zeigen, dass kein Gebot fehlt, deshalb behält jeder Bieter eine signierte Kopie seiner eigenen Gebote."
+          },
+          {
+            "q": "Ist das in Deutschland zulässig?",
+            "a": "Nach Art. 48 Abs. 2 MiCAR ist USDC E-Geld, und es für Kunden zu halten bräuchte eine Erlaubnis nach § 10 ZAG, also halten wir keine Kundengelder. Eine entgeltliche Zufallsauswahl von Waren kann nach § 3 Abs. 3 GlüStV ein Glücksspiel sein, deshalb funktionieren Packs wie unter „Wie bezahle ich ein Pack?“ beschrieben. Das ist unsere Lesart der Regeln, keine Rechtsberatung, und kein Anwalt hat sie geprüft."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "meta": {
+      "title": "Über Hammerprice: So funktioniert es und wer dahintersteckt",
+      "description": "So funktioniert Hammerprice in sechs Schritten, alle Funktionen der Plattform, geprüfter Zufall mit Live-Beweis, der Pitch, die FAQ und der Gründer: Farshad Shadjari, Deutschland."
+    },
+    "kicker": "Über uns",
+    "title": "Über uns",
+    "nav": {
+      "label": "Auf dieser Seite",
+      "how": "So funktioniert's",
+      "features": "Funktionen",
+      "verify": "Zufall",
+      "pitch": "Pitch",
+      "faq": "FAQ",
+      "team": "Gründer"
+    },
+    "team": {
+      "kicker": "Gründer",
+      "heading": "Hinter Hammerprice",
+      "intro": "Wer Hammerprice gebaut hat und betreibt."
+    },
+    "who": {
+      "heading": "Über mich",
+      "name": "Farshad Shadjari",
+      "role": "Gründer",
+      "facts": [
+        "Masterstudent der Wirtschaftsinformatik an der FernUniversität in Hagen"
+      ],
+      "operator": "Hammerprice wird betrieben von Future Webservice, Inhaber Farshad Shadjari, in Deutschland.",
+      "contactLabel": "Kontakt",
+      "githubLabel": "GitHub",
+      "githubNote": "Der Quellcode ist öffentlich unter der MIT-Lizenz (siehe Datei LICENSE)."
+    }
+  },
+  "closing": {
+    "heading": "Probieren Sie es aus",
+    "body": "Hammerprice ist live und befindet sich derzeit in der Beta. Über die Warteliste auf der Startseite erfahren Sie, wann der Mainnet-Start beginnt.",
+    "cta": "Zu den Räumen",
+    "sell": "Karte verkaufen",
+    "waitlist": "Auf die Warteliste"
+  },
+  "assistant": {
+    "quick": {
+      "heading": "Die Kurzfassung",
+      "items": [
+        {
+          "q": "Was brauche ich?",
+          "a": "Ein Solana-Wallet wie Phantom, Solflare oder Backpack, mit etwas USDC darin. SOL brauchen Sie nicht. Zum Umschauen brauchen Sie gar nichts."
+        },
+        {
+          "q": "Was passiert, wenn ich gewinne?",
+          "a": "Der Raum fordert Sie zur Zahlung auf. Sie bestätigen eine Zahlung in Ihrem Wallet. Der Verkäufer erhält das USDC, und die Karte wandert in Ihr Wallet. Sie haben 15 Minuten. Zahlen Sie nicht, verfällt der Zuschlag, und Ihr Wallet erhält eine Verwarnung."
+        },
+        {
+          "q": "Kann ich meine eigene Karte verkaufen?",
+          "a": "Ja. Öffnen Sie Verkaufen, wählen Sie eine Karte aus Ihrem Wallet, legen Sie Preis und Zeit fest. Der Verkäufer zahlt 2,5 % des Endpreises. Der Käufer zahlt keine zusätzliche Gebühr."
+        },
+        {
+          "q": "Ist das sicher?",
+          "a": "Ein Gebot ist ein signiertes Versprechen, und die Zahlung ist eine Transaktion, die Sie vor dem Signieren lesen können. Bei einer Auktion halten wir nie Ihr Geld oder Ihre Karten. Ein Gebot ist verbindlich: Wenn Sie gewinnen, schulden Sie die Zahlung."
+        },
+        {
+          "q": "Woher weiß ich, dass eine Ziehung fair ist?",
+          "a": "Eine Zufallsziehung, etwa die Reihenfolge der Lose, kommt mit einem öffentlichen Beweis, den Ihr Browser nachrechnet. Der Abschnitt zum geprüften Zufall auf dieser Seite verlinkt ein Live-Beispiel."
+        }
+      ]
+    },
+    "groups": [
+      {
+        "id": "start",
+        "heading": "Erste Schritte",
+        "items": [
+          {
+            "q": "Was brauche ich zum Bieten?",
+            "a": "Ein Solana-Wallet wie Phantom, Solflare oder Backpack, mit etwas USDC darin. Die Anmeldung ist eine kostenlose Signatur, und unser Schlüssel zahlt die Netzwerkgebühr der Abwicklung."
+          },
+          {
+            "q": "Woher bekomme ich USDC?",
+            "a": "Senden Sie USDC von einer Börse oder aus einem anderen Wallet an Ihre Wallet-Adresse. Wo ein Raum eine USDC-Aufladung (einen Faucet) anbietet, steht das im Raum, und Sie können sie einmal pro Wallet alle 24 Stunden abrufen."
+          },
+          {
+            "q": "Brauche ich SOL?",
+            "a": "Nein. Unser Abwicklungsschlüssel zahlt die Netzwerkgebühr, Ihr Wallet kann also nur USDC enthalten."
+          },
+          {
+            "q": "Geht das mit dem Telefon?",
+            "a": "Ja, über den eigenen Browser Ihrer Wallet-App. Öffnen Sie diese Seite dort. Ein normaler Telefon-Browser erreicht keine Wallet-App."
+          },
+          {
+            "q": "Brauche ich ein Wallet, um mich nur umzusehen?",
+            "a": "Nein. Startseite, Terminplan und Räume lassen sich ohne ansehen."
+          }
+        ]
+      },
+      {
+        "id": "bid",
+        "heading": "Bieten",
+        "items": [
+          {
+            "q": "Wie biete ich?",
+            "a": "Öffnen Sie einen Raum und verbinden Sie Ihr Wallet. Melden Sie sich mit einer kostenlosen Signatur an, das ist keine Transaktion. Wählen Sie das nächste Gebot oder eine Schnell-Erhöhung und bestätigen Sie das verbindliche Gebot. Das Gebot ist eine signierte Nachricht, und der Server prüft, ob Ihr USDC-Guthaben es deckt."
+          },
+          {
+            "q": "Ist ein Gebot verbindlich?",
+            "a": "Ja. Wenn Sie den Zuschlag erhalten, ist die Zahlung fällig. Bieten Sie nur, wenn Sie zahlen wollen."
+          },
+          {
+            "q": "Was, wenn jemand in den letzten Sekunden bietet?",
+            "a": "Die Endzeit rückt nach hinten, bis zu einer Obergrenze. Die Uhr läuft auf dem Server, die Uhr Ihres Geräts spielt keine Rolle."
+          },
+          {
+            "q": "Was ist ein Limit?",
+            "a": "Der niedrigste Preis, zu dem der Verkäufer verkauft. Ein Los, dessen höchstes Gebot darunter liegt, bleibt unverkauft, und niemand zahlt."
+          },
+          {
+            "q": "Was ist eine zeitlich begrenzte Auktion?",
+            "a": "Eine Karte, die von einer Stunde bis zu sieben Tagen offen bleibt und zur Frist von selbst endet. Ein Gebot kurz vor Ende verlängert die Uhr um einige Minuten, bis zu einer Obergrenze, und der Gewinner hat ein längeres Zahlungsfenster."
+          }
+        ]
+      },
+      {
+        "id": "win",
+        "heading": "Wenn Sie gewinnen",
+        "items": [
+          {
+            "q": "Was passiert, wenn ich gewinne?",
+            "a": "Der Raum öffnet eine Zahlungsrunde. Sie signieren eine Transaktion in Ihrem Wallet. Sie zahlt dem Verkäufer USDC, zahlt die Gebühr und überträgt die Karte an Sie. Sobald sie durch ist, verlinkt der Raum die Transaktion im Solana Explorer."
+          },
+          {
+            "q": "Wie lange habe ich zum Signieren?",
+            "a": "15 Minuten ab dem Ende. Eine einzelne Signierrunde dauert etwa eine Minute, und der Raum öffnet die nächste, wenn Sie eine verpassen."
+          },
+          {
+            "q": "Was, wenn ich nicht zahle?",
+            "a": "Der Zuschlag verfällt nach dem Zeitfenster, und das Los erscheint als nicht abgeschlossen. Die Karte hat sich nie bewegt, es muss also nichts erstattet werden. Ihr Wallet bekommt eine Verwarnung, und wiederholtes Verfallen kann zur Sperre führen."
+          }
+        ]
+      },
+      {
+        "id": "fees",
+        "heading": "Gebühren",
+        "items": [
+          {
+            "q": "Was kostet es?",
+            "a": "Der Verkäufer zahlt 2,5 % des Zuschlagspreises, in derselben Transaktion vom USDC abgezogen. Der Käufer zahlt sein Gebot und nichts weiter. Es gibt kein Käuferaufgeld."
+          },
+          {
+            "q": "Und die Netzwerkgebühren?",
+            "a": "Unser Abwicklungsschlüssel zahlt die Netzwerkgebühr der Abwicklung. Weder Käufer noch Verkäufer brauchen dafür SOL."
+          }
+        ]
+      },
+      {
+        "id": "sell",
+        "heading": "Verkaufen und Räume",
+        "items": [
+          {
+            "q": "Wie verkaufe ich eine Karte?",
+            "a": "Öffnen Sie Verkaufen, wählen Sie eine gradierte Karte aus dem verbundenen Wallet, lassen Sie den Eintrag bei Bedarf von der KI entwerfen und prüfen Sie ihn, legen Sie dann Preis, Mindestpreis und Los-Dauer fest und gehen Sie live. Sie müssen online sein, um innerhalb von 15 Minuten nach dem Ende zu signieren."
+          },
+          {
+            "q": "Welche Räume gibt es?",
+            "a": "Den Haus-Raum und zeitlich begrenzte Lose, die Hammerprice betreibt und als Tutorial kennzeichnet, und die Räume, die Verkäufer mit ihrer eigenen Wallet anlegen. Beide stehen auf der Räume-Seite, in zwei getrennten Abschnitten."
+          },
+          {
+            "q": "Wie funktioniert der Chat?",
+            "a": "Angemeldete Bieter können in einem Raum schreiben, und der Raum-Betreiber gibt jede Nachricht frei, bevor sie jemand anderes sieht. Links und Kontaktdaten werden abgelehnt, und die öffentliche Liste zeigt eine Bieternummer, nie eine Wallet. Besucher können eine Nachricht melden."
+          },
+          {
+            "q": "Gibt es Live-Video?",
+            "a": "Optional. Ein Verkäufer kann für eine Show Live-Video einschalten. Vom Video-Server wird nichts geladen, bis Sie auf Live-Video laden drücken. Sonst zeigt ein Raum das Foto der Karte und einen Live-Gebotsfeed."
+          },
+          {
+            "q": "Was sind das für Karten?",
+            "a": "Gradierte Sammelkarten, jede ein NFT. Der Katalog auf der Startseite ist der öffentliche Collector-Crypt-Tresor, und die Karte in einem Raum ist das NFT, das dem Verkäufer gehört."
+          }
+        ]
+      },
+      {
+        "id": "more",
+        "heading": "Packs, KI und Telegram",
+        "items": [
+          {
+            "q": "Wie funktionieren Packs?",
+            "a": "Ein Pack ist eine Ziehung aus einem öffentlichen Kartenpool. Pool und Wahrscheinlichkeiten werden vor dem ersten Verkauf per Hash festgelegt, und die Ziehung hat einen öffentlichen Beweis. Bei einem Zufalls-Pack zahlen Sie den unabhängigen Pack-Betreiber direkt und zuerst: Es wird nichts gezogen, bevor Ihre Zahlung endgültig ist, dann liefert der Betreiber die Karte innerhalb einer Frist. Wir halten kein Geld und können Ihnen nichts erstatten, prüfen Sie also vor der Zahlung die Lieferhistorie des Betreibers. Bei einem Pack mit gleichem Wert hat jede Karte denselben angegebenen Wert, und die Karte wandert in derselben Transaktion wie die Zahlung. Käufer müssen mindestens 18 sein."
+          },
+          {
+            "q": "Was macht die KI?",
+            "a": "Sie entwirft einen Eintrag, den der Verkäufer prüft, ein Assistent antwortet aus diesen FAQ, und ein Agent auf der KI-Seite findet offene Lose und bereitet ein Gebot vor, das Sie bestätigen. Alles ist als KI gekennzeichnet, eine angemeldete Wallet ist nötig, und der Agent bietet nie für Sie."
+          },
+          {
+            "q": "Wie funktioniert Telegram?",
+            "a": "Drücken Sie in Ihrem Profil auf Telegram verbinden und tippen Sie im Bot auf Start. Er meldet Ihnen, wenn Sie überboten werden, wenn Sie gewinnen und wenn eine Zahlung fällig ist, und /watch weist Sie mit einem vorausgefüllten Gebotslink auf die nächsten Lose eines Raums hin. Sie bestätigen und signieren immer in Ihrer eigenen Wallet."
+          }
+        ]
+      },
+      {
+        "id": "trust",
+        "heading": "Sicherheit und Fairness",
+        "items": [
+          {
+            "q": "Wer hält mein Geld und meine Karte?",
+            "a": "Niemand außer Ihnen. Der Abwicklungsschlüssel zahlt nur Netzwerkgebühren und kann weder Ihr USDC noch Ihre Karte bewegen. Beide Seiten signieren dieselbe Transaktion."
+          },
+          {
+            "q": "Was beweist eine Prüfseite?",
+            "a": "Sie rechnet jedes signierte Gebot in Ihrem Browser nach, hasht das Gebotsprotokoll und vergleicht es mit dem Memo der Zahlung auf Solana. Ein übereinstimmender Hash zeigt, dass das Protokoll nach dem Verkauf nicht verändert wurde. Er kann nicht zeigen, dass kein Gebot fehlt, deshalb behält jeder Bieter eine signierte Kopie seiner eigenen Gebote."
+          },
+          {
+            "q": "Ist das in Deutschland zulässig?",
+            "a": "Das Design folgt zwei Regeln. Kundengelder zu halten braucht eine Erlaubnis nach § 10 ZAG, also halten wir keine. Eine entgeltliche Zufallsauswahl von Waren kann nach § 3 Abs. 3 GlüStV ein Glücksspiel sein, deshalb veröffentlichen Packs ihre Wahrscheinlichkeiten, werden zuerst bezahlt und nach der endgültigen Zahlung gezogen. Das ist unsere Lesart der Regeln, keine Rechtsberatung, und kein Anwalt hat sie geprüft."
+          }
+        ]
+      }
+    ]
+  }
+}

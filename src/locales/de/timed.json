@@ -1,0 +1,34 @@
+{
+  "badge": "Zeitgesteuerte Auktion",
+  "phase": {
+    "endsSoon": "Endet bald"
+  },
+  "endsAt": "Endet {time}",
+  "extended": "Verlängert um {time}",
+  "antiSnipe": "Ein Gebot in den letzten {window} schiebt das Ende auf {extend} nach diesem Gebot. Das Ende verschiebt sich insgesamt höchstens um {max}.",
+  "keepUsdc": "Halten Sie bis zum Ende genug USDC in Ihrer Wallet bereit. Das Guthaben wird beim Bieten und noch einmal beim Bezahlen geprüft.",
+  "calendar": "Aktuelles Ende in meinen Kalender eintragen",
+  "calendarTitle": "Endet: {title}",
+  "picker": {
+    "summary": "Art der Auktion (erweitert)",
+    "legend": "Wie soll die Auktion laufen?",
+    "live": "Live-Show",
+    "liveHint": "Ein Raum mit einer Uhr für jede Karte. Mehrere Karten nacheinander.",
+    "timed": "Zeitgesteuerte Auktion",
+    "timedHint": "Eine Karte, die Stunden oder Tage offen bleibt. Bieter kommen zurück, wann sie möchten.",
+    "duration": "Wie lange sie offen bleibt",
+    "oneCard": "Eine zeitgesteuerte Auktion hat genau eine Karte, Sie haben {count} gewählt. Gehen Sie zurück und wählen Sie eine Karte.",
+    "limit": "Zeitgesteuerte Auktionen sind vorerst dem Hammerprice-Raum und Betreiber-Wallets vorbehalten. Mit jeder anderen Wallet wird das Veröffentlichen abgelehnt.",
+    "rules": "Ein Gebot in den letzten {window} schiebt das Ende auf {extend} nach diesem Gebot, insgesamt höchstens um {max}.",
+    "settle": "Nach dem Ende hat der Gewinner {time} Zeit zum Bezahlen. Der Verkäufer muss zum Unterschreiben online sein, wenn der Gewinner bezahlt."
+  },
+  "rooms": {
+    "filterLabel": "Anzeigen",
+    "all": "Alle",
+    "live": "Live",
+    "timed": "Zeitgesteuert",
+    "badge": "Zeitgesteuerte Auktion",
+    "endsIn": "Endet in {time}",
+    "noDeadline": "Öffnet gleich"
+  }
+}

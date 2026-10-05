@@ -1,0 +1,17 @@
+{
+  "tab": "bids",
+  "items": [
+    {
+      "bidId": "7b1c2d3e-4f50-4a61-8b72-000000000010",
+      "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+      "lotName": "Charizard ex 199/165",
+      "amount": "120000000",
+      "placedAt": "2026-10-05T18:00:00.000Z",
+      "leading": true,
+      "closesAt": "2026-10-06T18:00:00.000Z",
+      "lotState": "open",
+      "result": "leading"
+    }
+  ],
+  "nextCursor": null
+}

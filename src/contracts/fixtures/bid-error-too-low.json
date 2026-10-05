@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "code": "bid_too_low",
+  "reason": "The next bid must be at least 125 USDC.",
+  "minNext": "125000000"
+}

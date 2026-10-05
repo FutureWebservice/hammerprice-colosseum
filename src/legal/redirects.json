@@ -1,0 +1,112 @@
+[
+  {
+    "source": "/de/impressum",
+    "destination": "/de/legal/impressum",
+    "permanent": true
+  },
+  {
+    "source": "/de/datenschutz",
+    "destination": "/de/legal/datenschutz",
+    "permanent": true
+  },
+  {
+    "source": "/de/agb",
+    "destination": "/de/legal/agb",
+    "permanent": true
+  },
+  {
+    "source": "/en/legal/imprint",
+    "destination": "/en/legal/impressum",
+    "permanent": true
+  },
+  {
+    "source": "/en/legal/privacy",
+    "destination": "/en/legal/datenschutz",
+    "permanent": true
+  },
+  {
+    "source": "/en/legal/agb",
+    "destination": "/en/legal/terms",
+    "permanent": true
+  },
+  {
+    "source": "/en/legal/widerruf",
+    "destination": "/en/legal/consumer",
+    "permanent": true
+  },
+  {
+    "source": "/en/legal/withdrawal",
+    "destination": "/en/legal/consumer",
+    "permanent": true
+  },
+  {
+    "source": "/en/legal/notice",
+    "destination": "/en/legal/dsa-contact",
+    "permanent": true
+  },
+  {
+    "source": "/de/legal/imprint",
+    "destination": "/de/legal/impressum",
+    "permanent": true
+  },
+  {
+    "source": "/de/legal/privacy",
+    "destination": "/de/legal/datenschutz",
+    "permanent": true
+  },
+  {
+    "source": "/de/legal/terms",
+    "destination": "/de/legal/agb",
+    "permanent": true
+  },
+  {
+    "source": "/de/legal/widerruf",
+    "destination": "/de/legal/consumer",
+    "permanent": true
+  },
+  {
+    "source": "/de/legal/withdrawal",
+    "destination": "/de/legal/consumer",
+    "permanent": true
+  },
+  {
+    "source": "/de/legal/notice",
+    "destination": "/de/legal/dsa-contact",
+    "permanent": true
+  },
+  {
+    "source": "/legal/imprint",
+    "destination": "/en/legal/impressum",
+    "permanent": true
+  },
+  {
+    "source": "/legal/privacy",
+    "destination": "/en/legal/datenschutz",
+    "permanent": true
+  },
+  {
+    "source": "/legal/agb",
+    "destination": "/de/legal/agb",
+    "permanent": true
+  },
+  {
+    "source": "/legal/terms",
+    "destination": "/en/legal/terms",
+    "permanent": true
+  },
+  {
+    "source": "/legal/widerruf",
+    "destination": "/de/legal/consumer",
+    "permanent": true
+  },
+  {
+    "source": "/legal/withdrawal",
+    "destination": "/en/legal/consumer",
+    "permanent": true
+  },
+  {
+    "source": "/legal/notice",
+    "destination": "/en/legal/dsa-contact",
+    "permanent": true
+  }
+]

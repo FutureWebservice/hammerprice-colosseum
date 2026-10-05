@@ -1,0 +1,13 @@
+# dependencies and build output
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# local environment and Vercel link: never commit
+.env*
+!.env.example
+.vercel
+
+# local tooling and OS noise
+.DS_Store

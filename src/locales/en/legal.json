@@ -1,0 +1,10 @@
+{
+  "commission": {
+    "rate": "hammerprice charges the seller a commission of 2.5% of the hammer price on a lot that sells.",
+    "noFee": "There is no buyer's premium, and a lot that is withdrawn or fails to meet its reserve incurs no fee."
+  },
+  "ui": {
+    "kicker": "Legal",
+    "navLabel": "All legal pages"
+  }
+}

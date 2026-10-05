@@ -1,0 +1,10 @@
+{
+  "commission": {
+    "rate": "hammerprice berechnet dem Verkäufer eine Provision von 2,5 % auf den Zuschlagspreis eines verkauften Loses.",
+    "noFee": "Für Bieter fällt kein Aufgeld an, und für ein zurückgezogenes oder unter dem Limit gebliebenes Los entsteht keine Gebühr."
+  },
+  "ui": {
+    "kicker": "Rechtliches",
+    "navLabel": "Alle rechtlichen Seiten"
+  }
+}

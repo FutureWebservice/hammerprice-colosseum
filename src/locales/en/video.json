@@ -1,0 +1,66 @@
+{
+  "option": {
+    "label": "Live video (optional)",
+    "hint": "Off by default. If you turn this on, you can send your camera during the show. Viewers only see the picture after they click \"Load live video\". The video server then sees their IP address.",
+    "ipNote": "Every viewer who loads the picture connects to the video server, and that server sees their IP address."
+  },
+  "manage": {
+    "label": "Live video",
+    "on": "On",
+    "off": "Off",
+    "turnOn": "Turn on",
+    "turnOff": "Turn off",
+    "saving": "Saving",
+    "broadcast": "Open the broadcast page",
+    "ended": "The show has ended.",
+    "unavailable": "Live video cannot be switched on here: no video server is set up on this site yet."
+  },
+  "stage": {
+    "load": "Load live video",
+    "connect": "Connection to {host}",
+    "turnOff": "Video off",
+    "mark": "Camera picture, may be a few seconds behind. The server's clock decides.",
+    "title": "Camera picture from the seller",
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Sound off",
+    "unmute": "Sound on",
+    "fullscreen": "Full screen"
+  },
+  "broadcast": {
+    "meta": "Broadcast",
+    "kicker": "Live video",
+    "title": "Broadcast page",
+    "lede": "Send your camera to the room of this show. Show only the card, no people.",
+    "back": "Back to the show",
+    "loading": "Loading the show",
+    "off": "Live video is not switched on for this show. Turn it on in the show manager first.",
+    "ended": "This show has ended, so you can no longer send.",
+    "camera": "Camera",
+    "cameraDefault": "Default camera",
+    "mic": "Microphone",
+    "micOn": "Microphone on",
+    "micOff": "Microphone off",
+    "preview": "Start camera preview",
+    "previewAlt": "Your camera preview",
+    "goLive": "Go live",
+    "stop": "End",
+    "status": {
+      "idle": "Not sending.",
+      "connecting": "Connecting.",
+      "sending": "Sending. Viewers who load the video see the picture after a short delay.",
+      "retrying": "The connection dropped. Trying again.",
+      "stopped": "Stopped."
+    },
+    "errors": {
+      "denied": "The browser has no permission for the camera. Allow it in the address bar and try again.",
+      "nocam": "No camera was found.",
+      "signin": "Sign in with your wallet first.",
+      "forbidden": "Only the operator may send video here.",
+      "state": "Live video is not switched on for this show, or the show has ended.",
+      "rate": "Too many attempts. Wait a minute and try again.",
+      "unavailable": "The video server cannot be reached right now. The room keeps working without video.",
+      "generic": "Sending did not work. Try again."
+    }
+  }
+}

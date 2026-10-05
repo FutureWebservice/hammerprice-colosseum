@@ -1,0 +1,31 @@
+# Hammerprice
+
+> Live auctions for graded trading cards, settled in USDC on Solana in one transaction.
+
+Hammerprice is a live auction room. Bids are signed by the bidder's wallet and checked against the bidder's USDC balance. A server clock closes each lot automatically, with anti-sniping. At the close, buyer and seller each sign one transaction that pays the seller in USDC, pays the 2.5% seller commission and moves the card to the buyer, all or nothing. The platform holds neither the money nor the card and has no key with authority over either. The catalogue on the landing page is read live from the Collector Crypt vault (more than 150,000 graded cards); the cards in the rooms are labelled devnet replicas.
+
+The site is bilingual. Every page exists under /en and /de. How it works, everything the platform does, verified randomness, the pitch, the FAQ and the founder are the sections of one page, /en/about.
+
+## Start here
+
+- [Functions](https://hammerprice-earn.vercel.app/en/about#features): everything the platform does, in one place.
+- [Verified randomness](https://hammerprice-earn.vercel.app/en/about#verify): what ECVRF is, how to check a draw, and a live proof of the house room.
+- [How it works](https://hammerprice-earn.vercel.app/en/about#how): six steps for the buyer, the seller and the room host.
+- [FAQ](https://hammerprice-earn.vercel.app/en/about#faq): what you need to bid (a Solana wallet and USDC, no SOL), fees, selling, what happens when you win, packs, chat, AI and Telegram.
+- [AI agent](https://hammerprice-earn.vercel.app/en/ai): searches lots and prepares a bid proposal or a listing draft; it never bids, you confirm every step.
+- [Legal](https://hammerprice-earn.vercel.app/en/legal): imprint, terms, privacy, fees and risks.
+- [Auction rooms](https://hammerprice-earn.vercel.app/en/rooms): the schedule and the live rooms.
+- [Pitch](https://hammerprice-earn.vercel.app/en/about#pitch): problem, solution, why it works and the hackathon.
+- [About us](https://hammerprice-earn.vercel.app/en/about#team): the founder, Farshad Shadjari of Future Webservice, Germany.
+
+## Facts
+
+- Operator: Future Webservice, Inhaber Farshad Shadjari, Germany. Contact: info@futurewebservice.de
+- Founder: Farshad Shadjari, a master's student in Business Computer Science (Wirtschaftsinformatik) at FernUniversität in Hagen.
+- Fees: the seller pays 2.5% of the hammer price. There is no buyer's premium. On devnet the platform pays the network fee.
+- Network: Solana devnet only. This deployment runs on devnet. One network setting moves the code to mainnet; it was never run.
+- Not built: durable-nonce signing for offline sellers, non-Core card standards, email and push notifications. Not offered: buy now (an engine and API route exist, no button).
+- Optional features in the code, off unless the operator switches them on: verifiable random lot order, timed auctions, live video, pre-moderated chat, AI drafts with an assistant, packs, Telegram alerts (opt-in; the bot exists, delivery tested against a stand-in Telegram only), an AI agent page that only proposes and never bids.
+- Deliberately cut: a platform-held transfer key, a human hammer, proxy bids, a custom on-chain program, a buyer's premium.
+- Ideathon: One of ten prize winners at Superteam Germany's Road to Colosseum Ideathon.
+- Source code: the repository is public and MIT licensed (see LICENSE).

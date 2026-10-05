@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Hammerprice: the schedule",
+    "description": "A demo room to learn how an auction works, and rooms that sellers create with their own wallet. Settled in USDC on Solana."
+  },
+  "kicker": "The schedule",
+  "title": "What is on the block.",
+  "explainer": "Sellers create rooms with their own wallet, and Hammerprice runs one demo room. In every room each lot closes by itself when its timer ends, and the winner and the seller sign one transaction: the USDC goes to the seller and the card goes to the winner.",
+  "loading": "Loading the schedule...",
+  "empty": "No rooms are live or scheduled right now.",
+  "emptySell": "Have a card to sell? Schedule a room.",
+  "error": "The schedule is unavailable right now. Please try again in a moment.",
+  "status": {
+    "live": "Live",
+    "scheduled": "Coming up",
+    "ended": "Ended"
+  },
+  "lots": "{count, plural, one {# lot} other {# lots}}",
+  "enter": "Enter the room",
+  "startsIn": "Starts in {time}",
+  "startingNow": "Starting now",
+  "noStartTime": "Start time not set",
+  "addToCalendar": "Add to calendar",
+  "endedResult": "{lots, plural, one {# lot} other {# lots}}, {sold} sold, {amount} in total",
+  "endedNoSale": "{lots, plural, one {# lot} other {# lots}}, none sold",
+  "badge": {
+    "house": "Run by Hammerprice",
+    "devnet": "Devnet",
+    "practice": "Practice room, simulated bidders"
+  },
+  "houseNone": {
+    "title": "The house room is between shows",
+    "body": "The demo room (the live house show) runs around the clock. The next show starts a few minutes after the last one ends. Try again in a moment, or look at the schedule.",
+    "rooms": "See all rooms",
+    "how": "How it works"
+  },
+  "houseNext": {
+    "title": "The next house show has not started yet",
+    "body": "The demo room is between shows: the next one starts at {time} UTC. Until then no room can take bids. Try again at that time, or open the room to wait there.",
+    "open": "Open the scheduled room"
+  },
+  "emptyHouse": "Open the demo room. You can watch without a wallet.",
+  "errorAuto": "This page tries again by itself every few seconds.",
+  "demo": {
+    "badge": "Demo",
+    "title": "Demo rooms (tutorial)",
+    "sentence": "Tutorial: practise bidding here. The labelled bots never outbid a person.",
+    "bots": "The labelled bots never outbid a person.",
+    "try": "Bid against the labelled bots. The higher bid wins. You can watch without a wallet.",
+    "open": "Open the demo room",
+    "tutorialLive": "Tutorial: how a live auction room works",
+    "tutorialTimed": "Tutorial: how a timed auction works",
+    "footer": "Done with the tutorial? Real rooms are below, or list your own card."
+  },
+  "sellers": {
+    "title": "Real rooms",
+    "lede": "Created by sellers with a wallet in the sell flow. The seller pays 2.5% of the sale price, and the buyer pays no premium.",
+    "empty": "Real rooms are created by sellers with their own wallet. Be the first: list a card.",
+    "secondWallet": "To try both sides on devnet, use a second wallet: create a room with one wallet in the sell flow, then open it with the other wallet, take test USDC and bid. The higher bid wins.",
+    "orDemo": "Or bid in the demo room above.",
+    "emptyTitle": "No real rooms right now",
+    "cta": "List your card",
+    "how": "How selling works",
+    "filterEmpty": "No real rooms match this filter."
+  }
+}

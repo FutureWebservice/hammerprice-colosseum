@@ -1,0 +1,39 @@
+{
+  "id": "7b1c2d3e-4f50-4a61-8b72-000000000001",
+  "purpose": "lot_order",
+  "subject": {
+    "type": "show",
+    "id": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10"
+  },
+  "status": "revealed",
+  "cluster": "devnet",
+  "publicKey": "6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q",
+  "params": {
+    "lots": [
+      {
+        "id": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+        "n": 1
+      }
+    ],
+    "show": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10",
+    "v": 1
+  },
+  "paramsHash": "481d657bbfca4074eff9f689b41d6dc7b90c8f593591018bf4160f6ed2c2999c",
+  "alphaText": "hammerprice vrf v1\ncluster: devnet\npurpose: lot_order\nsubject: 3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10\nparams: 481d657bbfca4074eff9f689b41d6dc7b90c8f593591018bf4160f6ed2c2999c\nbeacon: 345123400:6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q",
+  "beacon": {
+    "slot": 345123400,
+    "blockhash": "6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q"
+  },
+  "commitTx": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ",
+  "commitSlot": 345123366,
+  "revealBy": "2026-10-05T18:01:00.000Z",
+  "proofHex": "687ae0ee82548f397363d09e2b8a07c01d86e8319b75ac0695df0e29e97558303f203f17dea88db1d1805925fdeb901e45ccc97ebd05eb9d991a8d59aa73d6948cc23e772d2b6b7aecd69d805b14fd35",
+  "outputHex": "1d523c19abec6f68414228c4cc2cb26047321e9c1e21631894c3e0225ff5a4c9cb7f5eaadf743e36ffa58fca26b1c613fb1d10ea68871691d3f36a836f1cea8e",
+  "revealTx": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ",
+  "result": {
+    "order": [
+      "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11"
+    ],
+    "applied": true
+  }
+}

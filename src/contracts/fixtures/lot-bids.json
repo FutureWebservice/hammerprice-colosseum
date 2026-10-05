@@ -1,0 +1,26 @@
+{
+  "lot": {
+    "id": "1f2e3d4c-5b6a-4879-8a9b-0c1d2e3f4a5b",
+    "number": 3,
+    "name": "2003 Skyridge Growlithe #62 CGC 10",
+    "showId": "b4a5f3c2-6d1e-4c7a-9b8f-2e1d0c9a8b71"
+  },
+  "bids": [
+    {
+      "id": "7a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4d",
+      "amount": "20000000",
+      "placedAt": "2026-10-05T18:00:03.000Z",
+      "paddle": 7,
+      "message": "hammerprice bid v1",
+      "signature": "c2ln",
+      "signer": "session",
+      "signerPubkey": "HPDemoSe11er1111111111111111111111111111111"
+    }
+  ],
+  "settlement": {
+    "id": "5d4c3b2a-1f0e-4d9c-8b7a-6f5e4d3c2b1a",
+    "bidLogHash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "txSignature": null,
+    "cluster": "devnet"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "title": "What does this mean?",
+  "close": "Close",
+  "listTitle": "Glossary",
+  "faq": "More in the FAQ",
+  "terms": {
+    "usdc": {
+      "label": "USDC",
+      "text": "A digital dollar on Solana. Bids and payments are in USDC, a stablecoin tied to the US dollar."
+    },
+    "devnet": {
+      "label": "Devnet",
+      "text": "A separate Solana network used for trials. Your wallet must be switched to it."
+    },
+    "wallet": {
+      "label": "Wallet",
+      "text": "Your Solana wallet, such as Phantom. It holds your USDC and your cards. We never see its secret key."
+    },
+    "signature": {
+      "label": "Signature",
+      "text": "Your confirmation in the wallet. It proves the wallet is yours and approves one action. Your secret key stays secret."
+    },
+    "paddle": {
+      "label": "Bidding number",
+      "text": "Your number in the room. It lets you bid up to your limit without a wallet window for every bid. Also called a paddle."
+    },
+    "bid": {
+      "label": "Binding bid",
+      "text": "A bid is a promise you confirm. It is binding: if you hold the highest bid when the lot closes, payment is due."
+    },
+    "reserve": {
+      "label": "Minimum price",
+      "text": "The lowest price at which the seller will sell. If the top bid stays below it, the lot is not sold. Also called the reserve."
+    },
+    "hammer": {
+      "label": "Sold",
+      "text": "A lot is sold when its clock runs out and the top bid reaches the minimum price. The server clock decides, not a person."
+    },
+    "hammerPrice": {
+      "label": "Sale price",
+      "text": "The price a lot sold for: the top bid when its clock ran out. Also called the hammer price."
+    },
+    "antiSniping": {
+      "label": "Anti-sniping",
+      "text": "A bid in the last seconds extends the clock a little, up to a limit, so nobody wins by bidding at the very last moment."
+    },
+    "networkFee": {
+      "label": "Network fee",
+      "text": "The small fee the Solana network charges for every transaction. Hammerprice pays it."
+    },
+    "onChain": {
+      "label": "On-chain",
+      "text": "Recorded publicly on the Solana blockchain, where anyone can check it and nobody can quietly change it."
+    },
+    "transaction": {
+      "label": "Transaction",
+      "text": "A bundle of steps the network runs all together or not at all."
+    },
+    "settlement": {
+      "label": "Payment and handover",
+      "text": "The last step of a sale, when the money and the card change hands. Also called settlement."
+    },
+    "memo": {
+      "label": "Memo",
+      "text": "A short note attached to a payment on the blockchain. Ours holds a fingerprint of the bids, so anyone can recheck the sale."
+    },
+    "verify": {
+      "label": "Verify",
+      "text": "To check something yourself. Verifying your wallet is a free confirmation. The audit page rechecks the bids of a sale."
+    },
+    "ecvrf": {
+      "label": "ECVRF",
+      "text": "A random draw that comes with a public proof, so anyone can check that the result was not picked by hand."
+    },
+    "testUsdc": {
+      "label": "Test USDC",
+      "text": "Free USDC for trying the site out. You can claim it in the room."
+    },
+    "replica": {
+      "label": "Replica",
+      "text": "A card that is marked as a replica in the demo rooms. It stands in for the original."
+    }
+  }
+}

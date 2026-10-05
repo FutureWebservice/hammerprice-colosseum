@@ -1,0 +1,310 @@
+/*
+ * The explain bubble and modal. Self-contained: this mounts on every page including the
+ * room, which loads neither hammerprice.css nor Header's fonts, so the palette and font
+ * names are declared locally here rather than assumed from an ancestor `.hp`. Where
+ * 'Instrument Serif' / 'Geist' / 'Geist Mono' *are* already loaded (every page but the room,
+ * via Header - see Header.tsx) the named font is picked up for free; where they are not,
+ * the fallback stack carries it.
+ */
+.ex-bubble,
+.ex-overlay,
+.ex-wallet,
+.ex-page {
+  --ex-ink: #0e1116;
+  --ex-baize: #14342b;
+  --ex-baize-lt: #1d4a3c;
+  --ex-brass: #c8a44d;
+  --ex-brass-br: #e8c776;
+  --ex-paper: #f4f0e6;
+  --ex-ink-text: #1a1a17;
+  --ex-slate: #9aa0a6;
+  --ex-serif: var(--font-serif), ui-serif, Georgia, serif;
+  --ex-sans: var(--font-sans), ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+  --ex-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* --- the bubble --- */
+.ex-bubble {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147480000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 12px;
+  border: 1px solid var(--ex-brass);
+  border-radius: 999px;
+  background: var(--ex-ink);
+  color: var(--ex-brass-br);
+  font-family: var(--ex-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: background-color 0.15s, transform 0.15s, border-color 0.15s;
+}
+.ex-bubble:hover {
+  background: var(--ex-baize);
+  border-color: var(--ex-brass-br);
+}
+.ex-bubble:focus-visible {
+  outline: 2px solid var(--ex-brass-br);
+  outline-offset: 2px;
+}
+.ex-bubble svg {
+  width: 18px;
+  height: 18px;
+  color: var(--ex-brass);
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .ex-bubble { right: 12px; bottom: 12px; padding: 10px 14px 10px 10px; }
+}
+
+/* --- the overlay + dialog --- */
+.ex-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147481000;
+  background: rgba(6, 8, 10, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.ex-dialog {
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  background: var(--ex-ink);
+  border: 1px solid rgba(200, 164, 77, 0.35);
+  border-radius: 6px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  outline: none;
+}
+.ex-dialog-head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  background: var(--ex-ink);
+  border-bottom: 1px solid #1c2620;
+}
+.ex-dialog-head h2 {
+  margin: 0;
+  font-family: var(--ex-serif);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--ex-paper);
+}
+.ex-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ex-slate);
+  cursor: pointer;
+}
+.ex-close:hover { color: var(--ex-paper); border-color: rgba(200, 164, 77, 0.35); }
+.ex-close:focus-visible { outline: 2px solid var(--ex-brass); outline-offset: 1px; }
+.ex-close svg { width: 16px; height: 16px; }
+
+/* --- shared content: tabs, panels, faq --- */
+.ex-content { padding: 6px 20px 22px; font-family: var(--ex-sans); }
+.ex-page .ex-content { padding: 0; }
+
+.ex-tabs { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid #1c2620; }
+.ex-tab {
+  padding: 9px 4px 10px;
+  margin-right: 18px;
+  border: none;
+  background: transparent;
+  color: var(--ex-slate);
+  font-family: var(--ex-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.ex-tab.is-active { color: var(--ex-brass-br); border-bottom-color: var(--ex-brass); }
+.ex-tab:focus-visible { outline: 2px solid var(--ex-brass); outline-offset: 2px; }
+
+.ex-panel { min-height: 220px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.ex-panel-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--ex-brass);
+  padding: 10px;
+  border: 1px solid rgba(200, 164, 77, 0.3);
+  border-radius: 6px;
+  background: var(--ex-baize);
+}
+.ex-panel-icon svg { width: 100%; height: 100%; }
+.ex-panel-title {
+  margin: 0;
+  font-family: var(--ex-serif);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--ex-paper);
+}
+.ex-panel-body { margin: 0; color: #c9d1cd; font-size: 14.5px; line-height: 1.55; max-width: 46ch; }
+
+.ex-dots { display: flex; gap: 0; margin-top: 12px; }
+/* 24 px hit area (WCAG 2.5.8) around an 8 px dot drawn by the pseudo-element. */
+.ex-dot {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.ex-dot::before {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  margin: 8px;
+  border: 1px solid var(--ex-brass);
+  border-radius: 50%;
+}
+.ex-dot.is-active::before { background: var(--ex-brass); }
+.ex-dot:focus-visible { outline: 2px solid var(--ex-brass-br); outline-offset: 2px; }
+
+.ex-panel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #1c2620;
+}
+.ex-nav-btn {
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 1px solid var(--ex-brass);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ex-brass-br);
+  font-family: var(--ex-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ex-nav-btn:hover:not(:disabled) { background: rgba(200, 164, 77, 0.12); }
+.ex-nav-btn:disabled { opacity: 0.35; cursor: default; }
+.ex-nav-btn:focus-visible { outline: 2px solid var(--ex-brass-br); outline-offset: 2px; }
+.ex-step {
+  font-family: var(--ex-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: var(--ex-slate);
+}
+
+.ex-faq { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.ex-faq-item { border-bottom: 1px solid #1c2620; padding-bottom: 14px; }
+.ex-faq-item dt {
+  font-family: var(--ex-serif);
+  font-weight: 400;
+  font-size: 16.5px;
+  color: var(--ex-paper);
+  margin-bottom: 5px;
+}
+.ex-faq-item dd { margin: 0; color: #b9c3be; font-size: 14px; line-height: 1.5; }
+
+/* --- the standalone page head and close (the AI page; /about uses pitch.css) --- */
+.ex-page { background: var(--ex-ink); }
+
+.ex-page-head {
+  max-width: 760px; margin: 0 auto; padding: 72px 24px 56px;
+}
+.ex-page-kicker {
+  font-family: var(--ex-mono); font-size: 11px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ex-brass); margin: 0 0 18px;
+}
+.ex-page-rule { height: 2px; width: 56px; background: var(--ex-brass); margin: 0 0 22px; }
+.ex-page h1 {
+  font-family: var(--ex-serif); font-weight: 400; font-size: clamp(36px, 6.4vw, 58px);
+  line-height: 1.03; letter-spacing: -.01em; margin: 0 0 18px; color: var(--ex-paper);
+  text-wrap: balance;
+}
+.ex-page-intro { max-width: 58ch; font-size: 19px; line-height: 1.5; color: #c9d1cd; margin: 0 0 14px; }
+.ex-page-lede { max-width: 58ch; font-size: 14px; color: var(--ex-slate); margin: 0; }
+
+/* --- the close --- */
+.ex-page-close { max-width: 680px; margin: 0 auto; padding: 8px 24px 96px; }
+.ex-page-close h2 {
+  font-family: var(--ex-serif); font-weight: 400; font-size: 26px;
+  margin: 0 0 14px; color: var(--ex-paper);
+}
+.ex-page-close p { max-width: 60ch; font-size: 16px; line-height: 1.6; color: #c9d1cd; margin: 0 0 30px; }
+.ex-cta {
+  display: inline-block; padding: 13px 28px; background: var(--ex-brass); color: var(--ex-ink);
+  font-family: var(--ex-mono); font-size: 12px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; text-decoration: none; border-radius: 2px;
+  transition: background-color .15s ease;
+}
+.ex-cta:hover, .ex-cta:focus-visible { background: var(--ex-brass-br); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ex-bubble, .ex-nav-btn, .ex-cta { transition: none !important; }
+}
+
+/* The second door out of the closing section: quieter than .ex-cta on purpose, because a reader
+   who got this far wants the argument, not another button competing with the one above it. */
+.ex-page-secondary {
+  margin: 18px 0 0;
+  font-family: var(--ex-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: var(--ex-slate);
+}
+.ex-page-secondary a {
+  color: var(--ex-brass);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 164, 77, 0.4);
+}
+.ex-page-secondary a:hover,
+.ex-page-secondary a:focus-visible { border-bottom-color: var(--ex-brass); }
+
+
+/* ---------- the about blocks (the AI page uses them) and the wallet help ---------- */
+.ex-about { max-width: 760px; margin: 0 auto; padding: 40px 24px; border-top: 1px solid #1c2620; }
+.ex-about h2,
+.ex-about h3 {
+  font-family: var(--ex-serif); font-weight: 400; font-size: clamp(24px, 3.2vw, 32px);
+  letter-spacing: -.01em; margin: 0 0 18px; color: var(--ex-paper);
+}
+.ex-about p { max-width: 62ch; font-size: 16.5px; line-height: 1.65; color: #c9d1cd; margin: 0 0 16px; }
+.ex-about a, .ex-wallet a { color: var(--ex-brass-br); text-underline-offset: 3px; }
+.ex-about-note { font-size: 14px !important; color: var(--ex-slate) !important; }
+.ex-wallet { padding: 28px 0 0; border-top: 1px solid #1c2620; }
+.ex-wallet h2, .ex-wallet h3 {
+  font-family: var(--ex-serif); font-weight: 400; font-size: clamp(24px, 3.2vw, 32px);
+  margin: 0 0 12px; color: var(--ex-paper); scroll-margin-top: 72px;
+}
+.ex-wallet-lede { max-width: 60ch; font-size: 16.5px; line-height: 1.6; color: #c9d1cd; margin: 0 0 16px; }
+.ex-wallet-steps { max-width: 62ch; margin: 0 0 20px; padding-left: 22px; list-style: decimal; color: #c9d1cd; line-height: 1.6; font-size: 15.5px; }
+.ex-wallet-steps li { margin-bottom: 8px; }
+.ex-wallet-links { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.ex-wallet a.ex-wallet-link {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; text-decoration: none;
+  font-family: var(--ex-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ex-brass-br); border: 1px solid var(--ex-brass); border-radius: 2px;
+}
+.ex-wallet a.ex-wallet-link:hover, .ex-wallet a.ex-wallet-link:focus-visible { background: rgba(200, 164, 77, .14); outline: 2px solid var(--ex-brass-br); outline-offset: 2px; }
+.ex-wallet-mobile { max-width: 62ch; font-size: 14.5px; line-height: 1.6; color: var(--ex-slate); margin: 0 0 10px; }
+.ex-wallet-more { margin: 0; font-size: 14.5px; }
+.ex-wallet-more a { display: inline-block; padding: 6px 0; }

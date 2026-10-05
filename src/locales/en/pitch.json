@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "title": "The hammer is the payment",
+    "description": "Live auctions for graded trading cards on Solana: bid in live rooms, pay in one USDC transaction, sell your own card. Live in beta."
+  },
+  "eyebrow": "Live card auctions on Solana",
+  "headline": {
+    "before": "The hammer ",
+    "em": "is",
+    "after": " the payment."
+  },
+  "tagline": "The live auction room for graded trading cards.",
+  "cta": {
+    "room": "Enter a live room",
+    "sell": "Sell a card",
+    "verify": "Check the randomness"
+  },
+  "langSwitch": "Read this in German",
+  "how": {
+    "kicker": "How it works",
+    "heading": "Six steps, three roles.",
+    "intro": "Whether you buy, sell or host a room, this is the whole path. Everything happens in your own wallet.",
+    "roles": {
+      "all": "Everyone",
+      "buyer": "Buyer",
+      "seller": "Seller",
+      "host": "Room host"
+    },
+    "steps": [
+      {
+        "roles": [
+          "all"
+        ],
+        "title": "Connect your wallet",
+        "body": "Open Hammerprice in a browser with a Solana wallet, sign in with a free signature and hold some USDC in it.",
+        "link": {
+          "label": "Wallet help",
+          "href": "#wallet"
+        }
+      },
+      {
+        "roles": [
+          "seller"
+        ],
+        "title": "Pick a card and set the terms",
+        "body": "In Sell, choose a graded card from your wallet and set the price, an optional minimum price and the lot length.",
+        "link": {
+          "label": "Sell a card",
+          "href": "/sell"
+        }
+      },
+      {
+        "roles": [
+          "host"
+        ],
+        "title": "Run your room",
+        "body": "Your room is live as soon as you start it. You can pause and resume it, and you moderate its chat.",
+        "link": null
+      },
+      {
+        "roles": [
+          "buyer"
+        ],
+        "title": "Place a bid",
+        "body": "Open a room, choose the next bid or a quick raise and confirm with one signature.",
+        "link": {
+          "label": "Enter a live room",
+          "href": "/room/house"
+        }
+      },
+      {
+        "roles": [
+          "buyer",
+          "seller"
+        ],
+        "title": "The hammer pays",
+        "body": "When the clock ends, the highest bid wins if it reaches the minimum price. The winner then confirms one payment in their wallet.",
+        "link": {
+          "label": "How the payment works",
+          "href": "#features"
+        }
+      },
+      {
+        "roles": [
+          "all"
+        ],
+        "title": "Check it yourself",
+        "body": "Public audit pages and proof pages let you recompute a sale or a draw in your browser, so you do not have to trust us.",
+        "link": {
+          "label": "Verified randomness",
+          "href": "#verify"
+        }
+      }
+    ]
+  },
+  "showcase": {
+    "kicker": "Seen",
+    "heading": "The product in ten screens.",
+    "intro": "Screenshots of the current build with sample accounts. No real wallet addresses or e-mail addresses are shown.",
+    "items": [
+      {
+        "id": "landing",
+        "frame": "desktop",
+        "src": "/pitch/en/landing.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "The front door",
+        "body": "The homepage with real vault cards.",
+        "alt": "The Hammerprice homepage: the logo, the headline The hammer is the payment, and graded cards from the vault."
+      },
+      {
+        "id": "journeys",
+        "frame": "desktop",
+        "src": "/pitch/en/journeys.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Six things you can do",
+        "body": "Six journeys, each with a button.",
+        "alt": "The homepage section What you can do on Hammerprice with journey blocks and short steps."
+      },
+      {
+        "id": "rooms",
+        "frame": "desktop",
+        "src": "/pitch/en/rooms.webp",
+        "width": 1600,
+        "height": 1250,
+        "title": "Tutorial rooms first, real rooms next",
+        "body": "Demo rooms on top, seller rooms below.",
+        "alt": "The rooms page: demo rooms labelled as tutorial above the real rooms created by sellers."
+      },
+      {
+        "id": "room",
+        "frame": "desktop",
+        "src": "/pitch/en/room.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "A live room",
+        "body": "Stage, bid slab and live feed.",
+        "alt": "A live auction room with the card on stage, the current bid, the bid buttons and the live feed."
+      },
+      {
+        "id": "pay",
+        "frame": "desktop",
+        "src": "/pitch/en/pay.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "The pay dialog",
+        "body": "Readable before you sign.",
+        "alt": "The payment dialog after a win: one transaction that pays the seller and moves the card to the buyer."
+      },
+      {
+        "id": "chat",
+        "frame": "desktop",
+        "src": "/pitch/en/chat.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "The moderated chat",
+        "body": "The owner's approval popup.",
+        "alt": "The room chat with a popup for the room owner showing a waiting message and the buttons to approve or reject it."
+      },
+      {
+        "id": "agent",
+        "frame": "desktop",
+        "src": "/pitch/en/agent.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "The AI agent",
+        "body": "It proposes, you decide.",
+        "alt": "The AI agent page: a conversation in which the agent shows lot cards and a bid proposal that the user still has to confirm."
+      },
+      {
+        "id": "profile",
+        "frame": "desktop",
+        "src": "/pitch/en/profile.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Your profile",
+        "body": "Shown with sample data.",
+        "alt": "The profile page with a username and avatar, sample bids and wins, and the notification settings."
+      },
+      {
+        "id": "wallet",
+        "frame": "desktop",
+        "src": "/pitch/en/wallet.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Your wallet at a glance",
+        "body": "Balances and cards.",
+        "alt": "The wallet tab of the profile with the USDC and SOL balance and the cards in the connected wallet."
+      },
+      {
+        "id": "mobile",
+        "frame": "phone",
+        "src": "/pitch/en/mobile.webp",
+        "width": 780,
+        "height": 1690,
+        "title": "Made for the phone",
+        "body": "The homepage at 390 px.",
+        "alt": "The homepage on a phone: logo, headline and the first buttons in a single column."
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Everything in the platform",
+    "heading": "What Hammerprice does.",
+    "intro": "One place for every function, in plain words.",
+    "items": [
+      {
+        "title": "Rooms and live bidding",
+        "body": "A live room sells its lots one after another on a server clock, so your device's clock does not matter, and a bid is a signed message that the server checks against your USDC. The house runs tutorial rooms and sellers create the real ones, in two sections on the rooms page. A seller can add optional live video; nothing loads until you press Load live video.",
+        "link": {
+          "label": "See the rooms",
+          "href": "/rooms"
+        }
+      },
+      {
+        "title": "One-transaction settlement",
+        "body": "The winner approves one payment: USDC to the seller, the fee and the card to the winner, all or nothing, as one atomic Solana transaction that costs a fraction of a cent, with no bridge and no custom program.",
+        "link": null
+      },
+      {
+        "title": "Timed auctions",
+        "body": "A card can stay open from one hour to seven days and closes by itself at its deadline, and the winner gets a longer window to pay.",
+        "link": null
+      },
+      {
+        "title": "Selling wizard with AI draft",
+        "body": "The sell wizard drafts a title and a German and an English text with AI for you to review before you go live.",
+        "link": {
+          "label": "Sell a card",
+          "href": "/sell"
+        }
+      },
+      {
+        "title": "Pre-moderated chat",
+        "body": "A message waits for approval: the room owner gets a popup with a preview and approves, rejects, mutes or blocks. Links and contact details are refused, the public list shows a bidder number, never a wallet, and visitors can report a message.",
+        "link": null
+      },
+      {
+        "title": "An AI agent that never bids",
+        "body": "On the AI page an agent finds open lots, prepares a bid and drafts a listing; in a room an assistant answers from a fixed FAQ. Everything is labelled AI, a signed-in wallet is required and you confirm every step yourself.",
+        "link": {
+          "label": "Open the AI page",
+          "href": "/ai"
+        }
+      },
+      {
+        "title": "Telegram bot with alerts",
+        "body": "@hammerpricebot tells you when you are outbid, when you win and when a payment is due. Connect it in your profile with Connect Telegram; it is opt-in, needs no phone number and never bids for you.",
+        "link": null
+      },
+      {
+        "title": "/watch and pre-filled bid links",
+        "body": "Send /watch to the bot (for example /watch 5 or /watch all) and get one short message when each of the next lots of a room opens. Its button opens the room with the bid filled in, and you confirm and sign in your own wallet.",
+        "link": null
+      },
+      {
+        "title": "Packs with published odds",
+        "body": "A pack is a draw from a public pool of cards. The odds, the pool and a commitment hash are public before the first sale.",
+        "link": {
+          "label": "How packs are paid",
+          "href": "#faq"
+        }
+      },
+      {
+        "title": "Profile and wallet",
+        "body": "A username and a picture, your bids, wins and sales, your notification settings, and the USDC and SOL balance and the cards of your connected wallet. A balance the network does not answer shows as not available, never as a guess.",
+        "link": {
+          "label": "Open your profile",
+          "href": "/account"
+        }
+      },
+      {
+        "title": "Verified randomness (ECVRF)",
+        "body": "Lot orders and pack draws come with a public random proof (ECVRF) that anyone can recompute.",
+        "link": {
+          "label": "How to check it",
+          "href": "#verify"
+        }
+      },
+      {
+        "title": "Public audit pages",
+        "body": "Every paid lot has a public audit page at /verify/ followed by the lot id, linked from the win dialog and the settlement review.",
+        "link": {
+          "label": "What it proves",
+          "href": "#faq"
+        }
+      },
+      {
+        "title": "German and English",
+        "body": "The whole site, the Telegram bot and the assistant's answers are available in German and English, with one switch in the header.",
+        "link": null
+      },
+      {
+        "title": "Wallet support",
+        "body": "Phantom, Solflare and Backpack are supported.",
+        "link": {
+          "label": "Wallet help",
+          "href": "#wallet"
+        }
+      }
+    ]
+  },
+  "ledgerLabels": {
+    "vault": "Vault items, live",
+    "commission": "Seller commission",
+    "commissionValue": "2.5",
+    "premium": "Buyer's premium",
+    "premiumValue": "0",
+    "custody": "Client funds we hold"
+  },
+  "verify": {
+    "kicker": "Verified randomness",
+    "heading": "Randomness you can check.",
+    "what": "Where Hammerprice needs a random result, such as the order of the lots in a show or the card drawn from a pack, it does not pick the result itself. It commits to the input on the Solana chain, waits for a block it cannot know in advance and draws with a verifiable random function (ECVRF, RFC 9381). The result comes with a cryptographic proof, so nobody, including us, can steer it, and anyone can recompute it.",
+    "howHeading": "How to check it",
+    "steps": [
+      "Open a proof page: press See the proof in a room, or use the live example on this page.",
+      "Press Recompute it yourself. Your browser rebuilds the input, checks the proof against the published public key and derives the result.",
+      "Compare: the lot order or the pack card the page derives must equal the one shown in the room. The commit and reveal transactions link to the Solana explorer."
+    ],
+    "live": {
+      "heading": "See it live",
+      "body": "The house room's lot order is drawn with this proof. Open the latest one.",
+      "cta": "Open the live proof",
+      "ctaFallback": "Open the house room",
+      "fallbackBody": "The house room shows a See the proof link under its lot list as soon as its lot order has been drawn.",
+      "room": "Go to the house room"
+    },
+    "also": [
+      "Every drawn pack has its own proof page at /verify/packs/ followed by the draw id."
+    ]
+  },
+  "why": {
+    "kicker": "The pitch",
+    "heading": "Problem and solution.",
+    "blocks": [
+      {
+        "title": "The problem",
+        "body": "More than 150,000 graded cards already sit as NFTs on Solana, tokenised by the Collector Crypt vault, and there is no live market for them. In a traditional card auction the hammer only starts the paperwork: a payout queue, a chargeback window, a shipping label. The seller is owed the money at the moment of the sale and waits days for it.",
+        "points": []
+      },
+      {
+        "title": "The solution",
+        "body": "Hammerprice makes the sale and the payout one step for vaulted cards.",
+        "points": []
+      }
+    ]
+  },
+  "submission": {
+    "linksLabel": "Links",
+    "links": [
+      {
+        "label": "Homepage",
+        "href": "/"
+      },
+      {
+        "label": "Auction rooms",
+        "href": "/rooms"
+      },
+      {
+        "label": "AI agent",
+        "href": "/ai"
+      },
+      {
+        "label": "Founder",
+        "href": "/about#team"
+      }
+    ]
+  }
+}

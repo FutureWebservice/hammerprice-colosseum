@@ -1,0 +1,7 @@
+{
+  "purchaseId": "7b1c2d3e-4f50-4a61-8b72-000000000006",
+  "status": "settled",
+  "balance": 10,
+  "txSignature": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ",
+  "explorerUrl": "https://explorer.solana.com/tx/36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ?cluster=devnet"
+}

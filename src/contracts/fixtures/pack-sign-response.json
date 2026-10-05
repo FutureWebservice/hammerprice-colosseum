@@ -1,0 +1,32 @@
+{
+  "step": "awaiting_counterparty",
+  "draw": {
+    "id": "7b1c2d3e-4f50-4a61-8b72-000000000030",
+    "packId": "7b1c2d3e-4f50-4a61-8b72-000000000020",
+    "drawIndex": 0,
+    "status": "reserved",
+    "cluster": "devnet",
+    "buyer": "3Cv8UNdmzgmNFGNo6U7iAMHjf3wv6679SZV3BfTWwdiU",
+    "clientSeed": "d8256379b805a63c6f012ec85a54a7de",
+    "poolHash": "360f330fbc77216eafabe884ca37b606c258f648afdae561b40176bcf24a5a94",
+    "vrf": {
+      "requestId": "7b1c2d3e-4f50-4a61-8b72-000000000021",
+      "status": "revealed",
+      "input": "hammerprice vrf v1\npurpose: pack_draw\nsubject: 7b1c2d3e-4f50-4a61-8b72-000000000030\npool: 360f330fbc77216eafabe884ca37b606c258f648afdae561b40176bcf24a5a94",
+      "proofHex": "43d63235d99cc17b79b643da38a0dbbd7418cec58c2d5630a4c9e46dd14efd5e236d40c4157aab006f23bee7f73f9407f4a8942226aba2b28ade8040dbf183f78e84919dbbd720589cac048593e98c88",
+      "outputHex": "cd39b14da7066c47b3a9935d14e70e3933a55ccef51a8d5ff93401114d615f468eb61bb4f0a837f939f6af4cc42fcde0d71f873026295e191f35b4fa77051d69"
+    },
+    "tier": "uncommon",
+    "card": {
+      "asset": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "name": "Pikachu PSA 9",
+      "imageUrl": null,
+      "tier": "uncommon"
+    },
+    "price": "5000000",
+    "settlementRef": "hp:pack:7b1c2d3e-4f50-4a61-8b72-000000000030:360f330fbc77216eafabe884ca37b606c258f648afdae561b40176bcf24a5a94",
+    "txSignature": null,
+    "createdAt": "2026-10-05T18:10:00.000Z",
+    "settledAt": null
+  }
+}

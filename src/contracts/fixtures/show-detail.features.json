@@ -1,0 +1,44 @@
+{
+  "show": {
+    "id": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10",
+    "title": "House show, devnet replicas",
+    "format": "auction",
+    "mode": "auto",
+    "status": "live",
+    "scheduledAt": "2026-10-05T17:59:00.000Z",
+    "startedAt": "2026-10-05T17:59:05.000Z",
+    "endedAt": null,
+    "settlementMode": "onchain",
+    "cluster": "devnet",
+    "isHouse": true,
+    "kind": "timed",
+    "orderMode": "vrf",
+    "video": {
+      "enabled": true
+    }
+  },
+  "lots": [
+    {
+      "id": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+      "lotNumber": 1,
+      "name": "Charizard ex 199/165",
+      "setName": "Scarlet & Violet 151",
+      "gradingCompany": "PSA",
+      "grade": "10",
+      "imageUrl": "https://d1xpxki1g4htqu.cloudfront.net/cards/charizard-ex-199.png",
+      "insuredValue": "250000000",
+      "reserve": "100000000",
+      "increment": "5000000",
+      "openingPrice": "50000000",
+      "buyNowPrice": null,
+      "mintAddress": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "nftStandard": "core",
+      "consignStatus": "ready",
+      "description": {
+        "de": "Beschreibung des Verkäufers: PSA 10, Scarlet & Violet 151, ohne weitere Angaben.",
+        "en": "Seller's description: PSA 10, Scarlet & Violet 151, nothing more."
+      },
+      "aiAssisted": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "code": "rate_limited",
+  "reason": "Too many requests. Try again shortly.",
+  "retryAfterS": 2
+}

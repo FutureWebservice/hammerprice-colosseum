@@ -1,0 +1,59 @@
+{
+  "tour": {
+    "label": "Quick tour",
+    "progress": "Step {n} of {total}",
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "done": "Done",
+    "steps": {
+      "stage": "This is the card currently on the block.",
+      "clock": "The server's clock ends the lot. A late bid extends it.",
+      "bid": "Place your bid here. A bid is binding.",
+      "rail": "All lots in this auction, with price and status.",
+      "sellSteps": "Selling takes three steps: pick your cards, set the price, choose the time.",
+      "sellStep": "Each step asks for little. What you rarely need sits under Advanced options.",
+      "sellPublish": "Move between the steps here. Nothing is public until you publish on the last step.",
+      "help": "You can replay this tour any time under Help."
+    }
+  },
+  "help": {
+    "button": "Help",
+    "label": "Help and explanations",
+    "replay": "Replay the tour",
+    "glossary": "What do these words mean?",
+    "wallet": "Help with your wallet",
+    "faq": "Questions and answers"
+  },
+  "nextStep": {
+    "label": "Your next step",
+    "noWallet": "Connect your wallet to bid.",
+    "notVerified": "Confirm that the wallet is yours (free).",
+    "noFunds": "Get free test USDC.",
+    "noFundsMain": "Add USDC to your wallet.",
+    "noPaddle": "Start bidding: one more signature, no payment.",
+    "ready": "Place a bid on the current lot.",
+    "leading": "You are leading. If nobody outbids you, the lot is yours.",
+    "outbid": "You were outbid. Bid again or wait for the next lot.",
+    "won": "You won. Pay now, the deadline is running.",
+    "paying": "Confirm in your wallet. Then the card is yours.",
+    "waitingSeller": "We are waiting for the seller's signature.",
+    "confirming": "Payment sent. We are waiting for the confirmation.",
+    "done": "Done. The card is in your wallet.",
+    "showEnded": "This show has ended. See all lots in the list.",
+    "notOpen": "The room is not open yet. You are ready."
+  },
+  "hint": {
+    "title": "What your wallet shows next",
+    "caveat": "Your wallet may show its own notes.",
+    "why": "Why does my wallet ask this?",
+    "signin": "Your wallet will ask for a free confirmation next, and it moves no money.",
+    "paddle": "One more free confirmation, with no payment, so your bidding number can bid up to your limit without a wallet window for each bid.",
+    "pay": "Your wallet shows how much USDC you send, so check the amount before you confirm.",
+    "consign": "No confirmation is needed here, we only check that the card is in your wallet.",
+    "credits": "A payment of 1 USDC to Hammerprice for 10 AI drafts."
+  },
+  "advanced": {
+    "title": "Advanced options"
+  }
+}

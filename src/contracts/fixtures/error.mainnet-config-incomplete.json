@@ -1,0 +1,5 @@
+{
+  "ok": false,
+  "code": "mainnet_config_incomplete",
+  "reason": "This deployment is not fully set up for mainnet-beta yet (missing: SOLANA_RPC_URL). Nothing was sent."
+}

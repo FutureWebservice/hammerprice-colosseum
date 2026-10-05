@@ -1,0 +1,20 @@
+/* Telegram panel on the account page. Uses the account page's own tokens (.sl). */
+.tg { margin: 26px 0; max-width: 72ch; scroll-margin-top: 80px; }
+.tg-types { list-style: none; margin: 10px 0 14px; padding: 0; display: grid; gap: 8px; }
+.tg-type {
+  display: flex; align-items: flex-start; gap: 12px; min-height: 44px; padding: 10px 12px; cursor: pointer;
+  background: var(--sl-card); border: 1px solid rgba(255, 255, 255, .08); border-radius: 4px;
+}
+.tg-type input { flex: none; width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--brass); cursor: pointer; }
+.tg-type input:focus-visible { outline: 2px solid var(--brass-br); outline-offset: 2px; }
+.tg-type strong { display: block; font-weight: 600; }
+.tg-type .sl-hint { display: block; margin-top: 2px; font-size: 13px; }
+.tg-fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.tg-fieldset legend { padding: 0; font-size: 14px; color: var(--sl-dim); }
+
+/* Highlight after a link that points here (?telegram=open). Reduced motion: the same outline, no animation. */
+.tg--flash { outline: 2px solid var(--brass-br); outline-offset: 8px; border-radius: 4px; animation: tg-flash 2.4s ease-out 1; }
+@keyframes tg-flash { 0% { background: rgba(212, 175, 55, .22); } 100% { background: transparent; } }
+@media (prefers-reduced-motion: reduce) { .tg--flash { animation: none; } }
+.tg:focus { outline: none; }
+.tg:focus-visible, .tg.tg--flash { outline: 2px solid var(--brass-br); outline-offset: 8px; }

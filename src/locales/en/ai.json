@@ -1,0 +1,233 @@
+{
+  "badge": {
+    "draft": "AI draft, seller reviews",
+    "template": "Template, not AI text",
+    "ai": "AI assistant: picks the matching answer from our FAQ",
+    "faq": "Suggestion from the FAQ"
+  },
+  "credits": {
+    "heading": "AI draft",
+    "freeNote": "AI is free during the judging period. No credits are needed.",
+    "balance": "{count} drafts left",
+    "balanceOne": "1 draft left",
+    "none": "No drafts left",
+    "packTest": "10 drafts for 1 test USDC (no value)",
+    "packReal": "10 drafts for 1 USDC",
+    "buy": "Buy a pack",
+    "needWallet": "Connect your wallet to buy drafts.",
+    "step": {
+      "quote": "Preparing the payment…",
+      "check": "Checking the payment…",
+      "sign": "Please confirm in your wallet.",
+      "send": "Sending the payment…",
+      "wait": "Waiting for the network to confirm…"
+    },
+    "bought": "Bought: 10 drafts. Balance: {count}.",
+    "explorer": "View transaction",
+    "limitReached": "You cannot buy more packs today. Try again tomorrow.",
+    "insufficient": "Your wallet does not hold enough USDC for this.",
+    "expired": "The time to confirm has run out. Please start the purchase again.",
+    "rejected": "You rejected the purchase in your wallet. Nothing was paid.",
+    "mismatch": "The payment did not match what was expected and was not sent.",
+    "failed": "The purchase failed. Nothing was credited. Please try again.",
+    "unavailable": "The network is not answering right now. Please try again in a moment.",
+    "noKey": "No AI access is set up at the moment. You get free templates."
+  },
+  "listing": {
+    "title": "AI draft for the description (optional)",
+    "intro": "Get a title and a description suggested. You review the text and adopt it yourself.",
+    "card": "Card",
+    "estimate": "Your estimate in USDC (optional)",
+    "estimateHint": "We calculate a suggestion for the opening price from it. It is not a valuation of the card.",
+    "notes": "Notes (optional)",
+    "notesHint": "Details about the card only, no personal data.",
+    "photos": "Photos (optional, up to 3)",
+    "photosHint": "Photos are shrunk in your browser, without location data, and not stored.",
+    "addPhoto": "Add a photo",
+    "removePhoto": "Remove photo",
+    "photoBad": "This photo cannot be used (JPEG, PNG or WebP).",
+    "create": "Create draft (1 draft)",
+    "createTemplate": "Create template (free)",
+    "creating": "Creating the draft…",
+    "result": {
+      "heading": "Your draft",
+      "titleDe": "Title (German)",
+      "titleEn": "Title (English)",
+      "descDe": "Description (German)",
+      "descEn": "Description (English)",
+      "opening": "Suggested opening price: {amount} USDC",
+      "openingNote": "A suggestion, not a valuation.",
+      "useOpening": "Set the opening price of this card to {amount}",
+      "reviewed": "I have reviewed the text.",
+      "apply": "Use the description for this card",
+      "applied": "Adopted. The description is now on this card.",
+      "left": "{count} drafts left",
+      "templateNote": "This is a template made from your details, not AI text. It costs no credit.",
+      "fellBack": "The AI draft was not possible. You get a template, and your balance is unchanged."
+    },
+    "errors": {
+      "notACard": "This does not look like a trading card. No draft was made and nothing was charged.",
+      "rate": "Too many drafts in a short time. Please wait a moment.",
+      "already": "This draft was already requested. Create a new one if you need to.",
+      "generic": "The draft could not be created. Nothing was charged."
+    },
+    "usedForCard": "Draft for: {name}"
+  },
+  "ask": {
+    "buttonSell": "Help with selling",
+    "titleSell": "Help with listing",
+    "introSell": "Ask a question about selling. Only you see the answer.",
+    "placeholder": "Your question",
+    "send": "Ask",
+    "asking": "One moment…",
+    "onlyYou": "Only visible to you",
+    "noAdvice": "The assistant gives no advice. It only picks answers from the FAQ.",
+    "examples": "For example",
+    "example1Sell": "How do I list a card?",
+    "example2Sell": "What does the AI draft cost?",
+    "example3Sell": "How do I find the opening price?",
+    "faqLink": "Go to the FAQ",
+    "contactLink": "Contact",
+    "wrongAnswer": "Was that the right answer? If not, rephrase the question or read the FAQ.",
+    "tooLong": "Please keep it shorter (300 characters at most).",
+    "rate": "Too many questions in a short time. Please wait a moment.",
+    "failed": "The question could not be answered right now. Please try again in a moment.",
+    "extra": {
+      "no_advice": {
+        "a": "I do not give advice on that. Whether you bid or sell is your own decision. For legal, tax or financial questions please ask a qualified person."
+      },
+      "cannot": {
+        "a": "I cannot answer that. Please read the FAQ or write to us."
+      },
+      "room_assistant": {
+        "q": "What is this assistant?",
+        "a": "The assistant picks the matching answer from our fixed FAQ for your question. It does not make up answers, gives no investment, legal or tax advice and knows no personal data. Only you see its answer."
+      },
+      "live_now": {
+        "q": "Which lot is on now, what is the bid and how long is left?",
+        "a": "The current lot, the highest bid and the time left are shown at the top of the stage. The current values of this room are shown below.",
+        "live": true
+      },
+      "sell_how": {
+        "q": "How do I list a card?",
+        "a": "Open Sell, choose a card from your wallet, set the opening price and the time, and publish. The card stays in your wallet until it is sold. After the hammer you must be online to sign the payment."
+      },
+      "sell_draft": {
+        "q": "What does the AI draft do?",
+        "a": "It suggests a title and a description for your card. The text is labelled as an AI draft, you review it and adopt it yourself. Without AI access you get a template at no cost."
+      },
+      "sell_credits": {
+        "q": "What do the AI drafts cost?",
+        "a": "A pack of 10 drafts costs 1 USDC (on the test network, test USDC with no value). You pay with one transaction that you confirm in your wallet. If a draft fails it is refunded. Templates cost nothing."
+      },
+      "sell_photos": {
+        "q": "What happens to my photos?",
+        "a": "Photos go to Google only for the AI draft. They are shrunk in your browser first, without location data, and we do not store them."
+      },
+      "sell_price": {
+        "q": "How do I find the opening price?",
+        "a": "You set the opening price yourself. If you enter your own estimate in the AI draft, we suggest 45 percent of it. That is not a valuation of the card. The reserve is optional: if the highest bid stays below it, the card is not sold."
+      }
+    },
+    "liveHeading": "Right now in this room",
+    "liveLot": "Lot {n} is open.",
+    "liveBid": "Highest bid: {amount} USDC.",
+    "liveNoBid": "No bid yet.",
+    "liveTime": "{time} left.",
+    "liveNone": "No lot is running right now.",
+    "publish": "Publish in the room chat",
+    "publishing": "Sending…",
+    "published": "Published in the chat, labelled as AI.",
+    "publishFailed": "Publishing did not work.",
+    "publishNote": "As the operator you can make this answer visible to everyone through the moderated chat.",
+    "publishRefused": "Refused by the chat rules (for example a link). Rephrase the question or write it in the chat yourself."
+  },
+  "agent": {
+    "title": "AI agent",
+    "intro": "Hello! I find lots, prepare bid proposals and start listing drafts.\nAsk in your own words, in German or English.",
+    "placeholder": "Your message",
+    "send": "Send",
+    "thinking": "One moment…",
+    "examples": "For example",
+    "example1": "Show me Pokemon cards under 100 USDC",
+    "example2": "Find a PSA 10 Charizard",
+    "example3": "Help me list my PSA 9 Pikachu",
+    "you": "You",
+    "labelAi": "AI agent",
+    "labelFaq": "Fixed answer from the FAQ",
+    "failed": "The agent could not answer right now. Please try again in a moment.",
+    "rate": "Too many messages in a short time. Please wait a moment.",
+    "tooLong": "Please keep it shorter (300 characters at most).",
+    "lot": "Lot {n}",
+    "open": "Open now",
+    "soon": "Coming up",
+    "bidNow": "Current bid {amount} USDC",
+    "opensAt": "Opens at {amount} USDC",
+    "openRoom": "Open the room",
+    "bidTitle": "Bid proposal, not placed",
+    "bidCurrent": "Current bid",
+    "bidNone": "No bid yet",
+    "bidAmount": "Proposed bid",
+    "bidLimit": "Your limit",
+    "bidConfirm": "Confirm in the room",
+    "bidNote": "Nothing is bid until you confirm in the room with your own wallet.",
+    "draftTitle": "Draft proposal, nothing created yet",
+    "draftName": "Card",
+    "draftSet": "Set",
+    "draftGrade": "Grading",
+    "draftEstimate": "Your estimate",
+    "draftCreate": "Create draft (1 credit)",
+    "draftCreateFree": "Create draft (free)",
+    "draftCreating": "Creating…",
+    "draftNote": "A credit is used only when you press the button. You review the text before it is used.",
+    "draftNoteFree": "AI is free during the judging period. Nothing happens until you press the button, and you review the text before it is used.",
+    "draftTitles": "Titles",
+    "draftDe": "Description in German",
+    "draftEn": "Description in English",
+    "draftCredits": "Credits left: {count}",
+    "draftSell": "Continue in the sell wizard",
+    "noCredit": "You have no credit left. A pack of 10 costs 1 USDC and can be bought in the sell wizard.",
+    "signIn": "Please connect your wallet and sign in first.",
+    "log": "Conversation with the AI agent",
+    "note": "The AI can make mistakes and only makes proposals, you confirm every step yourself.",
+    "timeLeft": "{time} left",
+    "startsOn": "Starts {when}",
+    "startsLater": "Start time not set yet",
+    "noPhoto": "No photo",
+    "currentBid": "Current bid",
+    "opening": "Opening bid",
+    "prepareBid": "Prepare bid",
+    "prepareBidText": "Bid {amount} USDC on {name}, lot {n}",
+    "bidDown": "Lower the amount",
+    "bidUp": "Raise the amount",
+    "bidCopy": "Copy amount",
+    "bidCopied": "Amount copied",
+    "bidThere": "Enter this amount in the room. The limit you typed is the highest you can choose here.",
+    "bidStep": "Steps of {step} USDC",
+    "reset": "Reset chat",
+    "resetConfirm": "Click again to delete this chat",
+    "saved": "Saved in this browser only",
+    "close": "Close",
+    "roomContext": "This room, lot {n}",
+    "roomExample1": "Bid up to 50 USDC on this lot",
+    "roomExample2": "How does bidding work here?",
+    "roomExample3": "Find similar cards under 100 USDC"
+  },
+  "lot": {
+    "aiAssisted": "AI-assisted, reviewed by the seller"
+  },
+  "gate": {
+    "title": "Connect your wallet to use the AI",
+    "body": "Every AI function here needs a signed-in wallet: the agent, the listing draft and the assistant in the rooms. Without one, nothing is sent to the AI and nothing costs anything.",
+    "connect": "Connect wallet",
+    "signIn": "Sign in with your wallet",
+    "signingIn": "Waiting for your wallet…",
+    "loading": "Checking your wallet…"
+  },
+  "assistant": {
+    "launch": "Assistant",
+    "open": "Open the AI assistant",
+    "close": "Close the AI assistant",
+    "title": "AI assistant"
+  }
+}

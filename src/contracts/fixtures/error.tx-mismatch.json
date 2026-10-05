@@ -1,0 +1,5 @@
+{
+  "ok": false,
+  "code": "tx_mismatch",
+  "reason": "The transaction does not match this settlement."
+}

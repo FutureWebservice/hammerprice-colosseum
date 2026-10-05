@@ -1,0 +1,11 @@
+{
+  "settlement": {
+    "cluster": {
+      "body": "This sale settles on mainnet. A wallet set to devnet cannot simulate or sign it.",
+      "step2": "Phantom: Settings, Developer Settings, turn off Testnet Mode. Solflare and Backpack: switch the network to Mainnet in settings."
+    },
+    "errors": {
+      "simulation_failed": "The network test run failed. Check that your wallet is on mainnet and try again."
+    }
+  }
+}

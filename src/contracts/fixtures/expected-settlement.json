@@ -1,0 +1,19 @@
+{
+  "settlementId": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+  "cluster": "devnet",
+  "buyer": "3Cv8UNdmzgmNFGNo6U7iAMHjf3wv6679SZV3BfTWwdiU",
+  "seller": "GCSbbGJoj4M16LdZkj5fjQDT6em52WPyZcnjwnE1Zn38",
+  "asset": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+  "collection": "9ipcz1upL3z3c1tsgfUr3J5Zg1SYn54B3p5Csz26RV1H",
+  "usdcMint": "DwUanmLhDF1gqrwjCqmyzJQ1bs5274FLJZ8gV8cUwmY8",
+  "gross": "120000000",
+  "platformFee": "3000000",
+  "royalty": "0",
+  "royaltyRecipient": null,
+  "feeWallet": "3qnQSy72DcCUVAR9PrZe8peDYwxufcf3hR1bVnjuHqjs",
+  "feePayer": "ENP94GJcPpF4PXrekDPqm8cL4aLKwLaQNigSiM2t6RPM",
+  "bidLogHash": "e52e5f8a3dd8059fccdffa2abd1c347b5792390fef57b1ae78854b947e0881a8",
+  "memo": "hp:settle:e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15:e52e5f8a3dd8059fccdffa2abd1c347b5792390fef57b1ae78854b947e0881a8",
+  "lifetime": "blockhash",
+  "nonceAccount": null
+}

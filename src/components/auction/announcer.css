@@ -1,0 +1,316 @@
+/*
+ * The room's own voice (Announcer.tsx) and the bid confirmation panel (BidPanel.tsx).
+ *
+ * Uses the CSS custom properties hammerprice.css sets on `.hp` - both components always mount
+ * somewhere inside `.hp.ar-room`, so the variables are simply inherited; nothing here redefines
+ * them. No dark/light variants: the room is always the same lit-at-night house regardless of
+ * the visitor's system theme (see auction.css, which does the same).
+ */
+
+/* --- announcer: fixed so it renders above the room regardless of where it mounts, and offset
+   far enough off the bottom that it never sits over the bid slab (see Announcer.tsx's doc). --- */
+.hp-announce-stack {
+  position: fixed;
+  left: 50%;
+  /* Clear of the lot block, not just of the bid slab. The lot's title, price and reserve line
+     together occupy roughly the 150-300px band above the slab, and a chip landing across the
+     "reserve reached" line covers the one thing a bidder is reading at that moment. 340px puts
+     the stack over the bottom of the card instead, where a broadcast lower third belongs, with
+     room for MAX_STACK chips above it. */
+  bottom: 340px;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  pointer-events: none;
+  width: min(92vw, 420px);
+}
+.hp-announce {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.3;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(14, 17, 22, 0.92);
+  border: 1px solid #2a3a32;
+  color: var(--paper);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  animation: hp-announce-in 200ms cubic-bezier(.16, 1, .3, 1);
+}
+.hp-announce--quiet { color: var(--slate); font-size: 12.5px; }
+.hp-announce--brass { color: var(--brass-br); border-color: var(--brass); font-weight: 500; }
+.hp-announce--urgent { color: var(--vermillion); border-color: var(--vermillion); font-weight: 600; }
+.hp-announce--win {
+  background: linear-gradient(180deg, var(--brass-br), var(--brass));
+  color: #221a08;
+  border-color: var(--brass);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 20px;
+}
+@keyframes hp-announce-in {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 560px) {
+  /* Top on mobile - the bid slab lives at the bottom of a much shorter screen, so bottom-anchored
+     is the one placement guaranteed to cover it there. */
+  .hp-announce-stack { bottom: auto; top: 64px; width: min(92vw, 360px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-announce { animation: none; }
+}
+
+/* --- bid panel: a centred card on desktop, a bottom sheet on mobile. It scrolls INSIDE itself (max-height under
+   the topbar), with a sticky title and a sticky confirm button, so nothing is ever clipped or pushed off screen. --- */
+.hp-bidpanel-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: rgba(0, 0, 0, 0.45);
+}
+.hp-bidpanel {
+  position: fixed;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  max-width: 92vw;
+  max-height: calc(100dvh - 96px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #12171d;
+  border: 1px solid rgba(232, 199, 118, .45);
+  border-radius: 20px;
+  padding: 0 22px 0;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+  animation: hp-announce-in 160ms cubic-bezier(.16, 1, .3, 1);
+}
+.hp-bidpanel-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 0 10px;
+  margin-bottom: 6px;
+  background: #12171d;
+}
+.hp-bidpanel-title {
+  margin: 0;
+  font-weight: 400;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brass-br);
+}
+.hp-bidpanel-close {
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  min-width: 32px;
+  min-height: 32px;
+}
+.hp-bidpanel-close:hover { color: var(--paper); }
+.hp-bidpanel-lot {
+  font-size: 14px;
+  color: var(--paper);
+  margin-bottom: 2px;
+}
+/* The decision, in one glance: current bid / your bid / the limit it has to clear - three columns,
+   no arithmetic required. Your bid sits visually heavier (it's the one number this click commits
+   to); the other two are reference points around it. */
+.hp-bidpanel-numbers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 8px;
+  padding-bottom: 14px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #223028;
+}
+.hp-bidpanel-num {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  min-width: 0;
+}
+.hp-bidpanel-num-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--slate);
+  line-height: 1.25;
+  display: flex;
+  align-items: flex-end;
+  /* German labels ("aktuelles Gebot") run longer than English ones - wrap onto a second line
+     rather than truncate; a three-column 320px panel has no room to widen these. The shared
+     min-height keeps every value baseline-aligned regardless of a one- or two-line label. */
+  overflow-wrap: break-word;
+}
+.hp-bidpanel-num-value {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  color: var(--paper);
+}
+.hp-bidpanel-num--yours { grid-column: 1 / -1; order: -1; padding: 12px 14px; border-radius: 14px; background: rgba(232, 199, 118, .09); border: 1px solid rgba(232, 199, 118, .35); }
+.hp-bidpanel-num--yours .hp-bidpanel-num-value {
+  color: var(--brass-br);
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+/* The single sentence that says what the numbers above mean: does this bid clear the limit, and
+   if not, by how much. Brass-tinted when it clears (a real outcome to look forward to), a plain
+   neutral panel when it doesn't (a fact, not an alarm - the vermillion budget on this screen is
+   already spent on the LIVE dot and the outbid paddle status, see auction.css). */
+.hp-bidpanel-standing {
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 500;
+  padding: 9px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.hp-bidpanel-standing.is-clear {
+  color: var(--brass-br);
+  background: rgba(200, 164, 77, 0.1);
+  border: 1px solid rgba(200, 164, 77, 0.3);
+}
+.hp-bidpanel-standing.is-below {
+  color: #c9d1cd;
+  background: rgba(107, 114, 128, 0.12);
+  border: 1px solid #2a3a32;
+}
+.hp-bidpanel-outcome {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #c9d1cd;
+  margin-bottom: 10px;
+}
+.hp-bidpanel-demo {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--slate);
+  border-top: 1px solid #223028;
+  padding-top: 10px;
+  margin-bottom: 16px;
+}
+.hp-bidpanel-cta {
+  position: sticky;
+  bottom: 0;
+  padding: 10px 0 calc(16px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, #12171d 75%, transparent);
+}
+.hp-bidpanel-cta button,
+.hp-bidpanel-cta .wallet-adapter-button {
+  width: 100% !important;
+  background: var(--brass-br) !important;
+  color: #1a1a17 !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 16px !important;
+  height: auto !important;
+  font-family: var(--sans) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  justify-content: center !important;
+  cursor: pointer;
+}
+.hp-bidpanel-cta button:disabled { opacity: .5; cursor: not-allowed; }
+.hp-bidpanel-cta .wallet-adapter-button-trigger { background: var(--brass) !important; }
+@media (max-width: 560px) {
+  .hp-bidpanel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    width: auto;
+    max-width: none;
+    max-height: calc(100dvh - 72px);
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    padding: 0 18px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-bidpanel { animation: none; }
+}
+
+/* --- the fee breakdown: what a hammer at this price actually costs -----------------------------
+   Shared by the bid panel and the win screen (FeeBreakdown.tsx). Set as a small ledger rather
+   than prose: four rows a reader scans, one note underneath for the thing they would otherwise
+   guess wrong, which is who pays the commission. */
+.hp-fees {
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 14px 0 0;
+  background: rgba(20, 52, 43, 0.35);
+}
+.hp-fees-head {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c8a44d;
+  margin: 0 0 8px;
+}
+.hp-fees-rows { margin: 0; display: grid; gap: 5px; }
+.hp-fees-rows > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hp-fees-rows dt {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: #9aa0a6;
+}
+.hp-fees-rows dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: #f4f0e6;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.hp-fees-rows .is-total {
+  border-top: 1px solid #2a3a32;
+  padding-top: 6px;
+  margin-top: 2px;
+}
+.hp-fees-rows .is-total dt,
+.hp-fees-rows .is-total dd { color: #e8c776; }
+.hp-fees-sol { display: block; font-size: 10.5px; color: #9aa0a6; }
+.hp-fees-note {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #9aa0a6;
+  margin: 8px 0 0;
+}
+
+/* The stage's own SOL line, under the big figure. */
+.ar-lotline-sol {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #8b9490;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,242 @@
+{
+  "heading": "What Hammerprice does",
+  "intro": {
+    "devnet": "The hackathon beta runs on Solana devnet with every feature below switched on. Each badge says what is running on this site today.",
+    "mainnet": "This site runs on Solana mainnet with real USDC. Each badge says what is running on this site today.",
+    "mainnetIncomplete": "This site is set to Solana mainnet, but the deployment is not fully set up yet, so the features below are switched off for now. Nothing runs with real USDC until the setup is complete."
+  },
+  "howItWorks": "How it works",
+  "limitsLabel": "Limits",
+  "status": {
+    "liveDevnet": "Live on devnet",
+    "liveMainnet": "Live on mainnet",
+    "demo": "Devnet demo",
+    "optional": "Optional",
+    "off": "Switched off on this site",
+    "planned": "Planned"
+  },
+  "items": {
+    "settlement": {
+      "title": "The hammer is the payment",
+      "lead": "When you win, one transaction pays the seller in USDC and moves the card to your wallet. All or nothing.",
+      "steps": [
+        {
+          "title": "Bid",
+          "body": "Place a binding bid. Nothing moves yet."
+        },
+        {
+          "title": "Win",
+          "body": "The server clock ends the lot. The top bid at or above the minimum price wins."
+        },
+        {
+          "title": "Pay",
+          "body": "You and the seller confirm one payment. We hold neither the money nor the card."
+        }
+      ],
+      "limits": "Both sides must confirm in the payment window, or the lot shows as not completed and nothing moves. In the house room our server signs for the seller, so you confirm once.",
+      "cta": "How payment works"
+    },
+    "verify": {
+      "title": "Check every sale yourself",
+      "lead": "Each paid lot has an audit page that recomputes the signed bids in your browser and reads the payment from the Solana network.",
+      "steps": [
+        {
+          "title": "Sign",
+          "body": "A key the wallet authorised for this show signs each bid. The page checks every signature."
+        },
+        {
+          "title": "Hash",
+          "body": "Your browser hashes the signed bid log with SHA-256."
+        },
+        {
+          "title": "Compare",
+          "body": "The page reads the payment's memo from the network and compares both hashes."
+        }
+      ],
+      "limits": "A matching hash shows that the log was not changed after the sale. It cannot show that no bid was left out, which is why every bidder keeps a signed copy of their own bids."
+    },
+    "random": {
+      "title": "Provably fair order and randomness",
+      "lead": "The order of the lots in the house room is drawn with a public random proof (ECVRF) that anyone can recompute.",
+      "steps": [
+        {
+          "title": "Commit",
+          "body": "Before the draw, a fingerprint (hash) of the lot list is written to the chain in a memo, so the list is fixed."
+        },
+        {
+          "title": "Seed",
+          "body": "A block that did not exist at commit time supplies the random seed."
+        },
+        {
+          "title": "Prove",
+          "body": "The key proves the result, and your browser recomputes the order from the proof."
+        }
+      ],
+      "limits": "Used for the lot order and a thank-you draw, never for bids. If a draw is not finished in time, the catalogue order applies.",
+      "cta": "See it in the house room"
+    },
+    "timed": {
+      "title": "Timed auctions",
+      "lead": "A card can stay open for hours or days instead of minutes, and it closes by itself at its deadline.",
+      "steps": [
+        {
+          "title": "List",
+          "body": "Pick a duration from 1 hour to 7 days. Bidders come back whenever they like."
+        },
+        {
+          "title": "Soft close",
+          "body": "A bid near the end extends the clock by a few minutes, up to a cap."
+        },
+        {
+          "title": "Settle",
+          "body": "At the deadline the top bid wins and has a longer window to pay than a live lot."
+        }
+      ],
+      "limits": "For now only the house and the wallets the operator allows can list a timed auction.",
+      "cta": "See the rooms"
+    },
+    "room": {
+      "title": "Demo rooms, live and timed",
+      "lead": "The house runs one live demo room and timed demo lots, all labelled Demo. The live room starts when someone opens it, so you can watch a real auction at any hour. Every other room is made by a seller with a wallet.",
+      "steps": [
+        {
+          "title": "Watch",
+          "body": "Each lot runs on a live clock. You need no wallet to look."
+        },
+        {
+          "title": "Bid",
+          "body": "Connect a wallet and place a binding bid."
+        },
+        {
+          "title": "Spot the bots",
+          "body": "When the operator switches them on, house bidders appear, labelled as bots. They never outbid a person."
+        }
+      ],
+      "limits": "It is marked DEMO: the cards are replicas owned by the platform, and after a win, a payment or an outbid the room says what a real room would have done. If a house bot wins, nothing is sold and nobody pays. To try the seller side, create your own room in the sell flow with a second wallet.",
+      "cta": "Enter the demo room"
+    },
+    "chat": {
+      "title": "Pre-moderated chat",
+      "lead": "Signed-in bidders can write in the room, and the room operator publishes each message before anyone else sees it.",
+      "steps": [
+        {
+          "title": "Write",
+          "body": "Send a short message. Only you see it, marked as waiting for approval."
+        },
+        {
+          "title": "Review",
+          "body": "The operator approves, rejects, mutes or blocks. Links and contact details are refused."
+        },
+        {
+          "title": "Publish",
+          "body": "Approved messages show a bidding number, never a wallet. Bots never post."
+        }
+      ],
+      "limits": "The filters are rules, not understanding, so a person reviews every message, and the room operator sees a popup for each waiting message. Visitors can report a message.",
+      "cta": "Open a room"
+    },
+    "ai": {
+      "title": "AI listing agent and assistant",
+      "lead": "AI drafts a listing for the seller to review, an assistant picks the matching answer from our FAQ, and an agent on the AI page finds open lots and prepares a bid for you to confirm. All of it is labelled AI.",
+      "steps": [
+        {
+          "title": "Draft",
+          "body": "A seller asks for a title and a German and English text. 1 USDC buys 10 drafts."
+        },
+        {
+          "title": "Review",
+          "body": "The draft is labelled AI. The seller edits it and ticks that they reviewed it."
+        },
+        {
+          "title": "Ask",
+          "body": "The agent on the AI page finds open lots and prepares a bid. In a room, the assistant answers from the FAQ."
+        }
+      ],
+      "limits": "Every AI function needs a signed-in wallet. The agent never places a bid: you confirm and sign in the room with your own wallet. The assistant writes no answers of its own and gives no legal or financial advice. The model is Google Gemini.",
+      "cta": "Open the AI page",
+      "more": "How AI is used on Hammerprice"
+    },
+    "packs": {
+      "title": "Packs: pay first, proof after",
+      "lead": "A pack is a draw from a pool of cards, with the pool and the odds public before you buy. In a chance pack you pay the pack operator directly and first.",
+      "steps": [
+        {
+          "title": "Pay first",
+          "body": "You pay the operator directly. Nothing is drawn or shown before your payment is final."
+        },
+        {
+          "title": "Draw",
+          "body": "A public ECVRF draw picks your card, using your payment and a later block. You can recompute it."
+        },
+        {
+          "title": "Deliver",
+          "body": "The operator signs the delivery within a deadline, or gets a strike and the pack is paused."
+        }
+      ],
+      "limits": "18+ only, with a daily limit per wallet. In a chance pack Hammerprice never receives your payment (it takes only its fee in the same payment), so it holds neither your money nor the cards. For the same reason it cannot refund you if the operator does not deliver: check the operator's public delivery record before you pay. The demo pack is operated by Hammerprice itself and holds replica cards; a copy of the card you draw there is minted into your wallet.",
+      "cta": "See the packs"
+    },
+    "video": {
+      "title": "Optional live video",
+      "lead": "A show can carry a live camera. It is off by default, and you load the picture with one click.",
+      "steps": [
+        {
+          "title": "Switch on",
+          "body": "The seller ticks Live video under Advanced options when creating the show."
+        },
+        {
+          "title": "Send",
+          "body": "A broadcast page sends the camera. Only wallets the platform allows may send."
+        },
+        {
+          "title": "Click to load",
+          "body": "Your browser contacts the video server only after you press Load live video."
+        }
+      ],
+      "limits": "The picture can lag, and the server clock decides, not the camera.",
+      "cta": "See the rooms"
+    },
+    "telegram": {
+      "title": "Telegram notifications",
+      "lead": "A Telegram bot, @hammerpricebot, that tells you when you are outbid, when you win and when a payment is due, watches a live room for you and sends bid links that pre-fill a bid.",
+      "steps": [
+        {
+          "title": "Connect",
+          "body": "You press Connect Telegram while signed in. No phone number is needed."
+        },
+        {
+          "title": "Tap Start",
+          "body": "Telegram opens the bot, and one tap links your chat to your wallet."
+        },
+        {
+          "title": "Choose",
+          "body": "Pick your messages. /watch alerts you to a room's next lots with a bid link, and /stop ends it all."
+        }
+      ],
+      "limits": "Opt-in only, and only after you link your chat. The bot never bids for you: a bid link only fills in the confirmation, and you sign in your own wallet."
+    },
+    "wallets": {
+      "title": "Your wallet, your keys",
+      "lead": "In auctions and equal-value packs Hammerprice never holds your USDC or your card, and it has no key that can move either.",
+      "steps": [
+        {
+          "title": "Connect",
+          "body": "Use Phantom, Solflare or Backpack. Signing in is a free signature, not a transaction."
+        },
+        {
+          "title": "Bid",
+          "body": "A bid is a signed message that names the show, the lot, the amount and the network."
+        },
+        {
+          "title": "Confirm",
+          "body": "Each payment needs your own confirmation. Our key only pays the network fee."
+        }
+      ],
+      "limits": "On a phone, open this site inside your wallet app's own browser.",
+      "cta": "Do I need a wallet?"
+    },
+    "ideathon": {
+      "title": "Where it started"
+    }
+  }
+}

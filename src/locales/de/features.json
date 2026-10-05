@@ -1,0 +1,242 @@
+{
+  "heading": "Was Hammerprice kann",
+  "intro": {
+    "devnet": "Die Hackathon-Beta läuft auf Solana Devnet, alle Funktionen unten sind eingeschaltet. Jedes Abzeichen sagt, was auf dieser Seite heute läuft.",
+    "mainnet": "Diese Seite läuft auf Solana Mainnet mit echtem USDC. Jedes Abzeichen sagt, was auf dieser Seite heute läuft.",
+    "mainnetIncomplete": "Diese Seite ist auf Solana Mainnet eingestellt, aber die Einrichtung ist noch nicht vollständig. Deshalb sind die Funktionen unten vorerst ausgeschaltet. Mit echtem USDC läuft nichts, bevor die Einrichtung abgeschlossen ist."
+  },
+  "howItWorks": "So funktioniert es",
+  "limitsLabel": "Grenzen",
+  "status": {
+    "liveDevnet": "Live auf Devnet",
+    "liveMainnet": "Live auf Mainnet",
+    "demo": "Devnet-Demo",
+    "optional": "Optional",
+    "off": "Auf dieser Seite aus",
+    "planned": "Geplant"
+  },
+  "items": {
+    "settlement": {
+      "title": "Der Zuschlag ist die Zahlung",
+      "lead": "Gewinnen Sie, bezahlt eine einzige Transaktion den Verkäufer in USDC und überträgt die Karte in Ihre Wallet. Ganz oder gar nicht.",
+      "steps": [
+        {
+          "title": "Bieten",
+          "body": "Geben Sie ein verbindliches Gebot ab. Noch bewegt sich nichts."
+        },
+        {
+          "title": "Gewinnen",
+          "body": "Die Uhr des Servers beendet das Los. Das höchste Gebot ab dem Mindestpreis gewinnt."
+        },
+        {
+          "title": "Zahlen",
+          "body": "Sie und der Verkäufer bestätigen eine Zahlung. Wir halten weder Geld noch Karte."
+        }
+      ],
+      "limits": "Beide Seiten müssen im Zahlungsfenster bestätigen, sonst gilt das Los als nicht abgeschlossen und nichts bewegt sich. Im Haus-Raum bestätigt unser Server für den Verkäufer, Sie bestätigen einmal.",
+      "cta": "So funktioniert die Zahlung"
+    },
+    "verify": {
+      "title": "Prüfen Sie jeden Verkauf selbst",
+      "lead": "Jedes bezahlte Los hat eine Prüfseite, die die signierten Gebote in Ihrem Browser nachrechnet und die Zahlung aus dem Solana-Netz liest.",
+      "steps": [
+        {
+          "title": "Signatur",
+          "body": "Ein von der Wallet für diese Show freigegebener Schlüssel signiert jedes Gebot. Die Seite prüft jede Signatur."
+        },
+        {
+          "title": "Hash",
+          "body": "Ihr Browser bildet den SHA-256-Hash über die signierte Gebotsliste."
+        },
+        {
+          "title": "Vergleich",
+          "body": "Die Seite liest das Memo der Zahlung aus dem Netz und vergleicht beide Hashes."
+        }
+      ],
+      "limits": "Ein gleicher Hash zeigt, dass die Liste nach dem Verkauf nicht verändert wurde. Er zeigt nicht, dass kein Gebot fehlt. Darum behält jeder Bieter eine signierte Kopie seiner Gebote."
+    },
+    "random": {
+      "title": "Nachprüfbar faire Reihenfolge und Zufall",
+      "lead": "Die Reihenfolge der Lose im Haus-Raum wird mit einem öffentlichen Zufallsbeweis (ECVRF) bestimmt, den jeder nachrechnen kann.",
+      "steps": [
+        {
+          "title": "Festlegen",
+          "body": "Vor der Ziehung steht ein Hash der Losliste in einem Memo auf der Chain. Die Liste steht fest."
+        },
+        {
+          "title": "Startwert",
+          "body": "Ein Block, den es zur Festlegung noch nicht gab, liefert den Zufallsstartwert."
+        },
+        {
+          "title": "Beweisen",
+          "body": "Der Schlüssel beweist das Ergebnis, und Ihr Browser rechnet die Reihenfolge nach."
+        }
+      ],
+      "limits": "Gilt für die Reihenfolge der Lose und eine Dankeschön-Auslosung, nie für Gebote. Ist eine Ziehung nicht rechtzeitig fertig, gilt die Katalogreihenfolge.",
+      "cta": "Im Haus-Raum ansehen"
+    },
+    "timed": {
+      "title": "Zeitauktionen",
+      "lead": "Eine Karte kann Stunden oder Tage statt Minuten offen bleiben und schließt von selbst zur Frist.",
+      "steps": [
+        {
+          "title": "Einstellen",
+          "body": "Wählen Sie eine Dauer von 1 Stunde bis 7 Tagen. Bieter kommen, wann sie wollen."
+        },
+        {
+          "title": "Weiches Ende",
+          "body": "Ein Gebot kurz vor Schluss verlängert die Uhr um einige Minuten, bis zu einer Obergrenze."
+        },
+        {
+          "title": "Abwickeln",
+          "body": "Zur Frist gewinnt das höchste Gebot und hat mehr Zeit zum Zahlen als bei einem Live-Los."
+        }
+      ],
+      "limits": "Vorerst können nur das Haus und die vom Betreiber freigegebenen Wallets eine Zeitauktion einstellen.",
+      "cta": "Zu den Räumen"
+    },
+    "room": {
+      "title": "Demo-Räume, live und zeitgesteuert",
+      "lead": "Das Haus betreibt einen Live-Demo-Raum und Demo-Zeitlose, alle als Demo gekennzeichnet. Der Live-Raum startet, sobald ihn jemand öffnet, damit Sie zu jeder Stunde eine echte Auktion sehen können. Jeder andere Raum wird von einem Verkäufer mit Wallet angelegt.",
+      "steps": [
+        {
+          "title": "Zusehen",
+          "body": "Jedes Los läuft auf einer Live-Uhr. Zum Zusehen brauchen Sie keine Wallet."
+        },
+        {
+          "title": "Bieten",
+          "body": "Verbinden Sie eine Wallet und bieten Sie verbindlich."
+        },
+        {
+          "title": "Bots erkennen",
+          "body": "Haus-Bieter, wenn eingeschaltet, sind als Bots gekennzeichnet. Sie überbieten nie eine Person."
+        }
+      ],
+      "limits": "Er ist als DEMO gekennzeichnet: Die Karten sind Replikate, die der Plattform gehören, und nach einem Gewinn, einer Zahlung oder einem verlorenen Zuschlag sagt der Raum, was ein echter Raum getan hätte. Gewinnt ein Haus-Bot, wird nichts verkauft und niemand zahlt. Um die Verkäuferseite auszuprobieren, legen Sie mit einer zweiten Wallet im Verkaufsablauf einen eigenen Raum an.",
+      "cta": "In den Demo-Raum"
+    },
+    "chat": {
+      "title": "Vormoderierter Chat",
+      "lead": "Angemeldete Bieter können im Raum schreiben, und der Raumbetreiber veröffentlicht jede Nachricht, bevor andere sie sehen.",
+      "steps": [
+        {
+          "title": "Schreiben",
+          "body": "Senden Sie eine kurze Nachricht. Nur Sie sehen sie, markiert als wartend auf Freigabe."
+        },
+        {
+          "title": "Prüfen",
+          "body": "Der Betreiber gibt frei, lehnt ab, stummt oder sperrt. Links und Kontaktdaten werden abgewiesen."
+        },
+        {
+          "title": "Veröffentlichen",
+          "body": "Freigegebene Nachrichten zeigen eine Bieternummer, nie eine Wallet. Bots schreiben nie."
+        }
+      ],
+      "limits": "Die Filter sind Regeln, kein Verstehen, darum prüft ein Mensch jede Nachricht, und der Raumbetreiber sieht für jede wartende Nachricht ein Popup. Besucher können eine Nachricht melden.",
+      "cta": "Einen Raum öffnen"
+    },
+    "ai": {
+      "title": "KI-Inserat-Agent und Assistent",
+      "lead": "KI entwirft ein Inserat, das der Verkäufer prüft, ein Assistent wählt die passende Antwort aus unseren FAQ, und ein Agent auf der KI-Seite findet offene Lose und bereitet ein Gebot vor, das Sie bestätigen. Alles ist als KI gekennzeichnet.",
+      "steps": [
+        {
+          "title": "Entwurf",
+          "body": "Ein Verkäufer bittet um Titel und Text auf Deutsch und Englisch. 1 USDC kauft 10 Entwürfe."
+        },
+        {
+          "title": "Prüfen",
+          "body": "Der Entwurf ist als KI gekennzeichnet. Der Verkäufer bearbeitet ihn und bestätigt die Prüfung."
+        },
+        {
+          "title": "Fragen",
+          "body": "Der Agent sucht Lose und bereitet ein Gebot vor. Im Raum antwortet der Assistent aus den FAQ."
+        }
+      ],
+      "limits": "Jede KI-Funktion braucht eine angemeldete Wallet. Der Agent gibt nie ein Gebot ab: Sie bestätigen und signieren im Raum mit Ihrer eigenen Wallet. Der Assistent schreibt keine eigenen Antworten und gibt keine Rechts- oder Finanzberatung. Das Modell ist Google Gemini.",
+      "cta": "KI-Seite öffnen",
+      "more": "So wird KI bei Hammerprice eingesetzt"
+    },
+    "packs": {
+      "title": "Packs: erst zahlen, danach der Beweis",
+      "lead": "Ein Pack ist eine Ziehung aus einem Pool von Karten, mit öffentlichem Pool und öffentlichen Quoten vor dem Kauf. Bei einem Zufalls-Pack zahlen Sie den Pack-Betreiber direkt und zuerst.",
+      "steps": [
+        {
+          "title": "Zuerst zahlen",
+          "body": "Sie zahlen den Betreiber direkt. Vor Ihrer endgültigen Zahlung wird nichts gezogen oder gezeigt."
+        },
+        {
+          "title": "Ziehen",
+          "body": "Eine öffentliche ECVRF-Ziehung wählt Ihre Karte, mit Ihrer Zahlung und einem späteren Block. Sie rechnen nach."
+        },
+        {
+          "title": "Liefern",
+          "body": "Der Betreiber signiert die Lieferung in einer Frist, sonst Strike und das Pack wird pausiert."
+        }
+      ],
+      "limits": "Nur ab 18, mit Tageslimit je Wallet. Bei einem Zufalls-Pack erhält Hammerprice Ihre Zahlung nie (es nimmt nur seine Gebühr in derselben Zahlung) und hält weder Ihr Geld noch die Karten. Aus demselben Grund kann es nichts erstatten, wenn der Betreiber nicht liefert: Prüfen Sie vor der Zahlung die öffentliche Lieferbilanz des Betreibers. Das Demo-Pack betreibt Hammerprice selbst, mit Replik-Karten; eine Kopie der dort gezogenen Karte wird in Ihre Wallet geprägt.",
+      "cta": "Zu den Packs"
+    },
+    "video": {
+      "title": "Optionales Live-Video",
+      "lead": "Eine Show kann eine Live-Kamera tragen. Sie ist standardmäßig aus, und Sie laden das Bild mit einem Klick.",
+      "steps": [
+        {
+          "title": "Einschalten",
+          "body": "Der Verkäufer setzt beim Anlegen der Show unter Erweitert das Häkchen bei Live-Video."
+        },
+        {
+          "title": "Senden",
+          "body": "Eine Sendeseite überträgt die Kamera. Nur von der Plattform freigegebene Wallets dürfen senden."
+        },
+        {
+          "title": "Per Klick laden",
+          "body": "Ihr Browser verbindet sich erst mit dem Video-Server, wenn Sie Live-Video laden drücken."
+        }
+      ],
+      "limits": "Das Bild kann nachlaufen, und es zählt die Uhr des Servers, nicht die Kamera.",
+      "cta": "Zu den Räumen"
+    },
+    "telegram": {
+      "title": "Telegram-Benachrichtigungen",
+      "lead": "Ein Telegram-Bot, @hammerpricebot, der Ihnen sagt, wenn Sie überboten wurden, wenn Sie gewinnen und wenn eine Zahlung fällig ist, einen Live-Raum für Sie beobachtet und Gebotslinks schickt, die ein Gebot vorausfüllen.",
+      "steps": [
+        {
+          "title": "Verbinden",
+          "body": "Sie drücken angemeldet auf Telegram verbinden. Eine Telefonnummer ist nicht nötig."
+        },
+        {
+          "title": "Start tippen",
+          "body": "Telegram öffnet den Bot, und ein Tipp verknüpft Ihren Chat mit Ihrer Wallet."
+        },
+        {
+          "title": "Auswählen",
+          "body": "Sie wählen Ihre Nachrichten. /watch meldet die nächsten Lose eines Raums mit Gebotslink, /stop beendet alles."
+        }
+      ],
+      "limits": "Nur auf Wunsch und erst, wenn Sie Ihren Chat verknüpfen. Der Bot bietet nie für Sie: ein Gebotslink füllt nur die Bestätigung aus, und Sie signieren in Ihrer eigenen Wallet."
+    },
+    "wallets": {
+      "title": "Ihre Wallet, Ihre Schlüssel",
+      "lead": "Bei Auktionen und Packs mit gleichem Wert hält Hammerprice weder Ihr USDC noch Ihre Karte und hat keinen Schlüssel, der eines von beiden bewegen kann.",
+      "steps": [
+        {
+          "title": "Verbinden",
+          "body": "Nutzen Sie Phantom, Solflare oder Backpack. Die Anmeldung ist eine kostenlose Signatur, keine Transaktion."
+        },
+        {
+          "title": "Bieten",
+          "body": "Ein Gebot ist eine signierte Nachricht mit Show, Los, Betrag und Netzwerk."
+        },
+        {
+          "title": "Bestätigen",
+          "body": "Jede Zahlung braucht Ihre eigene Bestätigung. Unser Schlüssel zahlt nur die Netzwerkgebühr."
+        }
+      ],
+      "limits": "Öffnen Sie die Seite auf dem Handy im Browser Ihrer Wallet-App.",
+      "cta": "Brauche ich eine Wallet?"
+    },
+    "ideathon": {
+      "title": "Wo es anfing"
+    }
+  }
+}

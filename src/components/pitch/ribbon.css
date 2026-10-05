@@ -1,0 +1,56 @@
+/*
+ * The catalogue's bookmark ribbon: brass, hanging off the right edge, riding the scroll.
+ *
+ * Self-contained like explain.css, since this mounts from SiteChrome and cannot assume an
+ * ancestor loaded hammerprice.css. It sits below the explain bubble's z-index and far from its
+ * corner, so the two never compete for the same glance.
+ */
+.pt-ribbon {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2147479000;
+
+  display: block;
+  padding: 30px 15px;
+  border: 1px solid #a5822f;
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(200deg, #e8c776, #c8a44d 55%, #a5822f);
+  color: #221a08;
+  text-decoration: none;
+  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.45);
+  transition: padding-right 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms ease;
+}
+.pt-ribbon:hover,
+.pt-ribbon:focus-visible {
+  padding-right: 22px;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+}
+.pt-ribbon:focus-visible {
+  outline: 2px solid #f4f0e6;
+  outline-offset: -4px;
+}
+
+.pt-ribbon-text {
+  writing-mode: vertical-rl;
+  /* vertical-rl runs top-to-bottom; the half turn makes it read bottom-to-top, the way a
+     spine is set, which is also the direction that puts the first word nearest the reader's
+     eye when the ribbon sits mid-screen. */
+  transform: rotate(180deg);
+  display: block;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .pt-ribbon { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pt-ribbon { transition: none; }
+}

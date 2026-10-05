@@ -1,0 +1,37 @@
+{
+  "v": 1,
+  "serverNow": 1791223170000,
+  "show": {
+    "id": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10",
+    "title": "House show, devnet replicas",
+    "status": "scheduled",
+    "mode": "auto",
+    "scheduledAt": "2026-10-05T17:59:00.000Z",
+    "settlementMode": "onchain",
+    "cluster": "devnet",
+    "isHouse": true
+  },
+  "current": null,
+  "lots": [
+    {
+      "id": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+      "lotNumber": 1,
+      "state": "catalogued",
+      "highBid": null,
+      "highBidder": null,
+      "bidCount": 0,
+      "closesAt": null
+    },
+    {
+      "id": "5d2e9f63-7c14-4b8a-9e05-3a6b1c8d4f12",
+      "lotNumber": 2,
+      "state": "catalogued",
+      "highBid": null,
+      "highBidder": null,
+      "bidCount": 0,
+      "closesAt": null
+    }
+  ],
+  "events": [],
+  "lastEventId": 0
+}

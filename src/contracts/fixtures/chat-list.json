@@ -1,0 +1,36 @@
+{
+  "enabled": true,
+  "messages": [
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000002",
+      "seq": 41,
+      "at": "2026-10-05T18:00:12.000Z",
+      "paddle": 7,
+      "role": "bidder",
+      "source": "user",
+      "lotNumber": 1,
+      "body": "Schöne Karte, viel Erfolg allen."
+    },
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000003",
+      "seq": 42,
+      "at": "2026-10-05T18:00:12.000Z",
+      "paddle": null,
+      "role": "seller",
+      "source": "user",
+      "lotNumber": null,
+      "body": "Welcome to lot 1."
+    },
+    {
+      "id": "7b1c2d3e-4f50-4a61-8b72-000000000004",
+      "seq": 43,
+      "at": "2026-10-05T18:00:12.000Z",
+      "paddle": null,
+      "role": "seller",
+      "source": "assistant",
+      "lotNumber": 1,
+      "body": "Answer from the assistant: the card ships with the transfer."
+    }
+  ],
+  "lastSeq": 43
+}

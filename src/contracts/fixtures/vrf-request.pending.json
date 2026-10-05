@@ -1,0 +1,31 @@
+{
+  "id": "7b1c2d3e-4f50-4a61-8b72-000000000001",
+  "purpose": "lot_order",
+  "subject": {
+    "type": "show",
+    "id": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10"
+  },
+  "status": "pending",
+  "cluster": "devnet",
+  "publicKey": "6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q",
+  "params": {
+    "lots": [
+      {
+        "id": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+        "n": 1
+      }
+    ],
+    "show": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10",
+    "v": 1
+  },
+  "paramsHash": "481d657bbfca4074eff9f689b41d6dc7b90c8f593591018bf4160f6ed2c2999c",
+  "alphaText": null,
+  "beacon": null,
+  "commitTx": null,
+  "commitSlot": null,
+  "revealBy": "2026-10-05T18:01:00.000Z",
+  "proofHex": null,
+  "outputHex": null,
+  "revealTx": null,
+  "result": null
+}

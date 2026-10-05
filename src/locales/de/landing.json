@@ -1,0 +1,299 @@
+{
+  "hero": {
+    "coldOpen": {
+      "kicker": "Live-Auktionen · gradierte Karten · Solana",
+      "heading": "Der Hammer ist die Zahlung.",
+      "copy": "Bieten Sie live auf gradierte Karten. Das Siegergebot bezahlt den Verkäufer und überträgt Ihnen die Karte, in einem Schritt."
+    },
+    "lotRises": {
+      "copy": "Beispiel-Los {lotNumber}{gradePart} · Mindestpreis {limit}"
+    },
+    "bidsStack": {
+      "copy": "Jedes Gebot ist signiert, und Ihr Guthaben wird beim Bieten geprüft. Es wird nichts gesperrt, behalten Sie das USDC bis zur Zahlung in Ihrer Wallet."
+    },
+    "finalTen": {
+      "copy": "Ein Gebot in den letzten Sekunden verlängert die Auktion, damit niemand in letzter Sekunde überboten wird.",
+      "strikes": [
+        "Zum Ersten",
+        "Zum Zweiten"
+      ]
+    },
+    "hammerFalls": {
+      "copy": "Der Timer endet und das höchste Gebot gewinnt."
+    },
+    "priceStamps": {
+      "copy": "{hammerPrice} ZUGESCHLAGEN"
+    },
+    "settleCta": {
+      "copy": "Der Verkäufer wird bezahlt und Sie erhalten die Karte, in einem Schritt. Wir halten nie Ihr Geld oder Ihre Karten."
+    }
+  },
+  "cta": {
+    "enterRoom": "Jetzt ausprobieren: im Demo-Raum bieten",
+    "needWallet": "Noch kein Wallet?",
+    "howItWorks": "So funktioniert es",
+    "tryAgent": "KI-Agent ausprobieren",
+    "joinWaitlist": "Auf die Warteliste"
+  },
+  "stats": {
+    "vaulted": "gradierte Karten im Tresor, den wir lesen",
+    "signature": "Signatur zum Bezahlen und Erhalten Ihrer Karte",
+    "custody": "Ihres Geldes oder Ihrer Karten, die wir halten"
+  },
+  "catalogue": {
+    "heading": "Echte Karten aus dem Tresor",
+    "note": "Live aus dem Collector-Crypt-Tresor: echte Karten, echte Grades, echte Angebotspreise. Auf diese Angebote können Sie hier nicht bieten. Jeder Raum sagt, welche Karten er anbietet.",
+    "error": "Katalog gerade nicht verfügbar: {error}",
+    "lot": "LOS {number}",
+    "count": "{count} Lose",
+    "ask": "Angebotspreis",
+    "insured": "Versicherungswert",
+    "seeRooms": "Zu den Räumen"
+  },
+  "moreInfo": "Wie Bieten und Bezahlen funktionieren und warum wir Ihr Geld nie anfassen, steht unter <a>So funktioniert es</a>.",
+  "product": {
+    "heading": "Hammerprice ist live",
+    "copy": "Hammerprice ist live und befindet sich derzeit in der Beta zusammen mit dem Colosseum-Hackathon. Wir planen, es kurz nach dem Hackathon im Solana-Mainnet erreichbar zu machen. Über die Warteliste erfahren Sie, wann es so weit ist.",
+    "link": "So funktioniert es"
+  },
+  "journeys": {
+    "heading": "Was Sie auf Hammerprice tun können",
+    "intro": "Vom ersten Gebot bis zum eigenen Verkauf und mehr. Jede Schaltfläche und jeder Link führt zur echten Seite. Die kleinen Bilder sind Beispiele, keine Live-Daten.",
+    "example": "Beispiel",
+    "moreHeading": "Und mehr",
+    "items": {
+      "bid": {
+        "title": "In Live-Räumen bieten",
+        "lead": "Ein Live-Raum verkauft seine Lose nacheinander nach der Uhr des Servers. Die Demo-Räume sind als Tutorial gekennzeichnet.",
+        "steps": [
+          "Verbinden Sie Ihre Wallet und holen Sie sich mit einer Signatur eine Bieternummer.",
+          "Bieten Sie mit einer signierten Nachricht. Ihr USDC-Guthaben wird geprüft, nichts wird gesperrt.",
+          "Ein Gebot in den letzten Sekunden verlängert die Zeit, damit niemand in letzter Sekunde überboten wird.",
+          "Gewinnen Sie und zahlen Sie mit einer Signatur: USDC geht an den Verkäufer, die Karte kommt zu Ihnen. Wir halten dazwischen nichts."
+        ],
+        "cta": "Live-Raum betreten",
+        "mock": {
+          "lot": "Los 01 · Beispielkarte",
+          "high": "Höchstgebot",
+          "highAmount": "125,00 USDC",
+          "left": "noch 00:07",
+          "you": "Sie sind Bieter 12",
+          "button": "130,00 USDC bieten",
+          "note": "Eine Signatur in Ihrer Wallet"
+        }
+      },
+      "sell": {
+        "title": "Raum erstellen und Ihre Karte verkaufen",
+        "lead": "Verkaufen Sie eine bewertete Karte aus Ihrer eigenen Wallet. Sie legen die Bedingungen fest, Hammerprice führt die Auktion durch.",
+        "steps": [
+          "Verbinden Sie Ihre Wallet und wählen Sie die Karte daraus. Jede Karte zeigt, ob sie verkauft werden kann.",
+          "Lassen Sie auf Wunsch die KI den Anzeigentext entwerfen. Sie prüfen und ändern ihn, bevor er verwendet wird.",
+          "Wählen Sie die Länge der Lose und optional einen Mindestpreis, dann gehen Sie live. Den Raum können Sie pausieren und fortsetzen.",
+          "Sie werden beim Zuschlag in USDC bezahlt. Hammerprice behält 2,5 Prozent des Zuschlagspreises vom Verkäufer ein, das ist die einzige Gebühr, die wir erheben."
+        ],
+        "cta": "Karte anbieten",
+        "mock": {
+          "s1": "Karte",
+          "s2": "Preis",
+          "s3": "Zeit",
+          "s4": "Live",
+          "length": "Länge je Los",
+          "lengthValue": "3 Min.",
+          "reserve": "Mindestpreis",
+          "reserveValue": "100 USDC",
+          "ready": "Bereit für den Start"
+        }
+      },
+      "packs": {
+        "title": "Ein Pack anbieten oder öffnen",
+        "lead": "Ein Pack ist eine verdeckte Ziehung aus einem öffentlichen Pool echter Karten. Ein Verkäufer baut es aus Karten in seinem eigenen Wallet, der Käufer zahlt den Verkäufer direkt, und eine Ziehung, die jeder nachprüfen kann, wählt die Karte.",
+        "steps": [
+          "Ein Verkäufer mit angemeldetem Wallet wählt echte Karten aus diesem Wallet. Die Teilnahme kann auf freigegebene Verkäufer beschränkt sein.",
+          "Der Verkäufer ordnet die Karten 1 bis 8 Stufen zu, legt die Quote je Stufe in Prozent fest (zusammen 100) und den Preis in USDC und veröffentlicht das Pack.",
+          "Die Quoten, der ganze Kartenpool und ein Festlegungs-Hash sind vor dem ersten Verkauf öffentlich. Nach der Veröffentlichung lässt sich nichts davon ändern.",
+          "Ein Käufer (ab 18) zahlt den Verkäufer direkt mit einer Signatur. Erst wenn diese Zahlung endgültig ist, wählt die nachprüfbare Zufallsziehung (ECVRF) die Karte.",
+          "Der Verkäufer liefert die gezogene Karte aus seinem eigenen Wallet innerhalb der Frist an den Käufer. Jede Ziehung hat eine öffentliche Nachweisseite, jeder Verkäufer eine öffentliche Lieferbilanz."
+        ],
+        "cta": "Packs ansehen",
+        "mock": {
+          "name": "Starter-Pack",
+          "sealed": "Verdeckt bis zur Zahlung",
+          "price": "5 USDC",
+          "odds": "Veröffentlichte Quoten",
+          "t1": "Gewöhnlich 70 %",
+          "t2": "Selten 25 %",
+          "t3": "Chase 5 %",
+          "pool": "Der ganze Pool, öffentlich vor dem ersten Verkauf",
+          "hash": "Festlegungs-Hash 3f9a...c1d7"
+        },
+        "flow": {
+          "heading": "Peer-to-Peer: Wer macht was",
+          "f1": "Wallet des Verkäufers",
+          "f1s": "Besitzt die Karten und baut das Pack.",
+          "f2": "Käufer zahlt USDC",
+          "f2s": "Direkt an das Wallet des Verkäufers, mit einer Signatur.",
+          "f3": "Nachprüfbare Zufallsziehung",
+          "f3s": "Erst nach endgültiger Zahlung.",
+          "f4": "Verkäufer liefert",
+          "f4s": "Die gezogene Karte geht vom Wallet des Verkäufers an das Wallet des Käufers.",
+          "platform": "Hammerprice steht neben dem Ablauf: Es zahlt die Netzwerkgebühr, nimmt seine Gebühr in derselben Zahlung und zeigt die Nachweisseite. Es erhält nie den Preis und hält nie eine Karte."
+        },
+        "details": {
+          "odds": {
+            "title": "So funktionieren die Quoten",
+            "line": "Quoten, Pool und Ziehung sind öffentlich und nachrechenbar."
+          },
+          "build": {
+            "title": "Eigenes Pack zusammenstellen",
+            "line": "Karten, Stufen und Preis festlegen, dann veröffentlichen."
+          },
+          "delivery": {
+            "title": "Kein Pool bei Hammerprice",
+            "line": "Sie zahlen den Verkäufer direkt, Hammerprice hält kein Geld."
+          }
+        },
+        "detailsLink": "Details"
+      },
+      "chat": {
+        "title": "Im Raum chatten",
+        "lead": "Jeder Raum hat einen vormoderierten Chat, damit es um die Karten geht.",
+        "steps": [
+          "Angemeldete Bieter können schreiben. Alle anderen lesen die freigegebenen Nachrichten.",
+          "Ihre Nachricht wartet auf Freigabe. Bis dahin sehen nur Sie sie.",
+          "Der Raumbetreiber erhält ein Popup mit Vorschau und gibt sie frei oder lehnt sie ab.",
+          "Der öffentliche Chat zeigt eine Bieternummer oder einen Anzeigenamen, nie eine Wallet-Adresse."
+        ],
+        "cta": "Raum öffnen",
+        "mock": {
+          "you": "Ist die Ecke scharf?",
+          "waiting": "Wartet auf Freigabe",
+          "toast": "Nachricht wartet",
+          "who": "Bieter 7",
+          "approve": "Freigeben",
+          "reject": "Ablehnen"
+        }
+      },
+      "telegram": {
+        "title": "Aus Telegram kaufen und bieten",
+        "lead": "Verbinden Sie den Bot @hammerpricebot und verfolgen Sie einen Raum vom Handy aus. Die Hinweise sind freiwillig.",
+        "steps": [
+          "Verbinden Sie Telegram in Ihrem Profil mit einem Tipp auf Start.",
+          "Sie erhalten einen Hinweis, wenn Sie überboten wurden und wenn Sie gewinnen.",
+          "Senden Sie /watch 3, /watch 5, /watch 10 oder /watch all, um zu erfahren, wann die nächsten Lose eines Live-Raums öffnen.",
+          "Tippen Sie unter einem Hinweis auf die Gebotsschaltfläche: Der Raum öffnet sich mit ausgefülltem Betrag, und Sie bestätigen in Ihrer Wallet. Der Bot bietet nie für Sie."
+        ],
+        "cta": "Telegram verbinden",
+        "cta2": "Bot öffnen",
+        "mock": {
+          "bot": "Hammerprice",
+          "head": "Los 3 ist offen",
+          "card": "Beispielkarte · PSA 10",
+          "left": "Noch 90 Sekunden. Für Sie wird nichts geboten.",
+          "bid": "12,50 USDC bieten",
+          "bidPlus": "13,75 USDC bieten (+10 %)"
+        }
+      },
+      "agent": {
+        "title": "Den KI-Agenten fragen",
+        "lead": "Sprechen Sie mit dem Agenten auf Deutsch oder Englisch. Er macht nur Vorschläge, Sie entscheiden.",
+        "steps": [
+          "Suchen Sie offene und kommende Lose in Ihren eigenen Worten.",
+          "Lassen Sie einen Gebotsvorschlag vorbereiten oder eine Anzeige für eine Karte entwerfen, die Sie verkaufen möchten.",
+          "Eine angemeldete Wallet ist nötig. Sie bestätigen jeden Schritt selbst, der Agent bietet und zahlt nie."
+        ],
+        "cta": "KI-Agent ausprobieren",
+        "mock": {
+          "ask": "Finde ein PSA 10 Glurak unter 500 USDC",
+          "answer": "2 Lose gefunden. Soll ich einen Gebotsvorschlag vorbereiten?",
+          "c1": "Lose suchen",
+          "c2": "Gebotsvorschlag",
+          "c3": "Anzeigenentwurf",
+          "confirm": "Sie bestätigen in Ihrer Wallet"
+        }
+      },
+      "profile": {
+        "title": "Ihr Profil und Ihre Wallet",
+        "lead": "Eine Seite für alles, was Ihnen gehört.",
+        "steps": [
+          "Wählen Sie einen Benutzernamen und ein Bild.",
+          "Sehen Sie Ihr USDC- und SOL-Guthaben und die Karten in Ihrer Wallet.",
+          "Verfolgen Sie Ihre Gebote, Gewinne und Zahlungen sowie Ihre Verkäufe mit den Preisen.",
+          "Legen Sie fest, welche Telegram-Hinweise Sie erhalten."
+        ],
+        "cta": "Profil öffnen",
+        "mock": {
+          "name": "collector_42",
+          "usdc": "USDC",
+          "sol": "SOL",
+          "t1": "Gebote",
+          "t2": "Gewinne",
+          "t3": "Verkäufe",
+          "row": "Los 01 · führend"
+        }
+      }
+    },
+    "more": {
+      "timed": {
+        "title": "Zeitauktionen",
+        "line": "Eine Karte, offen für Stunden oder Tage. Sie schließt von selbst, mit einem weichen Ende gegen Gebote in letzter Sekunde.",
+        "link": "Räume ansehen"
+      },
+      "random": {
+        "title": "Nachprüfbare Zufallsreihenfolge der Lose",
+        "line": "Die Reihenfolge der Lose wird mit einem öffentlichen ECVRF-Beweis gezogen, den jeder nachrechnen kann.",
+        "link": "Zum Hausraum"
+      },
+      "packs": {
+        "title": "Packs",
+        "line": "Eine verdeckte Ziehung aus einem öffentlichen Kartenpool, mit Quoten, Pool und einem Nachweis, den jeder nachprüfen kann.",
+        "link": "So funktionieren Packs"
+      },
+      "video": {
+        "title": "Live-Video",
+        "line": "Ein Verkäufer kann einer Show eine Live-Kamera hinzufügen. Sie laden das Bild mit einem Klick.",
+        "link": "Live-Raum finden"
+      },
+      "draft": {
+        "title": "KI-Inseratsentwurf und Raum-Assistent",
+        "line": "Verkäufer erhalten einen Entwurf für Titel und Text auf Deutsch und Englisch zur Prüfung, und ein Raum-Assistent antwortet aus unseren FAQ.",
+        "link": "KI-Seite öffnen"
+      },
+      "verify": {
+        "title": "Öffentliche Prüf- und Verifizierungsseiten",
+        "line": "Jedes bezahlte Los hat eine Seite, die die signierten Gebote neu prüft und die Zahlung aus dem Solana-Netz liest.",
+        "link": "Belege ansehen"
+      },
+      "languages": {
+        "title": "Deutsch und Englisch",
+        "line": "Die ganze Seite gibt es in beiden Sprachen.",
+        "link": "Diese Seite auf Englisch lesen"
+      },
+      "wallets": {
+        "title": "Wallet-Unterstützung",
+        "line": "Phantom, Solflare und Backpack. Die Anmeldung ist eine kostenlose Signatur, keine Transaktion.",
+        "link": "Wallet-Hilfe"
+      }
+    }
+  },
+  "waitlist": {
+    "heading": "Auf die Warteliste für den Mainnet-Start",
+    "copy": "Hammerprice ist heute live in der Beta. Hinterlassen Sie Ihre E-Mail-Adresse, dann sagen wir Ihnen Bescheid, sobald es im Mainnet startet. Eine E-Mail, kein Spam.",
+    "label": "E-Mail-Adresse",
+    "placeholder": "sie@beispiel.de",
+    "submit": "Auf die Warteliste",
+    "sending": "Wird gesendet",
+    "success": "Danke. Sie stehen auf der Warteliste.",
+    "errorInvalid": "Diese E-Mail-Adresse sieht nicht richtig aus. Bitte prüfen Sie sie und versuchen Sie es erneut.",
+    "errorTooMany": "Zu viele Versuche. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+    "errorGeneric": "Das hat nicht geklappt. Bitte versuchen Sie es gleich noch einmal.",
+    "privacyBefore": "Wir verwenden Ihre Adresse nur, um Ihnen mitzuteilen, wann Hammerprice im Mainnet erreichbar ist. ",
+    "privacyLink": "Datenschutzerklärung"
+  },
+  "wallet": {
+    "heading": "Noch kein Wallet?",
+    "lede": "Zum Bieten brauchen Sie ein Solana-Wallet im Browser. Es ist kostenlos und in zwei Minuten eingerichtet.",
+    "install": "Installieren",
+    "mobile": "Öffnen Sie diese Seite auf dem Telefon im eigenen Browser Ihrer Wallet-App. Ein normaler Telefon-Browser erreicht Ihre Wallet-App nicht.",
+    "faq": "Mehr in den FAQ"
+  }
+}

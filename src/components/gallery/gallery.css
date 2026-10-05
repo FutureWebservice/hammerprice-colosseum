@@ -1,0 +1,181 @@
+/*
+ * The rotating slab row. Tokens come from hammerprice.css - brass, baize, paper, the same
+ * one design system the rest of the site uses.
+ *
+ * Two motions, both compositor-only: every slab turns on its Y axis (gal-spin) and drifts a
+ * few pixels up and down (gal-float), phase-shifted per card by Card3D so the hand never moves
+ * in lockstep. The scroll room layers one extra eased turn on top (CardGallery.tsx).
+ */
+@import '../landing/hammerprice.css';
+
+.gal-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(10px, 2.6vw, 34px);
+  padding: 18px 12px 0;
+}
+
+.gal-card {
+  --gal-w: clamp(96px, 26vw, 236px);
+  --gal-depth: 14px;
+  width: var(--gal-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: gal-float 7s ease-in-out infinite;
+}
+@keyframes gal-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* Same hand at every width. A phone gets the first three of the five (the curated list puts
+   the icons first) at a smaller size, so the composition reads the way it does on desktop
+   instead of collapsing to a pair; from 640px all five. Hidden cards' lazy images never
+   fetch (display:none never intersects). */
+.gal-card:nth-child(n + 4) { display: none; }
+@media (min-width: 640px) {
+  /* Narrower than before because the box got taller (10:17): keeps the CTA on the first screen. */
+  .gal-card { --gal-w: clamp(140px, 13.5vw, 204px); }
+  .gal-card:nth-child(n + 4) { display: flex; }
+}
+
+.gal-card > .gal-outer,
+.gal-card > .gal-static-img {
+  /* Measured on the vault's own photos: 338 x 568, a 0.595 ratio. A 3:4 box with cover
+     cropped a fifth of every slab, the grading label at the top and the case at the bottom.
+     10:17 is the slab; contain is the safety net for the odd photo that is not. */
+  aspect-ratio: 10 / 17;
+  width: 100%;
+}
+
+/* --- the 3D slab --- */
+.gal-outer {
+  perspective: 1100px;
+  /* A slight resting tilt reads as an object standing on the table, not a flat swatch. */
+  transform: rotateX(7deg);
+  /* The pool of light the slab stands in. */
+  filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.55));
+}
+.gal-spin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: gal-spin 26s linear infinite;
+}
+@keyframes gal-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.gal-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  /* Dark, not paper: a face whose image has not decoded yet must not flash as a blank cream
+     slab on first paint, which it did for the first few seconds. */
+  background: var(--baize-lt);
+  /* Brass rim light along the top edge and a hairline of it all round: the acrylic case
+     catching the room's one light source. */
+  box-shadow:
+    inset 0 1px 0 rgba(232, 199, 118, 0.55),
+    inset 0 0 0 1px rgba(200, 164, 77, 0.28),
+    0 18px 40px rgba(0, 0, 0, 0.5);
+}
+.gal-face img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.gal-face::after {
+  /* A soft specular sweep across the case, fixed to the face so it turns with the card. */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0) 62%, rgba(232, 199, 118, 0.12) 100%);
+  pointer-events: none;
+}
+.gal-face--back { transform: rotateY(180deg); }
+
+/* Slab thickness: the two side edges, caught in brass light as the card turns. Only left and
+   right ever face the camera under a Y-axis spin, so top/bottom edges aren't drawn. */
+.gal-edge {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: var(--gal-depth);
+  background: linear-gradient(180deg, var(--brass-br), var(--brass) 45%, #6b5726 100%);
+}
+/* Each edge is already centred on its border (right/left: -depth/2), so a quarter turn about
+   its own centre puts it exactly where a box's side face sits: spanning -depth/2..+depth/2 in
+   Z at x = the border. The old extra translateZ(w/2) ran along the ALREADY ROTATED axis and
+   pushed each edge half a card-width outward, which is why brass hairlines stood off the
+   cards on both sides like a frame that was too wide. */
+.gal-edge--right {
+  right: calc(var(--gal-depth) / -2);
+  transform: rotateY(90deg);
+}
+.gal-edge--left {
+  left: calc(var(--gal-depth) / -2);
+  transform: rotateY(-90deg);
+}
+
+/* --- reduced motion: static front face, still beautiful --- */
+.gal-static-img {
+  height: 100%;
+  object-fit: contain;
+  border-radius: 7px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+/* --- caption: the real grade, name, ask - the verifiability is the point --- */
+.gal-cap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+  max-width: calc(var(--gal-w) + 20px);
+  /* A plate, so the hero's brass hairline and ticks drawn on the canvas behind never strike
+     through a price on a short screen. Outside the slab, never over it. */
+  background: rgba(14, 17, 22, 0.72);
+  padding: 5px 7px;
+  border-radius: 3px;
+}
+.gal-grade {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--brass-br);
+  background: var(--baize-lt);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.gal-name {
+  font-size: 11px;
+  color: #c9d1cd;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.gal-price {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brass);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-spin { animation: none; }
+  .gal-card { animation: none; }
+  .gal-outer { transform: none; }
+}

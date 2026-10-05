@@ -1,0 +1,206 @@
+{
+  "title": "Zahlung",
+  "roles": {
+    "buyer": "Käufer",
+    "seller": "Verkäufer"
+  },
+  "state": {
+    "signNow": "Bestätigen Sie jetzt in Ihrem Wallet.",
+    "waitingSeller": "Warten auf die Bestätigung des Verkäufers. Noch {seconds} s.",
+    "waitingBuyer": "Warten auf die Zahlung des Käufers. Noch {seconds} s.",
+    "submitted": "Beide haben bestätigt. Die Zahlung wird abgeschlossen…",
+    "settled": "Erledigt",
+    "expired": "Die Zeit ist abgelaufen",
+    "failed": "Nicht durchgegangen",
+    "loading": "Wird geladen…",
+    "ready": "Bereit, wenn Sie es sind.",
+    "readyBuyer": "Prüfen Sie den Betrag und drücken Sie dann Bezahlen. Erst dann öffnet sich Ihr Wallet.",
+    "readySeller": "Bestätigen Sie den Verkauf, um die Karte zu übergeben. Ihr Wallet fragt einmal.",
+    "preparing": "Ihre Zahlung wird vorbereitet…",
+    "timeLeft": "noch {seconds} s",
+    "lapsed": "Die Zeit ist abgelaufen. Es wurde nichts abgebucht. Drücken Sie Erneut versuchen.",
+    "retry": "Noch nicht abgeschlossen. Es wurde nichts abgebucht."
+  },
+  "window": {
+    "due": "Sie haben Zeit bis {time}",
+    "note": "Bleiben Sie auf dieser Seite, bis die Zahlung abgeschlossen ist."
+  },
+  "review": {
+    "heading": "Was Sie unterschreiben",
+    "note": "Diese Zahlen stammen aus der Transaktion selbst, nicht aus der Zusammenfassung des Servers.",
+    "youPay": "Käufer zahlt",
+    "sellerReceives": "Verkäufer erhält",
+    "fee": "Gebühr von Hammerprice",
+    "royalty": "Lizenzgebühr",
+    "card": "Karte",
+    "cardTo": "Karte geht an",
+    "memo": "Nachweis der Gebote (Hash), on-chain geschrieben",
+    "verify": "Gebote prüfen",
+    "gas": "Netzwerkgebühren trägt Hammerprice.",
+    "checking": "Die Zahlen erscheinen hier, sobald die Transaktion vorbereitet ist, und werden aus der Transaktion selbst gelesen.",
+    "ok": "Die Transaktion entspricht dem vereinbarten Kauf.",
+    "problems": {
+      "fee_payer": "Die Netzwerkgebühr würde nicht von Hammerprice getragen.",
+      "signers": "Die Transaktion verlangt Unterschriften, die sie nicht verlangen sollte.",
+      "cluster": "Die Transaktion gehört zu einem anderen Netzwerk als diese Show.",
+      "not_your_role": "Dieses Wallet ist nicht der {role} dieses Kaufs.",
+      "foreign_program": "Die Transaktion enthält einen Schritt, der nicht in eine Zahlung gehört.",
+      "mint": "Die Zahlung erfolgt nicht in dem erwarteten USDC.",
+      "leg_authority": "Eine Zahlung würde von einem anderen Konto als dem des Käufers abgebucht.",
+      "leg_destination": "Eine Zahlung geht an ein Konto, das nicht zu diesem Kauf gehört.",
+      "leg_amounts": "Die Zahlungsbeträge ergeben nicht die vereinbarte Aufteilung.",
+      "gross": "Die Summe passt nicht zum Zahlungsdatensatz.",
+      "price_mismatch": "Der Preis in der Transaktion ist nicht der Preis, auf den Sie geboten haben.",
+      "card": "Die Kartenübertragung geht nicht vom Verkäufer zum Käufer.",
+      "memo": "Der Nachweis der Gebote fehlt oder ist falsch.",
+      "shape": "Die Transaktion hat eine unerwartete Form."
+    },
+    "technical": "Technische Details"
+  },
+  "actions": {
+    "signing": "Warten auf Ihr Wallet…",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "explorer": "Beleg im Solana Explorer ansehen",
+    "refresh": "Aktualisieren",
+    "pay": "{amount} bezahlen",
+    "confirmSale": "Verkauf bestätigen",
+    "preparing": "Wird vorbereitet…"
+  },
+  "cluster": {
+    "title": "Ihr Wallet steht möglicherweise im falschen Netzwerk",
+    "body": "Dieser Kauf wird auf Devnet abgewickelt. Ein Wallet auf Mainnet kann ihn weder simulieren noch unterschreiben.",
+    "step1": "Öffnen Sie die Einstellungen Ihres Wallets.",
+    "step2": "Phantom: Einstellungen, Entwicklereinstellungen, Testnet-Modus einschalten, dann Solana Devnet wählen. Solflare und Backpack: In den Einstellungen das Netzwerk auf Devnet stellen.",
+    "step3": "Kommen Sie hierher zurück und versuchen Sie es erneut."
+  },
+  "outcome": {
+    "settledBuyer": "Erledigt. Die Karte ist in Ihrem Wallet, und der Verkäufer wurde bezahlt.",
+    "settledSeller": "Erledigt. Das USDC ist in Ihrem Wallet, und die Karte ging an den Käufer.",
+    "lapsed": "Nicht abgeschlossen. Die Zeit endete, bevor beide Seiten bestätigt haben. Es hat sich nichts bewegt: weder USDC noch Karte wechselten den Besitzer.",
+    "failed": "Die Zahlung ist fehlgeschlagen. Es hat sich nichts bewegt."
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Versuchen Sie es erneut.",
+    "load": "Die Zahlung konnte nicht geladen werden. Neuer Versuch läuft.",
+    "review": "Wir haben Ihr Wallet nicht um eine Unterschrift gebeten, weil die Zahlung nicht zum Kauf passt. Es wurde nichts gesendet. Versuchen Sie es erneut.",
+    "validator": "Wir haben Ihr Wallet nicht um eine Unterschrift gebeten, weil die Zahlung unsere Sicherheitsprüfung nicht bestanden hat. Es wurde nichts gesendet. Versuchen Sie es erneut.",
+    "walletRejected": "Sie haben im Wallet abgebrochen. Es wurde nichts abgebucht. Drücken Sie Erneut versuchen, wenn Sie bereit sind.",
+    "walletCluster": "Ihr Wallet konnte nicht unterschreiben. Vermutlich steht es im falschen Netzwerk: siehe die Schritte unten.",
+    "walletUnsupported": "Dieses Wallet kann keine Transaktionen unterschreiben. Nutzen Sie Phantom, Solflare oder Backpack.",
+    "walletUnknown": "Ihr Wallet konnte nicht unterschreiben. Versuchen Sie es erneut.",
+    "walletModified": "Ihr Wallet hat eine andere Zahlung zurückgegeben als unsere, deshalb haben wir sie nicht gesendet. Es wurde nichts abgebucht. Versuchen Sie es erneut.",
+    "unauthenticated": "Sie sind abgemeldet. Bestätigen Sie Ihr Wallet erneut.",
+    "not_found": "Diese Zahlung gibt es nicht.",
+    "not_party": "Dieses Wallet gehört nicht zu dieser Zahlung.",
+    "not_buyer": "Das kann nur der Käufer tun.",
+    "wrong_state": "Diese Zahlung wartet gerade nicht auf Sie.",
+    "tx_mismatch": "Der Server hat die Transaktion abgelehnt, weil sie nicht zum Kauf passt.",
+    "bad_signature": "Die Unterschrift konnte nicht geprüft werden. Versuchen Sie es erneut.",
+    "round_expired": "Dieser Versuch hat zu lange gedauert. Versuchen Sie es erneut.",
+    "blockhash_expired": "Dieser Versuch hat zu lange gedauert. Versuchen Sie es erneut.",
+    "counterparty_pending": "Warten darauf, dass die Gegenseite unterschreibt.",
+    "simulation_failed": "Der Testlauf im Netzwerk ist fehlgeschlagen. Prüfen Sie, ob Ihr Wallet auf Devnet steht, und versuchen Sie es erneut.",
+    "insufficient_usdc": "Ihr USDC-Guthaben deckt diese Zahlung nicht. Laden Sie USDC auf Ihre Wallet und versuchen Sie es erneut.",
+    "asset_not_ready": "Die Karte kann nicht übertragen werden: Sie hat eventuell den Besitzer gewechselt oder wurde eingefroren.",
+    "balance_unavailable": "Das USDC-Guthaben konnte nicht gelesen werden. Versuchen Sie es in ein paar Sekunden erneut.",
+    "rpc_unavailable": "Das Solana-Netzwerk antwortet langsam. Versuchen Sie es in ein paar Sekunden erneut.",
+    "rate_limited": "Zu viele Versuche. Warten Sie einen Moment und versuchen Sie es erneut.",
+    "paused": "Zahlungen sind vorübergehend pausiert.",
+    "banned": "Dieses Wallet ist gesperrt.",
+    "mainnet_config_incomplete": "Diese Seite ist für echte Zahlungen noch nicht vollständig eingerichtet. Es wurde nichts gesendet.",
+    "cluster_config_conflict": "Die Netzwerk-Einstellungen dieser Seite widersprechen sich. Es wurde nichts gesendet."
+  },
+  "verify": {
+    "kicker": "Prüfung",
+    "missingKicker": "Nicht verfügbar",
+    "rooms": "Zu den Räumen",
+    "home": "Zur Startseite",
+    "title": "Gebote prüfen",
+    "lede": "Jedes Gebot ist unterschrieben. Diese Seite berechnet den Nachweis (einen Hash der Gebote) aus den öffentlichen Geboten in Ihrem Browser neu. Wenn das Los bezahlt wurde, liest sie danach die Zahlung aus dem Solana-Netzwerk und vergleicht den dort gefundenen Nachweis mit Ihrem eigenen Ergebnis.",
+    "loading": "Gebote werden geladen…",
+    "unavailable": "Für dieses Los sind noch keine Prüfdaten verfügbar.",
+    "back": "Zurück zum Raum",
+    "lot": "Los {number}: {name}",
+    "bids": "Unterschriebene Gebote",
+    "colPaddle": "Bieter",
+    "colAmount": "Betrag",
+    "colTime": "Zeit",
+    "colSigner": "Unterschrieben von",
+    "colCheck": "Prüfung",
+    "signerWallet": "Wallet",
+    "signerSession": "Bieternummer-Schlüssel",
+    "anonymous": "Unbekannt",
+    "check": {
+      "valid": "Unterschrift gültig",
+      "bad_signature": "Unterschrift ungültig",
+      "mismatch": "Der unterschriebene Text passt nicht zu diesem Gebot"
+    },
+    "recomputed": "In Ihrem Browser neu berechnet",
+    "api": "Von unserem Server gemeldet",
+    "onchain": "Memo in der Zahlungstransaktion, aus dem Netzwerk gelesen",
+    "noMemo": "Kein gültiges Memo gefunden",
+    "mark": {
+      "ok": "stimmt mit Ihrem Ergebnis überein",
+      "bad": "weicht von Ihrem Ergebnis ab",
+      "none": "nicht geprüft"
+    },
+    "state": {
+      "checking": "Die Zahlung wird aus dem Netzwerk gelesen…",
+      "confirmed": "Bestätigt. Der Nachweis in der finalisierten Zahlungstransaktion stimmt mit diesen Geboten überein.",
+      "contradicts": {
+        "hash": "Stimmt nicht überein. Der Nachweis in der Zahlungstransaktion weicht vom Nachweis ab, der aus diesen Geboten berechnet wurde. Beide Werte stehen oben.",
+        "settlement": "Stimmt nicht überein. Das Memo in der Transaktion nennt eine andere Abwicklung ({found}) als die, zu der dieses Los gehört ({expected}).",
+        "memo": "Nicht bestätigt. Die Transaktion enthält kein gültiges Hammerprice-Memo (verlangt ist genau ein Memo, das mit hp:settle: beginnt) und trägt deshalb keinen Nachweis dieser Gebote.",
+        "failed": "Nicht bestätigt. Die Transaktion ist im Netzwerk fehlgeschlagen und hat dieses Los deshalb nicht abgewickelt."
+      },
+      "notFound": {
+        "no_signature": "Noch nichts zu lesen. Für die Zahlung dieses Loses gibt es im Netzwerk bisher keine Transaktion.",
+        "not_finalized": "Noch nicht endgültig. Das Netzwerk hat die Transaktion gesehen, aber noch nicht finalisiert. Prüfen Sie in einer Minute erneut.",
+        "unknown": "Nicht gefunden. Der Netzwerkknoten meldet keine finalisierte Transaktion mit dieser Signatur. Öffnen Sie den Explorer-Link oder prüfen Sie später erneut."
+      },
+      "unreachable": "Prüfung nicht möglich. Ihr Browser konnte das Netzwerk gerade nicht lesen. Das sagt nichts über die Gebote aus.",
+      "retry": "Erneut prüfen"
+    },
+    "noSettlement": "Für dieses Los gibt es noch keine Zahlung, daher gibt es nichts zu vergleichen. Die Unterschriften oben werden trotzdem geprüft.",
+    "howHash": "So entsteht der Nachweis: SHA-256 über den unterschriebenen Text und die Unterschrift jedes Gebots, der Reihe nach, eine pro Zeile.",
+    "howChain": "Ein Memo ist eine kurze Notiz, die an eine Solana-Transaktion angehängt wird. Die Zahlung trägt eine Notiz in der Form hp:settle:, Abwicklungs-ID, Doppelpunkt und Nachweis. Ihr Browser fragt das Solana-Netzwerk nach der finalisierten Transaktion und liest diese Notiz selbst.",
+    "chain": {
+      "heading": "Was das Netzwerk zeigt",
+      "network": "Netzwerk",
+      "net": {
+        "devnet": "Devnet",
+        "mainnet-beta": "Mainnet"
+      },
+      "signature": "Signatur der Transaktion",
+      "slot": "Slot (Position in der Chain)",
+      "confirmation": "Bestätigung",
+      "finalized": "Finalisiert, die höchste Bestätigungsstufe des Netzwerks",
+      "time": "Blockzeit",
+      "signers": "Unterschrieben von",
+      "role": {
+        "fee_payer": "Zahler der Netzwerkgebühr",
+        "buyer": "Käufer (hat das USDC gesendet)",
+        "seller": "Verkäufer (hat die Karte gesendet)",
+        "other": "Weiterer Unterzeichner"
+      },
+      "memo": "Memo-Text, wie er aus dem Netzwerk gelesen wurde",
+      "moves": "Was bewegt wurde",
+      "colWhat": "Was",
+      "colFrom": "Von",
+      "colTo": "An",
+      "usdc": "{amount} USDC",
+      "token": "{amount} des Tokens {mint}",
+      "card": "Karte {asset}"
+    },
+    "tx": "Zahlungstransaktion",
+    "explorer": "Im Solana Explorer öffnen",
+    "computing": "Wird berechnet…"
+  },
+  "titleBuyer": "Karte bezahlen",
+  "titleSeller": "Verkauf abschließen",
+  "summary": {
+    "heading": "Ihre Zahlung",
+    "fee": "Gebühr von Hammerprice (enthalten)"
+  }
+}

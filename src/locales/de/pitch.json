@@ -1,0 +1,371 @@
+{
+  "meta": {
+    "title": "Der Zuschlag ist die Zahlung",
+    "description": "Live-Auktionen für gradierte Sammelkarten auf Solana: in Live-Räumen bieten, mit einer USDC-Transaktion bezahlen, die eigene Karte verkaufen. Live in der Beta."
+  },
+  "eyebrow": "Live-Kartenauktionen auf Solana",
+  "headline": {
+    "before": "Der Zuschlag ",
+    "em": "ist",
+    "after": " die Zahlung."
+  },
+  "tagline": "Der Live-Auktionsraum für gradierte Sammelkarten.",
+  "cta": {
+    "room": "Live-Raum betreten",
+    "sell": "Karte verkaufen",
+    "verify": "Zufall prüfen"
+  },
+  "langSwitch": "Auf Englisch lesen",
+  "how": {
+    "kicker": "So funktioniert's",
+    "heading": "Sechs Schritte, drei Rollen.",
+    "intro": "Ob Sie kaufen, verkaufen oder einen Raum leiten: Das ist der ganze Weg. Alles geschieht in Ihrer eigenen Wallet.",
+    "roles": {
+      "all": "Alle",
+      "buyer": "Käufer",
+      "seller": "Verkäufer",
+      "host": "Raum-Betreiber"
+    },
+    "steps": [
+      {
+        "roles": [
+          "all"
+        ],
+        "title": "Wallet verbinden",
+        "body": "Öffnen Sie Hammerprice im Browser mit einer Solana-Wallet, melden Sie sich mit einer kostenlosen Signatur an und halten Sie etwas USDC darin.",
+        "link": {
+          "label": "Hilfe zur Wallet",
+          "href": "#wallet"
+        }
+      },
+      {
+        "roles": [
+          "seller"
+        ],
+        "title": "Karte wählen und Bedingungen festlegen",
+        "body": "Wählen Sie unter Verkaufen eine gradierte Karte aus Ihrer Wallet und legen Sie den Preis, einen optionalen Mindestpreis und die Los-Dauer fest.",
+        "link": {
+          "label": "Karte verkaufen",
+          "href": "/sell"
+        }
+      },
+      {
+        "roles": [
+          "host"
+        ],
+        "title": "Ihren Raum leiten",
+        "body": "Ihr Raum ist live, sobald Sie ihn starten. Sie können ihn pausieren und fortsetzen und moderieren seinen Chat.",
+        "link": null
+      },
+      {
+        "roles": [
+          "buyer"
+        ],
+        "title": "Gebot abgeben",
+        "body": "Öffnen Sie einen Raum, wählen Sie das nächste Gebot oder eine Schnell-Erhöhung und bestätigen Sie mit einer Signatur.",
+        "link": {
+          "label": "Live-Raum betreten",
+          "href": "/room/house"
+        }
+      },
+      {
+        "roles": [
+          "buyer",
+          "seller"
+        ],
+        "title": "Der Zuschlag zahlt",
+        "body": "Läuft die Uhr ab, gewinnt das höchste Gebot, wenn es den Mindestpreis erreicht. Die Gewinnerin oder der Gewinner bestätigt dann eine Zahlung in der eigenen Wallet.",
+        "link": {
+          "label": "So funktioniert die Zahlung",
+          "href": "#features"
+        }
+      },
+      {
+        "roles": [
+          "all"
+        ],
+        "title": "Selbst prüfen",
+        "body": "Öffentliche Prüf- und Beweisseiten lassen Sie einen Verkauf oder eine Ziehung in Ihrem Browser nachrechnen, Sie müssen uns also nicht vertrauen.",
+        "link": {
+          "label": "Geprüfter Zufall",
+          "href": "#verify"
+        }
+      }
+    ]
+  },
+  "showcase": {
+    "kicker": "Angesehen",
+    "heading": "Das Produkt in zehn Bildern.",
+    "intro": "Screenshots des aktuellen Stands mit Beispielkonten. Es sind keine echten Wallet-Adressen oder E-Mail-Adressen zu sehen.",
+    "items": [
+      {
+        "id": "landing",
+        "frame": "desktop",
+        "src": "/pitch/de/landing.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Die Eingangstür",
+        "body": "Die Startseite mit echten Tresorkarten.",
+        "alt": "Die Startseite von Hammerprice: das Logo, die Überschrift Der Hammer ist die Zahlung und gradierte Karten aus dem Tresor."
+      },
+      {
+        "id": "journeys",
+        "frame": "desktop",
+        "src": "/pitch/de/journeys.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Sechs Dinge, die Sie tun können",
+        "body": "Sechs Abläufe, je mit einem Knopf.",
+        "alt": "Der Abschnitt der Startseite Was Sie auf Hammerprice tun können, mit Ablauf-Blöcken und kurzen Schritten."
+      },
+      {
+        "id": "rooms",
+        "frame": "desktop",
+        "src": "/pitch/de/rooms.webp",
+        "width": 1600,
+        "height": 1250,
+        "title": "Erst Tutorial-Räume, dann echte Räume",
+        "body": "Demo-Räume oben, Räume von Verkäufern darunter.",
+        "alt": "Die Seite der Auktionsräume: als Tutorial gekennzeichnete Demo-Räume über den echten Räumen von Verkäufern."
+      },
+      {
+        "id": "room",
+        "frame": "desktop",
+        "src": "/pitch/de/room.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Ein Live-Raum",
+        "body": "Bühne, Gebotsleiste und Live-Feed.",
+        "alt": "Ein Live-Auktionsraum mit der Karte auf der Bühne, dem aktuellen Gebot, den Gebotsknöpfen und dem Live-Feed."
+      },
+      {
+        "id": "pay",
+        "frame": "desktop",
+        "src": "/pitch/de/pay.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Der Zahlungsdialog",
+        "body": "Vor dem Signieren lesbar.",
+        "alt": "Der Zahlungsdialog nach einem Zuschlag: eine Transaktion, die den Verkäufer bezahlt und die Karte an den Käufer überträgt."
+      },
+      {
+        "id": "chat",
+        "frame": "desktop",
+        "src": "/pitch/de/chat.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Der moderierte Chat",
+        "body": "Das Freigabe-Popup des Betreibers.",
+        "alt": "Der Raum-Chat mit einem Popup für den Raum-Betreiber, das eine wartende Nachricht und die Knöpfe zum Freigeben oder Ablehnen zeigt."
+      },
+      {
+        "id": "agent",
+        "frame": "desktop",
+        "src": "/pitch/de/agent.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Der KI-Agent",
+        "body": "Er schlägt vor, Sie entscheiden.",
+        "alt": "Die Seite des KI-Agenten: ein Gespräch, in dem der Agent Los-Karten und einen Gebotsvorschlag zeigt, den die Nutzerin oder der Nutzer noch bestätigen muss."
+      },
+      {
+        "id": "profile",
+        "frame": "desktop",
+        "src": "/pitch/de/profile.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Ihr Profil",
+        "body": "Gezeigt mit Beispieldaten.",
+        "alt": "Die Profilseite mit Benutzername und Bild, Beispielgeboten und -gewinnen und den Benachrichtigungseinstellungen."
+      },
+      {
+        "id": "wallet",
+        "frame": "desktop",
+        "src": "/pitch/de/wallet.webp",
+        "width": 1600,
+        "height": 1000,
+        "title": "Ihre Wallet auf einen Blick",
+        "body": "Guthaben und Karten.",
+        "alt": "Der Wallet-Reiter des Profils mit dem USDC- und SOL-Guthaben und den Karten der verbundenen Wallet."
+      },
+      {
+        "id": "mobile",
+        "frame": "phone",
+        "src": "/pitch/de/mobile.webp",
+        "width": 780,
+        "height": 1690,
+        "title": "Gemacht fürs Telefon",
+        "body": "Die Startseite bei 390 px.",
+        "alt": "Die Startseite auf dem Telefon: Logo, Überschrift und die ersten Knöpfe in einer Spalte."
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Alles in der Plattform",
+    "heading": "Was Hammerprice kann.",
+    "intro": "Alle Funktionen an einem Ort, in einfachen Worten.",
+    "items": [
+      {
+        "title": "Räume und Live-Bieten",
+        "body": "Ein Live-Raum verkauft seine Lose nacheinander auf einer Serveruhr, die Uhr Ihres Geräts spielt keine Rolle, und ein Gebot ist eine signierte Nachricht, die der Server gegen Ihr USDC prüft. Das Haus betreibt Tutorial-Räume, die echten Räume legen Verkäufer an, beide stehen in zwei Abschnitten auf der Räume-Seite. Ein Verkäufer kann optional Live-Video einschalten; vom Video-Server wird nichts geladen, bis Sie auf Live-Video laden drücken.",
+        "link": {
+          "label": "Zu den Räumen",
+          "href": "/rooms"
+        }
+      },
+      {
+        "title": "Abwicklung in einer Transaktion",
+        "body": "Wer gewinnt, bestätigt eine Zahlung: USDC an den Verkäufer, die Gebühr und die Karte an den Gewinner, ganz oder gar nicht, als eine atomare Solana-Transaktion, die einen Bruchteil eines Cents kostet, ohne Bridge und ohne eigenes Programm.",
+        "link": null
+      },
+      {
+        "title": "Zeitlich begrenzte Auktionen",
+        "body": "Eine Karte kann von einer Stunde bis zu sieben Tagen offen bleiben und endet von selbst zur Frist, und der Gewinner hat ein längeres Zahlungsfenster.",
+        "link": null
+      },
+      {
+        "title": "Verkaufsassistent mit KI-Entwurf",
+        "body": "Der Verkaufsassistent entwirft mit KI einen Titel und einen deutschen und englischen Text, die Sie prüfen, bevor Sie live gehen.",
+        "link": {
+          "label": "Karte verkaufen",
+          "href": "/sell"
+        }
+      },
+      {
+        "title": "Vormoderierter Chat",
+        "body": "Eine Nachricht wartet auf Freigabe: Der Raum-Betreiber erhält ein Popup mit Vorschau und gibt frei, lehnt ab, schaltet stumm oder sperrt. Links und Kontaktdaten werden abgelehnt, die öffentliche Liste zeigt eine Bieternummer, nie eine Wallet, und Besucher können eine Nachricht melden.",
+        "link": null
+      },
+      {
+        "title": "Ein KI-Agent, der nie bietet",
+        "body": "Auf der KI-Seite findet ein Agent offene Lose, bereitet ein Gebot vor und entwirft ein Angebot; in einem Raum antwortet ein Assistent aus einer festen FAQ. Alles ist als KI gekennzeichnet, eine angemeldete Wallet ist nötig, und Sie bestätigen jeden Schritt selbst.",
+        "link": {
+          "label": "KI-Seite öffnen",
+          "href": "/ai"
+        }
+      },
+      {
+        "title": "Telegram-Bot mit Benachrichtigungen",
+        "body": "@hammerpricebot meldet Ihnen, wenn Sie überboten werden, wenn Sie gewinnen und wenn eine Zahlung fällig ist. Sie verbinden ihn in Ihrem Profil mit Telegram verbinden; er ist freiwillig, braucht keine Telefonnummer und bietet nie für Sie.",
+        "link": null
+      },
+      {
+        "title": "/watch und vorausgefüllte Gebotslinks",
+        "body": "Senden Sie dem Bot /watch (zum Beispiel /watch 5 oder /watch all) und erhalten Sie eine kurze Nachricht, sobald eines der nächsten Lose eines Raums öffnet. Der Knopf öffnet den Raum mit ausgefülltem Gebot, und Sie bestätigen und signieren in Ihrer eigenen Wallet.",
+        "link": null
+      },
+      {
+        "title": "Packs mit veröffentlichten Wahrscheinlichkeiten",
+        "body": "Ein Pack ist eine Ziehung aus einem öffentlichen Kartenpool. Wahrscheinlichkeiten, Pool und ein Commitment-Hash sind vor dem ersten Verkauf öffentlich.",
+        "link": {
+          "label": "So wird ein Pack bezahlt",
+          "href": "#faq"
+        }
+      },
+      {
+        "title": "Profil und Wallet",
+        "body": "Benutzername und Bild, Ihre Gebote, Gewinne und Verkäufe, Ihre Benachrichtigungen sowie das USDC- und SOL-Guthaben und die Karten Ihrer verbundenen Wallet. Ein Guthaben, das das Netzwerk nicht liefert, steht als nicht verfügbar da, nie als Schätzung.",
+        "link": {
+          "label": "Profil öffnen",
+          "href": "/account"
+        }
+      },
+      {
+        "title": "Geprüfter Zufall (ECVRF)",
+        "body": "Lot-Reihenfolgen und Pack-Ziehungen kommen mit einem öffentlichen Zufallsbeweis (ECVRF), den jeder nachrechnen kann.",
+        "link": {
+          "label": "So prüfen Sie es",
+          "href": "#verify"
+        }
+      },
+      {
+        "title": "Öffentliche Prüfseiten",
+        "body": "Jedes bezahlte Los hat eine öffentliche Prüfseite unter /verify/ gefolgt von der Los-ID, verlinkt im Gewinn-Dialog und in der Abwicklungsübersicht.",
+        "link": {
+          "label": "Was sie beweist",
+          "href": "#faq"
+        }
+      },
+      {
+        "title": "Deutsch und Englisch",
+        "body": "Die ganze Seite, der Telegram-Bot und die Antworten des Assistenten gibt es auf Deutsch und Englisch, mit einem Schalter in der Kopfzeile.",
+        "link": null
+      },
+      {
+        "title": "Wallet-Unterstützung",
+        "body": "Phantom, Solflare und Backpack werden unterstützt.",
+        "link": {
+          "label": "Hilfe zur Wallet",
+          "href": "#wallet"
+        }
+      }
+    ]
+  },
+  "ledgerLabels": {
+    "vault": "Tresoreinträge, live",
+    "commission": "Provision der Verkäuferin",
+    "commissionValue": "2,5",
+    "premium": "Käuferaufgeld",
+    "premiumValue": "0",
+    "custody": "Kundengelder, die wir halten"
+  },
+  "verify": {
+    "kicker": "Geprüfter Zufall",
+    "heading": "Zufall, den Sie prüfen können.",
+    "what": "Wo Hammerprice ein zufälliges Ergebnis braucht, etwa die Reihenfolge der Lose einer Show oder die aus einem Pack gezogene Karte, bestimmt es das Ergebnis nicht selbst. Es legt sich auf der Solana-Chain auf die Eingabe fest, wartet auf einen Block, den es nicht vorhersehen kann, und zieht mit einer überprüfbaren Zufallsfunktion (ECVRF, RFC 9381). Das Ergebnis kommt mit einem kryptografischen Beweis, sodass niemand, auch wir nicht, es lenken kann und jeder es nachrechnen kann.",
+    "howHeading": "So prüfen Sie es",
+    "steps": [
+      "Öffnen Sie eine Beweisseite: Drücken Sie in einem Raum auf Beweis ansehen, oder nutzen Sie das Live-Beispiel auf dieser Seite.",
+      "Drücken Sie auf Selbst nachrechnen. Ihr Browser baut die Eingabe nach, prüft den Beweis gegen den veröffentlichten öffentlichen Schlüssel und leitet das Ergebnis ab.",
+      "Vergleichen Sie: Die Los-Reihenfolge oder die Pack-Karte, die die Seite ableitet, muss der im Raum gezeigten entsprechen. Die Commit- und die Reveal-Transaktion sind im Solana Explorer verlinkt."
+    ],
+    "live": {
+      "heading": "Live ansehen",
+      "body": "Die Los-Reihenfolge des Haus-Raums wird mit diesem Beweis gezogen. Öffnen Sie den neuesten.",
+      "cta": "Live-Beweis öffnen",
+      "ctaFallback": "Haus-Raum öffnen",
+      "fallbackBody": "Der Haus-Raum zeigt unter seiner Los-Liste einen Link Beweis ansehen, sobald seine Los-Reihenfolge gezogen ist.",
+      "room": "Zum Haus-Raum"
+    },
+    "also": [
+      "Jedes gezogene Pack hat eine eigene Beweisseite unter /verify/packs/ gefolgt von der Ziehungs-ID."
+    ]
+  },
+  "why": {
+    "kicker": "Der Pitch",
+    "heading": "Problem und Lösung.",
+    "blocks": [
+      {
+        "title": "Das Problem",
+        "body": "Mehr als 150.000 gradierte Karten liegen schon als NFTs auf Solana, tokenisiert vom Collector-Crypt-Tresor, und es gibt keinen Live-Markt dafür. Bei einer klassischen Kartenauktion beginnt mit dem Hammer erst der Papierkram: Auszahlungswarteschlange, Rückbuchungsfenster, Versandetikett. Der Verkäuferin steht das Geld im Moment des Verkaufs zu, und sie wartet Tage darauf.",
+        "points": []
+      },
+      {
+        "title": "Die Lösung",
+        "body": "Hammerprice macht Verkauf und Auszahlung für Karten im Tresor zu einem einzigen Schritt.",
+        "points": []
+      }
+    ]
+  },
+  "submission": {
+    "linksLabel": "Links",
+    "links": [
+      {
+        "label": "Startseite",
+        "href": "/"
+      },
+      {
+        "label": "Auktionsräume",
+        "href": "/rooms"
+      },
+      {
+        "label": "KI-Agent",
+        "href": "/ai"
+      },
+      {
+        "label": "Gründer",
+        "href": "/about#team"
+      }
+    ]
+  }
+}

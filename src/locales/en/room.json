@@ -1,0 +1,370 @@
+{
+  "topbar": {
+    "title": "Auction room"
+  },
+  "a11y": {
+    "skip": "Skip to bidding",
+    "siteNav": "Site",
+    "stage": "Lot on the block",
+    "catalogue": "Catalogue",
+    "bidding": "Bidding",
+    "feed": "Room feed",
+    "chatLabel": "Chat message",
+    "timer": "Time left on this lot"
+  },
+  "notFound": {
+    "title": "Not found",
+    "body": "This show doesn't exist, or hasn't been catalogued yet.",
+    "back": "All rooms"
+  },
+  "unavailable": "We could not load this room. Check your connection and try again.",
+  "retry": "Try again",
+  "loading": "Opening the room…",
+  "connection": {
+    "stale": "Connection lost. Showing the last known state and retrying."
+  },
+  "prefill": {
+    "notOpen": "Lot {number} from your link is not open right now. The room shows the current state."
+  },
+  "status": {
+    "live": "Live",
+    "startingSoon": "Starting soon",
+    "showEnded": "Show ended",
+    "scheduled": "Scheduled"
+  },
+  "phase": {
+    "open": "Bidding open",
+    "goingOnce": "Going once",
+    "goingTwice": "Going twice",
+    "closed": "Closed",
+    "waiting": "Waiting for the next lot",
+    "nextIn": "Next lot opens in {seconds} s",
+    "ended": "Show ended",
+    "closing": "Closing…",
+    "starts": "Starts {time}"
+  },
+  "countdown": {
+    "closesIn": "Closes in",
+    "extended": "+{seconds} s: a late bid extended the lot",
+    "antiSnipe": "A bid just before the close extends the lot."
+  },
+  "state": {
+    "sold": "Sold",
+    "hammered": "Sold, payment due",
+    "hammeredBelowReserve": "Sold below the minimum price",
+    "houseWon": "Won by house bot, no sale",
+    "passed": "Passed",
+    "withdrawn": "Withdrawn"
+  },
+  "catalogue": {
+    "head": "Catalogue · {count, plural, one {# lot} other {# lots}}",
+    "empty": "No lots catalogued yet.",
+    "lotNumber": "Lot {number}",
+    "hammer": "Sold for",
+    "estimate": "Minimum price",
+    "insured": "Insured",
+    "noMinimum": "No minimum",
+    "toYou": "to you",
+    "lotRule": "Each lot runs {duration}, longer when a late bid adds time."
+  },
+  "stage": {
+    "noLotOpen": "No lot open",
+    "currentBid": "current bid",
+    "estimate": "Minimum price",
+    "insured": "Insured",
+    "noMinimum": "No minimum",
+    "opening": "starting price",
+    "reserveNotMet": "Minimum price not met",
+    "untilLimit": "{amount} to the minimum price",
+    "limitReached": "Minimum price reached"
+  },
+  "call": {
+    "once": "Going once",
+    "twice": "Going twice"
+  },
+  "announce": {
+    "bid": "{paddle} bids {amount}",
+    "hammerYou": "Sold to you: {amount}",
+    "hammerOther": "Sold to {paddle}: {amount}",
+    "hammerYouBelowReserve": "Sold to you below the minimum price, the seller accepts: {amount}",
+    "hammerOtherBelowReserve": "Sold to {paddle} below the minimum price, the seller accepts: {amount}",
+    "passed": "Lot {number} not sold · minimum price not met",
+    "lotOpen": "Lot {number} is open: {name}, minimum price {amount}",
+    "lotOpenNoMinimum": "Lot {number} is open: {name}, no minimum price",
+    "leading": "Your bid of {amount} is leading",
+    "outbid": "Outbid by {paddle} at {amount}"
+  },
+  "paddle": {
+    "label": "Bidder {number}",
+    "house": "House bot {number}",
+    "maxInvalid": "Enter a plain amount such as 250 or 99.50.",
+    "expiryLabel": "Valid for",
+    "hours": "{hours, plural, one {# hour} other {# hours}}"
+  },
+  "bidPanel": {
+    "title": "Confirm bid",
+    "lotLine": "Lot {number} · {name}",
+    "yourBid": "Your bid",
+    "limitLabel": "Minimum price",
+    "meetsLimit": "This bid reaches the minimum price. If it wins, the card is yours.",
+    "belowLimit": "This bid is {amount} below the minimum price. A lot that stays below it is not sold.",
+    "noLimit": "This lot has no minimum price. The highest bid wins.",
+    "noLimitValue": "None",
+    "binding": "This bid is binding. If you win, you owe {amount} in USDC and must sign the payment in time.",
+    "outcome": "The card moves to your wallet and the seller is paid in the same transaction. Hammerprice never holds either.",
+    "demoNote": "Bidding in this room is a demonstration: no signature, no transaction, nothing charged.",
+    "close": "Close",
+    "titleAmount": "Bid {amount}",
+    "ifYouWin": "If you win you pay {amount} and the card moves to your wallet.",
+    "details": "Show details",
+    "fromLink": "The amount comes from your Telegram link. Nothing is placed until you confirm and sign in your own wallet.",
+    "fromLinkAdjusted": "The amount in your link no longer fits, so the current next bid is shown. Nothing is placed until you confirm and sign in your own wallet."
+  },
+  "fees": {
+    "heading": "What happens if you win",
+    "headingWon": "What you pay",
+    "hammer": "Sale price",
+    "network": "Network fee (Solana)",
+    "networkDevnet": "Paid by Hammerprice",
+    "youPay": "You pay",
+    "youPayValue": "{amount} plus the network fee",
+    "youPayDevnet": "{amount}",
+    "sellerGets": "Seller receives",
+    "commission": "Hammerprice keeps {pct}% of the sale price ({amount}), charged to the seller. As a bidder you pay your bid and nothing else.",
+    "approx": "SOL amounts are approximate at the current rate. You pay in USDC."
+  },
+  "bid": {
+    "noLotOpen": "No lot open",
+    "notOpenYet": "Not open yet",
+    "signingIn": "Waiting for your wallet…",
+    "bid": "Bid",
+    "bindingLabel": "Place binding bid, payment due if you win",
+    "placing": "Placing bid…",
+    "noPaddleOpen": "Bidding is open. Get your bidder number to join.",
+    "noPaddleSoon": "Bidding opens soon. You can get your bidder number now.",
+    "paddleLabel": "Bidding number",
+    "yourPaddle": "Your bidding number: {number}",
+    "outbid": "Outbid",
+    "notAccepted": "Bid not accepted",
+    "failed": "Could not place bid",
+    "nextAmount": "next bid",
+    "leadingSlab": "You are leading",
+    "leadingLine": "Your bid of {amount} is leading",
+    "outbidLine": "Outbid by {paddle} at {amount}",
+    "wonLine": "Sold to you: {amount}",
+    "lostLine": "Sold to {paddle}: {amount}",
+    "nextLotIn": "Next lot in {seconds}s",
+    "balance": "Your USDC: {amount}",
+    "balanceLow": "Your balance is below this bid.",
+    "balanceUnknown": "Balance unavailable right now.",
+    "getTestUsdc": "Get test USDC",
+    "funded": "Funded",
+    "notFunded": "Not funded",
+    "pendingServer": "Waiting for the room to confirm…",
+    "getReady": "Get ready to bid",
+    "quickLabel": "Raise to",
+    "pausedSlab": "Room paused"
+  },
+  "wallet": {
+    "title": "Connect a wallet to bid",
+    "need": "What you need",
+    "needWallet": "A Solana wallet. It holds your USDC and signs your bids.",
+    "needUsdc": "USDC to pay if you win.",
+    "detected": "Detected on this device",
+    "getWallet": "Get a wallet",
+    "connect": "Connect {name}",
+    "install": "Install {name}",
+    "mobileTitle": "On a phone?",
+    "mobileBody": "Open this page inside your wallet's own browser, then connect.",
+    "openIn": "Open in {name}",
+    "guestTitle": "No wallet? Try the practice room",
+    "guestBody": "Bid against simulated bidders. No wallet needed, nothing is sent.",
+    "guest": "Try the practice room",
+    "close": "Close",
+    "connectShort": "Connect wallet",
+    "connecting": "Connecting…",
+    "disconnect": "Disconnect",
+    "connectedAs": "Connected: {address}"
+  },
+  "practice": {
+    "pill": "Practice room · simulated bidders",
+    "pillShort": "Practice room",
+    "more": "What is real and what is simulated?",
+    "title": "Practice room",
+    "real": "Real: the cards, their grades, and the minimum price and bid step rules.",
+    "simulated": "Simulated: the bidders, their bids and the clock. Nothing is signed, sent or charged.",
+    "link": "See what is built and what is not",
+    "close": "Close",
+    "guestPaddle": "Demo bidder",
+    "guestYou": "You"
+  },
+  "devnet": {
+    "title": "Solana devnet",
+    "body": "This room settles on Solana devnet. Your wallet must be on devnet too, or it cannot sign.",
+    "help": "My wallet is on mainnet",
+    "step1": "Open your wallet's settings.",
+    "step2": "Phantom: Settings, Developer Settings, turn on Testnet Mode, then choose Solana Devnet. Solflare and Backpack: switch the network to Devnet in settings.",
+    "step3": "Come back and reload this page.",
+    "funds": "Get test USDC",
+    "details": "Details"
+  },
+  "errors": {
+    "generic": "Something went wrong. Try again.",
+    "network": "Could not reach Hammerprice. Check your connection and try again.",
+    "noSignMessage": "This wallet cannot sign messages. Use Phantom, Solflare or Backpack.",
+    "walletSign": "Your wallet could not sign.",
+    "walletRejected": "You cancelled the signature in your wallet.",
+    "walletCluster": "Your wallet could not sign. It is probably on the wrong network: open Details at the top of the page.",
+    "walletUnsupported": "This wallet cannot sign messages. Use Phantom, Solflare or Backpack.",
+    "walletUnknown": "Your wallet could not sign. Try again.",
+    "walletNotConnected": "The wallet is not connected yet. Wait a moment and try again.",
+    "walletTimeout": "Your wallet did not answer in time. Open the wallet, check the request and try again.",
+    "validation": "That request was not valid. Reload the page and try again.",
+    "unauthenticated": "You are signed out. Verify your wallet again to bid.",
+    "bad_signature": "Your wallet's signature did not check out. Try again.",
+    "replay": "That bid was already sent. Check the feed before trying again.",
+    "banned": "This wallet is banned from bidding.",
+    "forbidden": "You are not allowed to do that.",
+    "not_found": "This lot or show no longer exists.",
+    "wrong_state": "The room does not allow that right now.",
+    "nonce_used": "That verification was already used. Verify your wallet again.",
+    "expired": "Your verification expired. Verify your wallet again.",
+    "wrong_domain": "The wallet signed a message for another site. Reload and try again.",
+    "rate_limited": "Too many attempts. Wait {seconds} s and try again.",
+    "paused": "Bidding is paused for now. Try again shortly.",
+    "balance_unavailable": "We could not read your USDC balance. Try again in a few seconds.",
+    "rpc_unavailable": "The Solana network is slow to answer. Try again in a few seconds.",
+    "insufficient_funds": "Your available USDC does not cover this bid. Add USDC to your wallet or bid less.",
+    "show_not_live": "This show is not live.",
+    "show_ended": "This show has ended.",
+    "lot_not_open": "This lot is not open for bids.",
+    "lot_closed": "This lot just closed. Your bid was not accepted.",
+    "bid_too_low": "Someone bid first. The lowest bid now is {amount}.",
+    "amount_too_large": "That amount is above the largest bid allowed.",
+    "self_bid": "You cannot bid on your own lot.",
+    "already_high_bidder": "You already hold the high bid.",
+    "no_paddle": "Finish getting ready to bid first.",
+    "paddle_limit": "That is above the spending limit you set for this room. Raise the limit under \"Advanced options\" in \"Get ready to bid\", or bid a lower amount.",
+    "mainnet_config_incomplete": "This site is not fully set up for real payments yet. Nothing was sent.",
+    "cluster_config_conflict": "The network settings of this site contradict each other. Nothing was sent.",
+    "show_paused": "The seller paused the room. Bidding resumes with the same time left. Your bid was not placed."
+  },
+  "feed": {
+    "title": "Room",
+    "empty": "Quiet so far, nothing bid yet. Bids and chat land here.",
+    "placeholder": "Say something",
+    "send": "Send",
+    "note": "Chat is local to your screen only.",
+    "bidderFallback": "Bidder",
+    "youFallback": "You",
+    "buyerYou": "You",
+    "lotInline": "lot {number}",
+    "opened": "Lot {number} opens",
+    "sold": "Lot {number} sold: {amount}",
+    "hammered": "Lot {number} sold to {buyer}: {amount}",
+    "passed": "Lot {number}: not sold, minimum price not met",
+    "withdrawn": "Lot {number} withdrawn",
+    "extended": "Lot {number}: a late bid added time",
+    "settled": "Lot {number}: paid, the card has moved",
+    "notCompleted": "Lot {number}: not completed, the time ran out",
+    "houseWon": "Lot {number}: a house bot won. No sale, the card stays with the house",
+    "showLive": "The show is live",
+    "showEnded": "The show has ended",
+    "paused": "The seller paused the room, bidding resumes with the same time left (pause {count} of {max})",
+    "resumed": "Bidding is open again, with the same time left",
+    "resumedAuto": "The pause ended by itself, bidding is open again with the same time left"
+  },
+  "glossary": {
+    "title": "What do these mean?"
+  },
+  "win": {
+    "title": "You won",
+    "close": "Close",
+    "call": "Sold to you",
+    "outcome": "Once you pay, the card moves to your wallet and the seller is paid in the same step. Hammerprice holds neither.",
+    "status": {
+      "pending": "Getting your payment ready…",
+      "awaiting": "Payment due. Confirm it in your wallet to finish the purchase.",
+      "submitted": "Both sides confirmed. Finishing on the network…",
+      "settled": "Paid. The card is in your wallet.",
+      "windowEnded": "The payment window has ended. Paying is no longer possible and the sale will be recorded as not completed.",
+      "lapsed": "Not completed, the time ran out."
+    },
+    "pay": "Review and pay",
+    "receipt": "View receipt on Solana Explorer",
+    "verify": "Verify the bids",
+    "dismiss": "Keep watching",
+    "viewRooms": "All rooms",
+    "listYours": "List your own card",
+    "practiceNote": "This was the practice room: nothing was signed, transferred or charged. On a live lot, the seller is paid in USDC and the card moves to the winner's wallet in one transaction.",
+    "practiceNext": "See a live room",
+    "technical": "Technical details"
+  },
+  "demoOutcome": {
+    "wonTitle": "Great!",
+    "wonBody": "This was a demo run with a replica card. In a real room, the card you just won would be yours.",
+    "outbidTitle": "You were outbid in this demo.",
+    "outbidBody": "This was a demo run with a replica card. In a real room, the card shown here would go to the winner.",
+    "try": "Try a real room.",
+    "browse": "Browse real rooms",
+    "sell": "Sell your own card",
+    "dismiss": "Keep watching"
+  },
+  "desk": {
+    "title": "A payment is waiting for you",
+    "line": "Lot {number}: {amount}",
+    "buyer": "You won this lot. Pay to finish the purchase.",
+    "seller": "You sold this lot. Confirm to hand over the card.",
+    "open": "Review"
+  },
+  "ready": {
+    "title": "Get ready to bid",
+    "progress": "Step {step} of 3",
+    "steps": {
+      "connect": "Connect wallet",
+      "verify": "Verify wallet",
+      "funds": "Funds"
+    },
+    "connect": {
+      "body": "Choose the wallet that will hold your card and your USDC.",
+      "watch": "You can watch the room without a wallet. You only need one to bid."
+    },
+    "verify": {
+      "body": "Your wallet signs a short message to show that it is yours. This is free and sends no money.",
+      "button": "Verify wallet"
+    },
+    "waiting": "Waiting for your wallet…",
+    "funds": {
+      "bodyDevnet": "Your wallet does not hold enough USDC yet. Fill it here with free devnet test USDC to try bidding.",
+      "bodyMain": "Add at least $1 in USDC to this wallet, then check again.",
+      "balance": "Your balance: {amount}",
+      "unknown": "not available",
+      "claiming": "Getting your test USDC…",
+      "claim": "Get test USDC",
+      "recheck": "Check again",
+      "limited": "You claimed test USDC recently, so you cannot claim again for now. Try again later.",
+      "paused": "Claiming test USDC is paused right now. Try again later.",
+      "failed": "We could not send test USDC. Try again."
+    },
+    "start": {
+      "body": "One last free signature gives you your bidding number. After that you can bid without a wallet pop-up each time.",
+      "button": "Start bidding"
+    },
+    "advanced": {
+      "summary": "Advanced options",
+      "limitLabel": "Spending limit (USDC)",
+      "limitHelp": "Your bidding number cannot bid above this. Default: your balance, at most $250 (now {amount})."
+    }
+  },
+  "pause": {
+    "title": "The seller paused the room.",
+    "body": "Bidding is closed for now and resumes with the same time left. Nobody loses time.",
+    "keeps": "The lot keeps {time}",
+    "count": "Pause {used} of {max}",
+    "autoIn": "{minutes, plural, one {The pause ends by itself in about # minute at the latest.} other {The pause ends by itself in about # minutes at the latest.}}",
+    "autoCountdown": "Resumes by itself in {time}"
+  },
+  "seller": {
+    "by": "Offered by {name}"
+  }
+}

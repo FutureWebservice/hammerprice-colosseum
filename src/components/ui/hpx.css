@@ -1,0 +1,46 @@
+/*
+ * Shared surface kit for the rooms list, the room and the sell wizard: one radius, one button pair, one chip, one glass panel, one focus ring.
+ * Tokens (--brass, --brass-br, --paper, --ink ...) come from hammerprice.css. Every text colour here is at least 4.5:1 on its ground
+ * (checked in src/components/__tests__/contrast-guard.test.ts). Motion is limited to a 150 ms colour change and is switched off for reduced motion.
+ *   .hpx-panel   soft glass panel (16 px radius)
+ *   .hpx-btn     primary: solid yellow;  .hpx-btn--ghost  secondary: subtle outline
+ *   .hpx-chip    status chip; --live (vermillion dot), --gold, --demo (solid), --dim
+ */
+.hpx-panel {
+  background: rgba(255, 255, 255, .035);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+.hpx-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 22px;
+  font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  color: #1a1a17; background: var(--brass-br); border: 1px solid var(--brass-br); border-radius: 12px; cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.hpx-btn:hover:not(:disabled), .hpx-btn:focus-visible { background: var(--paper); border-color: var(--paper); }
+.hpx-btn:disabled { opacity: .45; cursor: not-allowed; }
+.hpx-btn--ghost { color: var(--paper); background: transparent; border-color: rgba(255, 255, 255, .3); }
+.hpx-btn--ghost:hover:not(:disabled), .hpx-btn--ghost:focus-visible { color: var(--brass-br); background: rgba(232, 199, 118, .1); border-color: var(--brass-br); }
+.hpx-btn:focus-visible, .hpx-card-link:focus-visible { outline: 2px solid var(--brass-br); outline-offset: 3px; }
+
+.hpx-chip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 24px; padding: 0 10px; border-radius: 999px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+  color: #cfd6d2; border: 1px solid rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .04);
+}
+.hpx-chip--gold { color: var(--brass-br); border-color: rgba(232, 199, 118, .55); background: rgba(232, 199, 118, .08); }
+.hpx-chip--demo { color: #221a08; background: var(--brass-br); border-color: var(--brass-br); font-weight: 600; }
+.hpx-chip--live { color: #ffb3a4; border-color: rgba(255, 138, 117, .5); background: rgba(210, 69, 46, .12); }
+.hpx-chip--dim { color: #a9b2ba; }
+.hpx-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--vermillion); flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .hpx-chip--live .hpx-dot { animation: hpx-pulse 2.2s ease-in-out infinite; }
+}
+@keyframes hpx-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(210, 69, 46, .45); }
+  60% { box-shadow: 0 0 0 7px rgba(210, 69, 46, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hpx-btn, .hpx-chip { transition: none; }
+}

@@ -1,0 +1,684 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Performance optimizations */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling.
+   `clip`, not `hidden`, and the difference matters twice over. `hidden` makes an element a
+   scroll container: it paints nothing sideways but the page can still be nudged sideways by a
+   trackpad, which is what the landing page did - the scroll room is full-bleed at `width:
+   100vw`, and 100vw counts the vertical scrollbar while the visible width does not, so the hero
+   was 8px wider than the viewport and the page slid 4px under a horizontal swipe. `clip` is not
+   a scroll container, so there is nothing to slide.
+   That same property is why `hidden` cannot go on body: the CSS Overflow spec silently upgrades
+   body's overflow-y to auto once it has any non-visible overflow-x, and body then becomes the
+   scrollport `position: sticky` resolves against - which would strand the landing page's pinned
+   hero (see ScrollRoom.tsx). `clip` on html avoids that trap on both counts. */
+html {
+  overflow-x: clip;
+  max-width: 100vw;
+}
+body {
+  max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+  max-width: 100%;
+}
+
+/* Optimized CSS animations to replace framer-motion */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+/* Ensure spin animation is always available */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Force loading spinner animations to work regardless of motion preferences */
+.loading-spinner {
+  animation: spin 1s linear infinite !important;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite !important;
+}
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 15, 15, 15;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 164, 77, 0.5); /* brass */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 164, 77, 0.8); /* brass */
+}
+
+/* Dark mode adjustments */
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 15, 15, 15;
+}
+
+/* Language switcher styles */
+.language-menu {
+  @apply absolute right-0 mt-1 w-48 bg-black/90 rounded-md shadow-lg border border-white/10 z-50;
+}
+
+.language-item {
+  @apply flex items-center w-full text-left px-4 py-2 text-sm text-white hover:bg-white/10 transition;
+}
+
+/* Animation for transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* The site's actual ground is the Hammerprice ink, not Tailwind's default --background.
+   #0E1116 mirrors .hp's --ink (scoped to the landing page only, so it can't be referenced
+   as a var() here) - keeps the page from flashing a mismatched color behind/around content. */
+body {
+  background-color: #0e1116;
+}
+
+/* Optimized floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0);
+  }
+  16.66% {
+    transform: translateY(-15px) translateZ(0);
+  }
+  33.33% {
+    transform: translateY(0px) translateZ(0);
+  }
+  50% {
+    transform: translateY(-15px) translateZ(0);
+  }
+  66.66% {
+    transform: translateY(0px) translateZ(0);
+  }
+  83.33% {
+    transform: translateY(-15px) translateZ(0);
+  }
+}
+
+.animate-float {
+  animation: float 1.5s ease-out 0.8s both;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Optimized performance classes */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Reduce motion for users who prefer it - but keep essential loading animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse,
+  .animate-bounce,
+  .jump-in,
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-in-right {
+    animation: none;
+  }
+  
+  /* Keep loading spinners for accessibility - they indicate active processes */
+  .animate-spin {
+    animation: spin 1s linear infinite !important;
+  }
+  
+  /* Reduce other animations but don't completely disable them */
+  *:not(.animate-spin) {
+    transition-duration: 0.1s !important;
+    animation-duration: 0.1s !important;
+  }
+}
+
+/* Improve scroll performance */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* Marquee Animation - Continuous scroll without reset */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  display: flex;
+  width: 200%; /* Double width to accommodate duplicated content */
+  will-change: transform; /* Optimize for smooth animation */
+}
+
+@layer components {
+  /* Wallet Adapter Button Overrides */
+  .wallet-adapter-button {
+    background-color: #C8A44D !important; /* brass */
+    color: #0E1116 !important; /* ink on brass: 8:1 */
+    border: none !important;
+    border-radius: 0.5rem !important; /* rounded-lg */
+    font-weight: 700 !important; /* font-bold */
+    padding: 0.5rem 1rem !important; /* px-4 py-2 */
+    font-size: 0.875rem !important; /* text-sm */
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important; /* shadow-md */
+  }
+
+  .wallet-adapter-button:hover {
+    background-color: #E8C776 !important; /* brass-bright on hover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; /* shadow-lg */
+  }
+
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #E8C776 !important;
+  }
+
+  .wallet-adapter-button[disabled] {
+    background-color: #404651 !important;
+    color: #C9CFD8 !important;
+  }
+
+  /* Wallet adapter modal styling */
+  .wallet-adapter-modal {
+    background-color: #1F2937 !important; /* dark background */
+    z-index: 99999 !important; /* Ensure modal is above everything else */
+    pointer-events: auto !important; /* Ensure modal can receive clicks */
+  }
+
+  .wallet-adapter-modal-overlay {
+    z-index: 99998 !important; /* Overlay should be below modal but above everything else */
+    pointer-events: none !important; /* Allow clicks to pass through overlay to modal content */
+    background-color: rgba(0, 0, 0, 0.75) !important; /* Make overlay visible */
+  }
+
+  .wallet-adapter-modal-container {
+    pointer-events: auto !important; /* Ensure container can receive clicks */
+    z-index: 99999 !important;
+    position: relative !important; /* Ensure container is positioned correctly */
+  }
+
+  .wallet-adapter-modal-wrapper {
+    pointer-events: auto !important; /* Ensure wrapper can receive clicks */
+    position: relative !important; /* Ensure wrapper is positioned correctly */
+  }
+
+  .wallet-adapter-modal-title {
+    color: white !important;
+  }
+
+  .wallet-adapter-modal-list {
+    background-color: #374151 !important; /* darker gray */
+    pointer-events: auto !important; /* Ensure list can receive clicks */
+  }
+
+  .wallet-adapter-modal-list-item {
+    pointer-events: auto !important; /* Ensure list items can receive clicks */
+    cursor: pointer !important;
+  }
+
+  .wallet-adapter-modal-list-item button {
+    pointer-events: auto !important; /* Ensure buttons can receive clicks */
+    cursor: pointer !important;
+    width: 100% !important;
+  }
+
+  .wallet-adapter-modal-list-item:hover {
+    background-color: #4B5563 !important; /* hover state */
+  }
+
+  /* The adapter's wallet rows are buttons too: ink panel with paper text instead of brass fill (readable, on brand). */
+  .wallet-adapter-modal-list .wallet-adapter-button {
+    background-color: #1F2733 !important;
+    color: #F4F0E6 !important;
+    box-shadow: none !important;
+  }
+  .wallet-adapter-modal-list .wallet-adapter-button:not([disabled]):hover {
+    background-color: #2B3544 !important;
+  }
+  .wallet-adapter-modal-list .wallet-adapter-button-end-icon,
+  .wallet-adapter-modal-list .wallet-adapter-button-start-icon { opacity: 1; }
+
+  .wallet-adapter-modal-list-more {
+    color: #E8C776 !important; /* brass-bright */
+    pointer-events: auto !important; /* Ensure links can receive clicks */
+  }
+
+  /* Ensure the modal content itself can receive clicks */
+  .wallet-adapter-modal .wallet-adapter-modal-container .wallet-adapter-modal-wrapper {
+    pointer-events: auto !important;
+  }
+
+  /* Fix for any nested elements that might be blocking clicks */
+  .wallet-adapter-modal * {
+    pointer-events: auto !important;
+  }
+
+  /* But make sure the backdrop/overlay specifically doesn't block clicks */
+  .wallet-adapter-modal-overlay, 
+  .wallet-adapter-modal > .wallet-adapter-modal-overlay {
+    pointer-events: none !important;
+  }
+
+  /* Additional wallet modal interaction fixes */
+  .wallet-adapter-modal-fade-in {
+    pointer-events: auto !important;
+  }
+
+  /* Ensure the actual modal dialog can receive clicks */
+  .wallet-adapter-modal .wallet-adapter-modal-container {
+    position: relative !important;
+    z-index: 100000 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Make sure wallet buttons inside the modal work */
+  .wallet-adapter-modal button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 100001 !important;
+    position: relative !important;
+  }
+
+  /* Override any conflicting pointer-events on the overlay specifically */
+  .wallet-adapter-modal::before,
+  .wallet-adapter-modal::after {
+    pointer-events: none !important;
+  }
+
+  /* Fix for the modal backdrop - it should not intercept clicks to modal content */
+  .wallet-adapter-modal[role="dialog"] {
+    pointer-events: none !important; /* Modal backdrop should not catch clicks */
+  }
+
+  .wallet-adapter-modal[role="dialog"] .wallet-adapter-modal-container {
+    pointer-events: auto !important; /* But the content should */
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Text Outline */
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.8);
+  }
+
+  .text-outline-white {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+  }
+
+  /* Backdrop Blur */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  .backdrop-blur-3xl {
+    backdrop-filter: blur(64px);
+  }
+
+  /* Text Clamping */
+  .clamp-text-sm {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .clamp-text-base {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+  }
+
+  .clamp-text-lg {
+    font-size: clamp(1.125rem, 3vw, 1.25rem);
+  }
+
+  .clamp-text-xl {
+    font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+  }
+
+  .clamp-text-2xl {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .clamp-text-3xl {
+    font-size: clamp(1.875rem, 5vw, 2.5rem);
+  }
+
+  .clamp-text-4xl {
+    font-size: clamp(2.25rem, 6vw, 3rem);
+  }
+
+  .clamp-text-5xl {
+    font-size: clamp(3rem, 8vw, 4rem);
+  }
+
+  .clamp-text-6xl {
+    font-size: clamp(3.75rem, 10vw, 5rem);
+  }
+
+  /* Mobile hero title optimization */
+  .hero-title-mobile {
+    font-size: clamp(2.5rem, 8vw, 3rem);
+    word-break: keep-all;
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .hero-title-mobile {
+      font-size: clamp(2.5rem, 13vw, 4.5rem);
+      white-space: nowrap;
+      text-align: center;
+      width: 100vw;
+      position: relative;
+    }
+  }
+
+  /* Epic sequential hero animations */
+  @keyframes epicFadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes epicJump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes badgeFadeJump {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    70% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    85% {
+      transform: scale(1) translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-hero-title {
+    opacity: 0;
+    animation: epicFadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+  }
+
+  .animate-hero-description {
+    opacity: 0;
+    animation: epicFadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+  }
+
+  .animate-hero-button-1 {
+    opacity: 0;
+    animation: epicFadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.7s both;
+  }
+
+  .animate-hero-button-2 {
+    opacity: 0;
+    animation: epicFadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  }
+
+  .animate-hero-tagline {
+    opacity: 0;
+    animation: epicFadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.4s both;
+  }
+
+  .animate-hero-badge {
+    opacity: 0;
+    animation: badgeFadeJump 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 3.2s both;
+  }
+
+  /* Line Clamping */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Fluid Spacing */
+  .space-y-fluid > * + * {
+    margin-top: clamp(1rem, 3vw, 2rem);
+  }
+
+  .space-x-fluid > * + * {
+    margin-left: clamp(1rem, 3vw, 2rem);
+  }
+
+  /* Mobile action buttons - make smaller and closer together */
+
+  /* Stream page mobile overlay */
+  .mobile-video-overlay {
+    gap: 0.25rem !important;
+  }
+
+  .mobile-video-overlay button {
+    transform: scale(0.8);
+  }
+
+  .mobile-video-overlay .w-10,
+  .mobile-video-overlay .w-12 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .mobile-video-overlay .h-10,
+  .mobile-video-overlay .h-12 {
+    height: 2rem !important;
+  }
+
+  /* Ensure wallet button clicks work on mobile overlay */
+  .mobile-video-overlay .wallet-adapter-button,
+  .mobile-video-overlay button {
+    pointer-events: auto !important;
+    z-index: 10;
+  }
+
+  /* Simple mobile button scaling - no complex overrides */
+  .mobile-video-overlay button,
+  .discover-mobile-buttons button {
+    transform: scale(0.85);
+  }
+
+  /* Duplicate Wallet Adapter styles removed - see earlier in file for complete styles */
+}
+
+/* The wallet adapter's dropdown stays in the layout when closed - `visibility: hidden` with
+   `opacity: 0`, not `display: none` - and its list items are wider than the list itself, so a
+   few pixels of a menu nobody can see hang past the right edge and give every page with a
+   wallet button a horizontal scrollbar. Measured on /de/pitch: document scrollWidth 902 against
+   a 896px viewport, with the only overflowing element a hidden .wallet-adapter-dropdown-list-item.
+   Taking it out of the layout while closed costs the open animation's fade-in and fixes the
+   scroll everywhere. `overflow-x: hidden` on body is NOT the fix here: it makes body its own
+   scroll container, which is the ancestor `position: sticky` resolves against, and the landing
+   page's scroll room depends on that sticky working (see ScrollRoom.tsx). */
+.wallet-adapter-dropdown-list:not(.wallet-adapter-dropdown-list-active) {
+  display: none;
+}

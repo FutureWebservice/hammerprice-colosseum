@@ -1,0 +1,17 @@
+{
+  "id": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+  "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+  "rail": "cosign",
+  "cluster": "devnet",
+  "attempt": 1,
+  "gross": "120000000",
+  "platformFee": "3000000",
+  "sellerAmount": "117000000",
+  "royalty": "0",
+  "dueAt": "2026-10-05T18:15:56.000Z",
+  "status": "awaiting_payment",
+  "roundExpiresAt": null,
+  "buyerSigned": false,
+  "sellerSigned": false,
+  "role": "buyer"
+}

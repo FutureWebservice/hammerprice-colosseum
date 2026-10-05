@@ -1,0 +1,53 @@
+{
+  "v": 1,
+  "serverNow": 1791223290000,
+  "show": {
+    "id": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10",
+    "title": "House show, devnet replicas",
+    "status": "ended",
+    "mode": "auto",
+    "scheduledAt": "2026-10-05T17:59:00.000Z",
+    "settlementMode": "onchain",
+    "cluster": "devnet",
+    "isHouse": true
+  },
+  "current": null,
+  "lots": [
+    {
+      "id": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+      "lotNumber": 1,
+      "state": "sold",
+      "highBid": "120000000",
+      "highBidder": {
+        "paddle": 7
+      },
+      "bidCount": 3,
+      "closesAt": "2026-10-05T18:00:56.000Z",
+      "settlement": {
+        "id": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+        "status": "settled",
+        "txSignature": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": 108,
+      "kind": "settlement.settled",
+      "at": "2026-10-05T18:01:20.000Z",
+      "payload": {
+        "lotId": "8a1b7c40-52de-4a6f-b3e1-0c9d2f4a6e11",
+        "lotNumber": 1,
+        "settlementId": "e2a8d5c1-3f97-4b60-9c2d-6e1a7f4b8d15",
+        "txSignature": "36NF7TS32kpMuu7Dy6qcqCmLrxWymGmUovEsZuCM4nRE85fvKGyzrfFghv9G3A61zVhA4qsGm62mMAY1P4nyk7WJ"
+      }
+    },
+    {
+      "id": 109,
+      "kind": "show.ended",
+      "at": "2026-10-05T18:01:21.000Z",
+      "payload": {}
+    }
+  ],
+  "lastEventId": 109
+}

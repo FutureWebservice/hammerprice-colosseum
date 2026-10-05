@@ -1,0 +1,206 @@
+{
+  "title": "Payment",
+  "roles": {
+    "buyer": "Buyer",
+    "seller": "Seller"
+  },
+  "state": {
+    "signNow": "Confirm in your wallet now.",
+    "waitingSeller": "Waiting for the seller to confirm. {seconds} s left.",
+    "waitingBuyer": "Waiting for the buyer to pay. {seconds} s left.",
+    "submitted": "Both confirmed. Finishing the payment…",
+    "settled": "Done",
+    "expired": "Time is up",
+    "failed": "Did not go through",
+    "loading": "Loading…",
+    "ready": "Ready when you are.",
+    "readyBuyer": "Check the amount, then press Pay. Your wallet opens only then.",
+    "readySeller": "Confirm the sale to hand over the card. Your wallet asks once.",
+    "preparing": "Preparing your payment…",
+    "timeLeft": "{seconds} s left",
+    "lapsed": "Time ran out. Nothing was taken from you. Press Try again.",
+    "retry": "Not done yet. Nothing was taken from you."
+  },
+  "window": {
+    "due": "You have until {time}",
+    "note": "Stay on this page until the payment is done."
+  },
+  "review": {
+    "heading": "What you are signing",
+    "note": "These figures are read from the transaction itself, not from the server's summary.",
+    "youPay": "Buyer pays",
+    "sellerReceives": "Seller receives",
+    "fee": "Hammerprice fee",
+    "royalty": "Royalty",
+    "card": "Card",
+    "cardTo": "Card goes to",
+    "memo": "Proof of the bids (hash), written on chain",
+    "verify": "Verify the bids",
+    "gas": "Network fees are paid by Hammerprice.",
+    "checking": "Figures appear here once the transaction is prepared, and are read from the transaction itself.",
+    "ok": "The transaction matches the agreed sale.",
+    "problems": {
+      "fee_payer": "The network fee would not be paid by Hammerprice.",
+      "signers": "The transaction asks for signers it should not.",
+      "cluster": "The transaction is for a different network than this show.",
+      "not_your_role": "This wallet is not the {role} of this sale.",
+      "foreign_program": "The transaction contains a step that does not belong in a payment.",
+      "mint": "The payment is not in the expected USDC.",
+      "leg_authority": "A payment would be taken from an account other than the buyer's.",
+      "leg_destination": "A payment goes to an account that is not part of this sale.",
+      "leg_amounts": "The payment amounts do not add up to the agreed split.",
+      "gross": "The total does not match the payment record.",
+      "price_mismatch": "The price in the transaction is not the price you bid.",
+      "card": "The card transfer is not from the seller to the buyer.",
+      "memo": "The proof of the bids is missing or wrong.",
+      "shape": "The transaction has an unexpected shape."
+    },
+    "technical": "Technical details"
+  },
+  "actions": {
+    "signing": "Waiting for your wallet…",
+    "retry": "Try again",
+    "close": "Close",
+    "explorer": "View receipt on Solana Explorer",
+    "refresh": "Refresh",
+    "pay": "Pay {amount}",
+    "confirmSale": "Confirm the sale",
+    "preparing": "Preparing…"
+  },
+  "cluster": {
+    "title": "Your wallet may be on the wrong network",
+    "body": "This sale settles on devnet. A wallet set to mainnet cannot simulate or sign it.",
+    "step1": "Open your wallet's settings.",
+    "step2": "Phantom: Settings, Developer Settings, turn on Testnet Mode, then choose Solana Devnet. Solflare and Backpack: switch the network to Devnet in settings.",
+    "step3": "Come back here and try again."
+  },
+  "outcome": {
+    "settledBuyer": "Done. The card is in your wallet and the seller has been paid.",
+    "settledSeller": "Done. The USDC is in your wallet and the card has moved to the buyer.",
+    "lapsed": "Not completed. The time ended before both sides confirmed. Nothing moved: no USDC and no card changed hands.",
+    "failed": "The payment failed. Nothing moved."
+  },
+  "errors": {
+    "generic": "Something went wrong. Try again.",
+    "load": "Could not load the payment. Retrying.",
+    "review": "We did not ask your wallet to sign, because the payment does not match the sale. Nothing was sent. Try again.",
+    "validator": "We did not ask your wallet to sign, because the payment failed our safety check. Nothing was sent. Try again.",
+    "walletRejected": "You cancelled in your wallet. Nothing was taken. Press Try again when you are ready.",
+    "walletCluster": "Your wallet could not sign. It is probably on the wrong network: see the steps below.",
+    "walletUnsupported": "This wallet cannot sign transactions. Use Phantom, Solflare or Backpack.",
+    "walletUnknown": "Your wallet could not sign. Try again.",
+    "walletModified": "Your wallet returned a different payment than ours, so we did not send it. Nothing was taken. Try again.",
+    "unauthenticated": "You are signed out. Verify your wallet again.",
+    "not_found": "This payment does not exist.",
+    "not_party": "This wallet is not part of this payment.",
+    "not_buyer": "Only the buyer can do that.",
+    "wrong_state": "This payment is not waiting for you right now.",
+    "tx_mismatch": "The server refused the transaction because it does not match the sale.",
+    "bad_signature": "The signature could not be checked. Try again.",
+    "round_expired": "That attempt ran out of time. Try again.",
+    "blockhash_expired": "That attempt ran out of time. Try again.",
+    "counterparty_pending": "Waiting for the other side to sign.",
+    "simulation_failed": "The network test run failed. Check that your wallet is on devnet and try again.",
+    "insufficient_usdc": "Your USDC balance does not cover this payment. Add USDC to your wallet, then try again.",
+    "asset_not_ready": "The card is not ready to move: it may have changed owner or been frozen.",
+    "balance_unavailable": "We could not read the USDC balance. Try again in a few seconds.",
+    "rpc_unavailable": "The Solana network is slow to answer. Try again in a few seconds.",
+    "rate_limited": "Too many attempts. Wait a moment and try again.",
+    "paused": "Payments are paused for now.",
+    "banned": "This wallet is banned.",
+    "mainnet_config_incomplete": "This site is not fully set up for real payments yet. Nothing was sent.",
+    "cluster_config_conflict": "The network settings of this site contradict each other. Nothing was sent."
+  },
+  "verify": {
+    "kicker": "Verification",
+    "missingKicker": "Not available",
+    "rooms": "Go to the rooms",
+    "home": "Back to home",
+    "title": "Verify the bids",
+    "lede": "Every bid is signed. This page rebuilds the proof (a hash of the bids) from the public bids in your browser. If the lot has been paid, it then reads the payment from the Solana network and compares the proof it finds there with your own result.",
+    "loading": "Loading the bids…",
+    "unavailable": "The verification data is not available for this lot yet.",
+    "back": "Back to the room",
+    "lot": "Lot {number}: {name}",
+    "bids": "Signed bids",
+    "colPaddle": "Bidder",
+    "colAmount": "Amount",
+    "colTime": "Time",
+    "colSigner": "Signed by",
+    "colCheck": "Check",
+    "signerWallet": "Wallet",
+    "signerSession": "Bidding number key",
+    "anonymous": "Unknown",
+    "check": {
+      "valid": "Signature valid",
+      "bad_signature": "Signature invalid",
+      "mismatch": "Signed text does not match this bid"
+    },
+    "recomputed": "Recomputed in your browser",
+    "api": "Reported by our server",
+    "onchain": "Memo in the payment transaction, read from the network",
+    "noMemo": "No valid memo found",
+    "mark": {
+      "ok": "matches your result",
+      "bad": "differs from your result",
+      "none": "not checked"
+    },
+    "state": {
+      "checking": "Reading the payment from the network…",
+      "confirmed": "Confirmed. The proof stored in the finalized payment transaction matches these bids.",
+      "contradicts": {
+        "hash": "Does not match. The proof in the payment transaction differs from the proof computed from these bids. Both values are listed above.",
+        "settlement": "Does not match. The memo in the transaction names another settlement ({found}) than the one this lot belongs to ({expected}).",
+        "memo": "Not confirmed. The transaction has no valid Hammerprice memo (exactly one memo that starts with hp:settle: is required), so it carries no proof of these bids.",
+        "failed": "Not confirmed. The transaction failed on the network, so it did not settle this lot."
+      },
+      "notFound": {
+        "no_signature": "Nothing to read yet. The payment for this lot has no transaction on the network so far.",
+        "not_finalized": "Not final yet. The network has seen the transaction but has not finalized it. Check again in a minute.",
+        "unknown": "Not found. The network node reports no finalized transaction with this signature. Open the explorer link or check again later."
+      },
+      "unreachable": "Could not check. Your browser could not read the network just now. This says nothing about the bids.",
+      "retry": "Check again"
+    },
+    "noSettlement": "This lot has no payment yet, so there is nothing to compare. The signatures above are still checked.",
+    "howHash": "How the proof is built: SHA-256 over each bid's signed text and signature, in order, one per line.",
+    "howChain": "A memo is a short note attached to a Solana transaction. The payment carries one that reads hp:settle:, the settlement ID, a colon and the proof. Your browser asks the Solana network for the finalized transaction and reads that note itself.",
+    "chain": {
+      "heading": "What the network shows",
+      "network": "Network",
+      "net": {
+        "devnet": "Devnet",
+        "mainnet-beta": "Mainnet"
+      },
+      "signature": "Transaction signature",
+      "slot": "Slot (position in the chain)",
+      "confirmation": "Confirmation",
+      "finalized": "Finalized, the network's highest confirmation level",
+      "time": "Block time",
+      "signers": "Signed by",
+      "role": {
+        "fee_payer": "Network fee payer",
+        "buyer": "Buyer (sent the USDC)",
+        "seller": "Seller (sent the card)",
+        "other": "Other signer"
+      },
+      "memo": "Memo text as read from the network",
+      "moves": "What moved",
+      "colWhat": "What",
+      "colFrom": "From",
+      "colTo": "To",
+      "usdc": "{amount} USDC",
+      "token": "{amount} of token {mint}",
+      "card": "Card {asset}"
+    },
+    "tx": "Payment transaction",
+    "explorer": "Open in Solana Explorer",
+    "computing": "Computing…"
+  },
+  "titleBuyer": "Pay for your card",
+  "titleSeller": "Complete the sale",
+  "summary": {
+    "heading": "Your payment",
+    "fee": "Hammerprice fee (included)"
+  }
+}

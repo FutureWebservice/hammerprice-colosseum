@@ -1,0 +1,84 @@
+{
+  "title": "Was bedeutet das?",
+  "close": "Schließen",
+  "listTitle": "Glossar",
+  "faq": "Mehr in den FAQ",
+  "terms": {
+    "usdc": {
+      "label": "USDC",
+      "text": "Ein digitaler Dollar auf Solana. Gebote und Zahlungen laufen in USDC, einem an den US-Dollar gebundenen Stablecoin."
+    },
+    "devnet": {
+      "label": "Devnet",
+      "text": "Ein getrenntes Solana-Netzwerk für Versuche. Ihre Wallet muss darauf umgestellt sein."
+    },
+    "wallet": {
+      "label": "Wallet",
+      "text": "Ihre Solana-Wallet, etwa Phantom. Sie hält Ihr USDC und Ihre Karten. Ihren geheimen Schlüssel sehen wir nie."
+    },
+    "signature": {
+      "label": "Signatur",
+      "text": "Ihre Bestätigung in der Wallet. Sie beweist, dass die Wallet Ihnen gehört, und gibt eine Aktion frei. Ihr Schlüssel bleibt geheim."
+    },
+    "paddle": {
+      "label": "Bieternummer",
+      "text": "Ihre Nummer im Raum. Mit ihr bieten Sie bis zu Ihrem Limit, ohne dass sich bei jedem Gebot ein Wallet-Fenster öffnet. Auch Paddle genannt."
+    },
+    "bid": {
+      "label": "Gebot (bindend)",
+      "text": "Ein Gebot ist ein von Ihnen bestätigtes Versprechen und verbindlich. Halten Sie am Ende das Höchstgebot, ist die Zahlung fällig."
+    },
+    "reserve": {
+      "label": "Mindestpreis",
+      "text": "Der niedrigste Preis, zu dem der Verkäufer verkauft. Bleibt das Höchstgebot darunter, wird das Los nicht verkauft. Auch Reserve genannt."
+    },
+    "hammer": {
+      "label": "Zuschlag",
+      "text": "Das Los ist verkauft, wenn die Uhr abläuft und das Höchstgebot den Mindestpreis erreicht. Die Uhr des Servers entscheidet."
+    },
+    "hammerPrice": {
+      "label": "Zuschlagspreis",
+      "text": "Der Preis, zu dem ein Los verkauft wurde: das Höchstgebot, als die Uhr ablief. Auf Englisch hammer price."
+    },
+    "antiSniping": {
+      "label": "Anti-Sniping",
+      "text": "Ein Gebot in den letzten Sekunden verlängert die Uhr etwas, bis zu einer Grenze. So gewinnt niemand im allerletzten Moment."
+    },
+    "networkFee": {
+      "label": "Netzwerkgebühr",
+      "text": "Die kleine Gebühr, die das Solana-Netzwerk für jede Transaktion verlangt. Hammerprice übernimmt sie."
+    },
+    "onChain": {
+      "label": "On-Chain",
+      "text": "Öffentlich in der Solana-Blockchain festgehalten, für alle prüfbar und nicht heimlich änderbar."
+    },
+    "transaction": {
+      "label": "Transaktion",
+      "text": "Ein Bündel von Schritten, das das Netzwerk ganz oder gar nicht ausführt."
+    },
+    "settlement": {
+      "label": "Bezahlung und Übergabe",
+      "text": "Der letzte Schritt eines Verkaufs, bei dem Geld und Karte den Besitzer wechseln. Auch Settlement genannt."
+    },
+    "memo": {
+      "label": "Memo",
+      "text": "Eine kurze Notiz an einer Zahlung in der Blockchain. Unsere enthält einen Fingerabdruck der Gebote, so ist der Verkauf nachprüfbar."
+    },
+    "verify": {
+      "label": "Verifizieren",
+      "text": "Selbst nachprüfen. Die Wallet zu verifizieren ist eine kostenlose Bestätigung. Die Prüfseite rechnet die Gebote eines Verkaufs nach."
+    },
+    "ecvrf": {
+      "label": "ECVRF",
+      "text": "Eine Zufallsziehung mit öffentlichem Beweis, sodass jeder prüfen kann, dass das Ergebnis nicht von Hand gewählt wurde."
+    },
+    "testUsdc": {
+      "label": "Test-USDC",
+      "text": "Kostenloses USDC zum Ausprobieren. Sie können es im Raum abholen."
+    },
+    "replica": {
+      "label": "Replik",
+      "text": "Eine Karte, die in den Demo-Räumen als Replik gekennzeichnet ist. Sie steht für das Original."
+    }
+  }
+}

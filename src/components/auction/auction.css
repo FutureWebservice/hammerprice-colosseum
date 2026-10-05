@@ -1,0 +1,686 @@
+/*
+ * The auction room - "the rostrum".
+ *
+ * Tokens come from hammerprice.css (imported below), not redefined here: the room and the
+ * landing page are one design system, not two palettes that can drift apart.
+ */
+@import '../landing/hammerprice.css';
+@import '../ui/hpx.css';
+
+.hp.ar-room {
+  padding: 0;
+  /* The site header (compact, 56 px plus a 1 px border) sits above the room: --hp-bar-h is set by Header and is 0 without it. */
+  height: calc(100dvh - var(--hp-bar-h, 0px));
+  min-height: 0; /* .hp says 100vh, which would push the room a whole header height past the window */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* --- status line: the room's own row under the site header (title, live or timed badge, practice label) --- */
+.ar-roomline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 6px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .03);
+  flex: none;
+}
+.ar-roomline-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -.005em;
+  margin: 0;
+  color: var(--paper);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* The title takes whatever width the chips leave and may shrink below its content width to ellipsize
+     (without min-width:0 a flex item refuses to shrink past its text). */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.ar-roomline-by { flex: none; font-family: var(--mono); font-size: 12px; color: #a9b2ba; max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ar-live, .ar-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  flex: none;
+}
+.ar-live { color: #ffb3a4; border: 1px solid rgba(255, 138, 117, .5); background: rgba(210, 69, 46, .12); }
+.ar-live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--vermillion); }
+@media (prefers-reduced-motion: no-preference) { .ar-live-dot { animation: hpx-pulse 2.2s ease-in-out infinite; } }
+.ar-status-pill { color: #cfd6d2; border: 1px solid rgba(255, 255, 255, .22); }
+.hp.ar-room { position: relative; }
+
+/* The floating "How it works" bubble used to sit bottom right, on top of the chat Send button and the Confirm bid
+   button. Inside a room it docks into the site header instead (which keeps 60 px free on the right for it), above
+   the header (z-index 46) and below the dialogs (49 and up). Icon only at every width: the German label ran over the
+   wallet button. It steps aside while the phone menu is open. */
+body:has(.ar-room) .ex-bubble { top: 9px; bottom: auto; right: 12px; padding: 9px; box-shadow: none; z-index: 47; }
+body:has(.ar-room) .ex-bubble span { display: none; }
+body:has(#mobile-menu:not([inert])) .ex-bubble { display: none; }
+@media (max-width: 560px) {
+  .ar-roomline { padding: 4px 16px; min-height: 44px; }
+  .ar-roomline-title { font-size: 16px; }
+}
+
+/* --- three-column rostrum (DOM order is centre, catalogue, feed so the bid controls come first in tab order) --- */
+.ar-rostrum {
+  flex: 1;
+  display: grid;
+  /* the rail widths are variables so a sidebar that sits over a rail's side can fold it away (room/launchers.css) */
+  grid-template-columns: var(--ar-cat-w, 280px) minmax(0, 1fr) var(--ar-feed-w, 320px);
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-areas: "cat centre feed";
+  min-height: 0;
+  overflow: hidden;
+}
+.ar-centre { grid-area: centre; }
+.ar-cat { grid-area: cat; }
+.ar-feed { grid-area: feed; }
+@media (max-width: 980px) {
+  /* A phone gets a normal scrolling page, not a fixed-height dashboard: the stage and the bid slab come first
+     and are large, the catalogue is a horizontal scroller under them, the feed follows. */
+  .hp.ar-room { height: auto; min-height: calc(100dvh - var(--hp-bar-h, 0px)); overflow: visible; }
+  .ar-rostrum {
+    display: flex; flex-direction: column; overflow: visible;
+  }
+}
+
+/* --- left rail: the catalogue --- */
+.ar-cat {
+  background: var(--paper);
+  color: var(--ink-text);
+  overflow-y: auto;
+  min-height: 0;
+  border-right: 1px solid #0009;
+  padding: 16px 14px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (max-width: 980px) {
+  .ar-cat { border-top: 1px solid #0009; border-right: none; padding: 10px 12px 14px; gap: 8px; overflow: visible; }
+}
+.ar-cat-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+@media (max-width: 980px) {
+  .ar-cat-list { flex-direction: row; overflow-x: auto; gap: 10px; padding-bottom: 6px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  .ar-cat-list > .ar-cat-lot { flex: 0 0 min(260px, 78vw); scroll-snap-align: start; }
+}
+.ar-cat-head {
+  font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; margin: 0;
+  color: #6e5c25; padding-bottom: 6px; border-bottom: 1px solid #ddd6c4;
+}
+.ar-cat-lot {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 0 rgba(200, 164, 77, .22);
+  transition: background-color .12s ease;
+  overflow: hidden;
+  /* .ar-cat (the list) is a column flex with overflow-y:auto so it scrolls rather than
+     shrinks - but a flex item's default flex-shrink:1 fights that: without this, the browser
+     squeezes every row to fit the visible height instead of overflowing into the scroll,
+     which is what silently squashed names/estimates to nothing. Rows keep their natural
+     height; the list scrolls. */
+  flex-shrink: 0;
+}
+.ar-cat-lot:hover { background: #e9e3d3; }
+/* The current lot is not just "the hovered lot's colour" - brighter than the paper itself
+   (not the muted hover tone), the brass rule down the side, and a faint lift off the page, so
+   a visitor can find "what's on the block right now" at a glance without reading every row. */
+.ar-cat-lot.is-current {
+  background: #fbf8ee;
+  box-shadow: inset 3px 0 0 var(--brass), 0 1px 6px rgba(200, 164, 77, .22);
+}
+.ar-cat-lot.is-sold .ar-cat-img, .ar-cat-lot.is-passed .ar-cat-img { opacity: .72; } /* dim the picture, never the text: opacity on the row dropped its text under 4.5:1 */
+.ar-cat-img {
+  width: 68px; height: 92px; flex: none; object-fit: contain;
+  background: #e7e1d2; border-radius: 2px;
+}
+.ar-cat-body { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.ar-cat-no {
+  font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: .12em; color: #6e5c25;
+}
+.ar-cat-name {
+  font-family: var(--serif); font-size: 14.5px; line-height: 1.2; margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* A clamped (overflow:hidden) flex item defaults to min-height:0 and the column's default
+     flex-shrink:1 then collapses it to nothing - this is what actually "lost" the card names:
+     the text was in the DOM the whole time, just rendered at 0 height. */
+  flex-shrink: 0;
+}
+.ar-cat-lot.is-sold .ar-cat-name { text-decoration: line-through; text-decoration-color: #8a7333aa; }
+.ar-cat-grade { font-family: var(--mono); font-size: 9.5px; color: #6a6554; }
+.ar-cat-est { font-family: var(--mono); font-size: 11px; color: #57513f; margin-top: 2px; }
+.ar-cat-est b { color: var(--ink-text); font-weight: 500; }
+@media (max-width: 560px) {
+  .ar-cat-img { width: 46px; height: 62px; }
+  .ar-cat-name { font-size: 13px; }
+}
+
+/* The stamp sits in the row's own flow, under the reserve line, so it can never overprint the lot number or the
+   title (it used to be absolutely positioned over the top right corner). It still lands with one scale-down. */
+.ar-stamp {
+  align-self: flex-start; margin-top: 5px; transform: rotate(-3deg);
+  border: 1.5px solid #6e5c25; color: #6e5c25; border-radius: 2px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .06em;
+  padding: 2px 6px; text-transform: uppercase; white-space: normal; max-width: 100%;
+  background: rgba(244, 240, 230, .88);
+  animation: ar-stamp-land .22s cubic-bezier(.16, 1, .3, 1);
+}
+@keyframes ar-stamp-land {
+  0% { transform: rotate(-3deg) scale(1.8); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: rotate(-3deg) scale(1); opacity: 1; }
+}
+
+/* --- centre column: video + bid slab, one scroll-free unit --- */
+.ar-centre {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+@media (max-width: 980px) {
+  .ar-centre { height: auto; overflow: visible; }
+}
+/* "Your next step" sits between the stage and the bid slab, in line with the slab. */
+.ar-centre > .ux-next { flex: none; margin: 0; padding: 8px 24px; }
+@media (max-width: 560px) {
+  .ar-centre > .ux-next { padding: 6px 16px; }
+}
+
+/*
+ * The stage. THE CARD IS THE STAGE: a portrait 5:7 card, large and centred, in a pool of light. Without a live video (every
+ * demo room, and every scheduled, ended or not-yet-streaming room) nothing wider than the card sets the stage's shape:
+ *  - a wide centre column (container >= 600 px): the card fills the stage height and the lot's information (phase, lower
+ *    third, lot line, description) sits BESIDE it, so the card gets the height the information used to take;
+ *  - a narrow one (a phone): the card above, the information below.
+ * A live video (.vd-poster / .vd-layer inside .ar-video-wrap) is a 16:9 frame next to the card (or above it on a phone) and the
+ * information moves under both; the card is never stretched into a super-wide band. Nothing in the stage is positioned over
+ * other text: no negative margins, no gradient overlays. The shape is guarded by src/components/auction/__tests__/stage-card-css.test.ts.
+ */
+.ar-stage {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  background: #05070a;
+  container: stage / inline-size;
+}
+/* The stage never takes the whole window: the bid bar stays in view. */
+@media (min-width: 981px) {
+  .ar-stage { max-height: 62vh; }
+}
+.ar-stage-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+/* A phone / tablet page scrolls (no fixed-height dashboard): the card area has its own height. */
+.ar-stage-main {
+  --stage-pad: 14px;
+  position: relative;
+  flex: none;
+  height: clamp(300px, 52svh, 440px);
+  box-sizing: border-box;
+  padding: var(--stage-pad);
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  background:
+    radial-gradient(ellipse 62% 70% at 50% 48%, rgba(232, 199, 118, .22), rgba(232, 199, 118, .06) 48%, transparent 72%),
+    var(--baize);
+}
+@media (min-width: 981px) {
+  /* A desktop column has a fixed height: the stage flexes, the card follows it. */
+  .ar-stage-main { flex: 1 1 0; height: auto; min-height: 180px; }
+}
+@media (max-width: 560px) {
+  .ar-stage-main { --stage-pad: 12px; }
+}
+/* The card box: reserved from the 5:7 ratio, so the stage never jumps while the picture loads and an absent picture leaves the
+   same box. It fills the stage height (minus --stage-pad); the width follows. */
+.ar-video-fallback.is-broadcast {
+  position: relative; flex: none;
+  height: 100%; max-width: 100%; aspect-ratio: 5 / 7;
+}
+.ar-video-still {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; padding: 0; box-sizing: border-box;
+}
+/* A lot without a picture still shows its card box, quietly. */
+div.ar-video-still { border: 1px dashed rgba(255, 255, 255, .16); border-radius: 10px; background: rgba(255, 255, 255, .03); }
+.ar-stage-card {
+  /* A box-shadow, not filter: drop-shadow(): a filtered, animated image is what some GPUs drew as a black silhouette of the card until a repaint. */
+  border-radius: 8px;
+  box-shadow: 0 20px 36px rgba(0, 0, 0, .55), 0 0 30px rgba(232, 199, 118, .24);
+}
+/* One settled movement on lot change, never a hard cut: the outgoing card holds its ground and fades back while the new one arrives (Stage.tsx's
+   outgoingSrc/prevLotRef). The ENTERING card never starts transparent (transform only): its resting state, the picture itself, is what is painted
+   even if the animation never runs. Reduced motion (hammerprice.css strips the keyframes) still leaves a correct, instant swap. */
+.ar-stage-card.is-entering { animation: ar-stage-card-enter .4s cubic-bezier(.16, 1, .3, 1); z-index: 2; }
+.ar-stage-card.is-leaving { animation: ar-stage-card-leave .4s cubic-bezier(.16, 1, .3, 1) forwards; z-index: 1; }
+@keyframes ar-stage-card-enter {
+  0% { transform: scale(.95); }
+  100% { transform: scale(1); }
+}
+@keyframes ar-stage-card-leave {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.03); }
+}
+
+/* The live video (optional): its own 16:9 frame. Empty (no stream) it takes no room at all. */
+.ar-video-wrap { position: relative; overflow: hidden; background: var(--baize); display: none; }
+.ar-video-wrap:has(.vd-layer, .vd-poster) { display: block; flex: 0 1 auto; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 6px; background: #05070a; border: 1px solid rgba(200, 164, 77, .28); box-sizing: border-box; }
+/* with a video the stage is a column on a phone: the video, then the card below it at a modest height */
+.ar-stage-main:has(.vd-layer, .vd-poster) { flex-direction: column; height: auto; min-height: 0; }
+.ar-stage-main:has(.vd-layer, .vd-poster) .ar-video-wrap { order: -1; }
+.ar-stage-main:has(.vd-layer, .vd-poster) .ar-video-fallback.is-broadcast { height: clamp(200px, 30svh, 260px); }
+.ar-stage-body:has(.vd-layer, .vd-poster) .ar-stage-main { flex: 0 0 auto; }
+
+/* The lot's information: under the card on a phone, beside it where the stage is wide enough. */
+.ar-stage-info { flex: none; min-width: 0; display: flex; flex-direction: column; background: #05070a; border-top: 1px solid #1c2620; }
+
+@container stage (min-width: 600px) {
+  /* wide: the card panel (5:7, as tall as the stage) and the information beside it */
+  .ar-stage-body { flex-direction: row; align-items: stretch; }
+  /* height: 100%, not auto: the stage's height comes from the flex column, and Safari does not turn a merely stretched height into the aspect-ratio
+     width (the panel was 0 wide, the card black, until the container dropped below 600 px). The percentage resolves there and still means stretch elsewhere. */
+  .ar-stage-main { flex: none; align-self: stretch; height: 100%; min-height: 0; aspect-ratio: 5 / 7; padding: 0; }
+  .ar-stage-main .ar-video-fallback.is-broadcast { position: absolute; inset: var(--stage-pad); width: auto; height: auto; aspect-ratio: auto; max-width: none; }
+  .ar-stage-info { flex: 1 1 0; border-top: 0; border-left: 1px solid #1c2620; overflow-y: auto; justify-content: safe center; }
+  .ar-stage-info .hp-phase { background: transparent; border-top: 0; }
+  /* with a video: the video and the card side by side on top, the information under both */
+  .ar-stage-body:has(.vd-layer, .vd-poster) { flex-direction: column; }
+  .ar-stage-main:has(.vd-layer, .vd-poster) { flex: 0 0 auto; flex-direction: row; align-items: center; align-self: auto; aspect-ratio: auto; padding: var(--stage-pad); height: clamp(260px, 44svh, 420px); }
+  .ar-stage-main:has(.vd-layer, .vd-poster) .ar-video-wrap { order: 0; flex: 0 1 auto; width: auto; height: 100%; }
+  .ar-stage-main:has(.vd-layer, .vd-poster) .ar-video-fallback.is-broadcast { position: relative; inset: auto; width: auto; height: 100%; aspect-ratio: 5 / 7; }
+  .ar-stage-body:has(.vd-layer, .vd-poster) .ar-stage-info { flex: none; border-left: 0; border-top: 1px solid #1c2620; overflow: visible; }
+  .ar-stage-body:has(.vd-layer, .vd-poster) .ar-stage-info .hp-phase { background: #0a0d11; }
+}
+@media (min-width: 981px) {
+  @container stage (min-width: 600px) {
+    .ar-stage-body:has(.vd-layer, .vd-poster) .ar-stage-main { flex: 1 1 0; height: auto; min-height: 180px; }
+  }
+}
+@media (min-width: 561px) and (max-width: 980px) {
+  /* a tablet page scrolls: the card is as tall as a comfortable part of the screen */
+  .ar-stage-main { height: clamp(320px, 62svh, 560px); }
+  @container stage (min-width: 600px) {
+    .ar-stage-body:not(:has(.vd-layer, .vd-poster)) { height: clamp(320px, 62svh, 560px); }
+    .ar-stage-main { height: auto; }
+  }
+}
+
+/* --- the lower third: what is happening right now, in the stage's information column. A plain block: it sits in the flow
+   under the phase banner and over nothing. Three faces, one at a time (LowerThird.tsx). --- */
+.ar-lt { position: relative; flex: none; padding: 12px 24px 6px; }
+.ar-lt-tag {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--brass); margin-bottom: 6px; overflow-wrap: anywhere;
+}
+.ar-lt-bid-row { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; }
+.ar-lt-bid {
+  font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 500;
+  font-size: clamp(30px, 9cqw, 50px); color: var(--brass-br); line-height: 1; overflow-wrap: anywhere;
+}
+.ar-lt-bid.is-roll { animation: ar-bid-roll .18s cubic-bezier(.16, 1, .3, 1); }
+.ar-lt-meta { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); }
+
+/* Going once / going twice takes the whole block over: a large serif call (the countdown bar is in PhaseBanner). */
+.ar-lt-call { display: flex; flex-direction: column; gap: 10px; }
+.ar-lt-call-text {
+  font-family: var(--serif); font-size: clamp(28px, 8cqw, 48px); line-height: 1.05;
+  color: var(--brass-br); letter-spacing: -.01em;
+}
+.ar-lt-callbar-track { height: 3px; background: rgba(200, 164, 77, .22); border-radius: 2px; overflow: hidden; }
+.ar-lt-callbar { height: 100%; background: var(--brass-br); transform-origin: left; }
+
+/* The hammer's result, stamped once and held through the gap with a live countdown to the next lot. "Passed" reads as a
+   muted outline: vermillion is already spent elsewhere on this screen (the LIVE dot, the outbid tag). */
+.ar-lt-result { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.ar-lt-result-stamp {
+  display: inline-block; font-family: var(--serif); font-size: clamp(26px, 7cqw, 44px);
+  line-height: 1.1; letter-spacing: -.005em; padding: 2px 16px; border-radius: 3px;
+  color: #1c1508; background: linear-gradient(180deg, var(--brass-br), var(--brass));
+  animation: ar-lt-stamp-land .3s cubic-bezier(.16, 1, .3, 1);
+}
+.ar-lt-result.is-passed .ar-lt-result-stamp {
+  background: none; border: 2px solid var(--brass); color: var(--paper); padding: 0 14px;
+}
+@keyframes ar-lt-stamp-land {
+  0% { transform: scale(1.4); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.ar-lt-result-amount {
+  font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: clamp(18px, 4cqw, 26px);
+  color: var(--brass-br);
+}
+.ar-lt-next { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--slate); }
+@container stage (min-width: 600px) {
+  .ar-lt-bid { font-size: clamp(26px, 4cqw, 46px); }
+  .ar-lt-call-text { font-size: clamp(26px, 4cqw, 44px); }
+  .ar-lt-result-stamp { font-size: clamp(24px, 3.4cqw, 38px); }
+}
+@media (max-width: 560px) {
+  .ar-lt { padding: 10px 16px 4px; }
+}
+
+/* The compact detail line under the lower third: grade, minimum price, nothing else (the lot number, name and bid figure live in
+   the lower third above). */
+.ar-lotline-compact {
+  padding: 4px 24px 14px; display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: baseline;
+}
+.ar-lotline-grade { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--brass-br); border: 1px solid rgba(232, 199, 118, .5); border-radius: 999px; padding: 1px 10px; align-self: center; }
+.ar-lotline-est { font-family: var(--mono); font-size: 12px; color: var(--slate); }
+.ar-lotline-est b { color: var(--paper); font-weight: 500; }
+@media (max-width: 560px) {
+  .ar-lotline-compact { padding: 4px 16px 10px; }
+}
+
+/* Where the bidding stands against the limit - a visitor must never again have to guess whether
+   their bid was enough (see the task this shipped for). A line of type, never a progress bar:
+   slate while there is still ground to cover, brass with a small brass mark once the limit is
+   met. Used on the stage's lot line (both the broadcast compact row and the real-room bid row)
+   and in the catalogue row for whichever lot is open right now. */
+.ar-limit {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .02em;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.ar-limit.is-gap { color: var(--slate); }
+.ar-limit.is-met { color: var(--brass-br); font-weight: 500; }
+.ar-limit-mark {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--brass);
+  box-shadow: 0 0 0 2px rgba(200, 164, 77, .18); flex: none;
+}
+/* The catalogue row's own copy is dark-on-paper, not paper-on-baize like the stage's - same
+   two states, the light-mode colours. */
+.ar-cat-lot .ar-limit.is-gap { color: #6b6555; }
+.ar-cat-lot .ar-limit.is-met { color: #6f5a1f; }
+.ar-cat-lot .ar-limit { font-size: 11px; margin-top: 1px; }
+
+.ar-lotline {
+  padding: 18px 24px 22px;
+  flex: none;
+}
+.ar-lotline-no {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--brass); margin-bottom: 6px;
+}
+.ar-lotline-name {
+  font-family: var(--serif); font-size: clamp(20px, 2.4vw, 30px); line-height: 1.18; color: var(--paper);
+  margin: 0 0 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ar-lotline-bid-row { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+.ar-lotline-bid {
+  font-family: var(--mono); font-variant-numeric: tabular-nums;
+  font-size: clamp(34px, 5vw, 54px); font-weight: 500; color: var(--brass-br); line-height: 1;
+}
+/* A new high bid rolls into place rather than appearing - tabular-nums above keeps digit
+   width fixed so this is pure translate/opacity, never a reflow jitter. Ease-out-expo, well
+   under 200ms, no bounce: rising money should read as decisive, not springy. Stage.tsx remounts
+   this span (key={jitterToken}) on every bid, so the animation replays exactly once per bid. */
+.ar-lotline-bid.is-roll { animation: ar-bid-roll .18s cubic-bezier(.16, 1, .3, 1); }
+@keyframes ar-bid-roll {
+  0% { transform: translateY(8px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.ar-lotline-meta { font-size: 13px; color: var(--slate); }
+@media (max-width: 560px) {
+  .ar-lotline { padding: 10px 16px 14px; }
+  .ar-lotline-no { margin-bottom: 3px; }
+  .ar-lotline-name { font-size: 17px; margin-bottom: 6px; -webkit-line-clamp: 1; }
+  .ar-lotline-bid { font-size: 28px; }
+}
+.ar-outbid {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--vermillion); border: 1px solid var(--vermillion); border-radius: 3px;
+  padding: 3px 8px;
+}
+/* Zum Ersten / Zum Zweiten - the auctioneer's call, sitting where "aktuelles Gebot" normally
+   does on the lot line, given the room's own voice (mono, tracked, brass) instead of just
+   restyled body text. */
+.ar-lotline-meta.is-call {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* --- bid control: one glass bar. Hierarchy: where you stand (chip), the one big yellow Bid button with the next amount, quick raises (outline) --- */
+.ar-bidbar-wrap {
+  padding: 14px 24px 20px; flex: none; margin-top: auto; position: relative;
+  border-top: 1px solid rgba(255, 255, 255, .1); background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .015));
+}
+.ar-paddle {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: #a9b2ba; margin-bottom: 10px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; min-height: 26px;
+}
+.ar-paddle b { color: var(--brass-br); font-weight: 500; }
+/* The viewer's own standing on the current lot (BidControl's `visitor` prop), as a chip: leading, outbid, won, lost. The live region is the whole line. */
+.ar-paddle-status { display: inline-flex; align-items: center; gap: 7px; min-height: 26px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .22); letter-spacing: .06em; }
+.ar-paddle-status.is-leading { color: var(--brass-br); border-color: rgba(232, 199, 118, .6); background: rgba(232, 199, 118, .1); }
+.ar-paddle-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--brass-br); flex: none; }
+.ar-paddle-status.is-outbid { color: #ff9a86; border-color: rgba(255, 138, 117, .6); background: rgba(210, 69, 46, .14); }
+.ar-paddle-status.is-won { color: #1a1a17; background: var(--brass-br); border-color: var(--brass-br); font-weight: 600; }
+.ar-paddle-status.is-lost { color: #cfd6d2; }
+.ar-bidbtn {
+  width: 100%; min-height: 64px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: var(--brass-br); color: #1a1a17;
+  border: 1px solid var(--brass-br); border-radius: 14px;
+  padding: 12px 24px;
+  font-family: var(--sans); font-weight: 700; font-size: 18px;
+  cursor: pointer;
+  transition: background-color .15s ease, transform .06s ease;
+}
+.ar-bidbtn:hover:not(:disabled) { background: var(--paper); border-color: var(--paper); }
+.ar-bidbtn:active:not(:disabled) { transform: translateY(1px); }
+.ar-bidbtn:disabled { opacity: .5; cursor: not-allowed; }
+.ar-bidbtn:focus-visible, .ar-quick-btn:focus-visible { outline: 2px solid var(--brass-br); outline-offset: 3px; }
+/* One gentle pulse the moment the visitor is outbid; never repeating (BidControl keys the button on the fact that triggered it). */
+@media (prefers-reduced-motion: no-preference) {
+  .ar-bidbtn.is-pulse { animation: ar-bidbtn-pulse .6s cubic-bezier(.16, 1, .3, 1); }
+}
+@keyframes ar-bidbtn-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(232, 199, 118, .55); }
+  100% { box-shadow: 0 0 0 14px rgba(232, 199, 118, 0); }
+}
+/* A lot that is not open (or that you lead) recedes to a quiet outline, so the one truly pressable state stays obvious. */
+.ar-bidbtn.is-dormant { background: transparent; border: 1px solid rgba(255, 255, 255, .2); color: #cfd6d2; justify-content: center; font-weight: 600; font-size: 16px; }
+.ar-bidbtn.is-dormant:disabled { opacity: 1; }
+.ar-bidbtn-next { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.ar-bidbtn-next-label { font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.ar-bidbtn-amount { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 26px; line-height: 1.1; }
+.ar-quick { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ar-quick-label { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #a9b2ba; margin-right: 2px; }
+.ar-quick-btn { min-height: 40px; padding: 0 16px; font-size: 13px; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.ar-bid-error { margin-top: 10px; padding: 9px 12px; border-radius: 10px; font-size: 13px; color: #ffd2c8; background: rgba(210, 69, 46, .12); border: 1px solid rgba(255, 138, 117, .45); }
+.ar-paddle-pending, .ar-paddle-funds { color: #a9b2ba; text-transform: none; letter-spacing: 0; }
+.ar-paddle-funds { margin-left: auto; color: #b4bdb9; }
+@media (max-width: 980px) {
+  /* On a phone the bar stays at the bottom of the screen while the stage is in view: the Bid button is always one thumb away. */
+  .ar-bidbar-wrap { position: sticky; bottom: 0; z-index: 30; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(14, 17, 22, .96); border-top-color: rgba(232, 199, 118, .35); }
+}
+@media (max-width: 560px) {
+  .ar-bidbar-wrap { padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); }
+  .ar-paddle { margin-bottom: 6px; min-height: 22px; }
+  .ar-bidbtn { min-height: 56px; padding: 8px 18px; font-size: 17px; }
+  .ar-bidbtn-amount { font-size: 22px; }
+  .ar-quick { flex-wrap: nowrap; overflow-x: auto; margin-top: 8px; padding-bottom: 2px; }
+  .ar-quick-label { display: none; }
+  .ar-quick-btn { flex: 1 0 auto; min-height: 40px; padding: 0 12px; }
+  .ar-paddle-funds { display: none; }
+}
+
+/* --- right rail: chat + bids --- */
+.ar-feed {
+  border-left: 1px solid #223028;
+  display: flex; flex-direction: column; min-height: 0; height: 100%;
+}
+@media (max-width: 980px) {
+  .ar-feed { border-top: 1px solid #223028; height: auto; }
+  .ar-feed-list { max-height: 46vh; min-height: 120px; }
+}
+.ar-feed-head {
+  font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; margin: 0;
+  color: var(--slate); padding: 14px 16px 10px; flex: none;
+}
+/* The glossary - five words, one line each, in the house's own voice (see the task this shipped
+   for). Sits in normal flow above the feed list, never fixed/absolute, so it structurally cannot
+   cover the stage or the bid slab in the columns beside it. */
+.ar-glossary {
+  flex: none; margin: 0 16px 10px; padding: 10px 12px;
+  background: rgba(200, 164, 77, .08); border: 1px solid rgba(200, 164, 77, .3); border-radius: 12px;
+}
+.ar-glossary-head {
+  display: flex; align-items: center; min-height: 24px; cursor: pointer;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--brass);
+}
+.ar-glossary[open] .ar-glossary-head { margin-bottom: 6px; }
+.ar-glossary-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.ar-glossary-list li { font-size: 12px; color: #c9d1cd; line-height: 1.4; }
+/* Terms are buttons: a row that wraps, each with a 24 px tall target. */
+.ar-glossary-list.is-terms { flex-direction: row; flex-wrap: wrap; gap: 2px 14px; }
+.ar-glossary-list.is-terms li { font-size: 13px; line-height: 24px; min-height: 24px; }
+@media (max-width: 560px) {
+  .ar-glossary { margin: 0 10px 8px; padding: 8px 10px; }
+  .ar-glossary-list li { font-size: 11px; }
+}
+
+.ar-feed-list { flex: 1; overflow-y: auto; padding: 0 16px 12px; display: flex; flex-direction: column-reverse; }
+.ar-feed-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column-reverse; gap: 1px; }
+.ar-feed-empty { color: var(--slate); font-size: 13px; padding: 8px 0; }
+/* A row arrives (slides up out of the composer edge, fades in) instead of just appearing.
+   feed.map gives every row a stable key, so this plays once on mount - the moment a bid or
+   event lands - and never replays on rows already on screen. */
+.ar-feed-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid #1c2620; font-size: 13px;
+  animation: ar-feed-in .18s cubic-bezier(.16, 1, .3, 1);
+}
+@keyframes ar-feed-in {
+  0% { transform: translateY(6px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.ar-feed-row.is-bid { border-bottom-color: rgba(200, 164, 77, .28); }
+/* The auctioneer's own narration - opened/passed/withdrawn plain, going-once/going-twice the
+   call itself - reads as a ruled line spanning the column now that the lower third speaks the
+   call out loud too: the rail is the room's record, not its narrator any more. */
+.ar-feed-row.is-rule { justify-content: center; text-align: center; }
+.ar-feed-rule-text {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--slate);
+}
+.ar-feed-row.is-call { border-bottom-color: rgba(200, 164, 77, .3); }
+.ar-feed-row.is-call .ar-feed-rule-text { color: var(--brass); font-weight: 600; }
+/* The hammer line - heavier than the room's other narration, buyer named right in the text. */
+.ar-feed-row.is-hammer { border-bottom-color: rgba(200, 164, 77, .4); }
+.ar-feed-row.is-hammer .ar-feed-note { color: var(--brass-br); font-weight: 600; font-size: 13px; }
+/* Where one lot's bidding ended and the next began - a firmer rule than the routine row
+   divider, with a little air above it so it reads as a break, not just another line. */
+.ar-feed-row.is-lot-boundary { margin-top: 8px; padding-top: 12px; border-top: 1px solid rgba(200, 164, 77, .35); }
+.ar-feed-who { color: #c9d1cd; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ar-feed-who b { color: var(--brass-br); font-weight: 500; }
+/* The visitor's own bid rows, marked without a left rule (that's the .is-bid border's job) -
+   a small brass badge where the paddle label normally sits. */
+.ar-feed-mine {
+  display: inline-block; font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: #221a08;
+  background: linear-gradient(180deg, var(--brass-br), var(--brass));
+  border-radius: 2px; padding: 1px 5px;
+}
+.ar-feed-amt { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--brass-br); flex: none; }
+.ar-feed-note { color: var(--slate); font-size: 12px; }
+.ar-feed-chat-text { color: var(--paper); }
+
+.ar-composer {
+  flex: none; display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid #223028;
+}
+.ar-composer input {
+  flex: 1; background: #0e1116; border: 1px solid rgba(255, 255, 255, .2); border-radius: 12px;
+  color: var(--paper); font-family: var(--sans); font-size: 13px; padding: 9px 10px;
+}
+.ar-composer input:focus-visible, .ar-composer button:focus-visible { outline: 2px solid var(--brass-br); outline-offset: 2px; }
+.ar-composer button {
+  background: transparent; border: 1px solid rgba(232, 199, 118, .6); color: var(--brass-br);
+  border-radius: 12px; min-height: 40px; padding: 0 16px; font-family: var(--mono); font-size: 11px;
+  text-transform: uppercase; letter-spacing: .06em; cursor: pointer;
+}
+.ar-composer button:hover { background: rgba(200, 164, 77, .12); }
+.ar-composer-note { padding: 0 16px 10px; font-size: 11px; color: var(--slate); }
+@media (max-width: 560px) {
+  /* The feed is now a narrow column next to the catalogue, not a full-width rail - everything
+     in it shrinks to match, and the chat composer/note (a "for this preview only" aside) is the
+     first thing to go: on a phone that room is for watching the sale, not typing into it. */
+  .ar-feed-head { padding: 10px 10px 6px; }
+  .ar-feed-list { padding: 0 10px 8px; }
+  .ar-feed-row { font-size: 11px; gap: 6px; padding: 5px 0; }
+  .ar-feed-amt { font-size: 10.5px; }
+  .ar-composer, .ar-composer-note { display: none; }
+}
+
+/* --- states --- */
+.ar-notice {
+  flex: 1; display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center;
+  color: var(--slate); font-family: var(--mono); font-size: 13px; padding: 60px 24px; text-align: center;
+}
+.ar-notice p { margin: 0; }
+.ar-cat-rule { margin: 0 0 8px; padding: 0 2px; font-family: var(--mono); font-size: 11.5px; line-height: 1.4; color: #5f5a4c; } /* on the paper catalogue, 6:1 */
+.ar-stale {
+  flex: none; padding: 8px 20px; font-family: var(--mono); font-size: 12px; color: #d8b98a; background: #1a1610; border-bottom: 1px solid #3a2f1a;
+}
+/* The seller paused the room: a calm, high-contrast banner above the stage (not an alarm: nothing is wrong, the clock is simply held). */
+.ar-pause {
+  flex: none; padding: 10px 20px; background: #1a1610; color: #f1e3c4; border-bottom: 1px solid var(--brass, #c8a44d); border-top: 1px solid var(--brass, #c8a44d);
+  font-family: var(--mono); font-size: 13px; line-height: 1.45;
+}
+.ar-pause p { margin: 0; }
+.ar-pause-text strong { color: var(--brass-br, #e6c76c); font-weight: 600; }
+.ar-pause-meta { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 4px; font-size: 12px; color: #d8b98a; }
+
+/* --- /rooms schedule --- */
+.ar-sched { max-width: 1120px; margin: 0 auto; padding: 56px 24px 90px; }
+.ar-sched-head { margin-bottom: 8px; }
+.ar-sched-grid {
+  display: grid; gap: 16px; margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.ar-sched-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--baize); border: 1px solid var(--baize-lt);
+  border-radius: 4px; padding: 18px 18px 16px;
+  transition: border-color .12s ease, transform .12s ease;
+}
+.ar-sched-card:hover { border-color: var(--brass); transform: translateY(-1px); }
+.ar-sched-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.ar-sched-title {
+  font-family: var(--serif); font-size: 21px; line-height: 1.15; color: var(--paper);
+  margin: 0 0 10px; text-wrap: balance;
+}
+.ar-sched-meta { display: flex; gap: 16px; font-family: var(--mono); font-size: 11.5px; color: var(--slate); }
+.ar-sched-meta b { color: var(--brass-br); font-weight: 500; }
+.ar-sched-empty { color: var(--slate); margin-top: 30px; }

@@ -1,0 +1,206 @@
+/*
+ * WinModal.tsx - the payoff screen. Centered over the whole room (unlike hp-bidpanel, which
+ * anchors to the bid slab), above the announcer stack (z-index 40) and the bid panel (49/50).
+ * Same "always the same lit-at-night house" rule as auction.css/announcer.css: no dark/light
+ * variants, the room doesn't follow the visitor's system theme.
+ */
+.hp-win-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  background: rgba(0, 0, 0, 0.6);
+}
+.hp-win {
+  position: fixed;
+  z-index: 60;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  max-width: 92vw;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--ink);
+  border: 1px solid var(--brass);
+  border-radius: 8px;
+  padding: 28px 26px 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: hp-win-in 220ms cubic-bezier(.16, 1, .3, 1);
+}
+.hp-win-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+.hp-win-close:hover { color: var(--paper); }
+
+/* 1. The call - the loudest moment the product has. */
+.hp-win-call {
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 1.15;
+  color: var(--brass-br);
+  margin: 4px 0 18px;
+}
+
+/* 2. The card, at size. */
+.hp-win-card {
+  width: 100%;
+  max-width: 220px;
+  max-height: min(300px, 26vh);
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+/* 3. Lot number, full name, grade. */
+.hp-win-lot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 18px;
+}
+.hp-win-lotnumber {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.hp-win-name {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--paper);
+  margin: 0;
+}
+.hp-win-grade {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+/* 4. The hammer price and the two lines that ARE the product. */
+.hp-win-price {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--brass-br);
+  margin-bottom: 12px;
+}
+.hp-win-outcome {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #c9d1cd;
+  margin: 0 0 10px;
+}
+
+/* 5. Below-limit note - a fact, not an alarm; same neutral treatment as hp-bidpanel's own
+   below-reserve state (announcer.css), never vermillion. */
+.hp-win-belowlimit {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--paper);
+  background: rgba(107, 114, 128, 0.14);
+  border: 1px solid #2a3a32;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin: 0 0 14px;
+}
+
+/* 6. The one honest line - quiet, at the bottom, never the headline and never hidden. */
+.hp-win-demo {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--slate);
+  border-top: 1px solid #223028;
+  padding-top: 12px;
+  margin: 4px 0 18px;
+  width: 100%;
+}
+
+/* Demo rooms: what the win, the paid sheet and the outbid dialog say about the test money and the replica card. */
+.hp-win-demo-outcome { width: 100%; margin: 4px 0 14px; padding: 12px; border: 1px solid rgba(200, 164, 77, .4); border-radius: 6px; background: rgba(200, 164, 77, .08); font-size: 13px; line-height: 1.5; color: #c9d1cd; text-align: left; }
+.hp-win-demo-outcome p { margin: 0 0 8px; }
+.hp-win-demo-title { font-family: var(--serif); font-size: 20px; color: var(--brass-br); }
+
+/* Settlement status under the price (real rooms). */
+.hp-win-status { width: 100%; margin: 0 0 12px; padding: 8px 10px; border-radius: 4px; font-size: 12.5px; border: 1px solid #2a3a32; color: #c9d1cd; }
+.hp-win-status.is-awaiting { color: var(--brass-br); border-color: rgba(200, 164, 77, .4); background: rgba(200, 164, 77, .08); }
+.hp-win-status.is-settled { color: var(--brass-br); border-color: var(--brass); }
+.hp-win-status.is-lapsed, .hp-win-status.is-windowEnded { color: #d8b98a; }
+
+/* 7. Actions. */
+.hp-win-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+/* The card is a flex column with a max-height: without this its children shrink to nothing and the Pay and Dismiss buttons vanish on short screens. */
+.hp-win > * { flex-shrink: 0; }
+.hp-win-pay {
+  flex: 1 0 100%;
+  padding: 14px;
+  border-radius: 4px;
+  border: none;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, var(--brass-br), var(--brass));
+  color: #221a08;
+}
+.hp-win-dismiss,
+.hp-win-rooms {
+  flex: 1 1 40%;
+  text-align: center;
+  padding: 13px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.hp-win-dismiss {
+  background: linear-gradient(180deg, var(--brass-br), var(--brass));
+  color: #221a08;
+  border: none;
+}
+.hp-win-rooms {
+  background: none;
+  border: 1px solid #2a3a32;
+  color: var(--paper);
+}
+.hp-win-rooms:hover { border-color: var(--brass); }
+
+@keyframes hp-win-in {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.98); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@media (max-width: 560px) {
+  .hp-win-call { font-size: 28px; }
+  .hp-win-price { font-size: 34px; }
+  .hp-win-card { max-height: 240px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-win { animation: none; }
+}
+.hp-win-tech { font-size: 12.5px; color: #c9d1cd; text-align: center; }
+.hp-win-tech summary { cursor: pointer; min-height: 28px; display: inline-flex; align-items: center; color: var(--brass-br); text-decoration: underline; text-underline-offset: 2px; }

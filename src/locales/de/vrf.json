@@ -1,0 +1,148 @@
+{
+  "chip": {
+    "pending": "Die Reihenfolge der Lose wird ausgelost (etwa 45 Sekunden)",
+    "checking": "Der Beweis wird in Ihrem Browser geprüft",
+    "verified": "Reihenfolge per Zufallsbeweis, in Ihrem Browser geprüft",
+    "failed": "Der Beweis hat sich in Ihrem Browser nicht bestätigt",
+    "defaulted": "Katalogreihenfolge (der Beweis wurde nicht rechtzeitig fertig)",
+    "details": "Beweis ansehen"
+  },
+  "page": {
+    "kicker": "Nachprüfbarer Zufall",
+    "missingKicker": "Nicht verfügbar",
+    "rooms": "Zu den Räumen",
+    "home": "Zur Startseite",
+    "title": "Beweis der Los-Reihenfolge",
+    "titleRaffle": "Beweis der Dankeschön-Auslosung",
+    "lede": "Die Plattform wählt die Reihenfolge der Lose nicht aus und kann das belegen. Sie legt sich zuerst auf die Lose fest, wartet auf einen Solana-Block, den sie vorher nicht kennen kann, und veröffentlicht dann einen Beweis, aus dem jeder die Reihenfolge nachrechnen kann. Diese Seite rechnet sie in Ihrem Browser nach.",
+    "ledeRaffle": "Eine Dankeschön-Auslosung unter allen, die in der Show geboten haben. Sie nennt nur eine Bieternummer: Es wechseln weder Geld noch Karten noch ein anderer Wert den Besitzer. Die Auslosung nutzt dieselbe beweisbare Zufallszahl wie die Los-Reihenfolge, und diese Seite rechnet sie in Ihrem Browser nach.",
+    "loading": "Der Beweis wird geladen",
+    "notFound": "Diese Auslosung gibt es nicht.",
+    "off": "Diese Funktion ist ausgeschaltet.",
+    "unavailable": "Der Beweis konnte nicht geladen werden. Versuchen Sie es gleich noch einmal.",
+    "back": "Zurück zum Raum"
+  },
+  "status": {
+    "pending": "Gestartet, wartet auf die Festlegung im Netzwerk",
+    "committed": "Festgelegt, wartet auf den Beacon-Block",
+    "revealed": "Offengelegt",
+    "defaulted": "Nicht rechtzeitig fertig"
+  },
+  "verdict": {
+    "checking": "Wird in Ihrem Browser nachgerechnet",
+    "proven": "Der Beweis ist gültig. Ihr Browser hat ihn geprüft und das Ergebnis daraus nachgerechnet, und das Ergebnis stimmt überein. Die Prüfungen gegen das Netzwerk laufen, wenn Sie auf \"Selbst nachrechnen\" klicken, und gelten nur soweit das Netzwerk antwortet.",
+    "failed": "Der Beweis besteht die Prüfung nicht. Mindestens eine Prüfung stimmt nicht. Die Einzelheiten stehen unten.",
+    "pending": "Der Beweis ist noch nicht fertig. Diese Seite aktualisiert sich selbst.",
+    "committed": "Die Eingabe ist festgelegt und kann sich nicht mehr ändern. Es wird auf den Beacon-Block gewartet. Diese Seite aktualisiert sich selbst.",
+    "defaulted": "Kein Beweis. Die Auslosung wurde vor ihrer Frist nicht fertig, deshalb gilt die Katalogreihenfolge. Das ist keine fehlgeschlagene Prüfung, und eine später eintreffende Offenlegung wird nicht mehr angenommen.",
+    "chainNote": "Die Netzwerk-Prüfungen lesen das öffentliche Netzwerk aus Ihrem Browser. Sie sind nach bestem Wissen gemacht: Ein Knoten, der nicht antwortet, erscheint als nicht prüfbar, nie als bestanden."
+  },
+  "fields": {
+    "status": "Status",
+    "cluster": "Netzwerk",
+    "key": "Öffentlicher Schlüssel",
+    "input": "Eingabetext (worüber der Beweis gebildet wird)",
+    "committed": "Festgelegte Parameter (Hash)",
+    "beacon": "Beacon (Slot und Block-Hash)",
+    "proof": "Beweis (80 Byte, hex)",
+    "output": "Zufallswert (64 Byte, hex)",
+    "result": "Ergebnis",
+    "commitTx": "Transaktion der Festlegung",
+    "revealTx": "Transaktion der Offenlegung",
+    "deadline": "Frist für die Offenlegung",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "explorer": "Im Explorer öffnen",
+    "download": "Beweispaket herunterladen (JSON)",
+    "none": "noch nicht verfügbar"
+  },
+  "cluster": {
+    "devnet": "Solana Devnet",
+    "mainnet": "Solana Mainnet"
+  },
+  "keycard": {
+    "title": "Der Schlüssel hinter jeder Auslosung",
+    "algorithm": "ECVRF-EDWARDS25519-SHA512-TAI (RFC 9381)",
+    "announced": "Bekanntgegeben in dieser Transaktion",
+    "notAnnounced": "Für diesen Schlüssel wurde noch keine Bekanntgabe-Transaktion veröffentlicht.",
+    "stats": "Festlegungen {commits}, Offenlegungen {reveals}, nicht rechtzeitig fertig {defaults}",
+    "hint": "Jede Festlegung und jede Offenlegung ist eine Transaktion, die mit diesem Schlüssel signiert ist. Eine Auslosung, die begonnen und nie offengelegt wurde, bleibt hier also sichtbar."
+  },
+  "recompute": {
+    "button": "Selbst nachrechnen",
+    "again": "Noch einmal nachrechnen",
+    "running": "Es wird nachgerechnet",
+    "hint": "Führt alle Prüfungen in Ihrem Browser aus. Die ersten fünf brauchen von uns nur die Daten auf dieser Seite. Die letzten vier lesen das öffentliche Netzwerk."
+  },
+  "checks": {
+    "crypto": "In Ihrem Browser geprüft",
+    "chain": "Aus dem Netzwerk gelesen (nach bestem Wissen)",
+    "status": {
+      "pass": "stimmt",
+      "fail": "stimmt nicht",
+      "skipped": "noch nichts zu prüfen",
+      "unverifiable": "nicht prüfbar"
+    },
+    "params_hash": {
+      "title": "Die festgelegten Parameter",
+      "how": "Die Lose und ihre Nummern, hier neu gehasht, ergeben den Wert, der vor der Auslosung festgelegt wurde."
+    },
+    "alpha": {
+      "title": "Der Eingabetext",
+      "how": "Der Text, über den der Beweis gebildet wird, wird aus Netzwerk, Auslosung, festgelegten Parametern und Beacon neu aufgebaut."
+    },
+    "proof": {
+      "title": "Der Beweis",
+      "how": "Der Beweis ist für diese Eingabe unter dem veröffentlichten öffentlichen Schlüssel gültig (RFC 9381)."
+    },
+    "output": {
+      "title": "Der Zufallswert",
+      "how": "Der Wert, den der Beweis liefert, ist gleich dem gespeicherten Wert."
+    },
+    "result": {
+      "title": "Das Ergebnis",
+      "how": "Das Ergebnis, das nach der öffentlichen Regel aus dem Zufallswert folgt, ist gleich dem gespeicherten Ergebnis."
+    },
+    "commit_memo": {
+      "title": "Die Festlegung im Netzwerk",
+      "how": "Die Transaktion der Festlegung enthält den festgelegten Hash und die Frist, vom Schlüssel signiert, im gespeicherten Slot."
+    },
+    "beacon": {
+      "title": "Der Beacon-Block",
+      "how": "Der Beacon ist der erste bestätigte Block mindestens 32 Slots nach der Festlegung, und sein Block-Hash stimmt."
+    },
+    "reveal_memo": {
+      "title": "Die Offenlegung im Netzwerk",
+      "how": "Die Transaktion der Offenlegung enthält denselben Beweis und Beacon, wurde nach dem Beacon-Block und nicht nach der Frist geschrieben."
+    },
+    "single_commit": {
+      "title": "Nur eine Festlegung",
+      "how": "Der Schlüssel hat sich für diese Auslosung genau einmal festgelegt. Ein verstecktes zweites Mal würde hier auffallen."
+    }
+  },
+  "explain": {
+    "title": "Was der Beweis zeigt und was nicht",
+    "proven": "Gezeigt: Das Ergebnis ist eine feste Funktion von drei Dingen, dem veröffentlichten Schlüssel, den festgelegten Losen und dem Block-Hash, der auf die Festlegung folgte. Wurde die Festlegung vor diesem Block geschrieben, was die Netzwerkprüfungen aus der Chain lesen, kann danach niemand das Ergebnis ändern, auch wir nicht.",
+    "notProven": "Nicht gezeigt: dass wir nie ein Ergebnis zurückhalten. Eine Auslosung, die begonnen und nicht rechtzeitig offengelegt wurde, bleibt als nicht fertig sichtbar, und es gilt die Katalogreihenfolge.",
+    "beacon": "Der Block-Hash stammt aus Solana Devnet, wo niemand einen Grund hat, einen Block zu manipulieren.",
+    "beaconMain": "Der Block-Hash stammt aus dem Hauptnetz. Ein Validator könnte ihn theoretisch beeinflussen. Das wäre teuer und sichtbar, ist aber nicht ausgeschlossen."
+  },
+  "order": {
+    "before": "Vor der Auslosung (Katalogreihenfolge)",
+    "after": "Nach der Auslosung (Reihenfolge im Raum)",
+    "lot": "Los {number}",
+    "applied": "Die neuen Nummern gelten im Raum.",
+    "notApplied": "Der Raum hatte schon begonnen, deshalb wurde die gezogene Reihenfolge nur festgehalten. Sie gilt nicht."
+  },
+  "raffle": {
+    "winner": "Gezogen: Bieternummer {number}",
+    "entrants": "{count} Teilnehmende (Bieternummern): {list}",
+    "bots": "Haus-Bieter, vom Haus abgegebene Gebote und der Verkäufer nehmen nicht teil."
+  },
+  "lot": {
+    "title": "So wurde die Reihenfolge der Lose gezogen",
+    "text": "Die Reihenfolge der Lose in dieser Show wurde mit einem Zufallsbeweis gezogen, den jeder nachrechnen kann.",
+    "link": "Beweis ansehen und nachrechnen",
+    "raffle": "Dankeschön-Auslosung ansehen"
+  }
+}

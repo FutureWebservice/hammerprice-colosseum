@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "db": {
+    "ms": 12
+  },
+  "rpc": {
+    "ms": 140
+  },
+  "cluster": "devnet",
+  "sa": {
+    "sol": 3.2
+  },
+  "flags": {
+    "bidding": true,
+    "settlement": true,
+    "faucet": true,
+    "mint": true,
+    "house_bots": true
+  }
+}

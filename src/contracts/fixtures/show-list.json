@@ -1,0 +1,21 @@
+{
+  "shows": [
+    {
+      "id": "3f6c1f2e-9b0a-4f43-8a52-1d7a0c5e7b10",
+      "title": "House show, devnet replicas",
+      "status": "live",
+      "scheduledAt": "2026-10-05T17:59:00.000Z",
+      "startedAt": "2026-10-05T17:59:05.000Z",
+      "lotCount": 6,
+      "soldCount": 1,
+      "hammerTotal": "120000000",
+      "cluster": "devnet",
+      "isHouse": true,
+      "thumbs": [
+        "https://d1xpxki1g4htqu.cloudfront.net/cards/charizard-ex-199.png"
+      ],
+      "endedAt": null
+    }
+  ],
+  "nextCursor": null
+}

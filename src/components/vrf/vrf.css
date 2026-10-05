@@ -1,0 +1,48 @@
+/*
+ * The draw UI: the room chip (on the cream catalogue paper), the proof page and the lot-page card (on the dark room tokens of the .hp scope).
+ * Colour is never the only signal: every state also has a word and a mark.
+ */
+
+/* --- the fairness chip in the catalogue rail (light paper) --- */
+.vrf-chip { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 8px 10px; border-left: 3px solid var(--brass, #c8a44d); background: #fbf8ee; border-radius: 0 3px 3px 0; font-size: 12.5px; line-height: 1.35; color: var(--ink-text, #1a1a17); }
+.vrf-chip a { color: #6f5a1f; text-decoration: underline; text-underline-offset: 2px; }
+.vrf-chip[data-state='verified'] { border-left-color: #6f5a1f; }
+.vrf-chip[data-state='failed'] { border-left-color: #a8321f; }
+.vrf-chip[data-state='failed'] .vrf-chip-text { color: #a8321f; font-weight: 600; }
+.vrf-chip[data-state='defaulted'] { border-left-color: #8a8470; }
+.vrf-chip-text::before { content: attr(data-mark); margin-right: 6px; font-weight: 700; }
+.vrf-chip-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #6f5a1f; animation: vrf-pulse 1.4s ease-in-out infinite; }
+@keyframes vrf-pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .vrf-chip-dot { animation: none; } }
+
+/* --- the proof page (dark) --- */
+.vrf .vrf-verdict { margin: 14px 0; padding: 10px 12px; border: 1px solid currentColor; border-radius: 4px; font-weight: 600; }
+.vrf .vrf-verdict.is-ok { color: #7fd99a; }
+.vrf .vrf-verdict.is-bad { color: #ff8a80; }
+.vrf .vrf-verdict.is-warn { color: #e8c9a0; }
+.vrf .vrf-key { display: grid; gap: 4px; padding: 12px 14px; border: 1px solid #223028; border-radius: 4px; background: #0a0d11; margin: 0 0 14px; }
+.vrf .vrf-key code, .vrf .vrf-long { font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; overflow-wrap: anywhere; word-break: break-all; color: var(--paper, #f4f0e6); }
+.vrf .vrf-pre { white-space: pre-wrap; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; margin: 0; padding: 8px 10px; border: 1px solid #223028; border-radius: 3px; background: #0a0d11; overflow-wrap: anywhere; }
+.vrf .vrf-btn { min-height: 44px; padding: 0 18px; border: 1px solid var(--brass, #c8a44d); border-radius: 3px; background: transparent; color: var(--brass-br, #e8c776); cursor: pointer; font: inherit; }
+.vrf .vrf-btn:hover:not(:disabled) { background: rgba(200, 164, 77, .12); }
+.vrf .vrf-btn:disabled { opacity: .6; cursor: progress; }
+.vrf .vrf-btn.is-small { min-height: 32px; padding: 0 10px; font-size: 13px; }
+.vrf .vrf-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+.vrf .vrf-checks { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 8px; }
+.vrf .vrf-check { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; padding: 10px 12px; border: 1px solid #223028; border-radius: 4px; }
+.vrf .vrf-check-mark { grid-row: span 2; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; align-self: start; min-width: 8.5em; }
+.vrf .vrf-check[data-status='pass'] .vrf-check-mark { color: #7fd99a; }
+.vrf .vrf-check[data-status='fail'] .vrf-check-mark { color: #ff8a80; font-weight: 700; }
+.vrf .vrf-check[data-status='skipped'] .vrf-check-mark, .vrf .vrf-check[data-status='unverifiable'] .vrf-check-mark { color: #e8c9a0; }
+.vrf .vrf-check-title { font-weight: 600; }
+.vrf .vrf-check-how { color: #9aa3ac; font-size: 13px; margin: 0; max-width: none; }
+.vrf .vrf-check-detail { color: #e8c9a0; font-size: 12.5px; margin: 0; font-family: var(--mono, ui-monospace, Menlo, monospace); overflow-wrap: anywhere; }
+.vrf .vrf-group { font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa3ac; margin: 14px 0 6px; }
+.vrf .vrf-lots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.vrf .vrf-lots ol { margin: 0; padding-left: 22px; }
+.vrf .vrf-lots li { margin: 2px 0; overflow-wrap: anywhere; }
+@media (max-width: 640px) { .vrf .vrf-lots { grid-template-columns: 1fr; } .vrf .vrf-check { grid-template-columns: 1fr; } .vrf .vrf-check-mark { grid-row: auto; } }
+
+/* --- the card on a lot's verify page --- */
+.vrf-lotcard { margin: 28px 0 0; padding: 14px 16px; border: 1px solid #223028; border-radius: 4px; background: #0a0d11; }
+.vrf-lotcard h2 { margin-top: 0; }

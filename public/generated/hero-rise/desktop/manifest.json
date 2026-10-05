@@ -1,0 +1,18 @@
+{
+  "id": "hero-rise-desktop",
+  "kind": "frame-sequence",
+  "format": "webp",
+  "frameCount": 150,
+  "framePattern": "frame-%04d.webp",
+  "indexBase": 1,
+  "pad": 4,
+  "sceneSeconds": 6,
+  "publicUrl": "/generated/hero-rise/desktop",
+  "frameUrlTemplate": "/generated/hero-rise/desktop/frame-%04d.webp",
+  "poster": "/generated/hero-rise/desktop/poster.webp",
+  "size": {
+    "width": 1880,
+    "height": 920,
+    "fit": "cover"
+  }
+}

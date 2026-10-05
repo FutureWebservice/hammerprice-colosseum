@@ -1,0 +1,233 @@
+{
+  "badge": {
+    "draft": "KI-Entwurf, Verkäufer prüft",
+    "template": "Vorlage, kein KI-Text",
+    "ai": "KI-Assistent: wählt die passende Antwort aus unserer FAQ",
+    "faq": "Vorschlag aus der FAQ"
+  },
+  "credits": {
+    "heading": "KI-Entwurf",
+    "freeNote": "KI ist während der Bewertungsphase kostenlos. Es werden keine Guthaben benötigt.",
+    "balance": "{count} Entwürfe übrig",
+    "balanceOne": "1 Entwurf übrig",
+    "none": "Kein Entwurf übrig",
+    "packTest": "10 Entwürfe für 1 Test-USDC (ohne Wert)",
+    "packReal": "10 Entwürfe für 1 USDC",
+    "buy": "Paket kaufen",
+    "needWallet": "Verbinden Sie Ihre Wallet, um Entwürfe zu kaufen.",
+    "step": {
+      "quote": "Zahlung wird vorbereitet…",
+      "check": "Zahlung wird geprüft…",
+      "sign": "Bitte bestätigen Sie in Ihrer Wallet.",
+      "send": "Zahlung wird gesendet…",
+      "wait": "Warte auf die Bestätigung im Netzwerk…"
+    },
+    "bought": "Gekauft: 10 Entwürfe. Guthaben: {count}.",
+    "explorer": "Transaktion ansehen",
+    "limitReached": "Heute können Sie keine weiteren Pakete kaufen. Morgen geht es wieder.",
+    "insufficient": "In Ihrer Wallet fehlt dafür USDC.",
+    "expired": "Das Zeitfenster zum Bestätigen ist abgelaufen. Bitte starten Sie den Kauf erneut.",
+    "rejected": "Sie haben den Kauf in der Wallet abgelehnt. Es wurde nichts bezahlt.",
+    "mismatch": "Die Zahlung entsprach nicht dem Erwarteten und wurde nicht gesendet.",
+    "failed": "Der Kauf ist fehlgeschlagen. Es wurde nichts gutgeschrieben. Bitte versuchen Sie es erneut.",
+    "unavailable": "Das Netzwerk antwortet gerade nicht. Bitte versuchen Sie es gleich noch einmal.",
+    "noKey": "Zurzeit ist kein KI-Zugang eingerichtet. Sie erhalten kostenlose Vorlagen."
+  },
+  "listing": {
+    "title": "KI-Entwurf für die Beschreibung (optional)",
+    "intro": "Lassen Sie sich Titel und Beschreibung vorschlagen. Sie prüfen den Text und übernehmen ihn selbst.",
+    "card": "Karte",
+    "estimate": "Ihre Schätzung in USDC (optional)",
+    "estimateHint": "Daraus rechnen wir einen Vorschlag für den Startpreis aus. Das ist keine Bewertung der Karte.",
+    "notes": "Notizen (optional)",
+    "notesHint": "Nur Angaben zur Karte, keine persönlichen Daten.",
+    "photos": "Fotos (optional, bis zu 3)",
+    "photosHint": "Fotos werden im Browser verkleinert, ohne Ortsdaten, und nicht gespeichert.",
+    "addPhoto": "Foto hinzufügen",
+    "removePhoto": "Foto entfernen",
+    "photoBad": "Dieses Foto kann nicht verwendet werden (JPEG, PNG oder WebP).",
+    "create": "Entwurf erstellen (1 Entwurf)",
+    "createTemplate": "Vorlage erstellen (kostenlos)",
+    "creating": "Entwurf wird erstellt…",
+    "result": {
+      "heading": "Ihr Entwurf",
+      "titleDe": "Titel (Deutsch)",
+      "titleEn": "Titel (Englisch)",
+      "descDe": "Beschreibung (Deutsch)",
+      "descEn": "Beschreibung (Englisch)",
+      "opening": "Vorschlag für den Startpreis: {amount} USDC",
+      "openingNote": "Vorschlag, keine Bewertung.",
+      "useOpening": "Startpreis dieser Karte auf {amount} setzen",
+      "reviewed": "Ich habe den Text geprüft.",
+      "apply": "Beschreibung für diese Karte übernehmen",
+      "applied": "Übernommen. Die Beschreibung steht jetzt bei dieser Karte.",
+      "left": "{count} Entwürfe übrig",
+      "templateNote": "Das ist eine Vorlage aus Ihren Angaben, kein KI-Text. Sie kostet kein Guthaben.",
+      "fellBack": "Der KI-Entwurf war nicht möglich. Sie erhalten eine Vorlage, und Ihr Guthaben bleibt unverändert."
+    },
+    "errors": {
+      "notACard": "Das sieht nicht nach einer Sammelkarte aus. Es wurde kein Entwurf erstellt und nichts abgebucht.",
+      "rate": "Zu viele Entwürfe in kurzer Zeit. Bitte warten Sie einen Moment.",
+      "already": "Dieser Entwurf wurde schon angefordert. Erstellen Sie bei Bedarf einen neuen.",
+      "generic": "Der Entwurf konnte nicht erstellt werden. Es wurde nichts abgebucht."
+    },
+    "usedForCard": "Entwurf für: {name}"
+  },
+  "ask": {
+    "buttonSell": "Hilfe zum Verkaufen",
+    "titleSell": "Hilfe beim Einstellen",
+    "introSell": "Stellen Sie eine Frage zum Verkaufen. Die Antwort sehen nur Sie.",
+    "placeholder": "Ihre Frage",
+    "send": "Fragen",
+    "asking": "Einen Moment…",
+    "onlyYou": "Nur für Sie sichtbar",
+    "noAdvice": "Der Assistent gibt keine Beratung. Er wählt nur Antworten aus der FAQ.",
+    "examples": "Zum Beispiel",
+    "example1Sell": "Wie stelle ich eine Karte ein?",
+    "example2Sell": "Was kostet der KI-Entwurf?",
+    "example3Sell": "Wie finde ich den Startpreis?",
+    "faqLink": "Zur FAQ",
+    "contactLink": "Kontakt",
+    "wrongAnswer": "War das die richtige Antwort? Wenn nicht, formulieren Sie die Frage anders oder lesen Sie die FAQ.",
+    "tooLong": "Bitte fassen Sie sich kürzer (höchstens 300 Zeichen).",
+    "rate": "Zu viele Fragen in kurzer Zeit. Bitte warten Sie einen Moment.",
+    "failed": "Die Frage konnte gerade nicht beantwortet werden. Bitte versuchen Sie es gleich noch einmal.",
+    "extra": {
+      "no_advice": {
+        "a": "Dazu gebe ich keine Beratung. Ob Sie bieten oder verkaufen, entscheiden Sie allein. Für rechtliche, steuerliche oder finanzielle Fragen wenden Sie sich bitte an eine fachkundige Person."
+      },
+      "cannot": {
+        "a": "Das kann ich nicht beantworten. Lesen Sie bitte die FAQ oder schreiben Sie uns."
+      },
+      "room_assistant": {
+        "q": "Was ist dieser Assistent?",
+        "a": "Der Assistent wählt zu Ihrer Frage die passende Antwort aus unserer festen FAQ. Er denkt sich keine Antworten aus, gibt keine Anlage-, Rechts- oder Steuerberatung und kennt keine persönlichen Daten. Seine Antwort sehen nur Sie."
+      },
+      "live_now": {
+        "q": "Welches Los läuft gerade, wie hoch ist das Gebot und wie lange noch?",
+        "a": "Das aktuelle Los, das höchste Gebot und die Restzeit stehen oben auf der Bühne. Die aktuellen Werte dieses Raums sehen Sie unten.",
+        "live": true
+      },
+      "sell_how": {
+        "q": "Wie stelle ich eine Karte ein?",
+        "a": "Öffnen Sie Verkaufen, wählen Sie eine Karte aus Ihrer Wallet, legen Sie Startpreis und Zeit fest und veröffentlichen Sie. Die Karte bleibt bis zum Verkauf in Ihrer Wallet. Nach dem Zuschlag müssen Sie online sein, um die Zahlung zu signieren."
+      },
+      "sell_draft": {
+        "q": "Was macht der KI-Entwurf?",
+        "a": "Er schlägt Titel und Beschreibung für Ihre Karte vor. Der Text ist als KI-Entwurf gekennzeichnet, Sie prüfen ihn und übernehmen ihn selbst. Ohne KI-Zugang erhalten Sie eine Vorlage ohne Kosten."
+      },
+      "sell_credits": {
+        "q": "Was kosten die KI-Entwürfe?",
+        "a": "Ein Paket mit 10 Entwürfen kostet 1 USDC (im Testnetz Test-USDC ohne Wert). Sie bezahlen mit einer Transaktion, die Sie in Ihrer Wallet bestätigen. Scheitert ein Entwurf, wird er zurückgebucht. Vorlagen kosten nichts."
+      },
+      "sell_photos": {
+        "q": "Was passiert mit meinen Fotos?",
+        "a": "Fotos gehen nur für den KI-Entwurf an Google. Sie werden vorher im Browser verkleinert, ohne Ortsdaten, und von uns nicht gespeichert."
+      },
+      "sell_price": {
+        "q": "Wie finde ich den Startpreis?",
+        "a": "Den Startpreis legen Sie selbst fest. Geben Sie im KI-Entwurf Ihre eigene Schätzung ein, schlagen wir 45 Prozent davon vor. Das ist keine Bewertung der Karte. Der Mindestpreis ist optional: bleibt das höchste Gebot darunter, wird nicht verkauft."
+      }
+    },
+    "liveHeading": "Aktuell in diesem Raum",
+    "liveLot": "Los {n} ist offen.",
+    "liveBid": "Höchstes Gebot: {amount} USDC.",
+    "liveNoBid": "Noch kein Gebot.",
+    "liveTime": "Noch {time}.",
+    "liveNone": "Gerade läuft kein Los.",
+    "publish": "Im Raum-Chat veröffentlichen",
+    "publishing": "Wird gesendet…",
+    "published": "Im Chat veröffentlicht, gekennzeichnet als KI.",
+    "publishFailed": "Das Veröffentlichen hat nicht geklappt.",
+    "publishNote": "Als Betreiber können Sie diese Antwort über den moderierten Chat für alle sichtbar machen.",
+    "publishRefused": "Von den Chat-Regeln abgelehnt (zum Beispiel wegen eines Links). Formulieren Sie die Frage um oder schreiben Sie selbst in den Chat."
+  },
+  "agent": {
+    "title": "KI-Agent",
+    "intro": "Guten Tag! Ich finde Lose, bereite Gebotsvorschläge vor und beginne Inseratsentwürfe.\nFragen Sie in eigenen Worten, auf Deutsch oder Englisch.",
+    "placeholder": "Ihre Nachricht",
+    "send": "Senden",
+    "thinking": "Einen Moment…",
+    "examples": "Zum Beispiel",
+    "example1": "Zeige mir Pokemon-Karten unter 100 USDC",
+    "example2": "Finde ein Charizard in PSA 10",
+    "example3": "Hilf mir, mein Pikachu in PSA 9 einzustellen",
+    "you": "Sie",
+    "labelAi": "KI-Agent",
+    "labelFaq": "Feste Antwort aus der FAQ",
+    "failed": "Der Agent konnte gerade nicht antworten. Bitte versuchen Sie es gleich noch einmal.",
+    "rate": "Zu viele Nachrichten in kurzer Zeit. Bitte warten Sie einen Moment.",
+    "tooLong": "Bitte fassen Sie sich kürzer (höchstens 300 Zeichen).",
+    "lot": "Los {n}",
+    "open": "Jetzt offen",
+    "soon": "Kommt bald",
+    "bidNow": "Aktuelles Gebot {amount} USDC",
+    "opensAt": "Startet bei {amount} USDC",
+    "openRoom": "Raum öffnen",
+    "bidTitle": "Gebotsvorschlag, nicht abgegeben",
+    "bidCurrent": "Aktuelles Gebot",
+    "bidNone": "Noch kein Gebot",
+    "bidAmount": "Vorgeschlagenes Gebot",
+    "bidLimit": "Ihr Limit",
+    "bidConfirm": "Im Raum bestätigen",
+    "bidNote": "Es wird nichts geboten, bis Sie im Raum mit Ihrer eigenen Wallet bestätigen.",
+    "draftTitle": "Entwurfsvorschlag, noch nichts erstellt",
+    "draftName": "Karte",
+    "draftSet": "Set",
+    "draftGrade": "Bewertung",
+    "draftEstimate": "Ihre Schätzung",
+    "draftCreate": "Entwurf erstellen (1 Guthaben)",
+    "draftCreateFree": "Entwurf erstellen (kostenlos)",
+    "draftCreating": "Wird erstellt…",
+    "draftNote": "Ein Guthaben wird erst verbraucht, wenn Sie den Knopf drücken. Sie prüfen den Text, bevor er verwendet wird.",
+    "draftNoteFree": "KI ist während der Bewertungsphase kostenlos. Es geschieht nichts, bis Sie den Knopf drücken, und Sie prüfen den Text, bevor er verwendet wird.",
+    "draftTitles": "Titel",
+    "draftDe": "Beschreibung auf Deutsch",
+    "draftEn": "Beschreibung auf Englisch",
+    "draftCredits": "Verbleibendes Guthaben: {count}",
+    "draftSell": "Weiter im Verkaufsassistenten",
+    "noCredit": "Sie haben kein Guthaben mehr. Ein Paket mit 10 kostet 1 USDC und lässt sich im Verkaufsassistenten kaufen.",
+    "signIn": "Bitte verbinden Sie zuerst Ihre Wallet und melden Sie sich an.",
+    "log": "Gespräch mit dem KI-Agenten",
+    "note": "Die KI kann Fehler machen und macht nur Vorschläge, Sie bestätigen jeden Schritt selbst.",
+    "timeLeft": "Noch {time}",
+    "startsOn": "Beginnt {when}",
+    "startsLater": "Beginn noch nicht festgelegt",
+    "noPhoto": "Kein Foto",
+    "currentBid": "Aktuelles Gebot",
+    "opening": "Startgebot",
+    "prepareBid": "Gebot vorbereiten",
+    "prepareBidText": "Biete {amount} USDC auf {name}, Los {n}",
+    "bidDown": "Betrag senken",
+    "bidUp": "Betrag erhöhen",
+    "bidCopy": "Betrag kopieren",
+    "bidCopied": "Betrag kopiert",
+    "bidThere": "Geben Sie diesen Betrag im Raum ein. Das von Ihnen genannte Limit ist das Höchste, was Sie hier wählen können.",
+    "bidStep": "Schritte von {step} USDC",
+    "reset": "Chat zurücksetzen",
+    "resetConfirm": "Noch einmal klicken, um den Chat zu löschen",
+    "saved": "Nur in diesem Browser gespeichert",
+    "close": "Schließen",
+    "roomContext": "Dieser Raum, Los {n}",
+    "roomExample1": "Biete bis zu 50 USDC auf dieses Los",
+    "roomExample2": "Wie funktioniert das Bieten hier?",
+    "roomExample3": "Finde ähnliche Karten unter 100 USDC"
+  },
+  "lot": {
+    "aiAssisted": "KI-gestützt, vom Verkäufer geprüft"
+  },
+  "gate": {
+    "title": "Verbinden Sie Ihre Wallet, um die KI zu nutzen",
+    "body": "Jede KI-Funktion hier braucht eine angemeldete Wallet: der Agent, der Inseratsentwurf und der Assistent in den Räumen. Ohne Wallet wird nichts an die KI gesendet und es entstehen keine Kosten.",
+    "connect": "Wallet verbinden",
+    "signIn": "Mit Ihrer Wallet anmelden",
+    "signingIn": "Warte auf Ihre Wallet…",
+    "loading": "Ihre Wallet wird geprüft…"
+  },
+  "assistant": {
+    "launch": "Assistent",
+    "open": "KI-Assistenten öffnen",
+    "close": "KI-Assistenten schließen",
+    "title": "KI-Assistent"
+  }
+}

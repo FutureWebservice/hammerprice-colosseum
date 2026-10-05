@@ -1,0 +1,115 @@
+/*
+ * Help pieces: glossary term and card, tour card, help menu, "next step" line, wallet hint, Advanced fold.
+ * Self-contained like explain.css: the card parts are portalled to <body>, outside any `.hp` ancestor, so the
+ * palette is declared on each root. The room is always dark, so everything here is dark with brass accents.
+ */
+.ux-term, .ux-pop, .ux-tour, .ux-help, .ux-next, .ux-hint, .ux-adv, .ux-glossary {
+  --ux-ink: #0e1116;
+  --ux-panel: #151b21;
+  --ux-line: #2a3a32;
+  --ux-brass: #c8a44d;
+  --ux-brass-br: #e8c776;
+  --ux-paper: #f4f0e6;
+  --ux-text: #c9d1cd;
+  --ux-slate: #9aa0a6;
+  --ux-sans: var(--font-sans, ui-sans-serif), ui-sans-serif, -apple-system, 'Segoe UI', sans-serif;
+  --ux-mono: var(--font-mono, ui-monospace), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* --- buttons shared by the cards --- */
+.ux-btn {
+  min-height: 32px; padding: 0 14px; border-radius: 4px; cursor: pointer;
+  background: none; border: 1px solid var(--ux-line); color: var(--ux-paper);
+  font-family: var(--ux-sans); font-size: 13px;
+}
+.ux-btn:hover { border-color: var(--ux-brass); }
+.ux-btn-main { background: var(--ux-brass); border-color: var(--ux-brass); color: #221a08; }
+.ux-btn-main:hover { background: var(--ux-brass-br); }
+.ux-btn-quiet { border-color: transparent; color: var(--ux-slate); }
+.ux-btn:focus-visible, .ux-term:focus-visible, .ux-help-btn:focus-visible, .ux-help-item:focus-visible, .ux-adv > summary:focus-visible {
+  outline: 2px solid var(--ux-brass-br); outline-offset: 2px;
+}
+
+/* --- glossary term: inline, so the line height sets its target size --- */
+.ux-term {
+  display: inline; padding: 0; margin: 0; background: none; border: 0; cursor: pointer;
+  font: inherit; color: inherit; text-align: inherit;
+  text-decoration: underline dotted; text-decoration-color: var(--ux-brass); text-underline-offset: 3px;
+}
+.ux-term:hover, .ux-term[aria-expanded='true'] { text-decoration-style: solid; }
+
+/* --- cards: glossary popover and tour step. Fixed, placed by script; no overlay, no click shield --- */
+.ux-pop, .ux-tour {
+  position: fixed; z-index: 2147483000; box-sizing: border-box; width: 300px; max-width: calc(100vw - 16px);
+  background: var(--ux-ink); color: var(--ux-text); border: 1px solid var(--ux-brass); border-radius: 8px;
+  padding: 14px 16px; box-shadow: 0 16px 40px rgba(0, 0, 0, .5); font-family: var(--ux-sans);
+  top: 0; left: 0;
+}
+.ux-pop-kicker, .ux-tour-count {
+  margin: 0 0 4px; font-family: var(--ux-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ux-brass);
+}
+.ux-pop-title { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: var(--ux-paper); }
+.ux-pop-text, .ux-tour-text { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ux-text); }
+.ux-tour-text { color: var(--ux-paper); font-size: 15px; }
+.ux-pop-foot, .ux-tour-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+.ux-pop-foot { justify-content: space-between; }
+.ux-pop-link { color: var(--ux-brass-br); font-size: 13px; text-decoration: underline; text-underline-offset: 2px; }
+.ux-tour-actions .ux-btn-quiet { margin-right: auto; padding-left: 0; }
+[data-tour-active='true'] { outline: 2px solid var(--ux-brass-br, #e8c776); outline-offset: 4px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ux-pop, .ux-tour { animation: ux-in .16s ease-out; }
+  @keyframes ux-in { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* A phone: the glossary card becomes a bottom sheet; the tour card spans the width next to its anchor. */
+@media (max-width: 640px) {
+  .ux-pop { top: auto !important; left: 0 !important; right: 0; bottom: 0; width: auto; max-width: none; border-radius: 12px 12px 0 0; border-bottom: 0; padding-bottom: calc(14px + env(safe-area-inset-bottom)); }
+  .ux-tour { width: auto; max-width: none; left: 8px !important; right: 8px; }
+  .ux-btn { min-height: 40px; }
+}
+
+/* --- help menu --- */
+.ux-help { position: relative; display: inline-block; }
+.ux-help-btn {
+  min-height: 32px; padding: 0 12px; border-radius: 999px; cursor: pointer; background: none;
+  border: 1px solid var(--ux-brass); color: var(--ux-brass-br); font-family: var(--ux-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+}
+.ux-help-btn:hover { background: rgba(200, 164, 77, .12); }
+/* A narrow top bar has no room for the word: the round "?" stays, 44 px, and its accessible name is unchanged. */
+@media (max-width: 480px) {
+  .ux-help-text { display: none; }
+  .ux-help-btn { min-width: 44px; min-height: 44px; padding: 0; font-size: 15px; }
+}
+.ux-help-list {
+  position: absolute; z-index: 60; right: 0; top: calc(100% + 6px); min-width: 230px; margin: 0; padding: 6px; list-style: none;
+  background: var(--ux-ink); border: 1px solid var(--ux-brass); border-radius: 8px; box-shadow: 0 16px 40px rgba(0, 0, 0, .5);
+}
+.ux-help-item {
+  display: flex; align-items: center; width: 100%; min-height: 40px; padding: 0 12px; box-sizing: border-box; border: 0; border-radius: 4px;
+  background: none; color: var(--ux-paper); font-family: var(--ux-sans); font-size: 14px; text-align: left; text-decoration: none; cursor: pointer;
+}
+.ux-help-item:hover { background: rgba(200, 164, 77, .14); }
+
+/* --- next step --- */
+.ux-next { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 8px 0; font-family: var(--ux-sans); font-size: 14px; line-height: 1.45; color: var(--ux-paper); }
+.ux-next-label { font-family: var(--ux-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ux-brass); }
+
+/* --- wallet hint --- */
+.ux-hint { box-sizing: border-box; margin: 0 0 12px; padding: 10px 12px; border-left: 3px solid var(--ux-brass); background: rgba(200, 164, 77, .08); border-radius: 0 4px 4px 0; font-family: var(--ux-sans); }
+.ux-hint-title { margin: 0 0 4px; font-family: var(--ux-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ux-brass); }
+.ux-hint-text { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ux-paper); }
+.ux-hint-more { margin: 6px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--ux-slate); }
+.ux-hint-more a { color: var(--ux-brass-br); text-decoration: underline; text-underline-offset: 2px; }
+.ux-hint-compact { padding: 4px 0 4px 10px; background: none; font-size: 12.5px; line-height: 1.45; color: var(--ux-slate); }
+
+/* --- Advanced --- */
+.ux-adv { margin: 12px 0 0; font-family: var(--ux-sans); font-size: 13px; color: var(--ux-text); }
+.ux-adv > summary { cursor: pointer; display: flex; align-items: center; min-height: 32px; color: var(--ux-brass-br); }
+.ux-adv-body { padding: 6px 0 2px; }
+
+/* --- glossary list --- */
+.ux-glossary dl { margin: 0; }
+.ux-glossary-item { padding: 10px 0; border-top: 1px solid var(--ux-line); }
+.ux-glossary dt { font-weight: 600; color: var(--ux-paper); }
+.ux-glossary dd { margin: 2px 0 0; color: var(--ux-text); line-height: 1.5; }

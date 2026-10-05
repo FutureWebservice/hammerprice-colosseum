@@ -1,0 +1,11 @@
+{
+  "settlement": {
+    "cluster": {
+      "body": "Dieser Kauf wird auf Mainnet abgewickelt. Ein Wallet auf Devnet kann ihn weder simulieren noch unterschreiben.",
+      "step2": "Phantom: Einstellungen, Entwicklereinstellungen, Testnet-Modus ausschalten. Solflare und Backpack: In den Einstellungen das Netzwerk auf Mainnet stellen."
+    },
+    "errors": {
+      "simulation_failed": "Der Testlauf im Netzwerk ist fehlgeschlagen. Prüfen Sie, ob Ihr Wallet auf Mainnet steht, und versuchen Sie es erneut."
+    }
+  }
+}

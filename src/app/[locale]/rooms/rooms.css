@@ -1,0 +1,92 @@
+/*
+ * /rooms: the schedule.
+ *
+ * Tokens come from hammerprice.css; buttons, chips and glass panels come from the shared kit (ui/hpx.css), so the page reads like the landing page and
+ * the AI agent page: ink ground, big serif type, soft glass cards with a 16 px radius, one solid yellow button, one subtle outline button.
+ * Two groups in this order: the demo rooms (tutorial) in a gold-edged panel, then the real rooms. Each group lists live, coming up and ended cards
+ * in a responsive grid. Nothing here is hidden at any width and nothing animates except the live dot (reduced motion switches it off).
+ *
+ * .hp already pads the page 24px each side, so every container below adds vertical padding only.
+ */
+@import '../../../components/landing/hammerprice.css';
+@import '../../../components/ui/hpx.css';
+
+.rm-head { max-width: 1120px; margin: 0 auto; padding: 64px 0 8px; }
+.rm-head-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; }
+.rm-explainer { max-width: 66ch; font-size: 16px; color: #c9d1cd; margin: 0 0 6px; }
+
+.rm-body { max-width: 1120px; margin: 0 auto; padding: 30px 0 100px; display: grid; gap: 28px; }
+.rm-empty, .rm-error { max-width: 1120px; margin: 0 auto; color: #a9b2ba; padding: 30px 0; font-family: var(--mono); font-size: 13px; }
+.rm-error { color: #ff8a75; }
+
+/* --- groups --- */
+.rm-group { padding: 6px 0 0; }
+.rm-group--demo { padding: 30px 30px 30px; border-color: rgba(232, 199, 118, .35); background: linear-gradient(180deg, rgba(29, 74, 60, .38), rgba(29, 74, 60, .12)); }
+.rm-group-title { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.1; letter-spacing: -.01em; margin: 0 0 12px; color: var(--paper); display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.rm-group-lede { max-width: 66ch; font-size: 17px; color: #e3e8e5; margin: 0 0 8px; }
+.rm-group-sentence { max-width: 70ch; font-size: 15px; color: #c9d1cd; margin: 0 0 6px; }
+.rm-group-try { max-width: 70ch; font-size: 15px; color: #b4bdb9; margin: 0 0 18px; }
+.rm-group > .rm-section:first-of-type { margin-top: 22px; }
+
+/* --- a list inside a group: live, coming up, ended --- */
+.rm-section { margin-top: 28px; }
+.rm-section-label { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--brass-br); margin: 0 0 12px; }
+.rm-section--archive .rm-section-label { color: #a9b2ba; }
+.rm-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.rm-section--archive .rm-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+
+/* --- the card --- */
+.rm-card { display: flex; flex-direction: column; overflow: hidden; color: inherit; text-decoration: none; min-width: 0; transition: border-color .15s ease, transform .15s ease; }
+a.rm-card:hover, .rm-card--scheduled:hover { border-color: rgba(232, 199, 118, .55); }
+@media (prefers-reduced-motion: no-preference) { a.rm-card:hover, .rm-card--scheduled:hover { transform: translateY(-2px); } }
+.rm-card-main { display: flex; flex-direction: column; flex: 1; color: inherit; text-decoration: none; border-radius: 16px 16px 0 0; }
+.rm-card--live { border-color: rgba(232, 199, 118, .35); }
+
+.rm-media { position: relative; aspect-ratio: 16 / 10; background: radial-gradient(ellipse 70% 60% at 50% 45%, #25604d, #14342b 72%); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.rm-media-img { height: 84%; width: auto; max-width: 70%; object-fit: contain; background: #e7e1d2; border-radius: 6px; box-shadow: 0 14px 30px rgba(0, 0, 0, .5); }
+.rm-media-empty { width: 28%; aspect-ratio: 3 / 4; border-radius: 6px; background: rgba(231, 225, 210, .85); box-shadow: 0 14px 30px rgba(0, 0, 0, .5); }
+.rm-media-top { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.rm-media-top .hpx-chip { background: rgba(14, 17, 22, .78); }
+
+.rm-card-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; min-width: 0; }
+.rm-card-title { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.15; letter-spacing: -.005em; margin: 0; color: var(--paper); overflow-wrap: anywhere; text-wrap: balance; }
+.rm-card-title--sm { font-size: 19px; }
+.rm-card-when { margin: -2px 0 0; font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 12px; color: #b4bdb9; }
+.rm-tutorial { margin: 0; font-size: 14px; color: var(--paper); font-weight: 500; }
+.rm-enter { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brass-br); }
+.rm-enter::after { content: '\2192'; transition: transform .15s ease; }
+.rm-card:hover .rm-enter::after, .rm-card:focus-visible .rm-enter::after { transform: translateX(3px); }
+.rm-card--scheduled .rm-cal { margin: 0 18px 18px; min-height: 40px; }
+
+.rm-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.rm-badge { display: inline-flex; align-items: center; min-height: 22px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; padding: 0 9px; border: 1px solid rgba(232, 199, 118, .5); color: var(--brass-br); border-radius: 999px; }
+.rm-badge--test { border-color: rgba(255, 255, 255, .28); color: #cfd6d2; }
+.rm-badge--demo { background: var(--brass-br); border-color: var(--brass-br); color: #221a08; font-weight: 600; }
+
+/* ended: compact result cards */
+.rm-card--ended { padding: 16px 18px; gap: 6px; }
+.rm-archive-date { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: #a9b2ba; }
+.rm-archive-result { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 12px; color: #c0c8c4; }
+
+/* the All / Live / Timed filter */
+.rm-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.rm-tab { min-height: 40px; padding: 0 16px; border-radius: 999px; cursor: pointer; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #cfd6d2; background: transparent; border: 1px solid rgba(255, 255, 255, .25); }
+.rm-tab[aria-selected='true'] { color: #1a1a17; background: var(--brass-br); border-color: var(--brass-br); font-weight: 600; }
+.rm-tab:hover:not([aria-selected='true']) { border-color: var(--brass-br); color: var(--brass-br); }
+.rm-tab:focus-visible { outline: 2px solid var(--brass-br); outline-offset: 2px; }
+
+/* the footer line of the demo panel and the empty state for real rooms */
+.rm-demo-footer { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; max-width: 70ch; margin: 28px 0 0; font-size: 15px; color: #d6ddd9; }
+.rm-sellers-empty { max-width: 70ch; padding: 26px 28px; margin-top: 16px; border-style: dashed; border-color: rgba(232, 199, 118, .4); }
+.rm-sellers-empty p { margin: 0 0 12px; font-size: 15px; color: #d6ddd9; }
+.rm-sellers-empty p:last-child { margin-bottom: 0; }
+.rm-empty-title { font-family: var(--serif); font-weight: 400; font-size: 26px; margin: 0 0 8px; color: var(--paper); }
+.rm-empty-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.rm-empty-hint { font-size: 14px !important; color: #b4bdb9 !important; }
+
+@media (max-width: 640px) {
+  .rm-head { padding-top: 40px; }
+  .rm-group--demo { padding: 22px 16px 22px; }
+  .rm-card-title { font-size: 22px; }
+  .rm-body { gap: 22px; }
+}

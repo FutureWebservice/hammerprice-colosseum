@@ -1,0 +1,8 @@
+[
+  { "source": "/:locale(de|en)/how-it-works", "destination": "/:locale/about#how", "permanent": true },
+  { "source": "/how-it-works", "destination": "/about#how", "permanent": true },
+  { "source": "/:locale(de|en)/pitch", "destination": "/:locale/about#pitch", "permanent": true },
+  { "source": "/pitch", "destination": "/about#pitch", "permanent": true },
+  { "source": "/:locale(de|en)/faq", "destination": "/:locale/about#faq", "permanent": true },
+  { "source": "/faq", "destination": "/about#faq", "permanent": true }
+]

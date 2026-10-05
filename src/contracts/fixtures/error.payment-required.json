@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "code": "payment_required",
+  "reason": "This draft needs one credit. Buy a pack of 10 credits for 1 USDC first.",
+  "scheme": "exact",
+  "network": "solana-devnet",
+  "amount": "1000000",
+  "asset": "6UdP82V3NzaUxiQUUxXnxqpVHLqhQdzX6tvAg4DVnU2q",
+  "payTo": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+  "maxTimeoutSeconds": 60,
+  "extra": {
+    "feePayer": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+    "memo": "hp:credits:quote"
+  },
+  "quoteUrl": "/api/ai/credits/quote"
+}

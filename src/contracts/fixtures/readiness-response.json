@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "readiness": {
+    "eligible": true,
+    "reasons": []
+  },
+  "consign": "ready"
+}

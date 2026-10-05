@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "live": true,
+  "hlsUrl": "https://media.example.test:8888/hp/Zk3Fq9TnR2vXw7LpAa1BcQ/index.m3u8"
+}

@@ -1,0 +1,59 @@
+{
+  "tour": {
+    "label": "Kurzer Rundgang",
+    "progress": "Schritt {n} von {total}",
+    "next": "Weiter",
+    "back": "Zurück",
+    "skip": "Überspringen",
+    "done": "Fertig",
+    "steps": {
+      "stage": "Hier sehen Sie die Karte, die gerade aufgerufen wird.",
+      "clock": "Die Uhr des Servers beendet das Los. Ein spätes Gebot verlängert sie.",
+      "bid": "Hier bieten Sie. Ein Gebot ist verbindlich.",
+      "rail": "Alle Lose dieser Auktion mit Preis und Stand.",
+      "sellSteps": "Verkaufen geht in drei Schritten: Karten wählen, Preis festlegen, Zeitpunkt wählen.",
+      "sellStep": "Jeder Schritt fragt nur das Nötige. Seltenes finden Sie unter Erweitert.",
+      "sellPublish": "Hier wechseln Sie zwischen den Schritten. Öffentlich wird erst, was Sie im letzten Schritt veröffentlichen.",
+      "help": "Den Rundgang finden Sie jederzeit unter Hilfe."
+    }
+  },
+  "help": {
+    "button": "Hilfe",
+    "label": "Hilfe und Erklärungen",
+    "replay": "Rundgang wiederholen",
+    "glossary": "Was bedeuten diese Wörter?",
+    "wallet": "Hilfe zu Ihrer Wallet",
+    "faq": "Fragen und Antworten"
+  },
+  "nextStep": {
+    "label": "Ihr nächster Schritt",
+    "noWallet": "Verbinden Sie Ihre Wallet, um mitzubieten.",
+    "notVerified": "Bestätigen Sie, dass die Wallet Ihnen gehört (kostenlos).",
+    "noFunds": "Holen Sie sich kostenloses Test-USDC.",
+    "noFundsMain": "Laden Sie USDC auf Ihre Wallet.",
+    "noPaddle": "Starten Sie das Bieten: eine weitere Signatur, ohne Zahlung.",
+    "ready": "Bieten Sie auf das aktuelle Los.",
+    "leading": "Sie führen. Wird nicht überboten, gehört das Los Ihnen.",
+    "outbid": "Sie wurden überboten. Bieten Sie erneut oder warten Sie auf das nächste Los.",
+    "won": "Sie haben gewonnen. Bezahlen Sie jetzt, die Frist läuft.",
+    "paying": "Bestätigen Sie in Ihrer Wallet. Dann ist die Karte Ihre.",
+    "waitingSeller": "Wir warten auf die Signatur des Verkäufers.",
+    "confirming": "Zahlung gesendet. Wir warten auf die Bestätigung.",
+    "done": "Fertig. Die Karte liegt in Ihrer Wallet.",
+    "showEnded": "Diese Show ist beendet. Alle Lose finden Sie in der Liste.",
+    "notOpen": "Der Raum ist noch nicht geöffnet. Sie sind bereit."
+  },
+  "hint": {
+    "title": "Was Ihre Wallet gleich zeigt",
+    "caveat": "Ihre Wallet kann eigene Hinweise einblenden.",
+    "why": "Warum fragt meine Wallet das?",
+    "signin": "Ihre Wallet bittet gleich um eine kostenlose Bestätigung, dabei wird kein Geld bewegt.",
+    "paddle": "Noch eine kostenlose Bestätigung ohne Zahlung, damit Ihre Bieternummer bis zum Limit bieten kann, ohne dass jedes Gebot ein Fenster öffnet.",
+    "pay": "Ihre Wallet zeigt, wie viel USDC Sie senden, prüfen Sie den Betrag also vor der Bestätigung.",
+    "consign": "Hier ist keine Bestätigung nötig, wir prüfen nur, ob die Karte in Ihrer Wallet liegt.",
+    "credits": "Eine Zahlung von 1 USDC an Hammerprice für 10 KI-Entwürfe."
+  },
+  "advanced": {
+    "title": "Erweitert"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "action": "publish",
+  "body": "The card ships with the transfer.",
+  "source": "assistant",
+  "lotNumber": 1,
+  "clientNonce": "7b1c2d3e-4f50-4a61-8b72-000000000031"
+}

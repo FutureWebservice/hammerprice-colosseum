@@ -1,0 +1,28 @@
+/*
+ * The verify and proof pages (bids of a lot, the lot-order and thank-you draws): the same language as the landing page. A brass rule, a mono
+ * kicker, big serif type and calm panels with a brass hairline, in place of the plain column they had. It only lays over room.css and vrf.css
+ * (which still own the tables, the checks and the verdicts), by being more specific, so nothing there is edited. No animation, no opacity
+ * below 1.
+ */
+.hp.hp-verify { max-width: 1120px; margin: 0 auto; padding: 0 24px 96px; }
+.vf-head { padding: 56px 0 18px; }
+.vf-rule { width: 68px; height: 2px; background: var(--brass, #c8a44d); margin-bottom: 26px; }
+.vf-kicker { margin: 0 0 18px; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--brass, #c8a44d); }
+.hp-verify .vf-head h1 { font-family: var(--serif, Georgia, serif); font-weight: 400; font-size: clamp(34px, 6.4vw, 64px); line-height: .98; letter-spacing: -.02em; margin: 0 0 18px; text-wrap: balance; color: var(--paper, #f4f0e6); }
+.hp-verify .vf-head .vf-lede { max-width: 66ch; font-size: 17px; line-height: 1.6; color: #c9d1cd; margin: 0; }
+
+/* the panels: the bid table, the hash block, the key card, the checks, the lot-order card */
+.hp-verify .hp-verify-table { padding: 6px 16px; border: 1px solid rgba(200, 164, 77, .28); border-radius: 6px; background: rgba(255, 255, 255, .03); }
+.hp-verify .hp-verify-hash, .hp-verify .vrf-key, .hp-verify .vrf-lotcard { padding: 16px 18px; border: 1px solid rgba(200, 164, 77, .28); border-radius: 6px; background: rgba(29, 74, 60, .22); }
+.hp-verify .vrf-check { border-color: rgba(200, 164, 77, .22); background: rgba(255, 255, 255, .02); border-radius: 6px; }
+.hp-verify .vrf-verdict, .hp-verify .hp-verify-verdict, .hp-verify .hp-verify-result { border-radius: 6px; padding: 14px 16px; }
+.hp-verify h2 { margin-top: 36px; }
+
+/* the primary button of these pages is the solid brass one of the landing page */
+.hp-verify .vrf-btn:not(.is-small), .hp-verify .hp-verify-retry { min-height: 46px; padding: 0 22px; background: var(--brass, #c8a44d); color: #0e1116; border: 1px solid var(--brass, #c8a44d); border-radius: 2px; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.hp-verify .vrf-btn:not(.is-small):hover:not(:disabled), .hp-verify .hp-verify-retry:hover { background: var(--brass-br, #e8c776); }
+
+@media (max-width: 620px) {
+  .hp.hp-verify { padding: 0 16px 72px; }
+  .vf-head { padding-top: 40px; }
+}

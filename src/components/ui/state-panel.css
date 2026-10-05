@@ -1,0 +1,32 @@
+/*
+ * StatePanel: the 404, the error page and the empty and failed states of the packs and verify pages. It carries its own colour values (the
+ * landing tokens, written out) so it also works where no .hp scope is above it. Nothing moves: no animation, no transition, no opacity below 1.
+ * Every text colour is checked against its background in src/components/ui/__tests__/state-panel.test.tsx (4.5:1 at least).
+ */
+.sp { --sp-ink: #0e1116; --sp-brass: #c8a44d; --sp-brass-br: #e8c776; --sp-paper: #f4f0e6; --sp-text: #c9d1cd; color: var(--sp-paper); }
+.sp * { box-sizing: border-box; }
+.sp--page { display: grid; place-items: center; min-height: 62vh; padding: 56px 24px; background: var(--sp-ink); }
+.sp--compact { padding: 8px 0; }
+.sp-card { width: 100%; max-width: 640px; }
+.sp--compact .sp-card { max-width: none; padding: 26px 24px 24px; border: 1px solid rgba(200, 164, 77, .28); border-radius: 6px; background: rgba(29, 74, 60, .22); }
+.sp--page .sp-card { text-align: left; }
+.sp-mark { display: block; width: auto; height: 44px; margin-bottom: 22px; }
+.sp-rule { width: 68px; height: 2px; background: var(--sp-brass); margin-bottom: 22px; }
+.sp--compact .sp-mark { display: block; width: auto; height: 44px; margin-bottom: 22px; }
+.sp-rule { width: 44px; margin-bottom: 16px; }
+.sp-kicker { margin: 0 0 14px; font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--sp-brass); }
+.sp-title { margin: 0 0 14px; font-family: var(--font-serif), ui-serif, Georgia, serif; font-weight: 400; line-height: 1; letter-spacing: -.02em; color: var(--sp-paper); text-wrap: balance; }
+.sp--page .sp-title { font-size: clamp(40px, 8vw, 72px); }
+.sp--compact .sp-title { font-size: clamp(26px, 4.4vw, 34px); line-height: 1.1; letter-spacing: -.01em; }
+.sp-body { margin: 0 0 26px; max-width: 54ch; font-size: 17px; line-height: 1.6; color: var(--sp-text); }
+.sp--compact .sp-body { margin-bottom: 20px; font-size: 16px; }
+.sp-actions { display: flex; flex-wrap: wrap; gap: 12px 14px; }
+.sp .sp-btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 26px; cursor: pointer;
+  background: var(--sp-brass); color: var(--sp-ink); border: 1px solid var(--sp-brass); border-radius: 2px;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+}
+.sp .sp-btn:hover, .sp .sp-btn:focus-visible { background: var(--sp-brass-br); border-color: var(--sp-brass-br); }
+.sp .sp-btn--alt { background: transparent; color: var(--sp-brass-br); border-color: rgba(232, 199, 118, .7); }
+.sp .sp-btn--alt:hover, .sp .sp-btn--alt:focus-visible { background: var(--sp-brass-br); color: var(--sp-ink); }
+.sp .sp-btn:focus-visible { outline: 2px solid var(--sp-paper); outline-offset: 3px; }

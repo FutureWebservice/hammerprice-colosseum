@@ -1,0 +1,34 @@
+{
+  "badge": "Timed auction",
+  "phase": {
+    "endsSoon": "Ends soon"
+  },
+  "endsAt": "Ends {time}",
+  "extended": "Extended by {time}",
+  "antiSnipe": "A bid in the last {window} moves the end to {extend} after that bid. The end can move by at most {max} in total.",
+  "keepUsdc": "Keep enough USDC in your wallet until the end. It is checked when you bid and again when you pay.",
+  "calendar": "Add the current end to my calendar",
+  "calendarTitle": "Ends: {title}",
+  "picker": {
+    "summary": "Auction type (advanced)",
+    "legend": "How should the auction run?",
+    "live": "Live show",
+    "liveHint": "A room with a clock for every card. Several cards, one after the other.",
+    "timed": "Timed auction",
+    "timedHint": "One card that stays open for hours or days. Bidders come back whenever they like.",
+    "duration": "How long it stays open",
+    "oneCard": "A timed auction has exactly one card, and you have picked {count}. Go back and pick one card.",
+    "limit": "For now, timed auctions are open to the Hammerprice room and to operator wallets. With any other wallet, publishing is declined.",
+    "rules": "A bid in the last {window} moves the end to {extend} after that bid, by at most {max} in total.",
+    "settle": "After the end, the winner has {time} to pay. The seller must be online to sign when the winner pays."
+  },
+  "rooms": {
+    "filterLabel": "Show",
+    "all": "All",
+    "live": "Live",
+    "timed": "Timed",
+    "badge": "Timed auction",
+    "endsIn": "Ends in {time}",
+    "noDeadline": "Opening soon"
+  }
+}

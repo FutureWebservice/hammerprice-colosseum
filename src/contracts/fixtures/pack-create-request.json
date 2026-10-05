@@ -1,0 +1,33 @@
+{
+  "name": {
+    "de": "Mein Pack",
+    "en": "My pack"
+  },
+  "mode": "equal_value",
+  "price": "20000000",
+  "odds": [
+    {
+      "tier": "any",
+      "label": {
+        "de": "Alle",
+        "en": "All"
+      },
+      "bps": 10000
+    }
+  ],
+  "cards": [
+    {
+      "asset": "2RvovZccZiaha6jtGpV7bv9k6TmvHCxEmJy8kFUrZmv4",
+      "tier": "any",
+      "name": "Slab A",
+      "listedValue": "20000000"
+    },
+    {
+      "asset": "9ipcz1upL3z3c1tsgfUr3J5Zg1SYn54B3p5Csz26RV1H",
+      "tier": "any",
+      "name": "Slab B",
+      "listedValue": "20000000"
+    }
+  ],
+  "perWalletDailyCap": 3
+}

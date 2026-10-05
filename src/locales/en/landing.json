@@ -1,0 +1,299 @@
+{
+  "hero": {
+    "coldOpen": {
+      "kicker": "Live auctions · graded cards · Solana",
+      "heading": "The hammer is the payment.",
+      "copy": "Bid on graded cards in live auctions. The winning bid pays the seller and moves the card to you in one step."
+    },
+    "lotRises": {
+      "copy": "Example lot {lotNumber}{gradePart} · minimum price {limit}"
+    },
+    "bidsStack": {
+      "copy": "Every bid is signed, and your balance is checked when you bid. Nothing is locked, so keep the USDC in your wallet until you pay."
+    },
+    "finalTen": {
+      "copy": "A bid in the last seconds adds time, so nobody gets sniped.",
+      "strikes": [
+        "Going once",
+        "Going twice"
+      ]
+    },
+    "hammerFalls": {
+      "copy": "The timer ends and the highest bid wins."
+    },
+    "priceStamps": {
+      "copy": "{hammerPrice} HAMMERED"
+    },
+    "settleCta": {
+      "copy": "The seller gets paid and you get the card, in one step. We never hold your money or your cards."
+    }
+  },
+  "cta": {
+    "enterRoom": "Try it now: bid in the demo room",
+    "needWallet": "Need a wallet?",
+    "howItWorks": "How it works",
+    "tryAgent": "Try the AI agent",
+    "joinWaitlist": "Join the waiting list"
+  },
+  "stats": {
+    "vaulted": "graded cards in the vault we read",
+    "signature": "signature to pay and get your card",
+    "custody": "of your money or cards held by us"
+  },
+  "catalogue": {
+    "heading": "Real cards from the vault",
+    "note": "Live from the Collector Crypt vault: real cards, real grades, real asking prices. You cannot bid on these listings here. Each room says which cards it offers.",
+    "error": "Catalogue unavailable: {error}",
+    "lot": "LOT {number}",
+    "count": "{count} lots",
+    "ask": "Asking price",
+    "insured": "Insured value",
+    "seeRooms": "See the rooms"
+  },
+  "moreInfo": "How bidding and payment work, and why we never touch your money, is laid out under <a>how it works</a>.",
+  "product": {
+    "heading": "Hammerprice is live",
+    "copy": "Hammerprice is live and currently in beta with the Colosseum hackathon. We plan to make it reachable on Solana mainnet shortly after the hackathon. The waiting list tells you when that happens.",
+    "link": "How it works"
+  },
+  "journeys": {
+    "heading": "What you can do on Hammerprice",
+    "intro": "From your first bid to your own sale, and more besides. Every button and link leads to the real page. The small pictures are examples, not live data.",
+    "example": "Example",
+    "moreHeading": "And more",
+    "items": {
+      "bid": {
+        "title": "Bid in live rooms",
+        "lead": "A live room sells its lots one after another on the server clock. The demo rooms are labelled as tutorials.",
+        "steps": [
+          "Connect your wallet and get a bidder number with one signature.",
+          "Bid with a signed message. Your USDC balance is checked, nothing is locked.",
+          "A bid in the last seconds adds time, so nobody gets sniped.",
+          "Win and pay with one signature: USDC goes to the seller and the card comes to you. We hold nothing in between."
+        ],
+        "cta": "Enter a live room",
+        "mock": {
+          "lot": "Lot 01 · Example card",
+          "high": "High bid",
+          "highAmount": "125.00 USDC",
+          "left": "00:07 left",
+          "you": "You are bidder 12",
+          "button": "Bid 130.00 USDC",
+          "note": "One signature in your wallet"
+        }
+      },
+      "sell": {
+        "title": "Create a room and sell your card",
+        "lead": "Sell a graded card from your own wallet. You set the terms and Hammerprice runs the auction.",
+        "steps": [
+          "Connect your wallet and pick the card from it. Each card shows whether it can be sold.",
+          "Let the AI draft the listing text if you like. You review and edit it before it is used.",
+          "Choose the lot length and an optional minimum price, then go live. You can pause and resume the room.",
+          "You are paid in USDC at the hammer. Hammerprice keeps 2.5 percent of the hammer price from the seller, and that is the only fee we charge."
+        ],
+        "cta": "List your card",
+        "mock": {
+          "s1": "Card",
+          "s2": "Price",
+          "s3": "Time",
+          "s4": "Go live",
+          "length": "Lot length",
+          "lengthValue": "3 min",
+          "reserve": "Minimum price",
+          "reserveValue": "100 USDC",
+          "ready": "Ready to go live"
+        }
+      },
+      "packs": {
+        "title": "Offer or open a pack",
+        "lead": "A pack is a sealed draw from a public pool of real cards. A seller builds it from cards in their own wallet, the buyer pays the seller directly, and a draw that anyone can recheck picks the card.",
+        "steps": [
+          "A seller with a signed-in wallet picks real cards from that wallet. Availability can be limited to approved sellers.",
+          "The seller sorts the cards into 1 to 8 tiers, sets the odds per tier in percent (they must add up to 100) and the price in USDC, then publishes.",
+          "The odds, the whole card pool and a commitment hash are public before the first sale. After publishing, none of it can be changed.",
+          "A buyer (18 or older) pays the seller directly with one signature. Only when that payment is final does the verifiable random draw (ECVRF) pick the card.",
+          "The seller delivers the drawn card from their own wallet to the buyer within the deadline. Every draw has a public proof page and every seller a public delivery record."
+        ],
+        "cta": "Browse packs",
+        "mock": {
+          "name": "Starter pack",
+          "sealed": "Sealed until you pay",
+          "price": "5 USDC",
+          "odds": "Published odds",
+          "t1": "Common 70 %",
+          "t2": "Rare 25 %",
+          "t3": "Chase 5 %",
+          "pool": "The whole pool, public before the first sale",
+          "hash": "Commitment hash 3f9a...c1d7"
+        },
+        "flow": {
+          "heading": "Peer to peer: who does what",
+          "f1": "Seller wallet",
+          "f1s": "Owns the cards and builds the pack.",
+          "f2": "Buyer pays USDC",
+          "f2s": "Straight to the seller wallet, with one signature.",
+          "f3": "Verifiable random draw",
+          "f3s": "Only after the payment is final.",
+          "f4": "Seller delivers",
+          "f4s": "The drawn card goes from the seller wallet to the buyer wallet.",
+          "platform": "Hammerprice sits beside the flow: it pays the network fee, takes its fee in the same payment and shows the proof page. It never receives the price and never holds a card."
+        },
+        "details": {
+          "odds": {
+            "title": "How the odds work",
+            "line": "Odds, pool and draw are public and can be recomputed."
+          },
+          "build": {
+            "title": "Build your own pack",
+            "line": "Pick cards, set tiers and a price, then publish."
+          },
+          "delivery": {
+            "title": "No pool at Hammerprice",
+            "line": "You pay the seller directly; Hammerprice holds no money."
+          }
+        },
+        "detailsLink": "Details"
+      },
+      "chat": {
+        "title": "Chat in the room",
+        "lead": "Every room has a pre-moderated chat, so the talk stays about the cards.",
+        "steps": [
+          "Signed-in bidders can write. Everyone else can read the approved messages.",
+          "Your message waits for approval. Until then only you see it.",
+          "The room owner gets a popup with a preview and approves or rejects it.",
+          "The public chat shows a bidder number or a display name, never a wallet address."
+        ],
+        "cta": "Open a room",
+        "mock": {
+          "you": "Is the corner sharp?",
+          "waiting": "Waiting for approval",
+          "toast": "Message waiting",
+          "who": "Bidder 7",
+          "approve": "Approve",
+          "reject": "Reject"
+        }
+      },
+      "telegram": {
+        "title": "Buy and bid from Telegram",
+        "lead": "Connect the bot @hammerpricebot and follow a room from your phone. Alerts are opt-in.",
+        "steps": [
+          "Connect Telegram in your profile with one tap on Start.",
+          "Get an alert when you are outbid and when you win.",
+          "Send /watch 3, /watch 5, /watch 10 or /watch all to hear when the next lots of a live room open.",
+          "Tap the Bid button under an alert: the room opens with the amount filled in and you confirm in your wallet. The bot never bids for you."
+        ],
+        "cta": "Connect Telegram",
+        "cta2": "Open the bot",
+        "mock": {
+          "bot": "Hammerprice",
+          "head": "Lot 3 is open",
+          "card": "Example card · PSA 10",
+          "left": "90 seconds left. Nothing is bid for you.",
+          "bid": "Bid 12.50 USDC",
+          "bidPlus": "Bid 13.75 USDC (+10 %)"
+        }
+      },
+      "agent": {
+        "title": "Ask the AI agent",
+        "lead": "Talk to the agent in German or English. It only makes proposals, you decide.",
+        "steps": [
+          "Search open and upcoming lots in your own words.",
+          "Have it prepare a bid proposal, or draft a listing for a card you want to sell.",
+          "A signed-in wallet is required. You confirm every step yourself, and the agent never bids or pays."
+        ],
+        "cta": "Try the AI agent",
+        "mock": {
+          "ask": "Find a PSA 10 Charizard under 500 USDC",
+          "answer": "2 lots found. Shall I prepare a bid proposal?",
+          "c1": "Search lots",
+          "c2": "Bid proposal",
+          "c3": "Listing draft",
+          "confirm": "You confirm in your wallet"
+        }
+      },
+      "profile": {
+        "title": "Your profile and wallet",
+        "lead": "One page for everything that is yours.",
+        "steps": [
+          "Choose a username and a picture.",
+          "See your USDC and SOL balance and the cards in your wallet.",
+          "Follow your bids, wins and payments, and your sales with their prices.",
+          "Choose which Telegram alerts you get."
+        ],
+        "cta": "Open your profile",
+        "mock": {
+          "name": "collector_42",
+          "usdc": "USDC",
+          "sol": "SOL",
+          "t1": "Bids",
+          "t2": "Wins",
+          "t3": "Sales",
+          "row": "Lot 01 · leading"
+        }
+      }
+    },
+    "more": {
+      "timed": {
+        "title": "Timed auctions",
+        "line": "One card, open for hours or days. It closes by itself, with a soft close against last-second sniping.",
+        "link": "See the rooms"
+      },
+      "random": {
+        "title": "Verifiable random lot order",
+        "line": "The order of the lots is drawn with a public ECVRF proof that anyone can recompute.",
+        "link": "See the house room"
+      },
+      "packs": {
+        "title": "Packs",
+        "line": "A sealed draw from a public pool of cards, with the odds, the pool and a proof anyone can recheck.",
+        "link": "How packs work"
+      },
+      "video": {
+        "title": "Live video",
+        "line": "A seller can add a live camera to a show. You load the picture with one click.",
+        "link": "Find a live room"
+      },
+      "draft": {
+        "title": "AI listing draft and room assistant",
+        "line": "Sellers get a draft title and text in German and English to review, and a room assistant answers from our FAQ.",
+        "link": "Open the AI page"
+      },
+      "verify": {
+        "title": "Public audit and verify pages",
+        "line": "Every paid lot has a page that rechecks the signed bids and reads the payment from the Solana network.",
+        "link": "See the evidence"
+      },
+      "languages": {
+        "title": "German and English",
+        "line": "The whole site is available in both languages.",
+        "link": "Read this page in German"
+      },
+      "wallets": {
+        "title": "Wallet support",
+        "line": "Phantom, Solflare and Backpack. Signing in is a free signature, not a transaction.",
+        "link": "Wallet help"
+      }
+    }
+  },
+  "waitlist": {
+    "heading": "Join the waiting list for the mainnet launch",
+    "copy": "Hammerprice is live in beta today. Leave your email and we tell you the moment it opens on mainnet. One email, no spam.",
+    "label": "Email address",
+    "placeholder": "you@example.com",
+    "submit": "Join the waiting list",
+    "sending": "Sending",
+    "success": "Thank you. You are on the waiting list.",
+    "errorInvalid": "This email address does not look right. Please check it and try again.",
+    "errorTooMany": "Too many attempts. Please wait a moment and try again.",
+    "errorGeneric": "That did not work. Please try again in a moment.",
+    "privacyBefore": "We use your address only to tell you when Hammerprice is reachable on mainnet. ",
+    "privacyLink": "Privacy policy"
+  },
+  "wallet": {
+    "heading": "Need a wallet?",
+    "lede": "To bid you need a Solana wallet in your browser. It is free and takes two minutes.",
+    "install": "Install",
+    "mobile": "On a phone, open this site inside your wallet app's own browser. A normal phone browser cannot reach your wallet app.",
+    "faq": "More in the FAQ"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Hammerprice: der Kalender",
+    "description": "Ein Demo-Raum, in dem Sie lernen, wie eine Auktion funktioniert, und Räume, die Verkäufer mit ihrer eigenen Wallet anlegen. Abgerechnet in USDC auf Solana."
+  },
+  "kicker": "Der Kalender",
+  "title": "Was aufgerufen wird.",
+  "explainer": "Verkäufer legen Räume mit ihrer eigenen Wallet an, und Hammerprice betreibt einen Demo-Raum. In jedem Raum endet jedes Los von selbst, wenn sein Timer abläuft, und der Gewinner und der Verkäufer signieren eine Transaktion: Das USDC geht an den Verkäufer, die Karte an den Gewinner.",
+  "loading": "Kalender wird geladen...",
+  "empty": "Gerade ist kein Raum live oder geplant.",
+  "emptySell": "Sie haben eine Karte zu verkaufen? Planen Sie einen Raum.",
+  "error": "Der Kalender ist gerade nicht verfügbar. Bitte versuchen Sie es in Kürze erneut.",
+  "status": {
+    "live": "Live",
+    "scheduled": "Demnächst",
+    "ended": "Beendet"
+  },
+  "lots": "{count, plural, one {# Los} other {# Lose}}",
+  "enter": "In den Raum",
+  "startsIn": "Beginnt in {time}",
+  "startingNow": "Beginnt jetzt",
+  "noStartTime": "Startzeit nicht gesetzt",
+  "addToCalendar": "Zum Kalender hinzufügen",
+  "endedResult": "{lots, plural, one {# Los} other {# Lose}}, {sold} verkauft, {amount} insgesamt",
+  "endedNoSale": "{lots, plural, one {# Los} other {# Lose}}, keins verkauft",
+  "badge": {
+    "house": "Von Hammerprice betrieben",
+    "devnet": "Devnet",
+    "practice": "Übungsraum, simulierte Bieter"
+  },
+  "houseNone": {
+    "title": "Der Hausraum macht gerade Pause",
+    "body": "Der Demo-Raum (die Live-Show des Hauses) läuft rund um die Uhr. Die nächste Show beginnt wenige Minuten nach dem Ende der letzten. Versuchen Sie es gleich noch einmal oder sehen Sie in den Zeitplan.",
+    "rooms": "Alle Räume ansehen",
+    "how": "So funktioniert es"
+  },
+  "houseNext": {
+    "title": "Die nächste Haus-Show hat noch nicht begonnen",
+    "body": "Der Demo-Raum macht gerade Pause: Die nächste Show beginnt um {time} Uhr UTC. Bis dahin kann in keinem Raum geboten werden. Versuchen Sie es zu dieser Zeit noch einmal oder öffnen Sie den Raum und warten Sie dort.",
+    "open": "Geplanten Raum öffnen"
+  },
+  "emptyHouse": "Öffnen Sie den Demo-Raum. Zuschauen geht ohne Wallet.",
+  "errorAuto": "Diese Seite versucht es alle paar Sekunden von selbst erneut.",
+  "demo": {
+    "badge": "Demo",
+    "title": "Demo-Räume (Tutorial)",
+    "sentence": "Tutorial: Hier können Sie das Bieten üben. Die gekennzeichneten Bots überbieten nie eine Person.",
+    "bots": "Die gekennzeichneten Bots überbieten nie eine Person.",
+    "try": "Bieten Sie gegen die gekennzeichneten Bots. Das höhere Gebot gewinnt. Zuschauen geht ohne Wallet.",
+    "open": "Demo-Raum öffnen",
+    "tutorialLive": "Tutorial: So funktioniert ein Live-Auktionsraum",
+    "tutorialTimed": "Tutorial: So funktioniert eine Zeitauktion",
+    "footer": "Tutorial geschafft? Die echten Räume stehen unten, oder legen Sie eine eigene Karte an."
+  },
+  "sellers": {
+    "title": "Echte Räume",
+    "lede": "Von Verkäufern mit einer Wallet im Verkaufsablauf angelegt. Der Verkäufer zahlt 2,5 % des Zuschlagspreises, der Käufer zahlt kein Aufgeld.",
+    "empty": "Echte Räume legen Verkäufer mit ihrer eigenen Wallet an. Seien Sie die oder der Erste: Bieten Sie eine Karte an.",
+    "secondWallet": "Um beide Seiten im Devnet auszuprobieren, nehmen Sie eine zweite Wallet: Legen Sie mit der einen Wallet im Verkaufsablauf einen Raum an, öffnen Sie ihn dann mit der anderen Wallet, holen Sie Test-USDC und bieten Sie. Das höhere Gebot gewinnt.",
+    "orDemo": "Oder bieten Sie oben im Demo-Raum.",
+    "emptyTitle": "Gerade keine echten Räume",
+    "cta": "Karte anbieten",
+    "how": "So funktioniert das Verkaufen",
+    "filterEmpty": "Kein echter Raum passt zu diesem Filter."
+  }
+}

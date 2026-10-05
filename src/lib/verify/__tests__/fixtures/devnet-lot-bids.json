@@ -1,0 +1,56 @@
+{
+  "lot": {
+    "id": "c82e6cef-38d5-4f46-8cae-ec148c49d905",
+    "number": 2,
+    "name": "2025 #143 Helioptile CGC 10 Pokemon Mega Evo (devnet replica)",
+    "showId": "6de65c64-f148-4aec-82f0-d8f158eaabb5"
+  },
+  "bids": [
+    {
+      "id": "6d6bc72a-26b4-476b-a686-6f397e13b6f6",
+      "amount": "60000000",
+      "placedAt": "2026-10-02T13:24:19.306Z",
+      "paddle": 1,
+      "message": "hammerprice bid v1\ncluster: devnet\nshow: 6de65c64-f148-4aec-82f0-d8f158eaabb5\nlot: c82e6cef-38d5-4f46-8cae-ec148c49d905\namount: 60000000\nbidder: 4sMtdQJ7rgAnvnCVFi67RBC6ft3YuUaFcgsQ6LFA5NeB\npaddle: c34ba4d5-4381-4c32-a036-53ac0f526dfc\nnonce: 21aab7370880601e\nissued: 1790947459265",
+      "signature": "kHbsCt84MRLtDL7DCa1slFknMLfT1k1823YwViyHfX1l14hQphUfBN4Jq6G74g1W8sPWfxcuuh07auGw8C08Dg==",
+      "signer": "wallet",
+      "signerPubkey": "4sMtdQJ7rgAnvnCVFi67RBC6ft3YuUaFcgsQ6LFA5NeB"
+    },
+    {
+      "id": "31007bf6-d383-472a-9174-2f65d120f9dc",
+      "amount": "66000000",
+      "placedAt": "2026-10-02T13:24:23.028Z",
+      "paddle": 2,
+      "message": "hammerprice bid v1\ncluster: devnet\nshow: 6de65c64-f148-4aec-82f0-d8f158eaabb5\nlot: c82e6cef-38d5-4f46-8cae-ec148c49d905\namount: 66000000\nbidder: 2VmLKErAo7nmUSGU27asjATjBF9tsN9t1scSKkGsRCJr\npaddle: 778e26f6-e238-4abf-8470-3a7dead2b134\nnonce: 677553dc19ffb9b0\nissued: 1790947462990",
+      "signature": "2eAF4pkLqzYJ6lzgSB6fPjKPvE0By/zlPACw2WaCa0c184GM4NRLNGXamYW7rmbrzOWkAFnevb3QTAoTuEpTAg==",
+      "signer": "wallet",
+      "signerPubkey": "2VmLKErAo7nmUSGU27asjATjBF9tsN9t1scSKkGsRCJr"
+    },
+    {
+      "id": "50b6e28b-b265-4bab-a158-5319c5d62182",
+      "amount": "72000000",
+      "placedAt": "2026-10-02T13:24:30.100Z",
+      "paddle": 1,
+      "message": "hammerprice bid v1\ncluster: devnet\nshow: 6de65c64-f148-4aec-82f0-d8f158eaabb5\nlot: c82e6cef-38d5-4f46-8cae-ec148c49d905\namount: 72000000\nbidder: 4sMtdQJ7rgAnvnCVFi67RBC6ft3YuUaFcgsQ6LFA5NeB\npaddle: c34ba4d5-4381-4c32-a036-53ac0f526dfc\nnonce: f9734b06ec27883f\nissued: 1790947470014",
+      "signature": "UH3t7iGHKSYZK80S6knY89NJldMX3Gy+zZOd0r3fWvJYya+29iXVCtjwhCDla+ietRL81B5I0dvbazbd11N6Ag==",
+      "signer": "wallet",
+      "signerPubkey": "4sMtdQJ7rgAnvnCVFi67RBC6ft3YuUaFcgsQ6LFA5NeB"
+    },
+    {
+      "id": "96cbd06d-76d8-4fb5-9170-9a8c35667f21",
+      "amount": "78000000",
+      "placedAt": "2026-10-02T13:25:36.708Z",
+      "paddle": 4,
+      "message": "hammerprice bid v1\ncluster: devnet\nshow: 6de65c64-f148-4aec-82f0-d8f158eaabb5\nlot: c82e6cef-38d5-4f46-8cae-ec148c49d905\namount: 78000000\nbidder: 9gyqQs6Hq2gzsYkcjDBMmtRMm7AQ42sdfeGUc8tDnLrx\npaddle: a6bff4d0-0922-4a30-9c36-6933fd576003\nnonce: 19a2660ecd96ec46\nissued: 1790947536551",
+      "signature": "XxS0EEKrykRcaUeoiv8vARgKq93Ta9uih4IzYy9YCDDZRebpvFLFCpqgsugV3+F+warJNmw/GuKZVeFyEDzeCw==",
+      "signer": "session",
+      "signerPubkey": "CNx3EeYQxVfniHNki5Pc3U9FebZFmyvdi5k6nhE1djDS"
+    }
+  ],
+  "settlement": {
+    "id": "d22dba70-68cc-4861-95a1-b382323f3c3f",
+    "bidLogHash": "04eed183147f346f9dc3e3faee1d6b29dcdff2f090243a1c9a921e75044b53ee",
+    "txSignature": "jNzE8GsVPwVKhyTXmEyqymPFmzj4oR72r2P3CoAWP2WTKJo4Axq9Y9hECQjCePHZRddSSs8Bphfehn5e89j4eGL",
+    "cluster": "devnet"
+  }
+}

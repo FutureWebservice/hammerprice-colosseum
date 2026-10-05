@@ -1,0 +1,44 @@
+/*
+ * The profile page (/account). Builds on sell.css (`.hp.sl`, `.sl-*`) and its tokens; every rule here is `ac-` and ours.
+ * Muted text stays at the sell.css grey (4.5:1 or better on the ink ground). Nothing here is wider than its column at 320 px.
+ */
+.ac-head { display: flex; gap: 20px; align-items: flex-start; margin: 18px 0 8px; padding: 16px; background: var(--sl-card); border: 1px solid rgba(255, 255, 255, .08); border-radius: 4px; }
+.ac-avatar { flex: none; width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 1px solid var(--sl-line); background: #2a2f36; display: block; }
+.ac-identicon { border-radius: 12px; }
+.ac-head-body { flex: 1; }
+.ac-name { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 4vw, 32px); line-height: 1.1; margin: 0 0 4px; overflow-wrap: anywhere; }
+.ac-name--none { color: var(--sl-dim); }
+.ac-display { margin: 0 0 4px; color: #cfd6d2; overflow-wrap: anywhere; }
+.ac-bio { margin: 0 0 8px; color: #cfd6d2; max-width: 60ch; overflow-wrap: anywhere; }
+.ac-facts { display: grid; gap: 10px 28px; margin: 12px 0 4px; grid-template-columns: 1fr; }
+.ac-facts dt { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--sl-dim); margin-bottom: 2px; }
+.ac-facts dd { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.ac-wallet { font-family: var(--mono); font-size: 13px; overflow-wrap: anywhere; word-break: break-all; }
+.ac-facts .sl-btn { min-height: 36px; padding: 0 12px; }
+
+.ac-stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin: 12px 0; padding: 0; }
+.ac-stat { background: var(--sl-card); border: 1px solid rgba(255, 255, 255, .08); border-radius: 4px; padding: 12px 14px; }
+.ac-stat dt { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--sl-dim); margin-bottom: 4px; }
+.ac-stat dd { margin: 0; font-size: 22px; overflow-wrap: anywhere; }
+.ac-stat dd.sl-hint { font-size: 12px; margin-top: 4px; }
+.ac-two { display: grid; gap: 8px 28px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.ac-money { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0; }
+.ac-money > div { min-width: 90px; }
+.ac-money dt { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--sl-dim); }
+.ac-money dd { margin: 0; }
+
+.ac-avatar-row { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+.ac-avatar-editor .ac-avatar { width: 96px; height: 96px; margin-top: 6px; }
+/* The file input is only the browser's file dialog: out of the tab order and hidden from assistive technology. The visible button opens it and is the labelled, described control. */
+.ac-file { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; clip-path: inset(50%); pointer-events: none; }
+.ac-danger .sl-note a { text-decoration: underline; text-underline-offset: 2px; }
+.ac-danger { margin-top: 28px; padding: 6px 16px 16px; border: 1px solid rgba(255, 138, 117, .45); border-radius: 4px; max-width: 72ch; }
+.ac-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (max-width: 560px) {
+  .ac-head { flex-direction: column; padding: 14px; }
+  .ac-avatar { width: 72px; height: 72px; }
+}
+@media (min-width: 720px) {
+  .ac-facts { grid-template-columns: repeat(auto-fit, minmax(220px, max-content)); }
+}
